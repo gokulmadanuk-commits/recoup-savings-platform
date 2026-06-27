@@ -8,6 +8,7 @@ export const F = {
   // shared
   contractId: "Contract ID",
   vendor: "Vendor",
+  vendorAliases: "Vendor Aliases",
   customer: "Customer",
   category: "Category",
   currency: "Currency",

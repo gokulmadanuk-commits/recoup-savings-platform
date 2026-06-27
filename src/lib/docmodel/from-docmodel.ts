@@ -234,6 +234,8 @@ export function assembleDataset(
   const vendors = [...byVendor.entries()].map(([vendorName, vdocs]) => {
     const contractDoc = vdocs.find((d) => d.docType === "contract");
     const contract = contractDoc ? docModelToContract(contractDoc) : null;
+    const aliasField = contractDoc?.fields.find((f) => f.label === F.vendorAliases);
+    const aliases = aliasField ? S.parseList(aliasField.value) : [];
     const invoices = vdocs
       .filter((d) => d.docType === "invoice")
       .map(docModelToInvoice);
@@ -245,7 +247,7 @@ export function assembleDataset(
         id: S.slug(vendorName),
         name: vendorName,
         category: contract?.category ?? "",
-        aliases: [],
+        aliases,
       },
       contract,
       invoices,

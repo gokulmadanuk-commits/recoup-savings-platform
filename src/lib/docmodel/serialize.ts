@@ -45,15 +45,16 @@ export function parseNum(s: string): number {
   return Number(String(s).replace(/,/g, "").trim());
 }
 
-/* comma-joined lists */
+/* pipe-joined lists — values (e.g. "Acme, Inc.") may themselves contain commas. */
+const LIST_SEP = " | ";
 export function list(items: string[]): string {
-  return items.join(", ");
+  return items.join(LIST_SEP);
 }
 export function parseList(s: string): string[] {
   const t = s.trim();
   if (!t) return [];
   return t
-    .split(",")
+    .split("|")
     .map((x) => x.trim())
     .filter(Boolean);
 }

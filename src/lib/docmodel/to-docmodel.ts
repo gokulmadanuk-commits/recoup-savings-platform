@@ -34,6 +34,50 @@ export function formatPaymentTerms(p: PaymentTerm): string {
   return `Net ${p.netDays}`;
 }
 
+/**
+ * Human-readable clause prose generated from the structured terms. Render-only:
+ * the parser reads data from fields/tables, so clauses make the document read
+ * like a real agreement without being part of the parse contract.
+ */
+export function contractClauses(c: Contract): { heading: string; body: string }[] {
+  const out: { heading: string; body: string }[] = [];
+  const renew = c.autoRenew
+    ? `This Agreement automatically renews for successive ${c.renewalTermMonths}-month terms unless either party provides written notice of non-renewal at least ${c.noticeWindowDays} days prior to the end of the then-current term.`
+    : `This Agreement expires at the end of the Initial Term unless renewed in writing by the parties.`;
+  out.push({
+    heading: "1. Term and Renewal",
+    body: `The initial term of this Agreement is ${c.initialTermMonths} months, commencing on ${c.effectiveDate} and continuing through ${c.endDate} (the "Initial Term"). ${renew}`,
+  });
+  out.push({
+    heading: "2. Fees and Payment",
+    body: `Customer shall pay the fees set out in the Rate Card and Order Form, with a current annual contract value as stated above. Invoices are payable per the stated payment terms. All fees are exclusive of applicable taxes.`,
+  });
+  if (c.escalator && c.escalator.type !== "none") {
+    const cap = c.escalator.capPct !== null ? ` Any such increase shall not exceed ${Math.round(c.escalator.capPct * 100)}% per annum.` : "";
+    out.push({
+      heading: "3. Price Adjustment",
+      body: `Fees may be adjusted at each anniversary of the Effective Date in accordance with the escalation terms stated above.${cap}`,
+    });
+  }
+  if (c.commitment?.minCommitSpendCents != null || c.commitment?.minCommitQty != null) {
+    out.push({
+      heading: "4. Minimum Commitment",
+      body: `Customer commits to the minimum stated above over each measurement period. Consumption below the committed minimum remains payable in full.`,
+    });
+  }
+  out.push({
+    heading: "5. Audit Rights",
+    body: `Customer may, on reasonable notice, audit invoices and supporting records against the rate card and order form for a period of twenty-four (24) months following each invoice date, and any confirmed overcharge shall be credited or refunded.`,
+  });
+  if (c.governingLaw) {
+    out.push({
+      heading: "6. Governing Law",
+      body: `This Agreement is governed by the laws of ${c.governingLaw}, without regard to its conflict-of-laws principles.`,
+    });
+  }
+  return out;
+}
+
 export function contractToDocModel(c: Contract): DocModel {
   const f = new Fields();
   f.push(F.contractId, c.id);
@@ -139,7 +183,7 @@ export function contractToDocModel(c: Contract): DocModel {
     title: `Master Services Agreement — ${c.vendorName}`,
     fields: f.build(),
     tables,
-    clauses: [],
+    clauses: contractClauses(c),
     fileName: c.sourceDoc,
   };
 }
@@ -234,7 +278,17 @@ export function usageToDocModel(
 /** All document representations for one vendor (contract + invoices + usage). */
 export function vendorRecordToDocModels(vr: VendorRecord): DocModel[] {
   const docs: DocModel[] = [];
-  if (vr.contract) docs.push(contractToDocModel(vr.contract));
+  if (vr.contract) {
+    const contractDoc = contractToDocModel(vr.contract);
+    // Carry vendor aliases (used by R06 entity-matching) on the contract doc so
+    // they survive the document round-trip — the canonical Contract has none.
+    if (vr.vendor.aliases.length) {
+      const idx = contractDoc.fields.findIndex((f) => f.label === F.vendor);
+      const aliasField = { label: F.vendorAliases, value: S.list(vr.vendor.aliases) };
+      contractDoc.fields.splice(idx >= 0 ? idx + 1 : contractDoc.fields.length, 0, aliasField);
+    }
+    docs.push(contractDoc);
+  }
   for (const inv of vr.invoices) docs.push(invoiceToDocModel(inv));
   if (vr.usage.length) {
     const fileName = `${S.slug(vr.vendor.name)}-utilization.xlsx`;
