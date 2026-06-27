@@ -1,0 +1,424 @@
+{
+  "report_markdown": "# RECOUP — Synthesized Go-to-Market & Product Brief\n\nRECOUP is a contingency-priced vendor-spend recovery service (30% of recovered cash / 20% of run-rate avoidance) that statelessly analyzes uploaded contracts, invoices and spreadsheets against 14 forensic rules — auto-renewals, escalators, idle SaaS seats, off-contract rates, duplicates, zombie billing, redundant tools, headcount-fee drift — and hands back a ranked, dollar-quantified findings list plus drafted vendor recovery emails. This brief synthesizes four research streams (product, GTM, PE prospecting, Companies House method) into one operating plan.\n\n## The strategic frame\nThe recovery-audit industry is real, mature and contingency-priced (PRGX, apexanalytix, CBIZ charge 20–40% of recovered funds) but has historically chased the Fortune 1000 on AP duplicate-payment recovery. RECOUP's wedge is two-fold: (1) the **mid-market** — too small for PRGX to bother with, too lean to have a real procurement function; and (2) a **broader forensic surface** — contract economics (escalators, auto-renewals, idle seats, redundant tools) that AP recovery audits skip. Duplicate/erroneous payments are only 0.8–2% of disbursements; the larger leakage lives in the contract-terms layer RECOUP owns. Companies lose ~9% of revenue to ineffective vendor-contract management.\n\nThe single best segment is **PE-backed portfolio companies and roll-ups**. They carry an explicit, time-boxed cost-out mandate (the 100-day value-creation plan), the EBITDA-multiple math makes a recurring £1 of cost worth ~8x at exit (£100k recurring saving ≈ £800k of exit value at the 8.4x median PE multiple), the contingency model fits their cash-constrained/no-upfront-spend posture perfectly, and they are vendor-sprawl machines because they grow by bolt-on acquisitions that bolt on duplicate vendor estates. Best of all the buyer is a channel: win one portfolio CFO and the operating-partner team unlocks 40–160 more companies with the identical problem.\n\n## Product: convert detector into a contingency operating system\nRECOUP today is a detector trapped in a browser tab. The three build-now picks — **Recovery Tracker**, **CFO Savings Report**, and **Renewal Calendar** — together convert it into an operating system: the Report wins the deal and justifies the 30% invoice, the Calendar drives the avoidance half of the revenue model, and the Tracker is the system of record that lets you actually invoice 30% of what posts. All three are HIGH feasibility, reuse the existing analysis JSON, and need no database (localStorage + JSON/PDF/CSV/.ics export covers persistence). Strong second tier: a macro SaaS-inflation/CPI benchmark overlay, a clause-matched negotiation playbook library, a what-if savings modeler, and a public ROI calculator for lead-gen (ROI calculators convert >40% vs 2–12% for static pages). Explicitly do NOT build per-SKU price benchmarks, live integrations/continuous monitoring, or a two-way vendor dispute portal — all require persistent state and a data moat that breaks RECOUP's stateless, no-DB design.\n\n## GTM in one line\nSell founder-led, signal-triggered outbound to mid-market CFOs (200–2,000 employees, $5M+ vendor spend, no CPO), anchored on PE operating-partner partnerships as the multiplier channel, with \"free unless it lands\" as the entire competitive advantage. Lead every message with numbers and timeline hooks (timeline hooks get 10.16% reply vs 4.54% for problem hooks; CFOs reply at 7.59%), one persona per sequence, cohorts ≤50, the free-first-look as the demo.\n\n## Prospecting method\nBuild the list top-down from Companies House: filter the free monthly Company Data CSV by target SIC codes + MEDIUM/FULL/GROUP account category + `NumMortOutstanding ≥ 1` (leverage signal), join the PSC snapshot to flag controllers named *Topco/Midco/Bidco/Holdings* or a known sponsor, then enrich the shortlist via the free REST API (charges to confirm the LBO debenture, officers for decision-makers, XBRL accounts for admin-expense/headcount). Cross-reference with PE firms' public portfolio pages (LDC ~90 holdings, Inflexion, August Equity, NorthEdge, Endless, Modella) and prioritize fresh carve-outs and active roll-ups, where the cost-out mandate is most acute and contracts are being re-baselined now.\n",
+  "product_opportunities": [
+    {
+      "name": "Recovery Tracker — Finding to Posted-Credit board",
+      "what": "A client-side kanban/pipeline board moving each finding through the lifecycle every recovery firm uses: Identified -> Email Drafted -> Sent to Vendor -> In Dispute -> Credit Approved -> Posted/Realized (plus Rejected/Won't Pursue). Each card shows dollar value, vendor, rule, drafted email and an evidence checklist; column headers sum dollars so you watch $ identified vs $ realized climb. State persists in localStorage with export/import JSON as the save file.",
+      "why": "The single biggest gap between RECOUP-as-detector and RECOUP-as-business. Every contingency firm (PRGX, APEX with 3,000+ active claims, Tangoe) lives on staged claim-status tracking; the market frames credibility as closed-loop tracking from identification through realization with an auditable trail. You cannot invoice 30% of recovered cash without a system of record for what actually posted. Converts a one-time report into a recurring engagement surface.",
+      "feasibility": "high",
+      "buildNow": true,
+      "buildNotes": "Pure React state + localStorage, no new data shape — wraps existing findings. Model status, statusHistory[] (timestamp per transition auto-builds the audit trail), realizedAmount, notes per finding. Two headline tiles: Identified $ and Realized $ with a realization-rate % (sells against the 30-60% procurement savings-leakage stat). Wire each card Send button to the existing Gmail draft. Drag-and-drop via @dnd-kit or simple status dropdowns. Add CSV export of the board for the CFO."
+    },
+    {
+      "name": "CFO Savings Report — downloadable PDF / CSV deliverable",
+      "what": "One click generates a branded editorial PDF (plus parallel CSV) the buyer forwards to their CFO: executive summary (total annual savings, recovered cash vs run-rate avoidance, contingency cost, net), findings ranked by dollar with rule + source-clause citation, vendor leaderboard, methodology footer. CSV is the same findings as a finance-importable line-item file.",
+      "why": "Every contingency recovery firm's actual deliverable is an audit report detailing findings prioritized by dollar. RECOUP's value is currently trapped in a browser tab the signing CFO never opened. A forwardable artifact closes the deal and justifies the 30% invoice. Lowest-effort, highest-trust output: deterministic, no LLM risk, immediately shareable.",
+      "feasibility": "high",
+      "buildNow": true,
+      "buildNotes": "Next.js print-optimized /report route, PDF via browser print pipeline or @react-pdf/renderer / Playwright-to-PDF in a Node route handler — all stateless, fed by existing analysis JSON. CSV trivial via papaparse. Build a print stylesheet matching the ivory/forest editorial design. Include a projected 12-month run-rate avoidance callout and the contingency net math, plus a per-finding evidence appendix pulling the exact contract clause RECOUP already extracts."
+    },
+    {
+      "name": "Renewal Calendar & Auto-Renewal Watchlist",
+      "what": "A timeline/calendar view of every contract's renewal date and notice deadline computed from dates RECOUP already parses. Each item is color-coded by urgency and shows the action window (e.g. 'Notice due by Mar 1 — 60-day window; act by Jan 1 to renegotiate'), with optional .ics / Add-to-Google-Calendar export and a watchlist of the highest-$ upcoming renewals.",
+      "why": "Table-stakes across Vendr, Tropic, Sastrify, Zylo, Spendflo. 80% of SaaS contracts auto-renew; negotiating 90+ days out yields ~49% savings vs 19% at 30-90 days; inadvertent renewal is a finding in ~20% of audits. Turns RECOUP forward-looking, which is exactly the run-rate avoidance half of its commercial model. Spendflo's most-praised behavior is flagging renewals 60 days out with benchmark data attached — RECOUP already has both the dates and the benchmark.",
+      "feasibility": "high",
+      "buildNow": true,
+      "buildNotes": "Derived view over parsed dates; date math only. noticeDeadline = renewalDate - noticeDays (default 60 if unparsed, flag as assumed). Sort watchlist by annualValue x urgency. .ics generation is a tiny stateless function; calendar push optional via the Google Calendar MCP. Cross-link each renewal to its findings and to the Recovery Tracker so a renewal can spawn a negotiation task. Surface the 'act 90+ days out for ~49% savings' rule as inline coaching."
+    },
+    {
+      "name": "Benchmark vs SaaS-Inflation / CPI overlay",
+      "what": "For each escalator/renewal finding, show the vendor's increase against benchmarks: CPI (~3%), SaaS market inflation (~12-13%), and a fair cap (3-5%, winnable with multi-year commit). Renders a per-finding badge reframing 'you got increased' as 'you got over-increased vs market'.",
+      "why": "Benchmarking is the #1 differentiator the leaders sell (Zylo 40M licenses, Tropic Supplier Graph, Vertice $30B index) and the biggest lever in negotiation prep. RECOUP can't match proprietary per-SKU data but can ship public, citable macro benchmarks (Vertice SaaS Inflation Index, BLS CPI) — enough to win the email.",
+      "feasibility": "high",
+      "buildNow": false,
+      "buildNotes": "Ship the macro version only: a versioned bundled benchmarks.json (CPI, SaaS inflation, standard caps) with source URLs + comparison math, fed straight into the drafted vendor email as a negotiation anchor. Do NOT attempt per-vendor price benchmarks — that needs a data moat you don't have (LOW feasibility)."
+    },
+    {
+      "name": "Negotiation Playbook Library (clause-matched)",
+      "what": "A library of vendor-email/redline templates keyed to each finding type: auto-renewal -> cut notice window to 30 days; escalator -> cap at 3-5% with multi-year commit; idle seats -> true-down language. Each entry carries leverage points and priority order (notice window > price cap > data-export rights).",
+      "why": "Upgrades RECOUP from 'one email' to 'a negotiation strategy', matching what Vendr/Spendflo charge for as negotiation-as-a-service. Cheap to build, hard to commoditize content moat.",
+      "feasibility": "high",
+      "buildNow": false,
+      "buildNotes": "Static MDX/JSON content mapped to existing rule IDs; deterministic selection, optional LLM personalization, no DB. Each entry: trigger rule, recommended ask, fallback ask, leverage rationale, ready-to-paste redline. Inject the matched playbook into the existing email queue."
+    },
+    {
+      "name": "What-If / Multi-Scenario Savings Modeler",
+      "what": "Dashboard sliders/toggles: realization rate (conservative/base/optimistic), which findings you pursue, escalator-cap assumptions -> recompute total savings and net-after-contingency live.",
+      "why": "Mirrors the conservative/base/optimistic toggling buyers expect and makes the savings number feel honest, selling against the 30-60% leakage reality. Good for managing CFO expectations.",
+      "feasibility": "high",
+      "buildNow": false,
+      "buildNotes": "Pure client-side recompute over existing findings, no DB. Default base = 60% realization. Pair tightly with the CFO Report (export the chosen scenario) and the Recovery Tracker (scenario = which findings enter the pipeline)."
+    },
+    {
+      "name": "Landing-Page ROI / Savings Calculator (lead-gen)",
+      "what": "Public, no-upload estimator: annual SaaS/vendor spend -> estimated recoverable + run-rate avoidance, free unless it lands. 5-8 inputs, branded outcome page, light email gate.",
+      "why": "Top-of-funnel growth. ROI calculators convert >40% vs 2-12% for static pages and are perfectly on-brand for a 'free unless savings land' contingency offer. Captures leads before any document is shared.",
+      "feasibility": "high",
+      "buildNow": false,
+      "buildNotes": "Static Next.js page, transparent multipliers from RECOUP's own finding-rate averages (audits typically surface 2-8% of vendor spend), no DB, gate emails to Formspree. Keep ranges honest and conservative to protect credibility into the paid engagement."
+    }
+  ],
+  "gtm": {
+    "icp": "Mid-market companies of 200-2,000 employees / ~$50M-$750M revenue with $5M+ annual third-party vendor + SaaS + services spend and NO dedicated CPO / thin procurement function (70% of SaaS spend is controlled by lines of business, only 26% by IT — decentralized buying is where leakage lives). SaaS alone now runs ~$4,830/employee/yr (+21.9% YoY). Highest-propensity sectors: PE-backed portfolio companies & roll-ups (the single best segment), software/tech-enabled scale-ups, professional services/agencies/staffing, multi-site healthcare/care/vet/dental, manufacturing/distribution/logistics, and multi-location retail/hospitality. Buying-trigger signals: recent PE acquisition or bolt-on, rapid headcount growth (51-53% of SaaS licenses sit unused, 23% never used at all), new CFO/VP Finance just landed, 3+ year-old auto-renewing contracts with 3-7% compounding escalators, recent layoffs leaving idle seats, or a stated cost-cutting mandate. Disqualifiers: <100 employees / <$2M vendor spend (too small to clear a contingency fee), and statutory public-sector procurement where contingency audits face legal limits.",
+    "valueProps": [
+      "Zero-risk, self-funding — free unless we find it. Contingency removes budget approval, RFP and CapEx friction; it is the one audit that never competes for budget. Industry norm 20-40% of recovery, ROI routinely >300%, clients recover 2-4% of audited spend on average (10-20% on specific supplier relationships).",
+      "Found money plus locked-in run-rate avoidance, in dollars, fast — RECOUP sells a ranked dollar-quantified findings list AND drafted vendor emails (recovery is teed up, not just diagnosed). Companies lose ~9% of revenue to vendor-contract mismanagement; one documented missed renewal locked in $183.6K of overpayment on idle seats for 12 months.",
+      "Forensic breadth beyond what a recovery auditor or your own team checks — 14 rules across auto-renewals, off-contract rates, idle seats, escalators, duplicates, zombie billing, redundant tools and headcount-fee drift. Legacy firms mostly hunt duplicate payments (only 0.8-2% of disbursements); RECOUP owns the bigger contract-economics layer they skip.",
+      "No lift on your team, no rip-and-replace — stateless analysis of uploaded PDFs/Excel/Word, no DB, no integration project, no IT ticket. Removes the #1 mid-market objection (we don't have the bandwidth).",
+      "Speed + privacy — stateless means nothing stored, fast turnaround, easy to clear with legal/security vs a 6-12 week enterprise recovery engagement.",
+      "For PE: a recurring pound of cost removed is worth ~8x at exit (8.4x median PE EBITDA multiple), reframing the 30%/20% contingency fee as trivially cheap against enterprise-value uplift — the single most powerful close in the PE world."
+    ],
+    "channels": [
+      "Founder-led / rep-led signal-triggered outbound (email + LinkedIn as one multi-touch motion) — the primary channel. CFOs reply at 7.59% to good cold email; finance engages with numbers and timeline hooks. Own this.",
+      "PE / VC portfolio partnerships — sell once to a sponsor's value-creation/operating-partner team, get warm intros to 10-40 portfolio CFOs with a built-in margin mandate. Highest-leverage channel for the roll-up ICP; a single contingency case study per fund unlocks the portfolio.",
+      "Referral + revenue-share with adjacent advisors — fractional CFOs, outsourced controllers, FP&A consultancies, M&A integration/QoE firms, RevOps/IT-asset-management consultants. They sit on the exact triggers (new finance leader, post-merger) and 'free unless we find it' is easy to forward with zero downside.",
+      "Free analysis as the demo — because the product is stateless document analysis, the offer IS the proof. Lead magnet: send one vendor contract + 12 months of that vendor's invoices, we show what we'd recover, free. Collapses the sales cycle.",
+      "Targeted founder-led content + peer benchmarks on LinkedIn (not a blog farm) — 'we analyzed N mid-market vendor stacks, here's the average leakage.' Supports outbound; not standalone.",
+      "Niche communities/events — fractional-CFO networks, regional PE associations, procurement meetups. Trust-building, not volume. De-prioritize paid search/display (intent thin, dominated by PRGX/Apex SEO), cold calling, and generic webinars."
+    ],
+    "objections": [
+      {
+        "objection": "We don't have budget for this.",
+        "rebuttal": "There's nothing to budget. We're contingency — you pay only a share of cash we actually recover or run-rate we avoid. If we find nothing, you owe nothing. It's the one audit that never competes with your budget. Contingency self-funds; ROI routinely exceeds 300%."
+      },
+      {
+        "objection": "Our finance/AP team or internal audit already checks this.",
+        "rebuttal": "They check that invoices match POs — duplicate-payment hygiene, ~1-2% of spend. We work the contract-economics layer they don't have time for: compounding escalators, auto-renewal windows, idle seats, redundant tools. Even tight AP teams have 0.8-2% slipping through, and the contract leakage is bigger. If your team's already perfect, our audit finds zero and costs you zero — a clean bill of health for free."
+      },
+      {
+        "objection": "We already use PRGX / a recovery auditor.",
+        "rebuttal": "Great — they're excellent at duplicate payments, freight and rebates. We're complementary: we cover SaaS seats, contract escalators, auto-renewals and redundant tools — the categories an AP recovery audit doesn't touch. Different rules, no overlap, same contingency model."
+      },
+      {
+        "objection": "I don't want to damage vendor relationships.",
+        "rebuttal": "We draft every vendor email for you and you control what gets sent — nothing goes out without your sign-off. Overcharges are almost always honest errors; a reputable vendor returns them and the relationship stays intact. A vendor-sensitive approach is how the whole recovery-audit industry operates."
+      },
+      {
+        "objection": "We don't have the bandwidth / it's a big project.",
+        "rebuttal": "Zero integration, no IT ticket, no rip-and-replace. You upload vendor PDFs, Excel and Word — we do the forensics statelessly and hand you a ranked, dollar-quantified list. Minimal internal effort is the whole point."
+      },
+      {
+        "objection": "Is our data safe? These are sensitive contracts.",
+        "rebuttal": "Stateless by design — we analyze the documents and store nothing in a database. Easy to clear with your security and legal teams; no data-retention exposure."
+      },
+      {
+        "objection": "How do I know the savings are real / that you won't inflate findings?",
+        "rebuttal": "Every finding is ranked in dollars and traced to the exact clause and invoice line that proves it — you see the source document. Our fee is only on cash you actually recover or run-rate you actually avoid, so we have zero incentive to inflate; phantom savings pay us nothing."
+      },
+      {
+        "objection": "30% feels high.",
+        "rebuttal": "30% of money you'd otherwise never see — the other 70% is pure margin you weren't going to have. Compare that to a fixed consulting fee paid whether they find anything or not. And it's only 20% on avoidance, where the recovery is forward-looking. For a PE-backed business, a recurring saving is worth ~8x at exit, so the fee is trivial against enterprise value."
+      }
+    ]
+  },
+  "outreach_templates": [
+    {
+      "channel": "Email",
+      "name": "Template A — CFO / VP Finance (numbers + timeline hook)",
+      "subject": "found $90K in [Company]'s vendor stack",
+      "body": "Hi [First name],\n\nMid-market companies your size lose roughly 9% of revenue to vendor-contract leakage — auto-renewal escalators, idle SaaS seats, off-contract rates. Most of it is invisible because it's spread across dozens of contracts no one re-reads.\n\nWe're contingency-only: send us one vendor contract plus 12 months of that vendor's invoices, and within a week I'll show you exactly what we'd recover — in dollars, tied to the clause. You pay nothing unless cash actually lands.\n\nWorth a 15-min look at one contract? I'll do the first one free.\n\n[Name] · RECOUP"
+    },
+    {
+      "channel": "Email",
+      "name": "Template B — PE-backed / post-acquisition CFO (trigger-based)",
+      "subject": "[Company] post-close — overlapping vendors",
+      "body": "Hi [First name],\n\nCongrats on the [acquisition/round]. Right after a deal is where vendor spend leaks hardest — duplicate tools across the combined entity, contracts auto-renewing at last year's headcount, escalators compounding 3-7% a year while no one's watching.\n\nWe find and quantify all of it from your existing contracts and invoices — no integration, nothing stored. Fee is a share of what we recover; zero if we find nothing. A typical look surfaces 2-4% of audited spend.\n\nWant me to run a free first pass on your three largest vendors?\n\n[Name] · RECOUP"
+    },
+    {
+      "channel": "Email",
+      "name": "Template C — Head of Procurement / Ops (peer / breadth angle)",
+      "subject": "the contract leakage AP audits miss",
+      "body": "Hi [First name],\n\nYou're likely already tight on duplicate payments. The money that still slips through is in the contract terms: uncapped escalators, missed renewal windows, seats you're paying for that nobody's used in 90 days. A $50K contract with a 7% escalator quietly becomes $370K over five years.\n\nWe run 14 forensic rules across your contracts + invoices and hand you a ranked, dollar-quantified list — plus the drafted vendor emails to recover it. Contingency only.\n\nOpen to me analyzing one renewal coming up this quarter, free?\n\n[Name] · RECOUP"
+    },
+    {
+      "channel": "Email",
+      "name": "Template D — PE operating partner / value-creation team (portfolio multiplier)",
+      "subject": "cost-out across the [Fund] portfolio",
+      "body": "Hi [First name],\n\nYour portfolio companies are sitting on vendor leakage that compounds with every bolt-on — duplicate carriers, telematics, SaaS seats and insurance the integrations never reconciled, plus escalators no one re-reads. Industry data puts it near 9% of revenue.\n\nWe work it on pure contingency: no software, no procurement headcount, nothing stored. We read a company's contracts + 12 months of invoices and hand back ranked dollar findings plus drafted vendor emails. A recurring saving is worth ~8x at exit on a typical multiple — so the math is heavily in your favour.\n\nOne CFO intro to start, and we'll run the same play across the rest of the portfolio. Worth a short call?\n\n[Name] · RECOUP"
+    },
+    {
+      "channel": "LinkedIn",
+      "name": "LinkedIn — connection (no-pitch) then value DM",
+      "subject": "connection + value follow-up",
+      "body": "CONNECTION REQUEST (no pitch): Hi [First name] — I work in vendor-spend recovery for mid-market finance teams and keep seeing the same leakage patterns in [sector]. Following your work at [Company], would be glad to connect.\n\nVALUE DM (2-3 days after accept, after liking one recent post): Thanks for connecting, [First name]. Quick one — most teams your size are quietly overpaying ~9% on vendor contracts (escalators, idle seats, auto-renewals). We work this on pure contingency: you only pay a share of what actually comes back. Happy to run a free first pass on one of your bigger contracts and show you the number — no obligation. Want me to?"
+    }
+  ],
+  "prospects": [
+    {
+      "company": "CM Downton",
+      "companyNumber": "",
+      "sector": "Road haulage / logistics",
+      "size": "~£120m revenue, 600 tractor units, 1,800 trailers, ~1,350 staff",
+      "peBacker": "EmergeVest (EV Cargo)",
+      "whyFit": "£75m 2024 buyout into a 6-operator roll-up (Palletforce, NFT, Allport, Jigsaw, Adjuno) — duplicate carriers, telematics, fuel cards, insurance and SaaS across newly-combined entities.",
+      "buyerTitle": "Group CFO / Integration Director",
+      "outreachAngle": "Post-integration vendor reconciliation across the EV Cargo brands — find the duplicate spend the merger left behind.",
+      "source": "evcargo.com — EmergeVest acquires CM Downton (£75m transaction)"
+    },
+    {
+      "company": "Palletforce",
+      "companyNumber": "",
+      "sector": "Pallet-network logistics",
+      "size": "Mid-market (part of EV Cargo)",
+      "peBacker": "EmergeVest (EV Cargo)",
+      "whyFit": "Network model with hundreds of member-depot contracts; off-contract rate drift plus duplicate IT/telecoms across the network.",
+      "buyerTitle": "CFO / Procurement Lead",
+      "outreachAngle": "Off-contract rate drift + duplicate IT/telecoms across the depot network.",
+      "source": "evcargo.com — EmergeVest / CM Downton announcement"
+    },
+    {
+      "company": "Fox Brothers Holdings Group",
+      "companyNumber": "",
+      "sector": "Haulage + quarrying/aggregates",
+      "size": "Mid-market",
+      "peBacker": "Stellex Capital Management (2024)",
+      "whyFit": "Fresh 2024 buyout plus merger with J A Jackson = duplicate fleet, fuel, insurance and back-office vendors across two operating businesses.",
+      "buyerTitle": "CFO",
+      "outreachAngle": "First-90-days cost-out on the combined Fox Brothers / J A Jackson vendor base.",
+      "source": "motortransport.co.uk — Fox Brothers acquired by Stellex"
+    },
+    {
+      "company": "Mandata",
+      "companyNumber": "",
+      "sector": "Transport-management software / logistics services",
+      "size": "Mid-market",
+      "peBacker": "LDC",
+      "whyFit": "LDC-backed; acquired Returnloads.net — bolt-on integration of overlapping tooling and redundant SaaS.",
+      "buyerTitle": "CFO",
+      "outreachAngle": "SaaS / redundant-tools rationalisation across the acquired stack.",
+      "source": "privateequitywire.co.uk — LDC-backed Mandata acquires Returnloads.net"
+    },
+    {
+      "company": "Contollo",
+      "companyNumber": "",
+      "sector": "Smart-building consultancy",
+      "size": "6 offices, 140 staff after 3 acquisitions",
+      "peBacker": "NorthEdge",
+      "whyFit": "Textbook buy-and-build — three acquired entities' vendor bases not yet rationalised.",
+      "buyerTitle": "CFO / FD",
+      "outreachAngle": "Consolidate the vendor estate across your three acquisitions before the next bolt-on.",
+      "source": "northedge.com — 2024 a year in review"
+    },
+    {
+      "company": "Frankham Group",
+      "companyNumber": "",
+      "sector": "Built-environment / multidisciplinary consultancy",
+      "size": "Mid-market, multi-office",
+      "peBacker": "LDC",
+      "whyFit": "Professional-services multi-site = sprawling software, travel, telecoms and professional-indemnity insurance.",
+      "buyerTitle": "FD / CFO",
+      "outreachAngle": "Idle SaaS seats + auto-renew sweep across offices.",
+      "source": "ldc.co.uk/portfolio"
+    },
+    {
+      "company": "Nu-Style Products",
+      "companyNumber": "",
+      "sector": "Manufacturing / built-environment supply",
+      "size": "Mid-market, domestic + international",
+      "peBacker": "LDC",
+      "whyFit": "Manufacturing + multi-territory = freight, raw-material contracts, escalators, energy spend.",
+      "buyerTitle": "CFO / COO",
+      "outreachAngle": "Escalator-clause and off-contract-rate findings on input/logistics spend.",
+      "source": "ldc.co.uk/portfolio"
+    },
+    {
+      "company": "VetPartners",
+      "companyNumber": "",
+      "sector": "Veterinary group (multi-site healthcare)",
+      "size": "Hundreds of clinics, one of UK's largest vet groups",
+      "peBacker": "BC Partners (originally August Equity)",
+      "whyFit": "Huge multi-site estate — duplicate clinical-supply contracts, lab services, PMS software, energy and waste across hundreds of sites.",
+      "buyerTitle": "Group CFO / Head of Procurement",
+      "outreachAngle": "Multi-site vendor normalisation across the clinic network — off-contract rates and duplicate suppliers.",
+      "source": "pitchbook.com — August Equity profile"
+    },
+    {
+      "company": "Taking Care",
+      "companyNumber": "",
+      "sector": "Telecare / technology-enabled care",
+      "size": "Mid-market (Exeter)",
+      "peBacker": "LDC (MBO carve-out from AXA Health, Dec 2025)",
+      "whyFit": "Fresh carve-out from a corporate parent = TSAs expiring, standalone vendor contracts being signed now, no clean baseline.",
+      "buyerTitle": "CFO (newly standalone)",
+      "outreachAngle": "Carve-out vendor baseline — make sure the new standalone contracts aren't inheriting parent-group overbilling.",
+      "source": "ldc.co.uk/news — LDC partner confident amid larger pipeline"
+    },
+    {
+      "company": "PAM Group",
+      "companyNumber": "",
+      "sector": "Preventative healthcare / occupational health",
+      "size": "Multi-site, doubled revenue + 3 acquisitions",
+      "peBacker": "LDC",
+      "whyFit": "Doubled revenue and three acquisitions = layered vendor stacks needing de-duplication.",
+      "buyerTitle": "CFO",
+      "outreachAngle": "SaaS + clinical-supplier de-duplication post-acquisition.",
+      "source": "ldc.co.uk/portfolio"
+    },
+    {
+      "company": "Latus",
+      "companyNumber": "",
+      "sector": "Occupational health services",
+      "size": "Early-stage roll-up (acquired OHS Services)",
+      "peBacker": "NorthEdge",
+      "whyFit": "Early-stage roll-up integrating its first acquisitions — ideal moment to set a clean vendor baseline.",
+      "buyerTitle": "FD / CFO",
+      "outreachAngle": "Set the vendor baseline before you scale the buy-and-build.",
+      "source": "northedge.com — 2024 a year in review"
+    },
+    {
+      "company": "Veloris (ex-Ecobat Battery Division)",
+      "companyNumber": "",
+      "sector": "Battery manufacturing / distribution",
+      "size": "Mid-market carve-out of US parent",
+      "peBacker": "Endless LLP (2025)",
+      "whyFit": "Fresh carve-out under a turnaround investor = explicit cost-discipline mandate and new standalone contracts being signed now.",
+      "buyerTitle": "CFO / Turnaround Director",
+      "outreachAngle": "Day-one carve-out cost-out: catch parent-group rate inheritance and duplicate logistics.",
+      "source": "endlessllp.com — 20th-anniversary review"
+    },
+    {
+      "company": "HSS hire division (Endless carve-out)",
+      "companyNumber": "",
+      "sector": "Equipment hire (multi-depot)",
+      "size": "Multi-depot, carved out of HSS Hire Group (2025)",
+      "peBacker": "Endless LLP",
+      "whyFit": "Multi-site hire estate + carve-out = duplicate fleet/telecoms/insurance and expiring TSAs.",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Multi-depot vendor reconciliation post-separation.",
+      "source": "endlessllp.com — 20th-anniversary review"
+    },
+    {
+      "company": "Coveris",
+      "companyNumber": "",
+      "sector": "Flexible plastic & paper packaging manufacturing",
+      "size": "Large mid-market / upper-mid, multi-plant",
+      "peBacker": "Sun European Partners",
+      "whyFit": "Multi-plant manufacturer actively divesting units (sold Paper BU 2026) = restructuring and cost focus.",
+      "buyerTitle": "Group CFO / Procurement Director",
+      "outreachAngle": "Energy, freight and raw-material escalator-clause audit across plants.",
+      "source": "mayerbrown.com — Coveris sale of Paper BU"
+    },
+    {
+      "company": "Alton Cars",
+      "companyNumber": "",
+      "sector": "Automotive repair group (multi-site)",
+      "size": "Multi-site",
+      "peBacker": "Sun European Partners (2025)",
+      "whyFit": "Multi-site auto-repair = parts suppliers, insurance, DMS software and telecoms across branches.",
+      "buyerTitle": "CFO / COO",
+      "outreachAngle": "Off-contract parts pricing + duplicate site-level vendors.",
+      "source": "businesswire.com — Sun European affiliate invests in Alton Cars"
+    },
+    {
+      "company": "Fortus",
+      "companyNumber": "",
+      "sector": "Accountancy practice (professional services)",
+      "size": "Yorkshire, buy-and-build",
+      "peBacker": "LDC",
+      "whyFit": "Professional-services roll-up — practice-management/audit software, idle seats and duplicate subscriptions across acquired firms.",
+      "buyerTitle": "FD / CFO / COO",
+      "outreachAngle": "Idle-seat + duplicate-SaaS sweep across the firms you've merged in.",
+      "source": "ldc.co.uk/portfolio"
+    },
+    {
+      "company": "TGJones (ex-WHSmith High Street)",
+      "companyNumber": "",
+      "sector": "Multi-site high-street retail",
+      "size": "480 stores",
+      "peBacker": "Modella Capital (£76m, June 2025, rebrand from WHSmith)",
+      "whyFit": "Just separated from parent WHSmith and rebranding 480 sites = brand-new standalone contracts, expiring shared-services agreements, energy/EPOS/telecoms estate to re-baseline.",
+      "buyerTitle": "CFO / Property & Procurement Director",
+      "outreachAngle": "Standalone-day vendor baseline across 480 stores — catch parent-inherited rates and zombie billing.",
+      "source": "retailgazette.co.uk — WHSmith High Street owner"
+    },
+    {
+      "company": "The Original Factory Shop",
+      "companyNumber": "",
+      "sector": "Discount multi-site retail",
+      "size": "~180 stores",
+      "peBacker": "Modella Capital (Feb 2025)",
+      "whyFit": "Distressed multi-site turnaround = aggressive cost focus and fragmented store-level vendor spend.",
+      "buyerTitle": "CFO / Turnaround Lead",
+      "outreachAngle": "Energy + waste + telecoms audit across 180 sites; auto-renew sweep.",
+      "source": "Modella Capital — Wikipedia"
+    },
+    {
+      "company": "Hobbycraft",
+      "companyNumber": "",
+      "sector": "Arts & crafts retail (multi-site)",
+      "size": "Multi-site chain",
+      "peBacker": "Modella Capital (Aug 2024)",
+      "whyFit": "Recently acquired multi-store estate with store-level facilities, EPOS and payment-processing vendors to audit.",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Store-level facilities + EPOS + payment-processing vendor audit.",
+      "source": "Modella Capital — Wikipedia"
+    },
+    {
+      "company": "Loungers",
+      "companyNumber": "",
+      "sector": "Bar / restaurant hospitality",
+      "size": "~280+ sites",
+      "peBacker": "Fortress Investment Group (£354m take-private, Feb 2025)",
+      "whyFit": "Large multi-site hospitality estate freshly private under a cost-focused sponsor = energy, food-supply, waste, EPOS, card-acquiring and repairs across hundreds of sites.",
+      "buyerTitle": "CFO / Group Procurement Director",
+      "outreachAngle": "Multi-site hospitality vendor audit — escalators on energy/food contracts + duplicate site suppliers.",
+      "source": "thecaterer.com — restaurant-group takeover deals"
+    },
+    {
+      "company": "Wingstop UK",
+      "companyNumber": "",
+      "sector": "QSR franchise",
+      "size": "Rapid multi-site rollout",
+      "peBacker": "Sixth Street (>£400m, 2024)",
+      "whyFit": "Fast-scaling multi-site franchise = repeated new-site vendor onboarding, duplicate suppliers and escalator exposure.",
+      "buyerTitle": "CFO / Finance Director",
+      "outreachAngle": "Standardise + de-duplicate the new-site vendor playbook; catch escalators.",
+      "source": "thecaterer.com — restaurant-group takeover deals"
+    },
+    {
+      "company": "ACCESS UK LTD",
+      "companyNumber": "02343760",
+      "sector": "Business management SaaS",
+      "size": "Large, acquisitive (group £9.2bn EV)",
+      "peBacker": "Hg + TA Associates",
+      "whyFit": "Highly acquisitive software group -> tool/license sprawl across acquired products; large but vendor-heavy IT estate.",
+      "buyerTitle": "Group CFO / VP Finance",
+      "outreachAngle": "License/redundant-tools sweep across the acquired product portfolio.",
+      "source": "Companies House 02343760; privateequitywire.co.uk — Access Group Hg/TA investment"
+    },
+    {
+      "company": "Pagabo Group Limited",
+      "companyNumber": "13306964",
+      "sector": "Procurement software",
+      "size": "Mid-market",
+      "peBacker": "PE-backed (PSC = 'Th 55 Group (Midco) Limited', 75%+ — Midco signal)",
+      "whyFit": "Midco PSC confirms a PE corporate stack; SaaS/cloud spend in a vendor-heavy software business.",
+      "buyerTitle": "CFO / FD",
+      "outreachAngle": "SaaS/cloud + auto-renew audit on a PE-backed software estate.",
+      "source": "Companies House 13306964 PSC record"
+    },
+    {
+      "company": "TC Group Holdings Limited",
+      "companyNumber": "11251664",
+      "sector": "Accountancy group (professional services)",
+      "size": "61 offices",
+      "peBacker": "Inflexion (Enterprise Fund V, 2023)",
+      "whyFit": "61-office accountancy roll-up = multi-site SaaS, telephony and duplicate subscriptions across acquired firms.",
+      "buyerTitle": "CFO / COO",
+      "outreachAngle": "Idle-seat + duplicate-SaaS + telephony sweep across the 61 offices.",
+      "source": "Companies House 11251664; inflexion.com/portfolio/tc-group"
+    },
+    {
+      "company": "Ocorian (UK) Limited",
+      "companyNumber": "05534412",
+      "sector": "Fund / corporate administration",
+      "size": "Mid-market (UK opco; also Admin UK 07473349, Corp Svcs UK 05593045)",
+      "peBacker": "Inflexion (2016 carve-out)",
+      "whyFit": "Fund/corporate admin runs heavy data, KYC and market-data subscriptions — classic SaaS/subscription leakage; carve-out heritage.",
+      "buyerTitle": "CFO / Head of Procurement",
+      "outreachAngle": "Market-data + KYC subscription rationalisation and renewal sweep.",
+      "source": "Companies House 05534412; inflexion.com/portfolio/ocorian"
+    }
+  ],
+  "companies_house": "Companies House gives RECOUP a free, top-down way to build a PE-backed mid-market prospect list. The free REST API base URL is https://api.company-information.service.gov.uk (register on the Developer Hub, mint an API key, authenticate via HTTP Basic with the key as username and a blank password). Rate limit: 600 requests per rolling 5-minute window (~2 req/sec sustained; 429 on overage).\\n\\nKEY ENDPOINTS: GET /advanced-search/companies is the workhorse for ICP filtering (params: company_name_includes/excludes, company_status, company_type/subtype, sic_codes (comma-delimited), incorporated_from/to, location, size, start_index). GET /company/{number} returns status, sic_codes, accounts (category + dates), date_of_creation. GET /company/{number}/persons-with-significant-control surfaces ownership (the PE structure). GET /company/{number}/charges reveals debentures/mortgages (the LBO leverage signal). GET /company/{number}/officers maps decision-makers, and GET /officers/{id}/appointments finds serial PE operating-partner directors across a portfolio. Note: advanced search does NOT filter on account category, charges or PSC directly — filter by SIC + status, then enrich each hit with the profile/charges/PSC calls.\\n\\nBULK PRODUCTS (for scale): The free monthly Company Data Product CSV (download.companieshouse.gov.uk/en_output.html, all ~5M live companies) is the primary sieve — columns CompanyName, CompanyNumber, CompanyCategory, CompanyStatus, IncorporationDate, RegAddress.* (geo), SICCode.SicText_1..4 (sector), Accounts.AccountCategory (size proxy: FULL/GROUP/MEDIUM/SMALL/MICRO/DORMANT), Mortgages.NumMortOutstanding (leverage), and PreviousName_1..10 (rebrands follow buyouts). The PSC Data Product (full-register JSON snapshot) is joined to find PE-controlled companies. The free Accounts Data Product (iXBRL, ~75% of filers) is parsed for turnover, headcount and administrative expenses — the line RECOUP's savings live in.\\n\\nPE/SIZE FILTERS: (Signal A, strongest) PSC/RLE naming the PE corporate stack — Topco -> Midco -> Bidco, with a Relevant Legal Entity holding >75%; regex PSC names for \\\\b(TOPCO|MIDCO|BIDCO|HOLDCO)\\\\b plus INVESTMENTS/CAPITAL/PARTNERS/FUND/LP/SARL or Jersey/Guernsey/Cayman registration, or a known sponsor name. Always walk UP from the opco to the group/holdco to see the fund (the opco PSC may list individuals). Verified example: Pagabo Group Limited (13306964) PSC = 'Th 55 Group (Midco) Limited', 75%+ — 'Midco' is the tell. (Signal B) Charges/mortgages = LBO debt registered against Bidco/Midco; NumMortOutstanding>0 + recent incorporation + holdco-style name is the buyout fingerprint, confirmed via /charges (all-assets debenture to a bank/credit fund). (Signal C) Size: target Accounts.AccountCategory of MEDIUM/FULL/GROUP (~£10M-£150M turnover, up to ~250-employee 'medium' through lower-large; exclude MICRO/DORMANT). UK thresholds from 6 Apr 2025: Medium = turnover <=£54M, balance sheet <=£27M, <=250 employees. (Signal D) SIC codes for vendor-heavy sectors: 62012/62020/62090 IT & software consultancy, 58290 software publishing, 82990/70229 business support/consultancy, 64999/66190/66300 financial & fund services, 86900/87300 healthcare/care, 78200/78300 staffing, 52290/49410 logistics.\\n\\nRECIPE: (1) Company Data CSV -> keep CompanyStatus=Active AND SICCode in target list AND AccountCategory in {MEDIUM,FULL,GROUP} AND NumMortOutstanding>=1. (2) Join PSC snapshot -> keep rows whose top RLE matches Topco/Midco/Bidco/Holdings or a known sponsor -> flag 'PE-backed'. (3) API-enrich shortlist via /charges (confirm LBO debenture), /officers (decision-makers), /filing-history (recent refinance), XBRL accounts (admin-expense/headcount). (4) Rank by estimated recoverable vendor spend; feed to the 14-rule engine and email drafter.\\n\\nVERIFIED STARTER RECORDS (numbers checked against find-and-update.company-information.service.gov.uk): ACCESS UK LTD 02343760 (Hg + TA Associates); PAGABO GROUP LIMITED 13306964 (Midco PSC signal); WATERSCAN LIMITED 02948891 (LDC); 15BELOW LIMITED 03945289, SIC 62020 (LDC); DELTRON LIFTS LIMITED 04885757 (LDC — walk up to holdco for fund PSC); TC GROUP HOLDINGS LIMITED 11251664 (Inflexion Enterprise Fund V, 61 offices); CIVICA UK LIMITED 01628868 (group 04968437, holdings 02131240 — Blackstone ~$2.5bn 2024); OCORIAN (UK) LIMITED 05534412 (also Admin UK 07473349, Corp Svcs UK 05593045 — Inflexion). High-fit Inflexion target BES Group / British Engineering Services: resolve the live opco via /advanced-search/companies?company_name_includes=British%20Engineering%20Services before outreach (multiple BES entities exist).\\n\\nEXPANDING TO 200+: take any sponsor's public portfolio page (LDC ~224 holdings, Inflexion, Livingbridge, Palatine), run each name through /search/companies to get the number, then walk PSC up the stack and pull charges/accounts; or go top-down via the CSV filter above joined to the PSC snapshot. Always verify current owner and CFO on the live record before outreach — ownership shifts with secondaries (e.g. VetPartners moved August Equity -> BC Partners)."
+}

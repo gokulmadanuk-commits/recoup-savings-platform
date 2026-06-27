@@ -11,7 +11,7 @@ import { contractClauses } from "./docmodel/to-docmodel";
 import { slug } from "./docmodel/serialize";
 import { runRules } from "./rules/runner";
 import { makeContext, type Rule } from "./rules/types";
-import { summarize, summarizeCategories, summarizeVendors } from "./rules/rank";
+import { summarize, summarizeCategories, summarizeVendors, summarizeRenewals } from "./rules/rank";
 import { draftEmailsForTop } from "./email/draft";
 import { ANALYSIS_DATE } from "./config";
 import {
@@ -75,6 +75,7 @@ export function analyzeDataset(
     categories: summarizeCategories(findings),
     vendors: summarizeVendors(dataset, findings),
     documents: [],
+    renewals: summarizeRenewals(dataset),
   };
 }
 

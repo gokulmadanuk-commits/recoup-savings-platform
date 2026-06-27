@@ -11,13 +11,16 @@ import type {
   CategorySummary,
   VendorSummary,
   FindingCategoryT,
+  Renewal,
 } from "../types";
 import {
   AnalysisSummarySchema,
   CategorySummarySchema,
   VendorSummarySchema,
+  RenewalSchema,
 } from "../types";
 import { annualizeCents, sumCents } from "../money";
+import { addDays, daysBetween } from "../dates";
 
 export const CATEGORY_LABELS: Record<FindingCategoryT, string> = {
   auto_renewal: "Auto-renewal",
@@ -108,6 +111,31 @@ export function summarizeCategories(findings: Finding[]): CategorySummary[] {
       }),
     )
     .sort((a, b) => b.savingsCents - a.savingsCents);
+}
+
+/** Every contract's renewal + notice deadline, soonest renewal first. */
+export function summarizeRenewals(dataset: Dataset): Renewal[] {
+  const today = dataset.analysisDate;
+  return dataset.vendors
+    .filter((v) => v.contract)
+    .map((v) => {
+      const c = v.contract!;
+      const noticeDeadline = addDays(c.endDate, -c.noticeWindowDays);
+      return RenewalSchema.parse({
+        vendorId: v.vendor.id,
+        vendorName: v.vendor.name,
+        category: v.vendor.category,
+        endDate: c.endDate,
+        autoRenew: c.autoRenew,
+        noticeWindowDays: c.noticeWindowDays,
+        noticeDeadline,
+        daysToRenewal: daysBetween(today, c.endDate),
+        daysToDeadline: daysBetween(today, noticeDeadline),
+        annualValueCents: c.currentAnnualValueCents,
+        renewalTermMonths: c.renewalTermMonths,
+      });
+    })
+    .sort((a, b) => a.daysToRenewal - b.daysToRenewal);
 }
 
 /** Per-vendor rollup (spend, savings, finding count), richest savings first. */

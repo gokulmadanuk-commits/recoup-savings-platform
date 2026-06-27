@@ -453,6 +453,22 @@ export const DocumentSummarySchema = z.object({
 });
 export type DocumentSummary = z.infer<typeof DocumentSummarySchema>;
 
+/** A contract renewal with its notice deadline (powers the renewal calendar). */
+export const RenewalSchema = z.object({
+  vendorId: z.string(),
+  vendorName: z.string(),
+  category: z.string(),
+  endDate: ISODateStr,
+  autoRenew: z.boolean(),
+  noticeWindowDays: z.number().int(),
+  noticeDeadline: ISODateStr,
+  daysToRenewal: z.number().int(),
+  daysToDeadline: z.number().int(),
+  annualValueCents: Cents,
+  renewalTermMonths: z.number().int(),
+});
+export type Renewal = z.infer<typeof RenewalSchema>;
+
 export const AnalysisResultSchema = z.object({
   summary: AnalysisSummarySchema,
   findings: z.array(FindingSchema),
@@ -460,5 +476,6 @@ export const AnalysisResultSchema = z.object({
   categories: z.array(CategorySummarySchema).default([]),
   vendors: z.array(VendorSummarySchema).default([]),
   documents: z.array(DocumentSummarySchema).default([]),
+  renewals: z.array(RenewalSchema).default([]),
 });
 export type AnalysisResult = z.infer<typeof AnalysisResultSchema>;
