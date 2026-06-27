@@ -61,11 +61,8 @@ export default function Home() {
               dollar.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Button href="/analyze" variant="cream">
-                Find my savings
-              </Button>
-              <Button href="#method" variant="ghost" arrow={false} className="border-cream/40 text-cream hover:bg-cream/10">
-                See the method
+              <Button href="/dashboard" newTab variant="cream">
+                See it in action
               </Button>
             </div>
             <p className="mt-6 font-ui text-sm tracking-wide text-cream/60">
@@ -109,7 +106,7 @@ export default function Home() {
             </p>
             <div className="mt-8">
               <Hairline className="mb-6" />
-              <Button href="/analyze">Point it at your last 12 months</Button>
+              <Button href="/dashboard" newTab>See it in action</Button>
             </div>
           </div>
         </Container>
@@ -174,8 +171,8 @@ export default function Home() {
             Findings appear immediately, ranked by what they're worth.
           </p>
           <div className="mt-10 flex justify-center">
-            <Button href="/analyze" variant="forest">
-              Analyze a portfolio
+            <Button href="/dashboard" newTab variant="forest">
+              See it in action
             </Button>
           </div>
         </Container>

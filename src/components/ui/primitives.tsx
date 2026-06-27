@@ -47,6 +47,7 @@ type ButtonProps = {
   className?: string;
   type?: "button" | "submit";
   arrow?: boolean;
+  newTab?: boolean;
 };
 
 /* Signature cream pill with a nudging arrow. */
@@ -58,6 +59,7 @@ export function Button({
   className,
   type = "button",
   arrow = true,
+  newTab = false,
 }: ButtonProps) {
   const base =
     "group inline-flex items-center gap-2 rounded-full px-6 py-3 font-ui text-sm tracking-wide transition-all duration-300";
@@ -78,7 +80,11 @@ export function Button({
   );
   if (href) {
     return (
-      <Link href={href} className={clsx(base, variants[variant], className)}>
+      <Link
+        href={href}
+        className={clsx(base, variants[variant], className)}
+        {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {inner}
       </Link>
     );

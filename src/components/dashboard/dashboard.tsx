@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { clsx } from "clsx";
 import type { AnalysisResult } from "@/lib/types";
-import { Container, Eyebrow } from "@/components/ui/primitives";
+import { Eyebrow } from "@/components/ui/primitives";
 import { formatUSD } from "@/lib/money";
 import { formatLong } from "@/lib/dates";
 import { Tiles } from "./tiles";
@@ -13,43 +13,26 @@ import { VendorsPanel } from "./vendors-panel";
 import { DocumentsPanel } from "./documents-panel";
 import { EmailQueue } from "./email-queue";
 import { FindingsSection } from "./findings-section";
+import { UploadCard } from "./upload-card";
 
-const SECTIONS = [
-  { id: "overview", label: "Overview" },
-  { id: "findings", label: "Findings" },
-  { id: "vendors", label: "Vendors" },
-  { id: "documents", label: "Documents" },
-  { id: "emails", label: "Email queue" },
+type SectionId = "overview" | "findings" | "vendors" | "documents" | "emails";
+
+const SECTIONS: { id: SectionId; label: string; eyebrow: string; title: string; subtitle: string }[] = [
+  { id: "overview", label: "Overview", eyebrow: "Overview", title: "The book of savings", subtitle: "Everything we found, at a glance." },
+  { id: "findings", label: "Findings", eyebrow: "Findings", title: "Ranked by what you can claw back", subtitle: "Each finding ties to its source document, with the leverage and the exact ask. Filter by category." },
+  { id: "vendors", label: "Vendors", eyebrow: "Vendors", title: "Vendor leaderboard", subtitle: "Annual spend reviewed against savings identified." },
+  { id: "documents", label: "Documents", eyebrow: "Source documents", title: "Everything we read", subtitle: "The contracts and invoices behind every finding — downloadable, with the clauses we extracted." },
+  { id: "emails", label: "Email queue", eyebrow: "Action queue", title: "Vendor emails, pre-drafted", subtitle: "Connect Gmail to open each email as a ready-to-send draft — the leverage and the number already written in." },
 ];
 
-function Section({
-  id,
-  eyebrow,
-  title,
-  subtitle,
-  children,
-}: {
-  id: string;
-  eyebrow: string;
-  title: string;
-  subtitle?: string;
-  children: ReactNode;
-}) {
-  return (
-    <section id={id} className="scroll-mt-32 border-t border-ink/10 py-12 first:border-0">
-      <div className="mb-7">
-        <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 className="mt-2 font-display text-3xl text-forest">{title}</h2>
-        {subtitle && <p className="mt-1.5 font-body text-ink-soft">{subtitle}</p>}
-      </div>
-      {children}
-    </section>
-  );
+function scrollToUpload() {
+  document.getElementById("upload-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 export function Dashboard() {
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [active, setActive] = useState<SectionId>("overview");
 
   useEffect(() => {
     try {
@@ -71,6 +54,12 @@ export function Dashboard() {
       .catch(() => setStatus("error"));
   }, []);
 
+  function handleResult(r: AnalysisResult) {
+    setResult(r);
+    setActive("overview");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   if (status === "loading") {
     return (
       <div className="flex min-h-screen items-center justify-center bg-paper">
@@ -87,8 +76,8 @@ export function Dashboard() {
       <div className="flex min-h-screen items-center justify-center bg-paper">
         <div className="text-center">
           <p className="font-display text-2xl text-forest">Couldn&apos;t load the analysis.</p>
-          <Link href="/analyze" className="mt-4 inline-block font-ui text-sm text-emerald underline underline-offset-4">
-            Start a new analysis →
+          <Link href="/" className="mt-4 inline-block font-ui text-sm text-emerald underline underline-offset-4">
+            Back to site →
           </Link>
         </div>
       </div>
@@ -96,109 +85,124 @@ export function Dashboard() {
   }
 
   const s = result.summary;
+  const meta = SECTIONS.find((x) => x.id === active)!;
   const topFinding = result.findings[0];
 
   return (
-    <main className="min-h-screen bg-paper pb-20">
-      {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-ink/10 bg-paper/90 backdrop-blur">
-        <Container className="flex items-center justify-between py-4">
-          <div className="flex items-baseline gap-4">
+    <div className="min-h-screen bg-paper lg:flex">
+      {/* Left rail */}
+      <aside className="border-b border-ink/10 bg-bone/40 lg:sticky lg:top-0 lg:h-screen lg:w-72 lg:shrink-0 lg:border-b-0 lg:border-r">
+        <div className="flex h-full flex-col gap-6 p-6">
+          <div>
             <Link href="/" className="font-display text-xl tracking-[0.2em] text-forest">
               RECOUP
             </Link>
-            <span className="hidden font-ui text-sm text-ink-soft sm:inline">{s.customer}</span>
+            <p className="mt-1.5 truncate font-ui text-[11px] uppercase tracking-[0.12em] text-ink-soft">
+              {s.customer}
+            </p>
           </div>
-          <nav className="hidden items-center gap-6 md:flex">
+
+          <nav className="flex gap-1 overflow-x-auto lg:flex-col">
             {SECTIONS.map((sec) => (
-              <a key={sec.id} href={`#${sec.id}`} className="font-ui text-sm text-ink-soft transition-colors hover:text-ink">
+              <button
+                key={sec.id}
+                onClick={() => setActive(sec.id)}
+                className={clsx(
+                  "whitespace-nowrap rounded-lg px-3 py-2 text-left font-ui text-sm transition-colors",
+                  active === sec.id
+                    ? "bg-forest text-cream"
+                    : "text-ink-soft hover:bg-ink/5 hover:text-ink",
+                )}
+              >
                 {sec.label}
-              </a>
+              </button>
             ))}
           </nav>
-          <Link
-            href="/analyze"
-            className="rounded-full bg-forest px-4 py-2 font-ui text-sm text-cream transition-colors hover:bg-pine"
+
+          <div className="hidden lg:block">
+            <hr className="border-0 border-t border-gold/40" />
+          </div>
+
+          <button
+            onClick={scrollToUpload}
+            className="group rounded-2xl border border-forest/20 bg-paper p-4 text-left transition-colors hover:border-forest/50"
           >
-            New analysis
-          </Link>
-        </Container>
-      </header>
-
-      <Container className="pt-10">
-        {/* Intro line */}
-        <div className="flex flex-wrap items-end justify-between gap-3 pb-2">
-          <div>
-            <Eyebrow className="text-emerald">Savings analysis</Eyebrow>
-            <h1 className="mt-2 font-display text-4xl text-forest md:text-5xl">{s.customer}</h1>
-          </div>
-          <p className="font-ui text-sm text-ink-soft">
-            {s.documentsProcessed} documents · {s.vendorsAnalyzed} vendors · {formatLong(s.analysisDate)}
-            {s.documentsFailed > 0 && <span className="text-terracotta"> · {s.documentsFailed} unreadable</span>}
-          </p>
-        </div>
-
-        {/* Overview */}
-        <Section id="overview" eyebrow="Overview" title="The book of savings">
-          <Tiles summary={s} />
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            <div className="rounded-2xl border border-ink/10 bg-paper p-6 lg:col-span-2">
-              <div className="mb-5 font-ui text-xs uppercase tracking-[0.12em] text-ink-soft">
-                Where the money is
-              </div>
-              <CategoryBreakdown categories={result.categories} />
+            <div className="flex items-center gap-1.5 font-ui text-sm font-medium text-forest">
+              Try it on your own data
+              <span className="transition-transform group-hover:translate-x-0.5">→</span>
             </div>
-            {topFinding && (
-              <div className="rounded-2xl bg-pine p-6 text-cream">
-                <div className="eyebrow text-gold">Top opportunity</div>
-                <div className="mt-3 font-display text-4xl tabular-nums">
-                  {formatUSD(topFinding.annualizedSavingsCents)}
-                </div>
-                <div className="mt-2 font-ui text-sm text-cream/70">{topFinding.vendorName}</div>
-                <p className="mt-4 font-body text-sm text-cream/80">{topFinding.title}</p>
-                <a href="#findings" className="mt-5 inline-block font-ui text-sm text-gold underline decoration-gold/50 underline-offset-4">
-                  See all findings →
-                </a>
-              </div>
-            )}
+            <div className="mt-1 font-ui text-xs text-ink-soft">Upload your contracts &amp; invoices</div>
+          </button>
+
+          <div className="mt-auto hidden pt-2 lg:block">
+            <Link href="/" className="font-ui text-xs text-ink-soft transition-colors hover:text-ink">
+              ← Back to site
+            </Link>
           </div>
-        </Section>
+        </div>
+      </aside>
 
-        {/* Findings */}
-        <Section
-          id="findings"
-          eyebrow="Findings"
-          title="Ranked by what you can claw back"
-          subtitle="Each finding ties to its source document, with the leverage and the exact ask. Filter by category."
-        >
-          <FindingsSection result={result} />
-        </Section>
+      {/* Main */}
+      <main className="min-w-0 flex-1">
+        <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
+          {/* Intro */}
+          <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink/10 pb-8">
+            <div>
+              <Eyebrow className="text-emerald">Savings analysis</Eyebrow>
+              <h1 className="mt-2 font-display text-3xl text-forest md:text-4xl">{s.customer}</h1>
+            </div>
+            <p className="font-ui text-sm text-ink-soft">
+              {s.documentsProcessed} documents · {s.vendorsAnalyzed} vendors · {formatLong(s.analysisDate)}
+              {s.documentsFailed > 0 && <span className="text-terracotta"> · {s.documentsFailed} unreadable</span>}
+            </p>
+          </div>
 
-        {/* Vendors */}
-        <Section id="vendors" eyebrow="Vendors" title="Vendor leaderboard" subtitle="Annual spend reviewed against savings identified.">
-          <VendorsPanel vendors={result.vendors} />
-        </Section>
+          {/* Active section heading */}
+          <div className="mb-8 mt-10">
+            <Eyebrow>{meta.eyebrow}</Eyebrow>
+            <h2 className="mt-2 font-display text-3xl text-forest md:text-4xl">{meta.title}</h2>
+            <p className="mt-1.5 max-w-2xl font-body text-ink-soft">{meta.subtitle}</p>
+          </div>
 
-        {/* Documents */}
-        <Section
-          id="documents"
-          eyebrow="Source documents"
-          title="Everything we read"
-          subtitle="The contracts and invoices behind every finding — downloadable, with the clauses we extracted."
-        >
-          <DocumentsPanel documents={result.documents} />
-        </Section>
+          {/* Active section body */}
+          {active === "overview" && (
+            <div>
+              <Tiles summary={s} />
+              <div className="mt-6 grid gap-6 lg:grid-cols-3">
+                <div className="rounded-2xl border border-ink/10 bg-paper p-6 lg:col-span-2">
+                  <div className="mb-5 font-ui text-xs uppercase tracking-[0.12em] text-ink-soft">
+                    Where the money is
+                  </div>
+                  <CategoryBreakdown categories={result.categories} />
+                </div>
+                {topFinding && (
+                  <div className="rounded-2xl bg-pine p-6 text-cream">
+                    <div className="eyebrow text-gold">Top opportunity</div>
+                    <div className="mt-3 font-display text-4xl tabular-nums">
+                      {formatUSD(topFinding.annualizedSavingsCents)}
+                    </div>
+                    <div className="mt-2 font-ui text-sm text-cream/70">{topFinding.vendorName}</div>
+                    <p className="mt-4 font-body text-sm text-cream/80">{topFinding.title}</p>
+                    <button
+                      onClick={() => setActive("findings")}
+                      className="mt-5 font-ui text-sm text-gold underline decoration-gold/50 underline-offset-4"
+                    >
+                      See all findings →
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+          {active === "findings" && <FindingsSection result={result} />}
+          {active === "vendors" && <VendorsPanel vendors={result.vendors} />}
+          {active === "documents" && <DocumentsPanel documents={result.documents} />}
+          {active === "emails" && <EmailQueue drafts={result.drafts} findings={result.findings} />}
 
-        {/* Emails */}
-        <Section
-          id="emails"
-          eyebrow="Action queue"
-          title="Vendor emails, pre-drafted"
-          subtitle="Connect Gmail to open each email as a ready-to-send draft — the leverage and the number already written in."
-        >
-          <EmailQueue drafts={result.drafts} findings={result.findings} />
-        </Section>
-      </Container>
-    </main>
+          {/* Upload box below every section */}
+          <UploadCard id="upload-card" onResult={handleResult} />
+        </div>
+      </main>
+    </div>
   );
 }

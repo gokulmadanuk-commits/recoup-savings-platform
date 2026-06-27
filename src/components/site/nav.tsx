@@ -26,12 +26,11 @@ export function Nav({ tone = "dark" }: { tone?: "dark" | "paper" }) {
           <Link href="/#what-we-find" className={link}>
             What We Find
           </Link>
-          <Link href="/analyze" className={link}>
-            Analyze
-          </Link>
         </nav>
         <Link
-          href="/analyze"
+          href="/dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
           className={clsx(
             "group inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-ui text-sm tracking-wide transition-all duration-300",
             dark
@@ -39,7 +38,7 @@ export function Nav({ tone = "dark" }: { tone?: "dark" | "paper" }) {
               : "bg-forest text-cream hover:bg-pine",
           )}
         >
-          Find My Savings
+          See it in action
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
