@@ -36,10 +36,12 @@ describe("rule framework", () => {
         }),
       ];
     });
-    const findings = rule.run(makeContext(seedDataset()));
-    // brightseat throws -> skipped; collabhub still produces one
-    expect(findings.length).toBe(1);
-    expect(findings[0].vendorId).toBe("collabhub-suite");
+    const ds = seedDataset();
+    const findings = rule.run(makeContext(ds));
+    // brightseat throws -> skipped; every other vendor still produces one
+    expect(findings.length).toBe(ds.vendors.length - 1);
+    expect(findings.some((f) => f.vendorId === "brightseat-crm")).toBe(false);
+    expect(findings.some((f) => f.vendorId === "collabhub-suite")).toBe(true);
   });
 
   it("rankFindings orders by annualized savings desc", () => {
