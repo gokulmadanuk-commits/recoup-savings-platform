@@ -41,6 +41,6 @@ describe("DeskFlow ITSM seed", () => {
     expect(expected).toHaveLength(1);
     const r01 = expected.find((e) => e.ruleId === "R01")!;
     expect(r01.annualizedSavingsCents).toBeGreaterThan(0);
-    expect(r01.annualizedSavingsCents).toBe(7_200_000); // $72,000
+    expect(r01.annualizedSavingsCents).toBe(471_072); // $4,710.72 renewal uplift (+7%)
   });
 });

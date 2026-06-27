@@ -44,6 +44,8 @@ const contract = makeContract({
     { sku: "DESK-PLATFORM", description: "ITSM Platform Base Fee", uom: "flat", unitPriceCents: PLATFORM_FEE },
   ],
   commitment: { contractedSeats: AGENT_SEATS, tier: "Pro", tierPricePerSeatCents: AGENT_PRICE },
+  // The renewal escalates +7%; R01 reads this to size the negotiable uplift.
+  escalator: { type: "fixed", fixedPct: 0.07, anniversaryMonth: 8 },
   capabilityTags: ["ITSM", "Service Desk", "Ticketing"],
   signatory: { name: "Priya Raman", title: "Director of IT Operations", date: "2025-08-12" },
 });
@@ -71,10 +73,11 @@ const record = VendorRecordSchema.parse({
   usage: [],
 });
 
-// R01 "$ at risk" = renewal annual value. Renewal term 12 months => full
-// post-renewal annual value, which is current spend +7%.
-// 6,729,600 * 1.07 = 7,200,672 cents = $72,006.72; documented as ~$72,000.
-const renewalAtRiskCents = usd(72_000);
+// R01 savings = the negotiable renewal UPLIFT (the +7% increase you challenge
+// by acting on the window); the full $72,007 renewal value is carried as the
+// "at risk" context. 6,729,600 * 1.07 = 7,200,672 => uplift 471,072 ($4,710.72).
+const renewalAnnualValue = Math.round(CURRENT_ANNUAL * 1.07); // 7,200,672
+const upliftCents = renewalAnnualValue - CURRENT_ANNUAL; // 471,072 = $4,710.72
 
 const seed: VendorSeed = {
   record,
@@ -84,8 +87,8 @@ const seed: VendorSeed = {
       ruleId: "R01",
       category: "auto_renewal",
       savingsType: "avoidance",
-      annualizedSavingsCents: renewalAtRiskCents,
-      note: "Auto-renews 2026-08-18 (52 days out); 60-day notice deadline already passed. Renewal at +7% on $67,296 current => ~$72,000/yr at risk for the 12-month renewal term.",
+      annualizedSavingsCents: upliftCents,
+      note: "Auto-renews 2026-08-18 (52 days out); 60-day notice deadline already passed (CRITICAL). Renewal at +7% on $67,296 => $4,711/yr negotiable uplift; full $72,007 renewal value at risk.",
     },
   ],
 };

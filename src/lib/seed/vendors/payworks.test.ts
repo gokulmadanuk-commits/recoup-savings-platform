@@ -46,6 +46,6 @@ describe("PayWorks HCM seed", () => {
   it("expected findings carry the engineered positive savings", () => {
     for (const e of expected) expect(e.annualizedSavingsCents).toBeGreaterThan(0);
     const r01 = expected.find((e) => e.ruleId === "R01");
-    expect(r01?.annualizedSavingsCents).toBe(3_110_400);
+    expect(r01?.annualizedSavingsCents).toBe(3_434_400); // $34,344 renewal uplift (+18%)
   });
 });

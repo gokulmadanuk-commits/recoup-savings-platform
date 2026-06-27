@@ -42,6 +42,8 @@ const contract = makeContract({
     { sku: "HCM-PEPM", description: "Payroll + HRIS (per employee per month)", uom: "employee", unitPriceCents: PEPM_RATE },
   ],
   pepmRateCents: PEPM_RATE,
+  // The renewal escalates the contract +18%; R01 reads this to size the uplift.
+  escalator: { type: "fixed", fixedPct: RENEWAL_UPLIFT_PCT, anniversaryMonth: 8 },
   capabilityTags: ["Payroll", "HRIS", "Benefits Administration"],
   signatory: { name: "Devon Carr", title: "VP People Operations", date: "2025-08-01" },
 });
@@ -69,8 +71,12 @@ const record = VendorRecordSchema.parse({
   usage: [],
 });
 
-// R01 avoidance = the +18% PEPM uplift at renewal (annualized).
-const r01Annual = Math.round(PEPM_MONTHLY * 12 * RENEWAL_UPLIFT_PCT); // 3110400
+// R01 savings = the negotiable +18% renewal uplift on the annual contract value
+// (the increase you challenge by acting on the 30-day window). The full
+// post-renewal value is the "at risk" context. (BASE+PEPM)*12 = $190,800;
+// uplift = round(190,800 * 1.18) - 190,800 = 34,344.
+const CURRENT_ANNUAL = (BASE_FEE + PEPM_MONTHLY) * 12; // 19,080,000 = $190,800
+const r01Annual = Math.round(CURRENT_ANNUAL * (1 + RENEWAL_UPLIFT_PCT)) - CURRENT_ANNUAL; // 3,434,400
 
 const seed: VendorSeed = {
   record,
@@ -81,7 +87,7 @@ const seed: VendorSeed = {
       category: "auto_renewal",
       savingsType: "avoidance",
       annualizedSavingsCents: r01Annual,
-      note: "Auto-renews in 45 days (30-day notice) at +18% PEPM uplift; $14,400/mo PEPM * 12 * 18% = $31,104/yr at risk",
+      note: "Auto-renews in 45 days (30-day notice) at +18% on $190,800 => $34,344/yr negotiable uplift; $45,000 termination-fee trap deepens the lock-in.",
     },
   ],
 };
