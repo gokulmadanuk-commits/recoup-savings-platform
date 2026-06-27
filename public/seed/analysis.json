@@ -5,6 +5,7 @@
     "documentsProcessed": 302,
     "documentsFailed": 0,
     "vendorsAnalyzed": 22,
+    "vendorsWithFindings": 22,
     "totalAnnualSpendCents": 468205232,
     "totalAnnualizedSavingsCents": 47927512,
     "totalRecoverableCents": 18632044,
@@ -1430,5 +1431,302 @@
       "body": "Hi PristineCare Facilities team,\n\nThanks for the renewal terms. The applied increase is out of line with both our agreement and the market. PristineCare Facilities applied a 9.0% year-over-year increase to \"Nightly Janitorial Services (3 offices)\" ($23,700.00 -> $25,833.00/mo), but the contract caps escalation at 4.0%. The portion above the cap — (9.0% - 4.0%) of the $284,400 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $14,220/yr.\n\nWhat we're seeing:\n  • Contract escalator clause: Escalator type \"fixed\", capped at 4.0% (anniversary month 9)\n  • Prior-period rate (May 2025): Nightly Janitorial Services (3 offices): $23,700.00/mo (= $284,400/yr base)\n  • Escalated rate (Jun 2026): Nightly Janitorial Services (3 offices): $25,833.00/mo (+9.0% year-over-year)\n  • Benchmark applied: Contract cap 4.0% — applied 9.0% exceeds the cap by 5.0%\n\nHere's a structure that works for both sides: Demand a credit/refund of $11,850 for the over-cap amount billed to date, roll \"Nightly Janitorial Services (3 offices)\" back to the cap-compliant rate of $24,648.00/mo, and correct the base going forward ($14,220/yr). — a contractual cap on any future increase (the lesser of CPI or 3–5%). In exchange we're prepared to commit to a multi-year term, which gives you revenue visibility. A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.\n\nCan you confirm whether the cap is workable within 10 business days? A predictable ceiling lets us re-sign with confidence.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
       "category": "price_escalator"
     }
-  ]
+  ],
+  "categories": [
+    {
+      "category": "overbilling",
+      "label": "Overbilling",
+      "count": 9,
+      "savingsCents": 10054600,
+      "recoverableCents": 10054600,
+      "avoidanceCents": 0
+    },
+    {
+      "category": "tier_optimization",
+      "label": "Right-sizing",
+      "count": 3,
+      "savingsCents": 9489996,
+      "recoverableCents": 0,
+      "avoidanceCents": 9489996
+    },
+    {
+      "category": "minimum_commit",
+      "label": "Minimum commitment",
+      "count": 1,
+      "savingsCents": 8400000,
+      "recoverableCents": 0,
+      "avoidanceCents": 8400000
+    },
+    {
+      "category": "price_escalator",
+      "label": "Price escalator",
+      "count": 4,
+      "savingsCents": 6932400,
+      "recoverableCents": 4292400,
+      "avoidanceCents": 2640000
+    },
+    {
+      "category": "unused_seats",
+      "label": "Idle licences",
+      "count": 1,
+      "savingsCents": 4860000,
+      "recoverableCents": 0,
+      "avoidanceCents": 4860000
+    },
+    {
+      "category": "auto_renewal",
+      "label": "Auto-renewal",
+      "count": 2,
+      "savingsCents": 3905472,
+      "recoverableCents": 0,
+      "avoidanceCents": 3905472
+    },
+    {
+      "category": "rate_mismatch",
+      "label": "Off-contract rate",
+      "count": 2,
+      "savingsCents": 1824000,
+      "recoverableCents": 1824000,
+      "avoidanceCents": 0
+    },
+    {
+      "category": "missed_discount",
+      "label": "Missed discount",
+      "count": 2,
+      "savingsCents": 1711044,
+      "recoverableCents": 1711044,
+      "avoidanceCents": 0
+    },
+    {
+      "category": "duplicate",
+      "label": "Duplicate billing",
+      "count": 1,
+      "savingsCents": 750000,
+      "recoverableCents": 750000,
+      "avoidanceCents": 0
+    }
+  ],
+  "vendors": [
+    {
+      "id": "atlascloud-iaas",
+      "name": "AtlasCloud (IaaS)",
+      "category": "Cloud/hosting",
+      "annualSpendCents": 48000000,
+      "savingsCents": 8400000,
+      "recoverableCents": 0,
+      "avoidanceCents": 8400000,
+      "findingCount": 1
+    },
+    {
+      "id": "catalyst-creative-agency",
+      "name": "Catalyst Creative Agency",
+      "category": "Marketing/agency",
+      "annualSpendCents": 9600000,
+      "savingsCents": 5550000,
+      "recoverableCents": 0,
+      "avoidanceCents": 5550000,
+      "findingCount": 1
+    },
+    {
+      "id": "collabhub-suite",
+      "name": "CollabHub Suite",
+      "category": "SaaS (per-seat)",
+      "annualSpendCents": 13500000,
+      "savingsCents": 4860000,
+      "recoverableCents": 0,
+      "avoidanceCents": 4860000,
+      "findingCount": 1
+    },
+    {
+      "id": "payworks-hcm",
+      "name": "PayWorks HCM",
+      "category": "Payroll/HR software",
+      "annualSpendCents": 19080000,
+      "savingsCents": 3434400,
+      "recoverableCents": 0,
+      "avoidanceCents": 3434400,
+      "findingCount": 1
+    },
+    {
+      "id": "redshield-cyber",
+      "name": "RedShield Cyber",
+      "category": "Security (cyber)",
+      "annualSpendCents": 2799996,
+      "savingsCents": 2799996,
+      "recoverableCents": 0,
+      "avoidanceCents": 2799996,
+      "findingCount": 1
+    },
+    {
+      "id": "keystone-mutual-insurance",
+      "name": "Keystone Mutual Insurance",
+      "category": "Insurance",
+      "annualSpendCents": 14640000,
+      "savingsCents": 2640000,
+      "recoverableCents": 0,
+      "avoidanceCents": 2640000,
+      "findingCount": 1
+    },
+    {
+      "id": "swiftparcel-express",
+      "name": "SwiftParcel Express",
+      "category": "Logistics/courier",
+      "annualSpendCents": 134400000,
+      "savingsCents": 2150400,
+      "recoverableCents": 2150400,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "sentryone-protective",
+      "name": "SentryOne Protective",
+      "category": "Security",
+      "annualSpendCents": 25920000,
+      "savingsCents": 1890000,
+      "recoverableCents": 1890000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "summit-copier-leasing",
+      "name": "Summit Copier Leasing",
+      "category": "Equipment lease",
+      "annualSpendCents": 7428000,
+      "savingsCents": 1644000,
+      "recoverableCents": 1644000,
+      "avoidanceCents": 0,
+      "findingCount": 2
+    },
+    {
+      "id": "brightseat-crm",
+      "name": "Brightseat CRM",
+      "category": "SaaS (per-seat)",
+      "annualSpendCents": 10800000,
+      "savingsCents": 1614000,
+      "recoverableCents": 1614000,
+      "avoidanceCents": 0,
+      "findingCount": 2
+    },
+    {
+      "id": "meridian-telecom",
+      "name": "Meridian Telecom",
+      "category": "Telecom/connectivity",
+      "annualSpendCents": 7500000,
+      "savingsCents": 1500000,
+      "recoverableCents": 1500000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "pristinecare-facilities",
+      "name": "PristineCare Facilities",
+      "category": "Facilities/janitorial",
+      "annualSpendCents": 30999600,
+      "savingsCents": 1422000,
+      "recoverableCents": 1422000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "ironroad-freight",
+      "name": "IronRoad Freight",
+      "category": "Logistics (LTL)",
+      "annualSpendCents": 9792000,
+      "savingsCents": 1370400,
+      "recoverableCents": 1370400,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "nimbusedge-cdn",
+      "name": "NimbusEdge CDN",
+      "category": "Cloud/hosting",
+      "annualSpendCents": 24480036,
+      "savingsCents": 1280004,
+      "recoverableCents": 1280004,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "harbor-benefits-brokers",
+      "name": "Harbor Benefits Brokers",
+      "category": "Insurance (benefits)",
+      "annualSpendCents": 18432000,
+      "savingsCents": 1152000,
+      "recoverableCents": 1152000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "vertex-advisory-llp",
+      "name": "Vertex Advisory LLP",
+      "category": "Professional services",
+      "annualSpendCents": 20400000,
+      "savingsCents": 1151040,
+      "recoverableCents": 1151040,
+      "avoidanceCents": 0,
+      "findingCount": 2
+    },
+    {
+      "id": "vaultsign-esignature",
+      "name": "VaultSign eSignature",
+      "category": "SaaS (usage+seat)",
+      "annualSpendCents": 4440000,
+      "savingsCents": 1140000,
+      "recoverableCents": 0,
+      "avoidanceCents": 1140000,
+      "findingCount": 1
+    },
+    {
+      "id": "peakrank-digital",
+      "name": "PeakRank Digital",
+      "category": "Marketing (media)",
+      "annualSpendCents": 36624000,
+      "savingsCents": 981000,
+      "recoverableCents": 981000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "cascade-power-water",
+      "name": "Cascade Power & Water",
+      "category": "Utilities",
+      "annualSpendCents": 9240000,
+      "savingsCents": 930000,
+      "recoverableCents": 930000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "clearwave-mobile",
+      "name": "ClearWave Mobile",
+      "category": "Telecom (wireless)",
+      "annualSpendCents": 7560000,
+      "savingsCents": 907200,
+      "recoverableCents": 907200,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "greenscape-grounds",
+      "name": "GreenScape Grounds",
+      "category": "Facilities (grounds)",
+      "annualSpendCents": 5840000,
+      "savingsCents": 640000,
+      "recoverableCents": 640000,
+      "avoidanceCents": 0,
+      "findingCount": 1
+    },
+    {
+      "id": "deskflow-itsm",
+      "name": "DeskFlow ITSM",
+      "category": "SaaS (per-seat)",
+      "annualSpendCents": 6729600,
+      "savingsCents": 471072,
+      "recoverableCents": 0,
+      "avoidanceCents": 471072,
+      "findingCount": 1
+    }
+  ],
+  "documents": []
 }

@@ -19,6 +19,7 @@ import { parseBatch, type InputFile } from "../src/lib/parsing/index";
 import { assembleDataset } from "../src/lib/docmodel/from-docmodel";
 import { analyzeDataset } from "../src/lib/analyze";
 import { ALL_RULES } from "../src/lib/rules/index";
+import { brandFor, type Brand } from "../src/lib/brand";
 import { toDollars } from "../src/lib/money";
 import type { DocModel } from "../src/lib/types";
 
@@ -34,10 +35,10 @@ function chooseFormat(doc: DocModel, category: string): Fmt {
   return /cloud|hosting|telecom|wireless|utilit/.test(c) ? "excel" : "pdf";
 }
 
-async function render(doc: DocModel, fmt: Fmt): Promise<Uint8Array> {
-  if (fmt === "pdf") return renderPdf(doc);
-  if (fmt === "excel") return renderExcel(doc);
-  return renderWord(doc);
+async function render(doc: DocModel, fmt: Fmt, brand: Brand): Promise<Uint8Array> {
+  if (fmt === "pdf") return renderPdf(doc, brand);
+  if (fmt === "excel") return renderExcel(doc, brand);
+  return renderWord(doc, brand);
 }
 
 interface ManifestDoc {
@@ -63,13 +64,14 @@ async function main() {
     const dir = join(root, vid);
     await mkdir(dir, { recursive: true });
     const docs = vendorRecordToDocModels(record);
+    const brand = brandFor(record.vendor.name, record.vendor.category);
     const manifestDocs: ManifestDoc[] = [];
 
     for (const doc of docs) {
       const fmt = chooseFormat(doc, record.vendor.category);
       const base = doc.fileName.replace(/\.[^.]+$/, "");
       const fileName = `${base}.${EXT[fmt]}`;
-      const bytes = await render(doc, fmt);
+      const bytes = await render(doc, fmt, brand);
       await writeFile(join(dir, fileName), bytes);
       totalBytes += bytes.byteLength;
       allFiles.push({ fileName, data: bytes });

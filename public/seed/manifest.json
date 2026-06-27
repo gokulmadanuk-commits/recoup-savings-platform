@@ -3,7 +3,7 @@
   "analysisDate": "2026-06-27",
   "generatedAt": "2026-06-27",
   "fileCount": 302,
-  "totalBytes": 1125958,
+  "totalBytes": 1303733,
   "byFormat": {
     "pdf": 229,
     "xlsx": 66,
@@ -20,105 +20,105 @@
           "format": "pdf",
           "fileName": "brightseat-crm-contract.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-contract.pdf",
-          "bytes": 4001
+          "bytes": 5115
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-07.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-07.pdf",
-          "bytes": 2253
+          "bytes": 2630
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-08.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-08.pdf",
-          "bytes": 2254
+          "bytes": 2631
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-09.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-09.pdf",
-          "bytes": 2252
+          "bytes": 2629
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-10.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-10.pdf",
-          "bytes": 2252
+          "bytes": 2629
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-11.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-11.pdf",
-          "bytes": 2249
+          "bytes": 2626
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2025-12.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2025-12.pdf",
-          "bytes": 2257
+          "bytes": 2634
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-01.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-01.pdf",
-          "bytes": 2254
+          "bytes": 2631
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-02.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-02.pdf",
-          "bytes": 2255
+          "bytes": 2632
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-03.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-03.pdf",
-          "bytes": 2254
+          "bytes": 2630
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-04.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-04.pdf",
-          "bytes": 2253
+          "bytes": 2629
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-05.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-05.pdf",
-          "bytes": 2254
+          "bytes": 2631
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-invoice-2026-06.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-invoice-2026-06.pdf",
-          "bytes": 2251
+          "bytes": 2627
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-services-invoice-2026-04.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-services-invoice-2026-04.pdf",
-          "bytes": 2190
+          "bytes": 2563
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "brightseat-crm-services-invoice-2026-04-copy.pdf",
           "path": "/seed/brightseat-crm/brightseat-crm-services-invoice-2026-04-copy.pdf",
-          "bytes": 2190
+          "bytes": 2563
         }
       ]
     },
@@ -132,98 +132,98 @@
           "format": "pdf",
           "fileName": "collabhub-suite-contract.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-contract.pdf",
-          "bytes": 3758
+          "bytes": 4784
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-07.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-07.pdf",
-          "bytes": 2161
+          "bytes": 2520
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-08.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-08.pdf",
-          "bytes": 2163
+          "bytes": 2518
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-09.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-09.pdf",
-          "bytes": 2160
+          "bytes": 2517
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-10.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-10.pdf",
-          "bytes": 2161
+          "bytes": 2516
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-11.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-11.pdf",
-          "bytes": 2158
+          "bytes": 2514
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2025-12.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2025-12.pdf",
-          "bytes": 2166
+          "bytes": 2521
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-01.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-01.pdf",
-          "bytes": 2163
+          "bytes": 2517
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-02.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-02.pdf",
-          "bytes": 2162
+          "bytes": 2518
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-03.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-03.pdf",
-          "bytes": 2162
+          "bytes": 2516
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-04.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-04.pdf",
-          "bytes": 2160
+          "bytes": 2516
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-05.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-05.pdf",
-          "bytes": 2163
+          "bytes": 2519
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "collabhub-suite-invoice-2026-06.pdf",
           "path": "/seed/collabhub-suite/collabhub-suite-invoice-2026-06.pdf",
-          "bytes": 2159
+          "bytes": 2516
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "collabhub-suite-utilization.xlsx",
           "path": "/seed/collabhub-suite/collabhub-suite-utilization.xlsx",
-          "bytes": 16002
+          "bytes": 17197
         }
       ]
     },
@@ -237,91 +237,91 @@
           "format": "pdf",
           "fileName": "deskflow-itsm-contract.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-contract.pdf",
-          "bytes": 4059
+          "bytes": 5100
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2025-08.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2025-08.pdf",
-          "bytes": 2262
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2025-09.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2025-09.pdf",
-          "bytes": 2261
+          "bytes": 2617
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2025-10.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2025-10.pdf",
-          "bytes": 2262
+          "bytes": 2620
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2025-11.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2025-11.pdf",
-          "bytes": 2260
+          "bytes": 2617
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2025-12.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2025-12.pdf",
-          "bytes": 2263
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-01.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-01.pdf",
-          "bytes": 2263
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-02.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-02.pdf",
-          "bytes": 2263
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-03.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-03.pdf",
-          "bytes": 2262
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-04.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-04.pdf",
-          "bytes": 2261
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-05.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-05.pdf",
-          "bytes": 2263
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-06.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-06.pdf",
-          "bytes": 2260
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "deskflow-itsm-invoice-2026-07.pdf",
           "path": "/seed/deskflow-itsm/deskflow-itsm-invoice-2026-07.pdf",
-          "bytes": 2263
+          "bytes": 2619
         }
       ]
     },
@@ -335,91 +335,91 @@
           "format": "pdf",
           "fileName": "vaultsign-esignature-contract.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-contract.pdf",
-          "bytes": 4117
+          "bytes": 5363
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-07.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-07.pdf",
-          "bytes": 2351
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-08.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-08.pdf",
-          "bytes": 2352
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-09.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-09.pdf",
-          "bytes": 2348
+          "bytes": 2708
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-10.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-10.pdf",
-          "bytes": 2349
+          "bytes": 2708
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-11.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-11.pdf",
-          "bytes": 2346
+          "bytes": 2705
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2025-12.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2025-12.pdf",
-          "bytes": 2354
+          "bytes": 2713
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-01.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-01.pdf",
-          "bytes": 2354
+          "bytes": 2709
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-02.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-02.pdf",
-          "bytes": 2356
+          "bytes": 2712
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-03.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-03.pdf",
-          "bytes": 2353
+          "bytes": 2710
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-04.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-04.pdf",
-          "bytes": 2349
+          "bytes": 2709
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-05.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-05.pdf",
-          "bytes": 2351
+          "bytes": 2710
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vaultsign-esignature-invoice-2026-06.pdf",
           "path": "/seed/vaultsign-esignature/vaultsign-esignature-invoice-2026-06.pdf",
-          "bytes": 2348
+          "bytes": 2708
         }
       ]
     },
@@ -433,91 +433,91 @@
           "format": "pdf",
           "fileName": "atlascloud-iaas-contract.pdf",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-contract.pdf",
-          "bytes": 3981
+          "bytes": 5053
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-07.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-07.xlsx",
-          "bytes": 7464
+          "bytes": 8670
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-08.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-08.xlsx",
-          "bytes": 7464
+          "bytes": 8669
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-09.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-09.xlsx",
-          "bytes": 7461
+          "bytes": 8667
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-10.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-10.xlsx",
-          "bytes": 7461
+          "bytes": 8666
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-11.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-11.xlsx",
-          "bytes": 7458
+          "bytes": 8664
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-12.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-12.xlsx",
-          "bytes": 7466
+          "bytes": 8672
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-01.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-01.xlsx",
-          "bytes": 7463
+          "bytes": 8669
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-02.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-02.xlsx",
-          "bytes": 7466
+          "bytes": 8670
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-03.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-03.xlsx",
-          "bytes": 7464
+          "bytes": 8670
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-04.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-04.xlsx",
-          "bytes": 7461
+          "bytes": 8667
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-05.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-05.xlsx",
-          "bytes": 7463
+          "bytes": 8669
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-06.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-06.xlsx",
-          "bytes": 7461
+          "bytes": 8667
         }
       ]
     },
@@ -531,91 +531,91 @@
           "format": "pdf",
           "fileName": "nimbusedge-cdn-contract.pdf",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-contract.pdf",
-          "bytes": 3841
+          "bytes": 5055
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-07.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-07.xlsx",
-          "bytes": 7458
+          "bytes": 8654
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-08.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-08.xlsx",
-          "bytes": 7459
+          "bytes": 8654
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-09.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-09.xlsx",
-          "bytes": 7457
+          "bytes": 8653
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-10.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-10.xlsx",
-          "bytes": 7456
+          "bytes": 8651
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-11.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-11.xlsx",
-          "bytes": 7455
+          "bytes": 8650
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-12.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-12.xlsx",
-          "bytes": 7461
+          "bytes": 8656
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-01.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-01.xlsx",
-          "bytes": 7460
+          "bytes": 8656
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-02.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-02.xlsx",
-          "bytes": 7463
+          "bytes": 8659
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-03.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-03.xlsx",
-          "bytes": 7459
+          "bytes": 8655
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-04.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-04.xlsx",
-          "bytes": 7459
+          "bytes": 8655
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-05.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-05.xlsx",
-          "bytes": 7455
+          "bytes": 8652
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-06.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-06.xlsx",
-          "bytes": 7458
+          "bytes": 8653
         }
       ]
     },
@@ -629,98 +629,98 @@
           "format": "pdf",
           "fileName": "meridian-telecom-contract.pdf",
           "path": "/seed/meridian-telecom/meridian-telecom-contract.pdf",
-          "bytes": 3762
+          "bytes": 4814
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-07.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-07.xlsx",
-          "bytes": 7653
+          "bytes": 8860
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-08.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-08.xlsx",
-          "bytes": 7654
+          "bytes": 8860
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-09.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-09.xlsx",
-          "bytes": 7651
+          "bytes": 8858
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-10.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-10.xlsx",
-          "bytes": 7652
+          "bytes": 8859
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-11.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-11.xlsx",
-          "bytes": 7648
+          "bytes": 8854
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-12.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-12.xlsx",
-          "bytes": 7656
+          "bytes": 8862
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-01.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-01.xlsx",
-          "bytes": 7654
+          "bytes": 8860
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-02.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-02.xlsx",
-          "bytes": 7655
+          "bytes": 8860
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-03.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-03.xlsx",
-          "bytes": 7655
+          "bytes": 8861
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-04.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-04.xlsx",
-          "bytes": 7651
+          "bytes": 8859
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-05.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-05.xlsx",
-          "bytes": 7651
+          "bytes": 8859
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-06.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-06.xlsx",
-          "bytes": 7650
+          "bytes": 8857
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "meridian-telecom-utilization.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-utilization.xlsx",
-          "bytes": 7099
+          "bytes": 8291
         }
       ]
     },
@@ -734,98 +734,98 @@
           "format": "pdf",
           "fileName": "clearwave-mobile-contract.pdf",
           "path": "/seed/clearwave-mobile/clearwave-mobile-contract.pdf",
-          "bytes": 3646
+          "bytes": 4726
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-07.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-07.xlsx",
-          "bytes": 8155
+          "bytes": 9364
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-08.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-08.xlsx",
-          "bytes": 8153
+          "bytes": 9363
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-09.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-09.xlsx",
-          "bytes": 8152
+          "bytes": 9362
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-10.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-10.xlsx",
-          "bytes": 8152
+          "bytes": 9362
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-11.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-11.xlsx",
-          "bytes": 8149
+          "bytes": 9359
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-12.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-12.xlsx",
-          "bytes": 8155
+          "bytes": 9365
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-01.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-01.xlsx",
-          "bytes": 8154
+          "bytes": 9364
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-02.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-02.xlsx",
-          "bytes": 8156
+          "bytes": 9365
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-03.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-03.xlsx",
-          "bytes": 8154
+          "bytes": 9363
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-04.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-04.xlsx",
-          "bytes": 8152
+          "bytes": 9362
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-05.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-05.xlsx",
-          "bytes": 8154
+          "bytes": 9364
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-06.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-06.xlsx",
-          "bytes": 8151
+          "bytes": 9361
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "clearwave-mobile-utilization.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-utilization.xlsx",
-          "bytes": 7722
+          "bytes": 8922
         }
       ]
     },
@@ -839,98 +839,98 @@
           "format": "pdf",
           "fileName": "cascade-power-water-contract.pdf",
           "path": "/seed/cascade-power-water/cascade-power-water-contract.pdf",
-          "bytes": 3746
+          "bytes": 4800
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-07.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-07.xlsx",
-          "bytes": 7610
+          "bytes": 8823
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-08.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-08.xlsx",
-          "bytes": 7610
+          "bytes": 8823
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-09.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-09.xlsx",
-          "bytes": 7608
+          "bytes": 8821
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-10.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-10.xlsx",
-          "bytes": 7609
+          "bytes": 8821
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-11.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-11.xlsx",
-          "bytes": 7605
+          "bytes": 8818
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-12.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-12.xlsx",
-          "bytes": 7612
+          "bytes": 8825
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-01.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-01.xlsx",
-          "bytes": 7609
+          "bytes": 8823
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-02.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-02.xlsx",
-          "bytes": 7611
+          "bytes": 8824
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-03.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-03.xlsx",
-          "bytes": 7610
+          "bytes": 8823
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-04.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-04.xlsx",
-          "bytes": 7606
+          "bytes": 8819
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-05.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-05.xlsx",
-          "bytes": 7610
+          "bytes": 8822
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-06.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-06.xlsx",
-          "bytes": 7607
+          "bytes": 8820
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "cascade-power-water-utilization.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-utilization.xlsx",
-          "bytes": 7075
+          "bytes": 8269
         }
       ]
     },
@@ -944,105 +944,105 @@
           "format": "pdf",
           "fileName": "swiftparcel-express-contract.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-contract.pdf",
-          "bytes": 3946
+          "bytes": 5208
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-05.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-05.pdf",
-          "bytes": 2262
+          "bytes": 2643
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-06.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-06.pdf",
-          "bytes": 2264
+          "bytes": 2642
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-07.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-07.pdf",
-          "bytes": 2264
+          "bytes": 2646
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-08.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-08.pdf",
-          "bytes": 2263
+          "bytes": 2645
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-09.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-09.pdf",
-          "bytes": 2260
+          "bytes": 2641
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-10.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-10.pdf",
-          "bytes": 2264
+          "bytes": 2646
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-11.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-11.pdf",
-          "bytes": 2261
+          "bytes": 2642
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2025-12.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2025-12.pdf",
-          "bytes": 2269
+          "bytes": 2648
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-01.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-01.pdf",
-          "bytes": 2263
+          "bytes": 2646
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-02.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-02.pdf",
-          "bytes": 2267
+          "bytes": 2647
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-03.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-03.pdf",
-          "bytes": 2264
+          "bytes": 2647
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-04.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-04.pdf",
-          "bytes": 2265
+          "bytes": 2643
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-05.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-05.pdf",
-          "bytes": 2263
+          "bytes": 2645
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "swiftparcel-express-invoice-2026-06.pdf",
           "path": "/seed/swiftparcel-express/swiftparcel-express-invoice-2026-06.pdf",
-          "bytes": 2261
+          "bytes": 2642
         }
       ]
     },
@@ -1056,105 +1056,105 @@
           "format": "word",
           "fileName": "pristinecare-facilities-contract.docx",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-contract.docx",
-          "bytes": 9867
+          "bytes": 10203
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-05.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-05.pdf",
-          "bytes": 2229
+          "bytes": 2615
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-06.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-06.pdf",
-          "bytes": 2228
+          "bytes": 2613
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-07.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-07.pdf",
-          "bytes": 2233
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-08.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-08.pdf",
-          "bytes": 2231
+          "bytes": 2615
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-09.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-09.pdf",
-          "bytes": 2232
+          "bytes": 2615
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-10.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-10.pdf",
-          "bytes": 2237
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-11.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-11.pdf",
-          "bytes": 2234
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2025-12.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2025-12.pdf",
-          "bytes": 2240
+          "bytes": 2621
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-01.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-01.pdf",
-          "bytes": 2238
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-02.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-02.pdf",
-          "bytes": 2238
+          "bytes": 2620
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-03.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-03.pdf",
-          "bytes": 2238
+          "bytes": 2620
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-04.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-04.pdf",
-          "bytes": 2235
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-05.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-05.pdf",
-          "bytes": 2239
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "pristinecare-facilities-invoice-2026-06.pdf",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-invoice-2026-06.pdf",
-          "bytes": 2234
+          "bytes": 2616
         }
       ]
     },
@@ -1168,91 +1168,91 @@
           "format": "word",
           "fileName": "greenscape-grounds-contract.docx",
           "path": "/seed/greenscape-grounds/greenscape-grounds-contract.docx",
-          "bytes": 9829
+          "bytes": 10172
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-07.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-07.pdf",
-          "bytes": 2297
+          "bytes": 2657
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-08.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-08.pdf",
-          "bytes": 2298
+          "bytes": 2655
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-09.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-09.pdf",
-          "bytes": 2197
+          "bytes": 2551
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-10.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-10.pdf",
-          "bytes": 2199
+          "bytes": 2550
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-11.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-11.pdf",
-          "bytes": 2195
+          "bytes": 2548
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2025-12.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2025-12.pdf",
-          "bytes": 2202
+          "bytes": 2554
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-01.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-01.pdf",
-          "bytes": 2199
+          "bytes": 2551
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-02.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-02.pdf",
-          "bytes": 2202
+          "bytes": 2552
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-03.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-03.pdf",
-          "bytes": 2198
+          "bytes": 2551
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-04.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-04.pdf",
-          "bytes": 2197
+          "bytes": 2551
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-05.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-05.pdf",
-          "bytes": 2297
+          "bytes": 2656
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "greenscape-grounds-invoice-2026-06.pdf",
           "path": "/seed/greenscape-grounds/greenscape-grounds-invoice-2026-06.pdf",
-          "bytes": 2294
+          "bytes": 2652
         }
       ]
     },
@@ -1266,91 +1266,91 @@
           "format": "word",
           "fileName": "sentryone-protective-contract.docx",
           "path": "/seed/sentryone-protective/sentryone-protective-contract.docx",
-          "bytes": 9849
+          "bytes": 10163
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-07.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-07.pdf",
-          "bytes": 2286
+          "bytes": 2662
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-08.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-08.pdf",
-          "bytes": 2370
+          "bytes": 2747
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-09.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-09.pdf",
-          "bytes": 2285
+          "bytes": 2660
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-10.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-10.pdf",
-          "bytes": 2367
+          "bytes": 2743
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-11.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-11.pdf",
-          "bytes": 2281
+          "bytes": 2656
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2025-12.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2025-12.pdf",
-          "bytes": 2372
+          "bytes": 2749
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-01.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-01.pdf",
-          "bytes": 2289
+          "bytes": 2662
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-02.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-02.pdf",
-          "bytes": 2373
+          "bytes": 2748
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-03.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-03.pdf",
-          "bytes": 2285
+          "bytes": 2660
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-04.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-04.pdf",
-          "bytes": 2367
+          "bytes": 2743
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-05.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-05.pdf",
-          "bytes": 2287
+          "bytes": 2663
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "sentryone-protective-invoice-2026-06.pdf",
           "path": "/seed/sentryone-protective/sentryone-protective-invoice-2026-06.pdf",
-          "bytes": 2367
+          "bytes": 2743
         }
       ]
     },
@@ -1364,91 +1364,91 @@
           "format": "pdf",
           "fileName": "ironroad-freight-contract.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-contract.pdf",
-          "bytes": 3826
+          "bytes": 4898
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-07.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-07.pdf",
-          "bytes": 2467
+          "bytes": 2856
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-08.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-08.pdf",
-          "bytes": 2470
+          "bytes": 2857
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-09.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-09.pdf",
-          "bytes": 2467
+          "bytes": 2854
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-10.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-10.pdf",
-          "bytes": 2466
+          "bytes": 2853
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-11.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-11.pdf",
-          "bytes": 2464
+          "bytes": 2851
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2025-12.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2025-12.pdf",
-          "bytes": 2473
+          "bytes": 2860
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-01.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-01.pdf",
-          "bytes": 2468
+          "bytes": 2855
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-02.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-02.pdf",
-          "bytes": 2468
+          "bytes": 2855
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-03.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-03.pdf",
-          "bytes": 2468
+          "bytes": 2854
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-04.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-04.pdf",
-          "bytes": 2467
+          "bytes": 2853
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-05.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-05.pdf",
-          "bytes": 2468
+          "bytes": 2855
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "ironroad-freight-invoice-2026-06.pdf",
           "path": "/seed/ironroad-freight/ironroad-freight-invoice-2026-06.pdf",
-          "bytes": 2468
+          "bytes": 2855
         }
       ]
     },
@@ -1462,105 +1462,105 @@
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-contract.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-contract.pdf",
-          "bytes": 3670
+          "bytes": 4707
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-05.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-05.pdf",
-          "bytes": 2246
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-06.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-06.pdf",
-          "bytes": 2246
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-07.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-07.pdf",
-          "bytes": 2247
+          "bytes": 2620
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-08.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-08.pdf",
-          "bytes": 2246
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-09.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-09.pdf",
-          "bytes": 2243
+          "bytes": 2615
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-10.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-10.pdf",
-          "bytes": 2247
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-11.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-11.pdf",
-          "bytes": 2244
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2025-12.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2025-12.pdf",
-          "bytes": 2251
+          "bytes": 2623
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-01.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-01.pdf",
-          "bytes": 2245
+          "bytes": 2618
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-02.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-02.pdf",
-          "bytes": 2247
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-03.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-03.pdf",
-          "bytes": 2247
+          "bytes": 2620
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-04.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-04.pdf",
-          "bytes": 2245
+          "bytes": 2616
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-05.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-05.pdf",
-          "bytes": 2246
+          "bytes": 2619
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "keystone-mutual-insurance-invoice-2026-06.pdf",
           "path": "/seed/keystone-mutual-insurance/keystone-mutual-insurance-invoice-2026-06.pdf",
-          "bytes": 2244
+          "bytes": 2615
         }
       ]
     },
@@ -1574,98 +1574,98 @@
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-contract.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-contract.pdf",
-          "bytes": 2926
+          "bytes": 4523
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-07.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-07.pdf",
-          "bytes": 2205
+          "bytes": 2584
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-08.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-08.pdf",
-          "bytes": 2206
+          "bytes": 2583
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-09.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-09.pdf",
-          "bytes": 2204
+          "bytes": 2580
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-10.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-10.pdf",
-          "bytes": 2204
+          "bytes": 2583
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-11.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-11.pdf",
-          "bytes": 2201
+          "bytes": 2580
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2025-12.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2025-12.pdf",
-          "bytes": 2208
+          "bytes": 2585
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-01.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-01.pdf",
-          "bytes": 2207
+          "bytes": 2584
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-02.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-02.pdf",
-          "bytes": 2207
+          "bytes": 2584
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-03.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-03.pdf",
-          "bytes": 2206
+          "bytes": 2582
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-04.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-04.pdf",
-          "bytes": 2205
+          "bytes": 2581
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-05.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-05.pdf",
-          "bytes": 2206
+          "bytes": 2583
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "harbor-benefits-brokers-invoice-2026-06.pdf",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-invoice-2026-06.pdf",
-          "bytes": 2200
+          "bytes": 2579
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "harbor-benefits-brokers-utilization.xlsx",
           "path": "/seed/harbor-benefits-brokers/harbor-benefits-brokers-utilization.xlsx",
-          "bytes": 7438
+          "bytes": 8635
         }
       ]
     },
@@ -1679,91 +1679,91 @@
           "format": "word",
           "fileName": "catalyst-creative-agency-contract.docx",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-contract.docx",
-          "bytes": 9489
+          "bytes": 9756
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-07.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-07.pdf",
-          "bytes": 2360
+          "bytes": 2739
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-08.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-08.pdf",
-          "bytes": 2361
+          "bytes": 2740
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-09.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-09.pdf",
-          "bytes": 2358
+          "bytes": 2737
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-10.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-10.pdf",
-          "bytes": 2359
+          "bytes": 2737
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-11.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-11.pdf",
-          "bytes": 2356
+          "bytes": 2734
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2025-12.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2025-12.pdf",
-          "bytes": 2363
+          "bytes": 2743
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-01.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-01.pdf",
-          "bytes": 2361
+          "bytes": 2740
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-02.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-02.pdf",
-          "bytes": 2361
+          "bytes": 2740
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-03.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-03.pdf",
-          "bytes": 2361
+          "bytes": 2737
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-04.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-04.pdf",
-          "bytes": 2359
+          "bytes": 2737
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-05.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-05.pdf",
-          "bytes": 2361
+          "bytes": 2740
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "catalyst-creative-agency-invoice-2026-06.pdf",
           "path": "/seed/catalyst-creative-agency/catalyst-creative-agency-invoice-2026-06.pdf",
-          "bytes": 2356
+          "bytes": 2735
         }
       ]
     },
@@ -1777,91 +1777,91 @@
           "format": "word",
           "fileName": "peakrank-digital-contract.docx",
           "path": "/seed/peakrank-digital/peakrank-digital-contract.docx",
-          "bytes": 9459
+          "bytes": 9729
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-07.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-07.pdf",
-          "bytes": 2292
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-08.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-08.pdf",
-          "bytes": 2293
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-09.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-09.pdf",
-          "bytes": 2290
+          "bytes": 2635
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-10.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-10.pdf",
-          "bytes": 2291
+          "bytes": 2636
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-11.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-11.pdf",
-          "bytes": 2288
+          "bytes": 2633
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2025-12.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2025-12.pdf",
-          "bytes": 2296
+          "bytes": 2640
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-01.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-01.pdf",
-          "bytes": 2293
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-02.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-02.pdf",
-          "bytes": 2293
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-03.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-03.pdf",
-          "bytes": 2293
+          "bytes": 2636
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-04.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-04.pdf",
-          "bytes": 2291
+          "bytes": 2636
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-05.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-05.pdf",
-          "bytes": 2293
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "peakrank-digital-invoice-2026-06.pdf",
           "path": "/seed/peakrank-digital/peakrank-digital-invoice-2026-06.pdf",
-          "bytes": 2290
+          "bytes": 2635
         }
       ]
     },
@@ -1875,91 +1875,91 @@
           "format": "word",
           "fileName": "redshield-cyber-contract.docx",
           "path": "/seed/redshield-cyber/redshield-cyber-contract.docx",
-          "bytes": 9756
+          "bytes": 10081
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-07.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-07.pdf",
-          "bytes": 2205
+          "bytes": 2544
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-08.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-08.pdf",
-          "bytes": 2207
+          "bytes": 2544
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-09.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-09.pdf",
-          "bytes": 2204
+          "bytes": 2542
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-10.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-10.pdf",
-          "bytes": 2205
+          "bytes": 2543
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-11.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-11.pdf",
-          "bytes": 2202
+          "bytes": 2540
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2025-12.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2025-12.pdf",
-          "bytes": 2209
+          "bytes": 2546
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-01.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-01.pdf",
-          "bytes": 2207
+          "bytes": 2544
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-02.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-02.pdf",
-          "bytes": 2206
+          "bytes": 2544
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-03.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-03.pdf",
-          "bytes": 2205
+          "bytes": 2541
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-04.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-04.pdf",
-          "bytes": 2203
+          "bytes": 2542
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-05.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-05.pdf",
-          "bytes": 2206
+          "bytes": 2543
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "redshield-cyber-invoice-2026-06.pdf",
           "path": "/seed/redshield-cyber/redshield-cyber-invoice-2026-06.pdf",
-          "bytes": 2202
+          "bytes": 2541
         }
       ]
     },
@@ -1973,98 +1973,98 @@
           "format": "pdf",
           "fileName": "summit-copier-leasing-contract.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-contract.pdf",
-          "bytes": 3749
+          "bytes": 4772
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-07.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-07.pdf",
-          "bytes": 2341
+          "bytes": 2722
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-08.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-08.pdf",
-          "bytes": 2345
+          "bytes": 2722
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-09.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-09.pdf",
-          "bytes": 2342
+          "bytes": 2722
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-10.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-10.pdf",
-          "bytes": 2339
+          "bytes": 2721
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-11.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-11.pdf",
-          "bytes": 2335
+          "bytes": 2716
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2025-12.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2025-12.pdf",
-          "bytes": 2343
+          "bytes": 2724
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-01.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-01.pdf",
-          "bytes": 2341
+          "bytes": 2721
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-02.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-02.pdf",
-          "bytes": 2343
+          "bytes": 2723
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-03.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-03.pdf",
-          "bytes": 2341
+          "bytes": 2720
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-04.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-04.pdf",
-          "bytes": 2342
+          "bytes": 2722
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-05.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-05.pdf",
-          "bytes": 2339
+          "bytes": 2720
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "summit-copier-leasing-invoice-2026-06.pdf",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-invoice-2026-06.pdf",
-          "bytes": 2342
+          "bytes": 2718
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "summit-copier-leasing-utilization.xlsx",
           "path": "/seed/summit-copier-leasing/summit-copier-leasing-utilization.xlsx",
-          "bytes": 7227
+          "bytes": 8415
         }
       ]
     },
@@ -2078,105 +2078,105 @@
           "format": "word",
           "fileName": "vertex-advisory-llp-contract.docx",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-contract.docx",
-          "bytes": 9892
+          "bytes": 10228
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-07.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-07.pdf",
-          "bytes": 2332
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-08.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-08.pdf",
-          "bytes": 2335
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-09.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-09.pdf",
-          "bytes": 2331
+          "bytes": 2708
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-10.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-10.pdf",
-          "bytes": 2334
+          "bytes": 2710
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-11.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-11.pdf",
-          "bytes": 2329
+          "bytes": 2707
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2025-12.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2025-12.pdf",
-          "bytes": 2335
+          "bytes": 2712
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-01.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-01.pdf",
-          "bytes": 2335
+          "bytes": 2713
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-02.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-02.pdf",
-          "bytes": 2335
+          "bytes": 2713
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-03.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-03.pdf",
-          "bytes": 2335
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-04.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-04.pdf",
-          "bytes": 2333
+          "bytes": 2711
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-05.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-05.pdf",
-          "bytes": 2335
+          "bytes": 2713
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-06.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-06.pdf",
-          "bytes": 2333
+          "bytes": 2710
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-07.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-07.pdf",
-          "bytes": 2337
+          "bytes": 2714
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "vertex-advisory-llp-invoice-2026-08.pdf",
           "path": "/seed/vertex-advisory-llp/vertex-advisory-llp-invoice-2026-08.pdf",
-          "bytes": 2338
+          "bytes": 2714
         }
       ]
     },
@@ -2190,91 +2190,91 @@
           "format": "pdf",
           "fileName": "payworks-hcm-contract.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-contract.pdf",
-          "bytes": 3945
+          "bytes": 5227
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-07.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-07.pdf",
-          "bytes": 2275
+          "bytes": 2640
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-08.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-08.pdf",
-          "bytes": 2275
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-09.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-09.pdf",
-          "bytes": 2274
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-10.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-10.pdf",
-          "bytes": 2275
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-11.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-11.pdf",
-          "bytes": 2272
+          "bytes": 2636
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2025-12.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2025-12.pdf",
-          "bytes": 2276
+          "bytes": 2642
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-01.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-01.pdf",
-          "bytes": 2276
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-02.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-02.pdf",
-          "bytes": 2277
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-03.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-03.pdf",
-          "bytes": 2276
+          "bytes": 2638
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-04.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-04.pdf",
-          "bytes": 2273
+          "bytes": 2637
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-05.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-05.pdf",
-          "bytes": 2276
+          "bytes": 2640
         },
         {
           "docType": "invoice",
           "format": "pdf",
           "fileName": "payworks-hcm-invoice-2026-06.pdf",
           "path": "/seed/payworks-hcm/payworks-hcm-invoice-2026-06.pdf",
-          "bytes": 2273
+          "bytes": 2636
         }
       ]
     }
