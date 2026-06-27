@@ -1,0 +1,454 @@
+{
+  "methodology_markdown": "# Contract & Payables Savings Platform — Methodology\n\n## 1. The Opportunity and Our Thesis\n\nMid-market companies systematically overpay vendors. Across the three adjacent industries that already monetize this — SaaS spend optimization, accounts-payable / profit-recovery audit, and telecom/utility expense management (TEM) — the pattern is consistent: organizations lose **5–10% of profit** to procurement and payment errors, a standard AP recovery audit returns on the order of **$1M per $1B of supplier spend**, the average company **overpays ~30%** versus market on SaaS, **30–53% of software licenses go unused**, and Gartner-cited figures put **~80% of telecom bills** in error. None of this is exotic fraud; it is drift — promo rates that reverted to list, seats provisioned and forgotten, escalators compounding above CPI, auto-renewals that closed the negotiation window, duplicate payments across channels, and minimum commitments nobody right-sized.\n\nOur platform ingests a company's contracts and twelve-plus months of invoices, normalizes them into a canonical data model, runs a deterministic battery of detection rules against that model, and produces a ranked book of findings — each one tied to a source document, with the dollar figure and the negotiation lever pre-computed. We then draft the vendor-facing recovery or renegotiation email. We charge nothing up front and take a percentage only of money that actually lands.\n\n## 2. Two Kinds of Savings, and Why the Distinction Governs Everything\n\nCFOs treat two categories of \"savings\" very differently, and our commercial model is built on the distinction:\n\n- **Recovery (hard cash).** Money already spent that comes back as a refund or credit memo with a vendor's name on it — duplicate payments, billed-above-contract overcharges, missed credits, misapplied overage, escalators above a contractual cap. This is auditable and bankable, and it is what makes contingency selling easy.\n- **Avoidance / cost reduction (soft savings).** Money you *would* have spent at the old run-rate but won't — a killed auto-renewal, a right-sized seat count, a capped escalator, a lowered minimum commitment. Real, but baseline-dependent and easier for a vendor (or a skeptical CFO) to dispute.\n\nThe credibility ladder a CFO applies, in priority order: (1) cash beats avoidance; (2) vendor-validated beats self-asserted; (3) traceable to a specific invoice/PO/clause beats a model estimate; (4) an explicit, agreed baseline with a measurement window for any run-rate claim; (5) an auditable trail from finding → dispute → posted credit; (6) aligned incentives and near-zero downside to saying yes. Every architectural decision below serves this ladder.\n\n## 3. How Each Savings Category Is Detected and Quantified\n\nWe ship a deterministic rule engine — defined inputs → comparison → trigger → savings formula — with all money handled as integer cents (`bigint`) or `decimal.js`, never floats, so cumulative overcharges don't drift. Every threshold (tolerance, activity window, fair-margin %, fuzzy-match cutoff) is a named, version-pinned config value, so findings are reproducible and auditable.\n\nThe rules cluster into the credibility tiers above:\n\n**Hard recovery (strongest, bill on posted cash):**\n- **Invoice rate mismatch** — invoiced unit price exceeds the contracted rate-card price for that SKU/period. The repeat nature (\"billed $X above contract for seven consecutive months\") makes it near-incontestable and demands a credit memo for the back period plus a forward fix.\n- **Duplicate / double billing** — exact match (vendor + invoice number + amount) catches only 30–40% of duplicates; we layer fuzzy matching (entity normalization, ±0.5% amount, ±7 days, ≥0.85 invoice-number similarity) and same-period recurring-charge detection. Low-controversy, fast, establishes credibility.\n- **Price escalators above cap** — when the applied year-over-year uplift exceeds the contract's own cap, that's a straightforward breach and refund.\n- **Misapplied overage / wrong-tier rates** and **missed volume discounts** — usage charged above a bundled allowance that wasn't breached, or a crossed volume tier that kept billing the higher rate; both yield retroactive credits.\n\n**Avoidance / run-rate (bill on a defined window against an agreed baseline):**\n- **Auto-renewal window** — a daily sliding-window job flags contracts auto-renewing within 90 days whose cancellation-notice deadline is imminent or passed. The \"savings\" is the optionality preserved; we surface the full annual renewal value as \"$ at risk if you miss the window.\"\n- **Unused seats / idle licenses** — paid seats minus seats with genuine recent activity (30-day default; 60/90-day exposed as conservative variants). Requires a third data source: a per-user activity export from the admin console / SSO / IdP.\n- **Tier downgrade / right-sizing** — active seats paying for a premium tier whose tier-exclusive features show zero adoption.\n- **Minimum commitments not met** — a take-or-pay floor the buyer pays but doesn't consume; in-term often unrecoverable, so the saving is realized by right-sizing at renewal.\n- **Above-market escalators** that are contract-compliant but exceed the 3–5% fair band (SaaS hit ~12% in 2026 vs ~3% CPI) — these *create* the renewal ask for a hard cap.\n\n**Process recovery:** **missed early-pay discounts** (a forfeited 2/10 net 30 discount ≈ borrowing at ~36% APR) — quantified retrospectively and prospectively.\n\nEvery rule depending on the shared line-matcher (rate mismatch, overage, volume discount) records a `matchConfidence`; only matches above threshold auto-assert a savings claim, the rest queue for human review. This protects against false overcharge claims from a bad SKU match. Each rule emits an **evidence bundle**: the exact contract clause / rate-card row, the invoice line(s), the computed expected value, the delta, and the formula used. That bundle *is* the negotiation artifact and the refund-demand exhibit.\n\n## 4. The Canonical Data Model and Annualization\n\nAll rules read from a normalized TypeScript model, never raw documents: `ContractTerm` (term, auto-renew, notice window, early-term fee), `RateCardLine` (SKU, UoM, contracted unit price, tier bounds, effective dates), `CommitmentTerm` (minimum commit, included allowance, overage price), `EscalatorTerm` (fixed / CPI / CPI-plus / greater-of, cap, anniversary), `PaymentTerm` (net days, discount), `InvoiceLine`, and `UsageRecord` (per-seat last-active). A shared `annualize(amountPerPeriod, period)` helper makes every rule's output a comparable yearly figure. CPI benchmarking pulls the BLS CPI-U series and stores the exact value used with each finding for auditability.\n\n## 5. The Contingency Commercial Model\n\nWe sell \"free unless we find you money.\" Fees attach to **realized dollars, not identified amounts** — the single biggest source of contingency disputes is billing on findings that never get collected. Following the established performance-based band and the recovery-vs-avoidance split, we charge:\n\n- **30% of realized recovery** — refunds and credit memos that post against specific historical invoices. Posted credits provide the simplest performance verification; this is the gold standard and we bill only the cash that actually lands.\n- **20% of validated avoidance / run-rate savings** — the lower rate reflects that avoidance is softer and harder to validate. Each avoidance claim requires an explicit baseline (the documented \"before\" rate), a fixed measurement window (e.g., 24 months), and adjustment rules if the client's operations change materially.\n\nThis sits squarely in the documented range (AP/profit recovery 20–30%; utility/TEM commonly split 30% recoveries / 20% avoidance). Validation chain: each finding ships with invoice references, rationale, calculations, and correspondence; a recovery tracker follows each claim from submission to posted credit; claims are validated directly with the supplier (credit memo or direct payment) and reconciled to the client's ledger before they count. Mature firms cite ~98% vendor-upheld rates as proof the numbers are disciplined, not aggressive — a metric we track and report.\n\nStandard objections and our rebuttals: *\"We self-audit\"* — external firms find what internal teams structurally can't (cross-channel duplicates, supplier-held statement credits, pricing drift) using benchmark data at scale; recovery audit is the second pass after controls, not a replacement. *\"This damages vendor relationships\"* — findings are presented with full documentation and collaborative dispute resolution; clean resolution of payment errors strengthens supplier trust. *\"You'll claim savings we'd have gotten anyway\"* — answered by tight baselines, vendor sign-off, and billing only on posted cash. *\"The % is high\"* — it is a share of found money that was otherwise lost; engagement ROI routinely exceeds 300%.\n\n## 6. The Parsing Pipeline\n\nThe hard engineering problem is reading tables and rate schedules out of hundreds of heterogeneous documents without one bad file killing the batch. Our all-Node/TypeScript toolchain:\n\n- **PDF (positional/tables):** `pdfjs-dist` `getTextContent`, which is the only library exposing per-glyph-run x/y and font size. We reconstruct tables by clustering runs into rows (dynamic y-tolerance derived from median glyph height, *not* hard-coded constants) then clustering x-starts globally into columns so sparse rows still land correctly. Critical gotcha: PDF origin is bottom-left, so sort by descending y for top-to-bottom. For serverless (Vercel) we use **`unpdf`**, a self-contained pdf.js v5 build with the worker embedded, reaching the same `getTextContent` items via `getResolvedPDFJS()`.\n- **Excel:** `exceljs` (typed cells, ~6× less memory than SheetJS, streaming `WorkbookReader` for large files), with a header-detection heuristic that scores candidate rows rather than assuming row 1. SheetJS is the fallback for `.xls`/`.ods`/CSV.\n- **Word:** `mammoth` `.docx`→HTML (emits `<thead>`, preserves merged cells), then a DOM walk via `node-html-parser`.\n- **Normalization:** schema-first with `zod`; each parser emits raw fields, a normalizer coerces and assigns a per-field confidence (0–1) from source quality (typed Excel cell > tagged-PDF cell > clustered-PDF cell > regex), schema-validation success, cross-checks (do line amounts sum to the stated total?), and parser warnings. Documents below threshold route to a human-review queue.\n\n**Surviving the batch:** `await loadingTask.destroy()` after every PDF and `page.cleanup()` per page (the #1 cause of unbounded heap growth), concurrency bounded with `p-limit` (4–8), `Promise.allSettled` so one rejected doc never aborts the run, and PDF parsing isolated in a `worker_threads` pool so the rare uncatchable pdf.js crash kills a worker, not the job. We avoid `pdf2json` (memory leaks, uncatchable errors). For test fixtures we generate **tagged** PDFs with PDFKit ≥0.15.0 (correct ToUnicode map, `Table`/`TR`/`TH`/`TD` structure, embedded subsettable fonts) and round-trip self-test: generate → extract → assert reconstructed cells equal source. We never rasterize tables to images.\n\n## 7. End-to-End Platform Methodology\n\nThe pipeline runs: **ingest** (queued, concurrency-bounded, worker-isolated) → **detect type and route** (PDF / Excel / Word, flag image-only PDFs as `needs_ocr`) → **raw parse** → **normalize** to the Zod canonical schema with per-field confidence → **batch report** (`ok | partial | failed`, low-confidence fields surfaced) → **rule engine** (rate-mismatch / duplicate / overage / volume-discount fire on each new-invoice ingest; auto-renewal and prospective early-pay run daily on sliding windows; seat/tier/escalator/commitment run monthly and on-demand at renewal-prep) → **findings book** (each with evidence bundle, annualized dollar figure, recovery-vs-avoidance classification, and negotiation lever) → **email drafter** (selects the category template, injects deal-specific numbers, attaches the evidence, sets a ~10-business-day deadline) → **recovery tracker** (finding → dispute → posted credit, tied to the GL) → **billing** on realized dollars at 30% recovery / 20% avoidance.\n\nThe product surface is an editorial, finance-grade web platform — ivory paper ground, deep forest green, serif display type — deliberately *not* a white-and-blue SaaS dashboard, signaling private-markets institutional authority. Findings read like a printed prospectus: numbers in tabular figures, hairline rules, generous whitespace, each claim defensible to the dollar. The whole system is engineered so that when a CFO asks \"prove it,\" every answer is one click from the source invoice.",
+  "detection_rules": [
+    {
+      "id": "R01",
+      "name": "Auto-Renewal / Evergreen Notice-Window Alert",
+      "category": "auto_renewal",
+      "what_it_finds": "Contracts auto-renewing within 90 days whose cancellation-notice deadline is imminent or has effectively passed, locking the buyer into another full term they may not want. ~69% of software contracts carry an auto-renew clause with a 30-90 day notice period.",
+      "detection_logic": "INPUTS: ContractTerm.autoRenew, endDate, noticeWindowDays, renewalTermMonths. DERIVE noticeDeadline = endDate - noticeWindowDays; daysToRenewal = endDate - today; daysToDeadline = noticeDeadline - today. TRIGGER when autoRenew == true AND 0 <= daysToRenewal <= 90. SEVERITY: CRITICAL if daysToDeadline <= 0 (window closed, locked in); URGENT if 0 < daysToDeadline <= 14; WATCH if > 14. Run as a daily cron so the 90-day window slides forward.",
+      "savings_formula": "annualRenewalValue = (renewalTermMonths/12) * currentAnnualContractValue. Surface annualRenewalValue as '$ at risk if you miss the window' (avoidance). If acting before deadline enables cancel/renegotiate, captured saving = annualRenewalValue - bestAlternative (switch cost or renegotiated price from R02/R04/R03). Add earlyTermFee to exposure if buyer would otherwise exit mid-term.",
+      "inputs_needed": [
+        "ContractTerm.autoRenew",
+        "ContractTerm.endDate",
+        "ContractTerm.noticeWindowDays",
+        "ContractTerm.noticeMethod",
+        "ContractTerm.renewalTermMonths",
+        "ContractTerm.earlyTermFee",
+        "currentAnnualContractValue",
+        "trailing-12-month vendor spend (fallback for stale contract value)"
+      ],
+      "leverage": "Acting before the deadline converts an automatic renewal into a competitive renewal event - the highest-leverage moment in the relationship. Even when keeping the tool, an open window lets you demand price holds, escalator caps (R04), and seat right-sizing (R03). Fallback: poorly-disclosed 60/90-day evergreen windows can be unenforceable under several state auto-renewal laws, an escape lever if the window was already missed."
+    },
+    {
+      "id": "R02",
+      "name": "Invoice Rate Mismatch (overcharge vs contracted rate)",
+      "category": "rate_mismatch",
+      "what_it_finds": "Invoice line items billed above the contracted unit price or rate-card rate for that SKU/period - the classic three-way-match failure (promo rate reverted to list, or vendor price-master drifted). Repeats across months, so dollar value per case exceeds duplicate-payment work.",
+      "detection_logic": "Resolve the applicable RateCardLine via the shared date- and tier-aware line-matcher (exact SKU, else normalized-description fuzzy match >= 0.85). GUARD: uom and currency must match (else normalize/flag). COMPUTE expectedUnitPrice = matchedRateCardLine.contractedUnitPrice; unitDelta = invoicedUnitPrice - expectedUnitPrice. TRIGGER when unitDelta > tolerance (tolerance = max(1 cent, 0.5% of expected)). Also recompute expectedLineTotal = qty * expectedUnitPrice and trigger if lineTotal - expectedLineTotal > tolerance to catch quantity/extension errors. Gate auto-assertion on matchConfidence; route low confidence to review.",
+      "savings_formula": "perLineOvercharge = (invoicedUnitPrice - expectedUnitPrice) * qty. recoverableToDate = sum of perLineOvercharge over all matching historical lines (last 12+ months) -> cash refund/credit. annualizedForward = perLineOvercharge_perPeriod * periodsPerYear. totalClaim = recoverableToDate + annualizedForward.",
+      "inputs_needed": [
+        "RateCardLine (sku, contractedUnitPrice, uom, currency, effectiveFrom/To, tierMin/Max)",
+        "InvoiceLine.sku or description",
+        "InvoiceLine.uom",
+        "InvoiceLine.qty",
+        "InvoiceLine.invoicedUnitPrice",
+        "InvoiceLine.lineTotal",
+        "InvoiceLine.invoiceDate"
+      ],
+      "leverage": "Documented, repeated overcharges on the same SKU are near-incontestable - demand a credit memo or cash refund for the back period, not just a forward fix. Pattern evidence ('billed $X above contract for 7 consecutive months') exposes a vendor price-master control failure and justifies a contractual audit-rights clause going forward."
+    },
+    {
+      "id": "R03",
+      "name": "Unused Seats / Idle Licenses",
+      "category": "unused_seats",
+      "what_it_finds": "Gap between paid/contracted seats and seats with genuine recent activity. Average org uses only ~47% of SaaS licenses; 30-53% go unused/underutilized; ~49% of users are inactive within 30 days.",
+      "detection_logic": "INPUTS: contractedSeats (ContractTerm/CommitmentTerm), invoicedSeats (InvoiceLine.qty where uom=='seat'), UsageRecord[] (per-seat lastActiveDate from admin export / SSO / IdP). DEFINE INACTIVE if lastActiveDate == null OR (today - lastActiveDate) > 30 days (default; expose 60/90-day conservative variants); NEVER_USED if provisioned == true AND lastActiveDate == null. COMPUTE paidSeats = max(contractedSeats, invoicedSeats); activeSeats = count(ACTIVE); idleSeats = paidSeats - activeSeats. TRIGGER when idleSeats > 0; rank by idleSeats and idleSeats/paidSeats ratio.",
+      "savings_formula": "pricePerSeat = invoicedSeatLineTotal / invoicedSeats (or contracted rate). annualIdleCost = idleSeats * pricePerSeat * billingPeriodsPerYear. Sanity-bound against ~$1,785/idle-seat/yr benchmark. Realizable value = full at renewal if seats reducible; partial/zero mid-term if locked (route to R09 minimum-commitment).",
+      "inputs_needed": [
+        "contractedSeats or minCommitQty",
+        "per-seat price",
+        "seat-reducibility flag (mid-term vs renewal)",
+        "InvoiceLine seat qty / lineTotal / uom",
+        "per-user activity export from admin console / SSO / IdP (required third source)"
+      ],
+      "leverage": "Hard utilization data ('128 of 400 seats never logged in') is the strongest right-sizing lever at renewal. Pair with R01 timing - present the reclaim before the notice deadline so the vendor must reduce seats or hold price. Anchor on active seats, not provisioned. Offer to hold per-seat rate flat plus a true-up clause to add seats later at the same price - protects their unit economics and makes 'yes' easy. Routinely justifies 20-30% pre-renewal seat reductions."
+    },
+    {
+      "id": "R04",
+      "name": "Price Escalator / CPI Ratchet Challenge",
+      "category": "price_escalator",
+      "what_it_finds": "Year-over-year price uplifts exceeding a fair benchmark - any fixed escalator >8%/yr, or a CPI-linked clause applied above CPI + a fair margin. Fair band is 3-5% ('lesser of CPI or 3%'); actual SaaS increases hit ~12% in 2026 vs ~3% CPI.",
+      "detection_logic": "INPUTS: priorPeriodUnitPrice, currentPeriodUnitPrice (same SKU, consecutive annual periods), EscalatorTerm (type, fixedPct, cpiPlusPct, capPct), cpiPct (BLS CPI-U, cached, stored with finding). COMPUTE actualIncreasePct = (current - prior)/prior. DETERMINE contractuallyAllowedPct: fixed->fixedPct; cpi->cpiPct; cpi_plus->cpiPct+cpiPlusPct; greater_of->max(components); apply capPct as ceiling. TRIGGERS: (a) CONTRACT BREACH if actualIncreasePct > contractuallyAllowedPct + tol; (b) ABOVE-MARKET if actualIncreasePct > 0.08; (c) CPI GAP if actualIncreasePct > cpiPct + fairMarginPct (fairMargin 0.03-0.05).",
+      "savings_formula": "challengeablePct = actualIncreasePct - benchmarkPct (benchmark = contractAllowed for breach, or cpi+fairMargin for above-market). overUpliftPerUnit = priorPrice * challengeablePct. annualChallenge = overUpliftPerUnit * qty * periodsPerYear. Escalators compound: present a 3-year NPV of the corrected base, not just year-1. Breach of the contract's own cap is recoverable cash; above-market-but-compliant is avoidance via renewal cap.",
+      "inputs_needed": [
+        "EscalatorTerm (type, fixedPct/cpiPlusPct/capPct, anniversary)",
+        "same-SKU unit price in two consecutive annual periods",
+        "BLS CPI-U benchmark"
+      ],
+      "leverage": "Two levers: (1) applied uplift exceeds the contract cap -> breach/refund; (2) compliant but above-market -> renewal ask to convert to a hard cap ('lesser of CPI or 3%' or fixed 5-7% ceiling), traded for a 2-3 year commitment (~5% discount per committed year). Caps are negotiable for virtually all enterprise SaaS but rarely offered proactively - the finding creates the ask. If a vendor refuses a cap, that itself signals their pricing trajectory."
+    },
+    {
+      "id": "R05",
+      "name": "Overage / Usage-Tier Mismatch",
+      "category": "tier_optimization",
+      "what_it_finds": "Usage billed at overage or wrong-tier rates when a higher-allowance tier or correct tier would be cheaper, or overage charged when the allowance was not breached.",
+      "detection_logic": "INPUTS: includedAllowance, overageUnitPrice, tieredRateCard[], actualUsageQty (from invoice). Compute current cost as billed. SIMULATE alternative tiers: for each tierOption cost = tierBaseFee + max(0, usage - tierAllowance) * tierOverageRate. TRIGGERS: (a) cheaper tier exists if min(simulatedTierCosts) < currentBilledCost; (b) misapplied overage if usage <= includedAllowance BUT overage charged; (c) wrong tier rate if invoiced overage rate != contract overage rate for the bracket.",
+      "savings_formula": "overageSaving = currentBilledCost - min(simulatedTierCosts) (avoidance via tier change). misappliedRefund = wronglyChargedOverageUnits * overageUnitPrice (recoverable cash). Annualize over measurement periods.",
+      "inputs_needed": [
+        "CommitmentTerm.includedAllowance",
+        "CommitmentTerm.overageUnitPrice",
+        "full tier table (base fees + breakpoints + overage rates)",
+        "actual usage qty per period from invoice",
+        "overage line charges and rates from invoice"
+      ],
+      "leverage": "If the customer consistently breaches an allowance, buy up the base allowance (cheaper per-unit) rather than pay punitive overage, or renegotiate the overage rate. Consistent under-use plus overage anomalies signals a billing-config error worth a refund."
+    },
+    {
+      "id": "R06",
+      "name": "Duplicate / Double Billing",
+      "category": "duplicate",
+      "what_it_finds": "The same charge invoiced and/or paid more than once. Affects ~0.8-2%+ of disbursements; exact matching alone catches only 30-40% of duplicates, so fuzzy matching is required.",
+      "detection_logic": "EXACT: same vendorId AND same invoiceNumber AND same amount -> DUPLICATE (high conf). FUZZY (near-dup) flag if ALL: vendorId matches after entity normalization ('Acme LLC'=='Acme Limited') AND |amountA-amountB|/amountA <= 0.005 AND |dateA-dateB| <= 7 days AND invoiceNumber similarity >= 0.85 (normalize 'INV-1024' vs 'INV1024'). SAME-PERIOD: same vendor + same SKU + overlapping periodStart/periodEnd on two invoices -> recurring-charge double-bill. Normalize entities (strip legal suffixes, casefold) and numbers (strip punctuation) before comparison.",
+      "savings_formula": "duplicateRecovery = sum of confirmed duplicate lineTotals -> cash refund / credit memo. Pure recovery, not avoidance.",
+      "inputs_needed": [
+        "InvoiceLine.vendorId",
+        "InvoiceLine.invoiceId / number",
+        "InvoiceLine.invoiceDate",
+        "InvoiceLine.amount / lineTotal",
+        "InvoiceLine.sku",
+        "period",
+        "optional payment-clearing data to confirm both were actually paid vs one voided"
+      ],
+      "leverage": "Low-controversy, fast recovery - vendors rarely dispute a clean duplicate. Establishes credibility and supports a 'three-way match + audit rights' clause for future invoices."
+    },
+    {
+      "id": "R07",
+      "name": "Missed Volume Discounts",
+      "category": "missed_discount",
+      "what_it_finds": "Spend/quantity crossed a contractual volume-discount breakpoint but invoices kept billing the lower-volume (higher) rate. Commonly under-claimed because rebate math relies on hard-to-access cumulative data.",
+      "detection_logic": "INPUTS: tiered RateCardLine[] with (tierMin, tierMax, contractedUnitPrice); cumulativeQty or cumulativeSpend over the rebate measurement window (read per-order vs cumulative-annual basis from the contract). COMPUTE earnedTier = tier where cumulative falls; appliedTier = tier implied by invoicedUnitPrice. TRIGGER when earnedTier.price < appliedTier.price (qualified for a better rate but didn't get it).",
+      "savings_formula": "missedDiscountPerUnit = appliedUnitPrice - earnedTierUnitPrice. recoverable = missedDiscountPerUnit * qtyBilledAtWrongTier (retro credit). annualizedForward = missedDiscountPerUnit * projectedAnnualQty.",
+      "inputs_needed": [
+        "volume-tier table (tierMin/Max, contractedUnitPrice)",
+        "measurement basis (per-order vs cumulative)",
+        "rebate true-up timing",
+        "per-line qty and unit price",
+        "computed cumulative running totals"
+      ],
+      "leverage": "'We crossed the 10,000-unit tier in month 8; you billed all 12 months at the sub-10K rate' -> retroactive credit plus auto-application going forward. Justifies a contractual automatic tier-application clause with a defined lookback and annual true-up so the buyer isn't policing it."
+    },
+    {
+      "id": "R08",
+      "name": "Missed Early-Pay Discounts",
+      "category": "missed_discount",
+      "what_it_finds": "Invoices with discount terms (e.g., 2/10 net 30) paid after the discount window, forfeiting the discount. ~$3M of early-pay discounts go unclaimed per $1B of PO spend; skipping a 2/10 to pay 20 days later equals borrowing at ~36% APR.",
+      "detection_logic": "INPUTS: PaymentTerm (discountPct, discountDays, netDays), invoiceDate, actualPayDate (if available). COMPUTE discountDeadline = invoiceDate + discountDays. RETROSPECTIVE TRIGGER: actualPayDate > discountDeadline AND discountPct > 0 (missed). PROSPECTIVE TRIGGER: today <= discountDeadline AND unpaid (capturable now - run daily).",
+      "savings_formula": "discountValue = invoiceTotal * discountPct. missedToDate = sum of discountValue over missed invoices. capturableNow = sum of discountValue over still-in-window invoices. annualizedAPR = discountPct/(1-discountPct) * (365/(netDays-discountDays)) (~36.5% for 2/10 net 30) - surface to justify prioritizing early payment.",
+      "inputs_needed": [
+        "PaymentTerm (discountPct, discountDays, netDays)",
+        "invoiceDate",
+        "invoiceTotal",
+        "actual payDate from AP/ERP (retrospective)",
+        "contract terms if not on invoice"
+      ],
+      "leverage": "Mostly an internal AP process fix, but quantifying chronic misses ('you left $48K on the table last year') justifies AP automation and can be traded with the vendor for dynamic-discounting terms (e.g., 2% at 5 days, 1.5% at 10)."
+    },
+    {
+      "id": "R09",
+      "name": "Minimum Commitments Not Met (take-or-pay shortfall)",
+      "category": "minimum_commit",
+      "what_it_finds": "A committed minimum (qty or spend) the buyer pays for but does not consume - wasted take-or-pay floor. Commit $120K, use $80K, and the $40K shortfall is still invoiced.",
+      "detection_logic": "INPUTS: minCommitSpend (or minCommitQty), measurementPeriod, actualConsumption (sum of invoiced usage/spend over the period). COMPUTE shortfall = max(0, minCommit - actualConsumption); utilizationPct = actualConsumption / minCommit. TRIGGER when shortfall > 0; severity scales as utilization drops; flag hard if < 80%.",
+      "savings_formula": "periodWaste = shortfall; annualizedWaste = periodWaste * periodsPerYear. rightSizedCommit = projectedActualConsumption * (1 + bufferPct). recommendedSaving = (currentCommit - rightSizedCommit) at contract rate. In-term shortfall is often unrecoverable (you owe the floor); the saving is realized by right-sizing at renewal - tie to R01 timing.",
+      "inputs_needed": [
+        "CommitmentTerm.minCommitSpend or minCommitQty",
+        "measurementPeriod",
+        "true-up mechanics",
+        "actual consumption/spend per period from invoices"
+      ],
+      "leverage": "A documented utilization trend (65% of a $120K floor for 3 consecutive periods) is the lever to lower the next-term minimum or convert take-or-pay to drawdown/rollover. Over-commitment also signals the original deal was oversold - leverage for additional concessions."
+    },
+    {
+      "id": "R10",
+      "name": "Tier Downgrade / Right-Sizing (over-provisioned plan)",
+      "category": "tier_optimization",
+      "what_it_finds": "Buyer on a higher plan tier (e.g., E5/enterprise) but only using features available on a cheaper tier. Distinct from R03: there the seat is idle; here the seat is active but over-tiered.",
+      "detection_logic": "INPUTS: currentTier + its pricePerSeat, featureCatalog (which features each tier unlocks), featureUsage (per-feature adoption from vendor usage export / API). COMPUTE premiumFeaturesUsed = features used that exist ONLY above the next-cheaper tier. TRIGGER when premiumFeaturesUsed == 0 (or below a usage threshold across the seat population) -> safe-to-downgrade candidate. Requires contrasting last-login with actual feature usage, not just login activity.",
+      "savings_formula": "perSeatSaving = currentTierPrice - lowerTierPrice. annualSaving = perSeatSaving * downgradableSeats * billingPeriodsPerYear. Avoidance, realized at renewal.",
+      "inputs_needed": [
+        "current tier and per-tier pricing",
+        "feature-tier mapping / feature catalog",
+        "tier and seat count billed",
+        "per-feature usage telemetry from vendor admin export / API"
+      ],
+      "leverage": "'You sold us E5; nobody uses the E5-only features - we're downgrading to E3 unless you match the E3-equivalent price.' Strong renewal lever; pair with R01 timing and R03 seat data for a combined right-sizing package."
+    },
+    {
+      "id": "R11",
+      "name": "Zombie / Inactive Service Line (telecom, utility, equipment)",
+      "category": "overbilling",
+      "what_it_finds": "Recurring charges for a decommissioned site, disconnected circuit, ex-employee wireless line, returned/ghost equipment unit, or a closed location's meter still billing its monthly recurring charge (MRC). The TEM analog of idle seats.",
+      "detection_logic": "INPUTS: active-asset inventory (circuits / lines / meters / leased units from service orders and admin systems), recurring invoice lines (MRC per asset), per-asset usage records. TRIGGER (a) ASSET NOT IN INVENTORY: invoice line bills an asset absent from the current active-asset list; (b) ZERO-USAGE: per-line/circuit usage == 0 for N consecutive months (default 3) while still billed; (c) GHOST UNIT: leased/returned unit count on invoice exceeds active deployed count.",
+      "savings_formula": "perAssetMonthlyWaste = MRC of the inactive asset. recoverableToDate = sum of perAssetMonthlyWaste over months billed after decommission (cash credit). annualizedForward = perAssetMonthlyWaste * 12.",
+      "inputs_needed": [
+        "active-asset inventory (circuit/line/meter/unit list with status)",
+        "per-asset MRC from invoice",
+        "per-asset usage over trailing N months",
+        "decommission/return dates from service orders"
+      ],
+      "leverage": "Clean, low-controversy recovery - a decommissioned circuit or closed-location meter still billing is an unarguable credit. Establishes an inventory-reconciliation discipline and audit-rights clause for future invoices."
+    },
+    {
+      "id": "R12",
+      "name": "Service / Labor Overbilling (overtime, holiday, unperformed, accessorial)",
+      "category": "overbilling",
+      "what_it_finds": "Hourly-services and logistics invoices billing more than the schedule justifies: overtime hours exceeding the post schedule, holiday premiums applied to non-holidays, seasonal lines billed out of season (snow removal in summer), or accessorial/surcharge lines that don't match the delivery type (residential or liftgate fees on commercial dock deliveries).",
+      "detection_logic": "INPUTS: contract post orders / scope-of-work schedule, service calendar (holidays, season windows), delivery-type metadata, invoice labor and accessorial lines. TRIGGERS: (a) OT/HOLIDAY: invoiced OT hours > scheduled hours, OR holiday-premium line on a date not in the holiday calendar; (b) UNPERFORMED: seasonal/conditional service line billed in a period with no qualifying event (snow line in summer, per service log); (c) ACCESSORIAL LEAKAGE: surcharge line (residential, liftgate) on a delivery whose type does not warrant it.",
+      "savings_formula": "overbillingRecovery = sum of (wronglyBilledHours * rate) + (misappliedPremiumLines) + (unwarrantedAccessorialCharges). Recoverable cash; annualize recurring patterns.",
+      "inputs_needed": [
+        "post orders / scope-of-work schedule",
+        "service calendar (holidays, season windows)",
+        "service logs (events performed)",
+        "delivery-type metadata",
+        "invoice labor lines (regular/OT/holiday) and accessorial/surcharge lines"
+      ],
+      "leverage": "Itemized 'you billed holiday premium on 6 non-holidays and OT exceeding the post schedule by 12 hrs/week' demands a credit and a corrected go-forward billing process. Accessorial leakage on logistics is a recurring, compounding recovery that also justifies tighter invoice-validation terms."
+    },
+    {
+      "id": "R13",
+      "name": "Cross-Vendor Redundant / Overlapping Tool",
+      "category": "tier_optimization",
+      "what_it_finds": "Two vendors billing for functionally overlapping capability (e.g., a standalone MDR/SOC subscription overlapping a security add-on already bundled in a cloud agreement). Enterprises average 5-7 functionally overlapping tools.",
+      "detection_logic": "INPUTS: per-vendor capability tags (from contract scope / product category), active subscriptions across the vendor portfolio. COMPUTE capability overlap sets across vendors. TRIGGER when two or more active, separately-billed contracts cover the same capability tag above an overlap threshold, AND at least one is a candidate for elimination/non-renewal. Route to human review (capability equivalence is judgment-heavy).",
+      "savings_formula": "redundancySaving = annual cost of the eliminable overlapping subscription (the cheaper-to-drop or lower-utilized one). Avoidance realized at the eliminable contract's renewal/cancellation window (tie to R01).",
+      "inputs_needed": [
+        "per-vendor capability/category tags",
+        "active subscription list with annual cost",
+        "utilization signals per overlapping tool (to choose which to drop)"
+      ],
+      "leverage": "'This capability is already covered under our cloud agreement's security add-on' is a clean non-renewal justification for the redundant vendor and a consolidation lever - directing the retained spend to one vendor can earn a better tier (R07)."
+    },
+    {
+      "id": "R14",
+      "name": "Headcount-Based Fee Overbilling (PEPM / per-unit)",
+      "category": "overbilling",
+      "what_it_finds": "Per-employee-per-month (PEPM) or per-unit fees billed on a stale or inflated count - e.g., payroll/benefits billing 640 employees when the HRIS roster is 600, or a percentage-of-spend management fee computed at the wrong rate (15% billed vs 12% contracted).",
+      "detection_logic": "INPUTS: contract fee basis (PEPM rate, or % of a defined base), authoritative count/base (HRIS headcount roster, or contractual ad-spend base), invoice fee line and implied count/rate. TRIGGER (a) COUNT MISMATCH: invoiced billable count > authoritative roster count for the period; (b) RATE MISMATCH: invoiced fee / base != contracted percentage or PEPM rate (beyond tolerance).",
+      "savings_formula": "countOvercharge = (invoicedCount - authoritativeCount) * PEPMRate * periods. rateOvercharge = (invoicedPct - contractedPct) * base * periods. Recoverable cash; annualize.",
+      "inputs_needed": [
+        "contract PEPM rate or fee % and base definition",
+        "authoritative count source (HRIS roster) or contractual base",
+        "invoice fee line, implied count, and computed rate"
+      ],
+      "leverage": "'You billed PEPM on 640 employees; our HRIS shows 600' or 'you computed 15% of ad spend against a contracted 12%' are arithmetic-clean credits, plus a go-forward correction and a roster-reconciliation cadence."
+    }
+  ],
+  "design_system": {
+    "palette": [
+      {
+        "name": "Paper / Ivory",
+        "hex": "#F5F1E8",
+        "usage": "Primary page background - the warm 'paper off-white'. ~60% of every screen."
+      },
+      {
+        "name": "Bone",
+        "hex": "#EDE7D9",
+        "usage": "Background alt - alternating sections, card insets, subtle banding, low-contrast zebra rows."
+      },
+      {
+        "name": "Forest Green",
+        "hex": "#1F3A2E",
+        "usage": "Primary dark - hero blocks, footer, full-bleed feature panels, primary CTA on paper, chart primary series. The 'deep forest'. ~30% of layout."
+      },
+      {
+        "name": "Pine (Forest Deep)",
+        "hex": "#16271F",
+        "usage": "Darkest green - footers, gradient floors, image overlays, stat-card backgrounds, tooltip backgrounds."
+      },
+      {
+        "name": "Apollo Emerald",
+        "hex": "#008168",
+        "usage": "Mid accent - links, active nav underline, chart secondary series, kickers, small accents. Secondary to forest, never a large fill."
+      },
+      {
+        "name": "Verdant",
+        "hex": "#2E7D5B",
+        "usage": "Bright green - hover states on green, secondary data series, tags, and positive/gain figures (up)."
+      },
+      {
+        "name": "Near-black Ink",
+        "hex": "#1A1A17",
+        "usage": "Body copy and headlines on ivory - a warm near-black, never pure #000."
+      },
+      {
+        "name": "Slate Ink",
+        "hex": "#4A4A42",
+        "usage": "Muted ink - secondary text, captions, table sub-labels, axis labels."
+      },
+      {
+        "name": "Muted Gold / Antique Brass",
+        "hex": "#B08D45",
+        "usage": "Seasoning accent - hairline rules, table-header bottom border, italic accent words, premium markers, chart tertiary. Used sparingly, like a fountain-pen flourish, never a large fill."
+      },
+      {
+        "name": "Champagne Sand",
+        "hex": "#D8C9A8",
+        "usage": "Tag fills, subtle dividers, chart area fills, disabled states on dark."
+      },
+      {
+        "name": "Cream",
+        "hex": "#F0E9D8",
+        "usage": "Text, wordmark, and cream pill buttons on forest backgrounds."
+      },
+      {
+        "name": "Terracotta",
+        "hex": "#A6492F",
+        "usage": "Negative figures (down), losses - earthy, deliberately not alarm-red."
+      }
+    ],
+    "typography": {
+      "display_font": "Fraunces (variable; opsz ~144 at large sizes, SOFT/WONK axes; weight 400-500 for elegance, 600 for impact). The closest free analog to Apollo's modified-Garamond editorial feel. Use true italics for accent words inside headlines, e.g. 'Built for the next generation of allocators.'",
+      "body_font": "Newsreader (on-screen reading serif, premium-magazine feel; its italic carries pull-quotes and the lead/standfirst). Spectral or Source Serif 4 are acceptable alternates. UI/labels/data/eyebrows use Inter at small sizes only.",
+      "notes": "Three-role system: Fraunces (display) + Newsreader (body) + Inter (UI/labels/data). All Google-hosted. Scale (1.25-ish, tightened at display): Display XL hero clamp(2.75rem,6vw,5.5rem)/1.02 tracking -0.02em; H1 3rem/1.05 -0.015em; H2 2.25rem/1.1; H3 Fraunces 600 1.5rem/1.2; Lead Newsreader 400 italic 1.375rem/1.5; Body Newsreader 400 1.125rem/1.65; Caption 0.9375rem/1.55; Eyebrow Inter 600 0.75rem uppercase tracking 0.14em; Button/nav Inter 500 0.9375rem tracking 0.02em; Data Inter 500 with tabular-nums. Rules: headlines get tight leading (1.0-1.1) and negative tracking; body gets generous leading (1.6-1.7); emphasis via serif italics, not bold; cap body measure at 62-70ch (max-w-[42rem]); ALWAYS font-feature-settings tabular-nums + lining-nums on financial figures so columns align like a printed prospectus."
+    },
+    "components": "BUTTONS (signature = cream pill with arrow): inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm tracking-wide transition-all duration-300. On forest/dark: bg-cream text-forest, trailing arrow that translates right ~4px on hover, bg shifts toward #FFFFFF with faint shadow. On paper: bg-forest text-cream, hover -> bg-emerald or darken to #16271F. Secondary/ghost: transparent, 1px ink-or-cream border, pill, label only. Tertiary: ink/emerald label with a gold (#B08D45) underline that grows in on hover. No harsh shadows. CARDS: bg paper or bone, rounded-xl (12-16px, soft not pill), border 1px solid rgba(26,26,23,0.08) (hairline ink) instead of shadow; hover lift translate-y-[-2px] + border darken + faint shadow-[0_8px_30px_rgba(31,58,46,0.06)]. Insight/finding cards: uppercase Inter kicker in emerald, Fraunces H3 title, Newsreader excerpt, gold hairline <hr> above a 'Read ->' / 'View finding ->' link; optional muted image with slight green duotone. Stat cards on forest.deep: cream text, large Fraunces figure with tabular-nums, gold thin rule under the label. TABLES (finance, the core surface): no vertical gridlines; horizontal 1px hairlines only rgba(26,26,23,0.10); header row Inter 600 uppercase 0.75rem tracked text-ink-muted with a 1px gold (#B08D45) bottom border; body figures Inter tabular-nums right-aligned; optional bone zebra at very low contrast; positive figures verdant (#2E7D5B), negative terracotta (#A6492F); generous py-4 rows - let it breathe like a printed prospectus. NAV: transparent over hero (cream wordmark on forest, ink on paper), Inter 500 with generous tracking, active/hover gold-or-emerald underline animating in (2px width transition); on scroll condense to solid paper/95 backdrop-blur with bottom hairline; right-aligned cream pill CTA ('Client Login ->'). CHARTS (in-palette, never default blue): series forest #1F3A2E -> emerald #008168 -> gold #B08D45 -> verdant #2E7D5B, sand #D8C9A8 for area fills (8-12% opacity); paper backgrounds; gridlines faint ink hairlines rgba(26,26,23,0.06) or omitted; axis labels Inter small ink-muted; tooltips forest.deep bg with cream text, rounded; thin strokes 1.5-2px, flat, no glossy gradients. TEXTURES (tactile premium layer, felt-not-seen): global SVG feTurbulence fractal-noise grain at 3-5% opacity over paper and forest panels via a fixed .grain::before pseudo-element (content:'';position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.04); optional faint cream/gold curved line-art SVG in the hero at 6-10% opacity, large and asymmetric, behind the headline.",
+    "principles": "Editorial finance-grade, a private-markets annual report rendered for the web - explicitly NOT a white-and-blue SaaS dashboard. Discipline: 60% paper/ivory ground, 30% forest green anchors (heroes, footer, feature bands), 10% ink + gold accents; gold is a seasoning, never a fill across large areas. Whitespace is the luxury signal: max-w-7xl container, px-6 md:px-12 lg:px-20, section rhythm py-24 to py-32. Asymmetry over centered symmetry: off-axis headlines, content on ~7 columns with whitespace ballast, oversized Fraunces/gold section indices ('01 - Strategy'). Alternating paper -> forest full-bleed -> paper bands create a magazine-spread cadence; footer always forest.deep with cream wordmark and gold hairline dividers. Hairline gold/ink rules separate sections instead of heavy boxes. Imagery muted and desaturated with a green duotone so photos sit inside the palette. Motion restrained and confident: entrances fade + 12-20px rise, 500-700ms, ease-out cubic-bezier(0.16,1,0.3,1), stagger children ~80ms; micro-interactions (arrow nudge 4px, underlines grow from left, cards lift 2px) at duration-300; no bounce, no parallax; always respect prefers-reduced-motion (disable transforms); if built as an Astro lead-gen surface keep client JS at zero and do entrances/hovers in pure CSS (@starting-style / scroll-driven animations). Numbers set like a printed prospectus, one literary serif speaking in italics, and air everywhere."
+  },
+  "synthetic_data_spec": {
+    "vendors": [
+      {
+        "name": "Brightseat CRM",
+        "category": "SaaS (per-seat)",
+        "description": "Cloud CRM, per-seat annual subscription via MSA + Order Form (Order Form controls). Planted: invoice rate above Order Form rate, plus a duplicate invoice."
+      },
+      {
+        "name": "CollabHub Suite",
+        "category": "SaaS (per-seat)",
+        "description": "Team collaboration/messaging, per-seat. Planted: heavy seat over-provisioning (active users far below contracted seats), with an attached usage CSV as the answer key."
+      },
+      {
+        "name": "DeskFlow ITSM",
+        "category": "SaaS (per-seat)",
+        "description": "IT service-desk ticketing, tiered seats. Planted: auto-renewal with notice window about to close (avoidance alert)."
+      },
+      {
+        "name": "VaultSign eSignature",
+        "category": "SaaS (usage+seat)",
+        "description": "E-signature, seats plus envelope overage. Planted: usage overage above plan allowance at premium rate."
+      },
+      {
+        "name": "Meridian Telecom",
+        "category": "Telecom/connectivity",
+        "description": "Multi-site SD-WAN + voice, MSA + service orders, MRC per circuit. Planted: decommissioned-site circuit still billing (zombie line)."
+      },
+      {
+        "name": "ClearWave Mobile",
+        "category": "Telecom (wireless)",
+        "description": "Corporate wireless fleet, per-line plans. Planted: inactive lines with zero usage for 3+ months still billed."
+      },
+      {
+        "name": "AtlasCloud (IaaS)",
+        "category": "Cloud/hosting",
+        "description": "Compute/storage under committed-spend agreement. Planted: committed-spend underutilization (consumed well below commitment, on-demand premium on the rest)."
+      },
+      {
+        "name": "NimbusEdge CDN",
+        "category": "Cloud/hosting",
+        "description": "CDN + egress/bandwidth, usage-billed (.xlsx invoices with many lines). Planted: egress at standard rate when volume qualifies for next pricing tier."
+      },
+      {
+        "name": "PristineCare Facilities",
+        "category": "Facilities/janitorial",
+        "description": "Nightly janitorial across 3 offices, flat monthly (.docx contract). Planted: annual escalation above the contract's 4% cap (jumped 9%)."
+      },
+      {
+        "name": "GreenScape Grounds",
+        "category": "Facilities (grounds)",
+        "description": "Landscaping/snow removal, seasonal monthly. Planted: snow-removal line billed in summer months with no events (unperformed service)."
+      },
+      {
+        "name": "SentryOne Protective",
+        "category": "Security",
+        "description": "Unarmed guard post coverage, hourly bill rate. Planted: holiday premium applied to non-holidays and OT exceeding the post schedule (labor overbilling)."
+      },
+      {
+        "name": "RedShield Cyber",
+        "category": "Security (cyber)",
+        "description": "Managed SOC/MDR, monthly subscription. Planted: capability overlap with AtlasCloud security add-on (cross-vendor redundancy)."
+      },
+      {
+        "name": "SwiftParcel Express",
+        "category": "Logistics/courier",
+        "description": "Parcel/overnight, GRI + fuel surcharge + accessorials. Planted: mid-term GRI of 7.5% applied vs contract-locked 5.9%."
+      },
+      {
+        "name": "IronRoad Freight",
+        "category": "Logistics (LTL)",
+        "description": "LTL freight, accessorials + fuel. Planted: residential + liftgate accessorial fees on commercial dock deliveries (accessorial leakage)."
+      },
+      {
+        "name": "Keystone Mutual Insurance",
+        "category": "Insurance",
+        "description": "CGL + property package, annual premium, declarations-page PDF. Planted: renewal premium +22% and property limit duplicating landlord policy (above-market + dup coverage)."
+      },
+      {
+        "name": "Harbor Benefits Brokers",
+        "category": "Insurance (benefits)",
+        "description": "Group health/benefits admin, PEPM-style fee. Planted: PEPM billed on 640 employees when HRIS roster is 600 (headcount overbilling)."
+      },
+      {
+        "name": "Catalyst Creative Agency",
+        "category": "Marketing/agency",
+        "description": "Monthly retainer + out-of-scope hourly (.docx contract). Planted: invoices bill 65 hrs against a 40-hr retainer allotment every month (out-of-scope overbilling) - the single largest finding."
+      },
+      {
+        "name": "PeakRank Digital",
+        "category": "Marketing (media)",
+        "description": "Paid-media management, % of ad spend + mgmt fee. Planted: management fee computed at 15% vs contracted 12% (rate-mismatch on % base)."
+      },
+      {
+        "name": "Summit Copier Leasing",
+        "category": "Equipment lease",
+        "description": "MFP/copier fleet lease + per-click charges. Planted: color click billed $0.105 vs $0.085 contracted, plus 2 returned units still leased (rate + ghost units)."
+      },
+      {
+        "name": "Vertex Advisory LLP",
+        "category": "Professional services",
+        "description": "Accounting/audit, fixed fee + hourly. Planted: fixed fee escalated 8% vs contract 3%; also 2/10 net 30 early-pay discount unused."
+      },
+      {
+        "name": "Cascade Power & Water",
+        "category": "Utilities",
+        "description": "Electricity/water/gas, metered usage (.xlsx invoices). Planted: a closed location's meter still billed plus a demand-charge tier error."
+      },
+      {
+        "name": "PayWorks HCM",
+        "category": "Payroll/HR software",
+        "description": "Payroll + HRIS, base fee + PEPM. Planted: auto-renews in 45 days at +18% PEPM with a termination-fee trap (renewal + uplift avoidance)."
+      }
+    ],
+    "document_types": "Per vendor: 1 contract + 12-15 monthly invoices spanning the contract term, so YoY escalation findings show a visible jump at the renewal-month boundary. Total ~22 vendors x ~13-16 docs = ~310-350 documents. Mix formats deliberately to exercise the parser: contracts as PDF (SaaS Order Forms, insurance declarations pages, leases) AND Word .docx (services/janitorial/agency/professional); invoices as PDF for most vendors and Excel .xlsx for line-heavy categories (cloud, telecom, utilities). Generate PDFs tagged (PDFKit >= 0.15.0, real ToUnicode map, Table/TR/TH/TD structure, embedded subsettable fonts) so getTextContent extraction round-trips. Universal invoice anatomy: invoice # (VND-YYYY-NNNN), invoice date, due date, PO # (PO-NW-NNNN), bill-to (Northwind AP), remit-to + EIN, billing period, line-item table (description/qty/unit price/line total), subtotal, tax (~7-9% where applicable), total, payment terms (Net 15/30/45), remittance. Contracts carry the universal header (parties, effective/commencement date, initial term, auto-renewal clause with explicit notice window, governing law, signature block) plus category-specific bodies (rate card / Order Form, escalation clause, term/renewal, SLA, key quantities).",
+    "planted_findings": "Engineered so total recoverable + avoidance lands at ~$487K/yr against ~$6.8M annual spend (~7.2% recoverable, a credible result). RECURRING OVERCHARGES (rate>contract) ~$77K: Brightseat invoice $48.60 vs $45/seat Order Form on 200 seats ($8.6K, R02); PristineCare 9% escalation vs 4% cap ($14.2K, R04); SwiftParcel GRI 7.5% vs 5.9% ($21.5K, R02/R04); PeakRank 15% vs 12% mgmt fee ($9.8K, R14); Summit color click $0.105 vs $0.085 + 2 ghost units ($16.4K, R02/R11); Vertex fee escalated 8% vs 3% ($7.2K, R04). UTILIZATION / RIGHT-SIZING ~$112K: CollabHub 250 seats / 160 active ($48.6K, R03); ClearWave 18 zero-usage lines @ $42 ($9.1K, R11); AtlasCloud $480K committed / $360K consumed ($34K, R09); NimbusEdge egress qualifies for next tier ($12.8K, R05); Harbor PEPM on 640 vs 600 HRIS ($11.5K, R14). AUTO-RENEWAL AVOIDANCE ~$103K: DeskFlow renews in 52 days, 60-day notice (~$72K renewal at +7%, R01); PayWorks renews in 45 days at +18% PEPM (~$31K uplift, R01). BILLING ERRORS (zombie/duplicate/unperformed) ~$45K: Meridian decommissioned circuit $1,250 MRC/mo ($15K, R11); GreenScape summer snow-removal lines ($6.4K, R12); Cascade closed-location meter + demand-tier error ($9.3K, R11); Brightseat invoice BS-2026-0412 paid twice ($7.5K one-time, R06); missed 2/10 net 30 on Vertex + Catalyst ($6.9K, R08). OVERAGE / ACCESSORIAL LEAKAGE ~$44K: VaultSign 1,150 envelopes vs 500 plan ($11.4K, R05); SentryOne holiday-premium-on-non-holidays + OT over schedule ($18.9K, R12); IronRoad residential+liftgate on commercial dock ($13.7K, R12). REDUNDANCY / BENCHMARK ~$54K: RedShield MDR overlapping AtlasCloud security add-on ($28K, R13); Keystone +22% premium + duplicated property coverage ($26.3K, R04/R13). OUT-OF-SCOPE OVERBILLING ~$56K: Catalyst 65 hrs billed vs 40-hr retainer @ $185/mo ($55.5K, R12). Every condition is embedded in actual document values (real seat counts in the Order Form vs lower numbers in an attached usage CSV) so rules detect from content, not metadata.",
+    "notes": "Company: Northwind Logistics Group, Inc. (~600 employees, ~$95M revenue, 3 US offices). Use consistent ID schemes so cross-document matching (invoice -> PO -> contract) is testable: PO-NW-####, INV-##### / VND-YYYY-NNNN, contract MSA-VND-YYYY. Embed the 'answer key' in document content (e.g., contracted seats in the Order Form, lower active count in an attached usage export) rather than hard-coding findings, keeping detection honest. Span monthly invoices across the renewal-month boundary so YoY escalation jumps (PristineCare, SwiftParcel, Vertex, PayWorks) are visible. The corpus deliberately exercises every rule class: rate-vs-contract diff (R02), seat/line/commit utilization (R03/R09/R11), auto-renewal date math (R01), escalation-cap enforcement (R04), overage/accessorial detection (R05/R12), duplicate/zombie billing (R06/R11), cross-vendor redundancy (R13), headcount/fee overbilling (R14), and missed-discount terms (R07/R08)."
+  },
+  "email_playbook": [
+    {
+      "category": "Auto-Renewal — Cancellation / Renegotiation (R01)",
+      "leverage": "The auto-renewal/notice clause and whether the vendor met its obligations (SLA, uptime, support) - non-performance is the strongest exit lever. State evergreen-clause law (several states require clear-and-conspicuous notice and may render a silent 60-90 day auto-renew unenforceable). The vendor's incentive: re-papering keeps recurring revenue, so they would rather adjust the term than fight a churn.",
+      "ask_framing": "Don't ask 'can we cancel?'. Ask for one specific outcome: (a) release from the renewed term with a pro-rata credit, or (b) convert to month-to-month at the current rate while you evaluate. If the window was missed, anchor on a 3-month bridge rather than a full year. Always set a ~10-business-day deadline and pair with a face-saving path.",
+      "template": "Subject: {Company} – {Vendor} renewal {contract #}: term adjustment request\n\nHi {name},\n\nWe value the partnership and want to keep working together, but I need to flag the {date} auto-renewal under Section {X} of our MSA. {Choose: We notified you of non-renewal on {date} / The notice window does not appear to meet the 'clear and conspicuous' standard required under {state} law / Our SLA experience this term — {specific, e.g. three SLA-credit events in Q1} — has materially changed our position}.\n\nRather than dispute the renewal, I'd like to propose a clean path: {convert the renewed term to month-to-month at the current ${X}/mo rate / release us from the {N}-month renewal with a pro-rata credit of ${Y}}, effective {date}. This keeps us as a customer while we right-size our footprint.\n\nCan you confirm by {date, ~10 business days out}? Happy to jump on a call — we'd like to resolve this collaboratively before it escalates to a formal contract review.\n\nBest, {name}, {title}"
+    },
+    {
+      "category": "Invoice Overcharge / Refund Claim (R02, R11, R14)",
+      "leverage": "The contract/PO/rate card versus the invoiced amount - a documented variance is a near-automatic concession. Cite invoice number, date, total billed, the specific charges disputed, amounts, and why they are incorrect; attach the PO, signed order form, and usage/service logs. Invoke the audit-rights clause if present. Remedy options the vendor can offer painlessly: a credit note or a corrected invoice.",
+      "ask_framing": "State the exact dollar overcharge and the remedy - a credit note for ${delta} or a refund. Itemize precisely ('billed for 12 units, contracted for 10'); precision signals you've done the math. Offer to pay the undisputed portion immediately as good faith. Frame it as 'your records and ours don't match' so it's easy to fix without losing face.",
+      "template": "Subject: Billing discrepancy – Invoice {#}, ${total} – correction requested\n\nHi {name},\n\nWe're reviewing Invoice {#} dated {date} for ${total} and identified a discrepancy against {PO {#} / our rate card / MSA Section {X}}:\n\n- Charged: {line item} at ${charged}\n- Contracted/ordered: ${correct}\n- Overcharge: ${delta}\n\nSupporting documentation attached ({PO, signed order form, usage export}). Please issue a {credit note / refund} for ${delta} and a corrected invoice. We'll remit the undisputed balance of ${undisputed} on standard terms upon receipt.\n\nPlease confirm the correction by {date, ~10 business days out}. If helpful, we can exercise the audit-records provision under Section {X} to reconcile jointly.\n\nThanks, {name}, {title}"
+    },
+    {
+      "category": "Unused-Seat / License Reduction at Renewal (R03, R10)",
+      "leverage": "Your own utilization export - export actual seat activity over the prior 90 days; if you pay for 200 licenses and 130 show no meaningful usage, you have a document-backed argument (up to 30% of SaaS spend is recoverable; ~49% of licenses go unused within 30 days). Renewal timing is the only window. Churn risk: most vendors right-size rather than lose the customer entirely.",
+      "ask_framing": "Anchor on the active-usage number, not the provisioned number. Ask to renew at {active seats} instead of {provisioned}, and propose a true-up clause to add seats later at the same unit price. Offer to hold the per-seat price flat in exchange for the reduction - that protects their headline rate and makes 'yes' easy.",
+      "template": "Subject: {Vendor} renewal – right-sizing to actual usage ({active}/{provisioned} seats)\n\nHi {name},\n\nAhead of our {date} renewal, we pulled 90-day utilization from the admin console. Of {provisioned} provisioned seats, {active} show meaningful activity — {idle} are idle.\n\nFor renewal we'd like to right-size to {active} seats. To keep this simple and protect your unit economics, we'll hold the per-seat rate flat at ${rate} and add a true-up provision so we can re-add seats at the same price as we grow. Net renewal value: ${new total} vs ${old total} today.\n\nUsage export attached. Can you have the revised order form to us by {date, ~10 business days out}? We'd rather expand this relationship from a clean baseline than carry shelfware into another term.\n\nBest, {name}, {title}"
+    },
+    {
+      "category": "Price-Escalator / Renewal Uplift Challenge (R04)",
+      "leverage": "Market benchmark / public list pricing as an objective reference. Typical software renewal uplifts run 5-7%; enterprise vendors commonly accept a 3% cap (or CPI-linked with a 5-7% ceiling) in exchange for a multi-year commitment. The tell: if a vendor won't agree to a cap, that says something about their pricing trajectory - use that framing. If the applied uplift exceeded the contract's own cap, this becomes a straight breach/refund instead.",
+      "ask_framing": "Anchor low and specific - counter a proposed uplift with '0% this year, then a 3% cap or CPI capped at 5% thereafter.' Tie the concession to a quid pro quo (each additional committed year is worth ~5% discount). Argue out-of-line-with-market and budget predictability, not 'unfair.'",
+      "template": "Subject: {Vendor} renewal pricing – capping the annual uplift\n\nHi {name},\n\nThanks for the renewal quote. The proposed {X}% increase is above the 5-7% band we benchmark across comparable SaaS agreements, and our finance team needs budget predictability to re-sign.\n\nHere's a structure that works for both sides: 0% uplift for the upcoming term, and a contractual cap of {3% / CPI not to exceed 5%} on any future increase. In exchange, we're prepared to commit to a {2-3}-year term, which gives you the revenue visibility to justify the cap internally.\n\nCan you confirm whether the cap is workable by {date, ~10 business days out}? A predictable ceiling lets us expand with confidence; open-ended escalators force us to re-bid at every renewal.\n\nBest, {name}, {title}"
+    },
+    {
+      "category": "Volume-Discount / Tier Optimization & Consolidation (R07, R13)",
+      "leverage": "Aggregated/consolidated spend increases volume and pricing power - consolidation yields 10-20% savings, and a consolidated negotiation captures 6-10 points better unit pricing than fragmented ones. Ask for the exact discount formula per spend band, with lookback periods and annual true-ups so the volume math is auditable. Cross-vendor redundancy (R13) lets you direct retained spend to one vendor to cross a tier.",
+      "ask_framing": "Anchor on the next tier's price applied to your committed volume. Show you're just below (or can consolidate to cross) a threshold, and ask for that tier's unit price now in exchange for the commitment. Name the specific unit price or % from the tier table. Position consolidation as giving them more wallet share - a gain to them, not a squeeze.",
+      "template": "Subject: Consolidating spend with {Vendor} – tier pricing proposal\n\nHi {name},\n\nWe're consolidating {categories / tools / subsidiary spend} and want to direct more of it to {Vendor}. Combined, that brings our annual commitment to ${X} — which crosses your {Tier N} threshold.\n\nWe'd like to lock the {Tier N} unit price of ${rate} (vs the ${current} we pay today) against that committed volume, with a clear band-by-band discount schedule, a {12-month} lookback, and an annual true-up so the volume math is transparent both ways.\n\nIn return you get ${delta} of incremental annual spend and fewer fragmented contracts to service. Can your team send a tiered pricing matrix by {date, ~10 business days out}? Happy to walk through the consolidation plan on a call.\n\nBest, {name}, {title}"
+    },
+    {
+      "category": "Early-Pay Discount / Late-Fee Waiver (R08)",
+      "leverage": "Cash-flow value to the vendor - early payment accelerates their cash and positions you as a preferred buyer. The 2/10 net 30 math: a 2% discount for paying 20 days early = (0.02/0.98) x (360/20) = ~36.7% annualized, cheaper than their cost of capital. Sliding-scale/dynamic discounting if a flat 2% is resisted. For late-fee waivers: clean payment history plus relationship, settled through individual negotiation.",
+      "ask_framing": "Early pay: anchor on 2/10 net 30 (or 2/10 net 45 for longer terms too); offer guaranteed 10-day payment for 2%, framed as you doing them a cash-flow favor. Late fee: ask for a full waiver of the ${fee} charge citing first/clean occurrence and immediate payment of principal.",
+      "template": "Subject: Faster payment in exchange for early-pay terms\n\nHi {name},\n\nWe're able to pay {Vendor} invoices on an accelerated schedule and would like to formalize 2/10 net 30: a 2% discount when we settle within 10 days. On our ${annual} annual spend that's ${savings}/yr to us — and materially faster cash to you (the equivalent of a ~36% annualized return on the discount you extend).\n\nIf a flat 2% is tight, we're open to a sliding scale ({2% at 5 days / 1.5% at 10}). Can we add this to the next order form effective {date}?\n\n[Late-fee variant] Subject: Invoice {#} – payment today, requesting late-fee waiver\nHi {name}, Invoice {#} slipped past terms on our side — apologies. We're remitting the full principal of ${principal} today. Given our clean payment history and that this is a first occurrence, could you waive the ${fee} late charge as a one-time courtesy? Happy to set up {autopay / a PO process} to prevent a repeat.\n\nThanks, {name}, {title}"
+    }
+  ],
+  "tech_stack_notes": "PARSING / INGESTION: pdfjs-dist (getTextContent for per-glyph x/y + font size; the only lib that exposes positions needed to rebuild table rows/columns) for server-side, with unpdf as the serverless/Vercel build (self-contained pdf.js v5, worker embedded; reach the same items via getResolvedPDFJS()). pdf-parse only for quick flat-text needs; AVOID pdf2json (memory leaks, uncatchable errors that defeat 'never let one bad doc kill the batch'). exceljs for Excel reads (typed cells via Enums.ValueType, streaming WorkbookReader, ~6x less memory than SheetJS - decisive under serverless limits), with SheetJS (xlsx) as fallback for .xls/.ods/CSV. mammoth for .docx -> HTML (emits thead, preserves merged cells), then node-html-parser to walk tables. ROBUSTNESS: p-limit (cap concurrency 4-8), Promise.allSettled (one rejection must not abort the batch), worker_threads pool to isolate the rare uncatchable pdf.js crash; religiously call loadingTask.destroy() per PDF and page.cleanup() per page (the #1 cause of heap growth). VALIDATION / NORMALIZATION: zod for the schema-first canonical model with per-field coercion and a 0-1 confidence score (source quality + safeParse success + cross-checks like line-sum==total + parser warnings); route sub-threshold docs to human review. MONEY / DETERMINISM: decimal.js or integer-cents bigint everywhere - never JS floats - so cumulative overcharges don't drift; string-similarity / fast-levenshtein for the >=0.85 fuzzy line-matcher and duplicate-detection thresholds; all thresholds as named, version-pinned config. EXTERNAL DATA: native fetch / node-fetch for the BLS CPI-U API (cache the trailing-12-month figure, store the value used with each finding). TEST-FIXTURE GENERATION: PDFKit >= 0.15.0 (fixed ToUnicode map, tagged Table/TR/TH/TD structure, embedded subsettable fonts) so generated invoices/contracts round-trip through the extractor; pdf-lib only when modifying/stamping existing PDFs; round-trip self-test (generate -> extract -> assert cells equal source) as the built-in verification harness. NEVER rasterize tables to images. FRONTEND: editorial finance-grade surface - Tailwind with the forest/paper/gold token set; Fraunces + Newsreader + Inter via Google Fonts (tabular-nums + lining-nums on all figures); SVG feTurbulence grain at 3-5% opacity; charts via a lib themed to the brand palette (forest/emerald/gold/verdant, never default blue), thin 1.5-2px strokes, flat. If built as an Astro lead-gen surface keep client JS at zero (pure-CSS entrances via @starting-style / scroll-driven animations); respect prefers-reduced-motion. SCHEDULING: Vercel Cron for the daily sliding-window rules (R01 auto-renewal, R08 prospective early-pay); rule batches run on new-invoice ingest (R02/R06/R07) and monthly + on-demand at renewal-prep (R03/R04/R05/R09/R10). TESTING: a unit suite per detection rule against the synthetic corpus answer key (the corpus IS the source of truth - each planted finding must fire its rule at the expected dollar figure), plus the PDF round-trip harness."
+}
