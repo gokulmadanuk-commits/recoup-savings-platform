@@ -403,6 +403,7 @@ export const AnalysisSummarySchema = z.object({
   documentsProcessed: z.number().int(),
   documentsFailed: z.number().int(),
   vendorsAnalyzed: z.number().int(),
+  vendorsWithFindings: z.number().int().default(0),
   totalAnnualSpendCents: Cents,
   totalAnnualizedSavingsCents: Cents,
   totalRecoverableCents: Cents,
@@ -412,9 +413,52 @@ export const AnalysisSummarySchema = z.object({
 });
 export type AnalysisSummary = z.infer<typeof AnalysisSummarySchema>;
 
+/** Savings rolled up by finding category (powers the dashboard breakdown). */
+export const CategorySummarySchema = z.object({
+  category: FindingCategory,
+  label: z.string(),
+  count: z.number().int(),
+  savingsCents: Cents,
+  recoverableCents: Cents.default(0),
+  avoidanceCents: Cents.default(0),
+});
+export type CategorySummary = z.infer<typeof CategorySummarySchema>;
+
+/** Per-vendor rollup (powers the vendor leaderboard / drill-down). */
+export const VendorSummarySchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  category: z.string(),
+  annualSpendCents: Cents,
+  savingsCents: Cents,
+  recoverableCents: Cents.default(0),
+  avoidanceCents: Cents.default(0),
+  findingCount: z.number().int(),
+});
+export type VendorSummary = z.infer<typeof VendorSummarySchema>;
+
+/** A source document in the portfolio (powers the documents + clauses viewer). */
+export const DocumentSummarySchema = z.object({
+  vendorId: z.string(),
+  vendorName: z.string(),
+  docType: z.enum(["contract", "invoice", "usage_export"]),
+  format: z.enum(["pdf", "excel", "word"]),
+  fileName: z.string(),
+  /** Download path for the sample corpus; null for live uploads. */
+  path: z.string().nullable().default(null),
+  sizeBytes: z.number().int().nullable().default(null),
+  clauses: z
+    .array(z.object({ heading: z.string(), body: z.string() }))
+    .default([]),
+});
+export type DocumentSummary = z.infer<typeof DocumentSummarySchema>;
+
 export const AnalysisResultSchema = z.object({
   summary: AnalysisSummarySchema,
   findings: z.array(FindingSchema),
   drafts: z.array(EmailDraftSchema).default([]),
+  categories: z.array(CategorySummarySchema).default([]),
+  vendors: z.array(VendorSummarySchema).default([]),
+  documents: z.array(DocumentSummarySchema).default([]),
 });
 export type AnalysisResult = z.infer<typeof AnalysisResultSchema>;
