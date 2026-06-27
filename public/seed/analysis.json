@@ -1,0 +1,1434 @@
+{
+  "summary": {
+    "customer": "Northwind Logistics Group, Inc.",
+    "analysisDate": "2026-06-27",
+    "documentsProcessed": 302,
+    "documentsFailed": 0,
+    "vendorsAnalyzed": 22,
+    "totalAnnualSpendCents": 468205232,
+    "totalAnnualizedSavingsCents": 47927512,
+    "totalRecoverableCents": 18632044,
+    "totalAvoidanceCents": 29295468,
+    "estimatedFeeCents": 11448706,
+    "findingCount": 25
+  },
+  "findings": [
+    {
+      "id": "R09-atlascloud-iaas",
+      "ruleId": "R09",
+      "ruleName": "Minimum Commitment Shortfall",
+      "category": "minimum_commit",
+      "vendorId": "atlascloud-iaas",
+      "vendorName": "AtlasCloud (IaaS)",
+      "title": "Over-committed minimum: 75.0% of a $480,000/yr floor used",
+      "summary": "AtlasCloud (IaaS) carries a $480,000/yr committed minimum but consumed only $360,000 (75.0% utilization) — a $120,000 take-or-pay shortfall paid for and not used. In-term the floor is owed; right-sizing the next-term commitment to $396,000 (consumption + 10% buffer) recaptures $84,000/yr. Raise this before the renewal notice deadline (2027-11-01, 492 days out).",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 8400000,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 12000000,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 1680000,
+      "confidence": 0.85,
+      "severity": "medium",
+      "leverage": "A documented multi-period utilization trend is the lever to lower the next-term minimum or convert take-or-pay to a drawdown/rollover. Over-commitment also signals the original deal was oversold — leverage for additional concessions. Tie to R01 timing: present before the notice deadline.",
+      "evidence": [
+        {
+          "label": "Committed annual minimum (take-or-pay floor)",
+          "value": "$480,000",
+          "sourceDoc": "atlascloud-iaas-contract.pdf"
+        },
+        {
+          "label": "Commitment terms (annual measurement period)",
+          "value": "minCommitSpend $480,000 / annual",
+          "sourceDoc": "atlascloud-iaas-contract.pdf"
+        },
+        {
+          "label": "Actual consumption (12 invoices)",
+          "value": "$360,000 (75.0% of the floor)",
+          "sourceDoc": "atlascloud-iaas-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Monthly run-rate / range",
+          "value": "$30,000/mo (low $30,000, high $30,000)",
+          "sourceDoc": "atlascloud-iaas-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Take-or-pay shortfall (paid, not consumed)",
+          "value": "$120,000",
+          "sourceDoc": "atlascloud-iaas-contract.pdf"
+        },
+        {
+          "label": "Right-sized commitment (consumption + buffer)",
+          "value": "$396,000 (consumption + 10% buffer)",
+          "sourceDoc": "atlascloud-iaas-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Reduce the committed annual minimum from $480,000 to $396,000 at renewal (consumption of $360,000 + 10% buffer), or convert the take-or-pay floor to a drawdown/rollover so unused commit carries forward — a $84,000/yr right-sizing.",
+      "deadlineDate": "2027-11-01"
+    },
+    {
+      "id": "R05-catalyst-creative-agency",
+      "ruleId": "R05",
+      "ruleName": "Overage / Usage-Tier Mismatch",
+      "category": "tier_optimization",
+      "vendorId": "catalyst-creative-agency",
+      "vendorName": "Catalyst Creative Agency",
+      "title": "Catalyst Creative Agency: 25 hour/monthly over allowance billed at punitive overage",
+      "summary": "Plan includes 40 hour/monthly, but invoices bill 65 (25 over) at $185.00/hour = $4,625/monthly ($55,500/yr) in overage. No higher-allowance tier is published; the entire $4,625/monthly in punitive overage is avoidable by buying up the base allowance from 40 to 65 units. Annualized avoidable savings $55,500.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 5550000,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 0,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 1110000,
+      "confidence": 0.85,
+      "severity": "high",
+      "leverage": "Consistent allowance breach means a higher base allowance (cheaper per unit) or a renegotiated overage rate beats paying punitive overage month after month.",
+      "evidence": [
+        {
+          "label": "Included allowance (contract commitment)",
+          "value": "40 hour per monthly",
+          "sourceDoc": "catalyst-creative-agency-contract.docx"
+        },
+        {
+          "label": "Contract overage rate",
+          "value": "$185.00 per hour",
+          "sourceDoc": "catalyst-creative-agency-contract.docx"
+        },
+        {
+          "label": "Billed usage (invoice)",
+          "value": "65 hour (25 over the 40 allowance)",
+          "sourceDoc": "catalyst-creative-agency-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Overage charge per period",
+          "value": "25 x $185.00 = $4,625 / monthly ($55,500 / yr)",
+          "sourceDoc": "catalyst-creative-agency-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Annualized avoidable savings",
+          "value": "$4,625 / monthly x 12 = $55,500 / yr",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Buy up the base allowance from 40 to at least 65 hour/monthly, eliminating the $4,625/monthly punitive overage — $4,625/monthly ($55,500/yr).",
+      "deadlineDate": null
+    },
+    {
+      "id": "R03-collabhub-suite",
+      "ruleId": "R03",
+      "ruleName": "Unused Seats / Idle Licenses",
+      "category": "unused_seats",
+      "vendorId": "collabhub-suite",
+      "vendorName": "CollabHub Suite",
+      "title": "90 idle seats of 250 paid (64.0% utilization)",
+      "summary": "Utilization export shows only 160 of 250 paid seats active within the 30-day activity window — 90 seats are billed but idle. Reclaiming them at renewal avoids $48,600/yr.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 4860000,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 4860000,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 972000,
+      "confidence": 0.88,
+      "severity": "high",
+      "leverage": "Hard utilization data ('only N of M seats active') is the strongest right-sizing lever at renewal. Anchor on active seats, not provisioned. Offer to hold the per-seat rate flat plus a true-up clause to add seats later at the same price — it protects the vendor's unit economics and makes 'yes' easy. Pair with R01 timing so the ask lands before the notice deadline.",
+      "evidence": [
+        {
+          "label": "Contracted seats (commitment)",
+          "value": "250 seats @ $45.00/seat/mo (tier Standard)",
+          "sourceDoc": "collabhub-suite-contract.pdf"
+        },
+        {
+          "label": "Active seats (utilization export)",
+          "value": "160 of 250 seats active within 30 days of 2026-06-27 (64.0% utilization)",
+          "sourceDoc": "utilization-export"
+        },
+        {
+          "label": "Idle seats",
+          "value": "90 idle = 250 paid − 160 active (30 never logged in, 60 inactive >30d)",
+          "sourceDoc": "utilization-export"
+        },
+        {
+          "label": "Annualized idle cost",
+          "value": "90 × $45.00 × 12 = $48,600/yr ($4,050/mo)",
+          "sourceDoc": "collabhub-suite-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Reduce the seat count from 250 to 160 active seats at renewal (drop 90 idle seats), holding the $45.00/seat/mo rate flat — an annual avoidance of $48,600.",
+      "deadlineDate": "2027-01-29"
+    },
+    {
+      "id": "R01-payworks-hcm",
+      "ruleId": "R01",
+      "ruleName": "Auto-Renewal Notice-Window Alert",
+      "category": "auto_renewal",
+      "vendorId": "payworks-hcm",
+      "vendorName": "PayWorks HCM",
+      "title": "Auto-renewal notice window closing — act before July 12, 2026",
+      "summary": "PayWorks HCM auto-renews on August 11, 2026 (45 days out) at a 18.0% uplift, taking the contract from $190,800/yr to $225,144/yr. Written cancellation notice is due by July 12, 2026 (15 days away). Acting before that deadline opens a competitive renewal: the $34,344/yr uplift is negotiable and a price hold / escalator cap can be demanded as the condition of staying.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 3434400,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 22514400,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 686880,
+      "confidence": 0.85,
+      "severity": "watch",
+      "leverage": "An open (or contestable) notice window is the highest-leverage moment in the relationship: it converts an automatic renewal into a competitive event, forcing a price hold, escalator cap, and seat/commit right-sizing as the price of staying.",
+      "evidence": [
+        {
+          "label": "Auto-renew clause",
+          "value": "autoRenew = true; renewal term 12 months; notice required by written notice to vendor 30 days before term end",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        },
+        {
+          "label": "Term end date",
+          "value": "August 11, 2026 (45 days from analysis date June 27, 2026)",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        },
+        {
+          "label": "Notice deadline",
+          "value": "July 12, 2026 — 15 days away",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        },
+        {
+          "label": "Current annual value",
+          "value": "$190,800/yr",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        },
+        {
+          "label": "Renewal uplift",
+          "value": "18.0% fixed escalator → renewal value $225,144/yr; negotiable uplift $34,344/yr",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        },
+        {
+          "label": "Early-termination fee",
+          "value": "$45,000 termination fee deepens the lock-in",
+          "sourceDoc": "payworks-hcm-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Before the July 12, 2026 notice deadline, demand a price hold or convert to month-to-month and cap the renewal uplift — eliminating the 18.0% ($34,344/yr) increase on the $190,800/yr base.",
+      "deadlineDate": "2026-07-12"
+    },
+    {
+      "id": "R13-redshield-cyber",
+      "ruleId": "R13",
+      "ruleName": "Cross-Vendor Redundant Tool",
+      "category": "tier_optimization",
+      "vendorId": "redshield-cyber",
+      "vendorName": "RedShield Cyber",
+      "title": "Redundant Managed Detection & Response (MDR) — RedShield Cyber duplicates AtlasCloud (IaaS)",
+      "summary": "RedShield Cyber's standalone \"Managed Detection & Response (MDR)\" subscription ($28,000/yr) overlaps the same capability already bundled in AtlasCloud (IaaS)'s agreement. Eliminating the redundant standalone subscription at its renewal/cancellation window avoids the full annual cost. Issue the non-renewal/cancellation notice before 2027-11-01 (60-day window).",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 2799996,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 0,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 559999,
+      "confidence": 0.82,
+      "severity": "high",
+      "leverage": "\"Managed Detection & Response (MDR)\" is already covered under our agreement with AtlasCloud (IaaS) — a clean non-renewal justification for RedShield Cyber and a consolidation lever toward a single retained vendor.",
+      "evidence": [
+        {
+          "label": "Overlapping capability",
+          "value": "\"Managed Detection & Response (MDR)\" is covered by both AtlasCloud (IaaS) and RedShield Cyber.",
+          "sourceDoc": null
+        },
+        {
+          "label": "RedShield Cyber — standalone subscription (eliminable)",
+          "value": "Capability tags: Managed Detection & Response (MDR), SIEM, Threat Intelligence. Contract MSA-REDSHIELD-CYBER runs 2025-01-01 → 2027-12-31, 60-day notice.",
+          "sourceDoc": "redshield-cyber-contract.docx"
+        },
+        {
+          "label": "AtlasCloud (IaaS) — capability already bundled (retained)",
+          "value": "Capability tags: IaaS, Compute, Storage, Managed Detection & Response (MDR). \"Managed Detection & Response (MDR)\" ships as a bundled add-on under contract MSA-ATLASCLOUD-IAAS.",
+          "sourceDoc": "atlascloud-iaas-contract.pdf"
+        },
+        {
+          "label": "RedShield Cyber run-rate",
+          "value": "12 monthly invoice(s) annualizing to $28,000 (contract current annual value $28,000).",
+          "sourceDoc": "redshield-cyber-invoice-2025-07.pdf"
+        },
+        {
+          "label": "RedShield Cyber billed line",
+          "value": "Managed Detection & Response (MDR) — 24x7 SOC — $2,333/mo (recurring).",
+          "sourceDoc": "redshield-cyber-invoice-2025-07.pdf"
+        }
+      ],
+      "recommendedAsk": "Do not renew the RedShield Cyber Managed Detection & Response (MDR) subscription; eliminate the redundant $28,000/yr spend (capability already provided under the AtlasCloud (IaaS) agreement).",
+      "deadlineDate": "2027-11-01"
+    },
+    {
+      "id": "R04-keystone-mutual-insurance",
+      "ruleId": "R04",
+      "ruleName": "Price-Escalator / Above-Market Challenge",
+      "category": "price_escalator",
+      "vendorId": "keystone-mutual-insurance",
+      "vendorName": "Keystone Mutual Insurance",
+      "title": "Above-market renewal: 22.0% uplift on CGL + Property Package Premium (monthly installment)PKG-CGL-PROP",
+      "summary": "Keystone Mutual Insurance raised \"CGL + Property Package Premium (monthly installment)PKG-CGL-PROP\" 22.0% year-over-year ($10,000.00 -> $12,200.00/mo), far above the 8.0% above-market threshold and the fair 3-5% band (CPI 3.2%). With no contractual cap, the full $26,400/yr uplift is challengeable at renewal — convert it to a hard cap.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 2640000,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 2640000,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 528000,
+      "confidence": 0.82,
+      "severity": "high",
+      "leverage": "A compliant-but-above-market uplift is the renewal ask: convert it to a hard cap ('lesser of CPI or 5%'), traded for a multi-year commitment. A vendor's refusal to cap signals its pricing trajectory.",
+      "evidence": [
+        {
+          "label": "Contract escalator clause",
+          "value": "Escalator type \"fixed\", no cap; market fair band is 3-5% (CPI 3.2%)",
+          "sourceDoc": "keystone-mutual-insurance-contract.pdf"
+        },
+        {
+          "label": "Prior-period rate (May 2025)",
+          "value": "CGL + Property Package Premium (monthly installment)PKG-CGL-PROP: $10,000.00/mo (= $120,000/yr base)",
+          "sourceDoc": "keystone-mutual-insurance-invoice-2025-05.pdf"
+        },
+        {
+          "label": "Escalated rate (Jun 2026)",
+          "value": "CGL + Property Package Premium (monthly installment)PKG-CGL-PROP: $12,200.00/mo (+22.0% year-over-year)",
+          "sourceDoc": "keystone-mutual-insurance-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Benchmark applied",
+          "value": "Above-market threshold 8.0% — applied 22.0% (CPI 3.2%, BLS CPI-U trailing 12mo (May 2026): 3.2%)",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Cap the renewal increase at \"lesser of CPI or 5%\" and roll the 22.0% uplift back toward fair market, recovering $26,400/yr of above-market spend.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R04-swiftparcel-express",
+      "ruleId": "R04",
+      "ruleName": "Price-Escalator / Above-Market Challenge",
+      "category": "price_escalator",
+      "vendorId": "swiftparcel-express",
+      "vendorName": "SwiftParcel Express",
+      "title": "Escalator breach: 7.5% uplift exceeds the 5.9% contract cap",
+      "summary": "SwiftParcel Express applied a 7.5% year-over-year increase to \"Base Transportation Charge\" ($112,000.00 -> $120,400.00/mo), but the contract caps escalation at 5.9%. The portion above the cap — (7.5% - 5.9%) of the $1,344,000 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $21,504/yr.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 2150400,
+      "recoverableToDateCents": 358400,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 645120,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.",
+      "evidence": [
+        {
+          "label": "Contract escalator clause",
+          "value": "Escalator type \"fixed\", capped at 5.9% (anniversary month 5)",
+          "sourceDoc": "swiftparcel-express-contract.pdf"
+        },
+        {
+          "label": "Prior-period rate (May 2025)",
+          "value": "Base Transportation Charge: $112,000.00/mo (= $1,344,000/yr base)",
+          "sourceDoc": "swiftparcel-express-invoice-2025-05.pdf"
+        },
+        {
+          "label": "Escalated rate (Jun 2026)",
+          "value": "Base Transportation Charge: $120,400.00/mo (+7.5% year-over-year)",
+          "sourceDoc": "swiftparcel-express-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Benchmark applied",
+          "value": "Contract cap 5.9% — applied 7.5% exceeds the cap by 1.6%",
+          "sourceDoc": "swiftparcel-express-contract.pdf"
+        },
+        {
+          "label": "Over-uplift billed to date",
+          "value": "$1,792.00/mo over the cap-allowed rate x 2 month(s) billed = $3,584 recoverable",
+          "sourceDoc": "swiftparcel-express-invoice-2026-06.pdf"
+        }
+      ],
+      "recommendedAsk": "Demand a credit/refund of $3,584 for the over-cap amount billed to date, roll \"Base Transportation Charge\" back to the cap-compliant rate of $118,608.00/mo, and correct the base going forward ($21,504/yr).",
+      "deadlineDate": null
+    },
+    {
+      "id": "R12-sentryone-protective",
+      "ruleId": "R12",
+      "ruleName": "Service / Labor Overbilling",
+      "category": "overbilling",
+      "vendorId": "sentryone-protective",
+      "vendorName": "SentryOne Protective",
+      "title": "SentryOne Protective: misapplied holiday premiums and unwarranted overtime",
+      "summary": "Labor overbilling (holiday premium + overtime): $18,900 of wrongly-billed charges identified across 12 invoices (annualized run-rate $18,900). Each charged line is contradicted by the contract schedule/scope.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1890000,
+      "recoverableToDateCents": 1890000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 567000,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "Itemized proof that each line is contradicted by the signed contract schedule/scope justifies a credit now and corrected go-forward billing terms.",
+      "evidence": [
+        {
+          "label": "Contract labor schedule",
+          "value": "Scheduled post = 168 hrs/week; billable holidays = 6 dates. Premiums and OT are only warranted within those terms.",
+          "sourceDoc": "sentryone-protective-contract.docx"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2025-08-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-08-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2025-08.pdf"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2025-10-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-10-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2025-10.pdf"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2025-12-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-12-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2025-12.pdf"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2026-02-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2026-02-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2026-02.pdf"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2026-04-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2026-04-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2026-04.pdf"
+        },
+        {
+          "label": "Holiday premium on non-holiday (2026-06-15)",
+          "value": "24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2026-06-15 is not in the contract holiday calendar)",
+          "sourceDoc": "sentryone-protective-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Overtime beyond the post schedule (168 hrs/wk)",
+          "value": "Regular hours already cover the post (166 hrs/wk vs 168 scheduled); 324 OT hrs across the period = $14,580 of unwarranted overtime",
+          "sourceDoc": "sentryone-protective-contract.docx"
+        },
+        {
+          "label": "Holiday calendar",
+          "value": "2025-07-04, 2025-09-01, 2025-11-27, 2025-12-25, 2026-01-01, 2026-05-25",
+          "sourceDoc": "sentryone-protective-contract.docx"
+        }
+      ],
+      "recommendedAsk": "Credit $18,900 for holiday premiums charged on non-holidays and overtime beyond the scheduled post, and correct the go-forward billing process.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R11-meridian-telecom",
+      "ruleId": "R11",
+      "ruleName": "Zombie / Inactive Service Line",
+      "category": "overbilling",
+      "vendorId": "meridian-telecom",
+      "vendorName": "Meridian Telecom",
+      "title": "Inactive circuit(s) still billing — $15,000/yr zombie charge",
+      "summary": "1 circuit(s) billing a combined $1,250.00/mo ($15,000/yr) are decommissioned, returned, or zero-usage in the asset inventory yet still carry their monthly recurring charge. $15,000 is recoverable for periods already billed after retirement.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1500000,
+      "recoverableToDateCents": 1500000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 450000,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "A decommissioned circuit, closed-location meter, or returned lease unit still billing is an unarguable, low-controversy credit; reconciling inventory to invoices also establishes audit-rights discipline for future periods.",
+      "evidence": [
+        {
+          "label": "Contract MRC basis",
+          "value": "Meridian Telecom recurring circuit charges — annual contract value $75,000",
+          "sourceDoc": "meridian-telecom-contract.pdf"
+        },
+        {
+          "label": "Asset CKT-4417 — billed 12 mo @ $1,250.00/mo",
+          "value": "SD-WAN MRC — Detroit Branch (closed) (CKT-4417) — inventory status \"decommissioned\" on 2025-05-30; recoverable $15,000",
+          "sourceDoc": "meridian-telecom-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Inventory record CKT-4417 (circuit)",
+          "value": "status=decommissioned, lastActive=2025-05-30, decommissioned 2025-05-30",
+          "sourceDoc": "meridian-telecom-usage.xlsx"
+        }
+      ],
+      "recommendedAsk": "Credit $15,000 for the 1 inactive circuit(s) billed after retirement, remove them going forward ($15,000/yr), and add an inventory-reconciliation/audit-rights clause.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R04-pristinecare-facilities",
+      "ruleId": "R04",
+      "ruleName": "Price-Escalator / Above-Market Challenge",
+      "category": "price_escalator",
+      "vendorId": "pristinecare-facilities",
+      "vendorName": "PristineCare Facilities",
+      "title": "Escalator breach: 9.0% uplift exceeds the 4.0% contract cap",
+      "summary": "PristineCare Facilities applied a 9.0% year-over-year increase to \"Nightly Janitorial Services (3 offices)\" ($23,700.00 -> $25,833.00/mo), but the contract caps escalation at 4.0%. The portion above the cap — (9.0% - 4.0%) of the $284,400 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $14,220/yr.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1422000,
+      "recoverableToDateCents": 1185000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 426600,
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.",
+      "evidence": [
+        {
+          "label": "Contract escalator clause",
+          "value": "Escalator type \"fixed\", capped at 4.0% (anniversary month 9)",
+          "sourceDoc": "pristinecare-facilities-contract.docx"
+        },
+        {
+          "label": "Prior-period rate (May 2025)",
+          "value": "Nightly Janitorial Services (3 offices): $23,700.00/mo (= $284,400/yr base)",
+          "sourceDoc": "pristinecare-facilities-invoice-2025-05.pdf"
+        },
+        {
+          "label": "Escalated rate (Jun 2026)",
+          "value": "Nightly Janitorial Services (3 offices): $25,833.00/mo (+9.0% year-over-year)",
+          "sourceDoc": "pristinecare-facilities-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Benchmark applied",
+          "value": "Contract cap 4.0% — applied 9.0% exceeds the cap by 5.0%",
+          "sourceDoc": "pristinecare-facilities-contract.docx"
+        },
+        {
+          "label": "Over-uplift billed to date",
+          "value": "$1,185.00/mo over the cap-allowed rate x 10 month(s) billed = $11,850 recoverable",
+          "sourceDoc": "pristinecare-facilities-invoice-2026-06.pdf"
+        }
+      ],
+      "recommendedAsk": "Demand a credit/refund of $11,850 for the over-cap amount billed to date, roll \"Nightly Janitorial Services (3 offices)\" back to the cap-compliant rate of $24,648.00/mo, and correct the base going forward ($14,220/yr).",
+      "deadlineDate": null
+    },
+    {
+      "id": "R12-ironroad-freight",
+      "ruleId": "R12",
+      "ruleName": "Service / Labor Overbilling",
+      "category": "overbilling",
+      "vendorId": "ironroad-freight",
+      "vendorName": "IronRoad Freight",
+      "title": "IronRoad Freight: unwarranted accessorial surcharges on commercial deliveries",
+      "summary": "Accessorial leakage: $13,704 of wrongly-billed charges identified across 12 invoices (annualized run-rate $13,704). Each charged line is contradicted by the contract schedule/scope.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1370400,
+      "recoverableToDateCents": 1370400,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 411120,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "Itemized proof that each line is contradicted by the signed contract schedule/scope justifies a credit now and corrected go-forward billing terms.",
+      "evidence": [
+        {
+          "label": "Contract scope — delivery type",
+          "value": "Scope is Logistics (LTL); accessorial surcharges (e.g. residential, liftgate) do not apply to these commercial deliveries.",
+          "sourceDoc": "ironroad-freight-contract.pdf"
+        },
+        {
+          "label": "Unwarranted accessorial — Residential Delivery Surcharge",
+          "value": "24 units across the period = $3,480 billed on commercial deliveries that do not warrant the surcharge",
+          "sourceDoc": "ironroad-freight-contract.pdf"
+        },
+        {
+          "label": "Unwarranted accessorial — Liftgate Service",
+          "value": "72 units across the period = $10,224 billed on commercial deliveries that do not warrant the surcharge",
+          "sourceDoc": "ironroad-freight-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Credit $13,704 for residential/liftgate accessorials billed on commercial dock deliveries and add invoice-validation terms to block them going forward.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R07-nimbusedge-cdn",
+      "ruleId": "R07",
+      "ruleName": "Missed Volume Discount",
+      "category": "missed_discount",
+      "vendorId": "nimbusedge-cdn",
+      "vendorName": "NimbusEdge CDN",
+      "title": "Volume-tier discount earned but never applied — $12,800/yr",
+      "summary": "Cumulative usage of 1,280,004 GB crossed the 1,000,000-GB breakpoint in the $0.08/GB tier, but every invoice kept billing the standard $0.09/GB. The buyer earned the cheaper rate yet was charged the higher one on the full annual volume, overpaying $12,800.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1280004,
+      "recoverableToDateCents": 1280004,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 384001,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "We crossed the 1,000,000-GB tier on cumulative annual volume; you billed all 12 invoices at the sub-breakpoint $0.09/GB rate. Owed a retroactive credit for the difference plus automatic tier application going forward.",
+      "evidence": [
+        {
+          "label": "Contracted volume-tier schedule",
+          "value": "0 to 1,000,000 GB: $0.09/GB; 1,000,000 and up GB: $0.08/GB",
+          "sourceDoc": "nimbusedge-cdn-contract.pdf"
+        },
+        {
+          "label": "Earned tier (cumulative volume)",
+          "value": "Cumulative 1,280,004 GB over 12 invoices crosses the 1,000,000-GB breakpoint (~invoice 10), earning $0.08/GB.",
+          "sourceDoc": "nimbusedge-cdn-contract.pdf"
+        },
+        {
+          "label": "Rate actually billed",
+          "value": "Every usage line billed at the standard $0.09/GB (e.g. 106,667 GB on invoice NE-INV-01).",
+          "sourceDoc": "nimbusedge-cdn-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Missed discount",
+          "value": "($0.09 − $0.08)/GB × 1,280,004 GB = $12,800 overbilled.",
+          "sourceDoc": "nimbusedge-cdn-invoice-2025-07.xlsx"
+        }
+      ],
+      "recommendedAsk": "Issue a retroactive credit of $12,800 ($0.01/GB × 1,280,004 GB) and apply the earned $0.08/GB tier automatically once cumulative volume crosses 1,000,000 GB, with an annual true-up.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R14-harbor-benefits-brokers",
+      "ruleId": "R14",
+      "ruleName": "Headcount-Based Fee Overbilling",
+      "category": "overbilling",
+      "vendorId": "harbor-benefits-brokers",
+      "vendorName": "Harbor Benefits Brokers",
+      "title": "PEPM fee billed on 640 employees vs 600 on the HRIS roster",
+      "summary": "Harbor Benefits Brokers bills the $24.00 per-employee-per-month fee on 640 employees, but the authoritative HRIS roster shows only 600 for the same periods — 40 phantom employees. That is an overcharge of $960.00/month ($11,520/yr), recoverable as a credit with a go-forward roster reconciliation.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 1152000,
+      "recoverableToDateCents": 1152000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 345600,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "'You billed PEPM on the higher headcount; our HRIS shows fewer employees.' Arithmetic-clean credit plus a monthly roster-reconciliation cadence so the count is trued up going forward.",
+      "evidence": [
+        {
+          "label": "Contract fee basis (PEPM)",
+          "value": "$24.00 per employee per month",
+          "sourceDoc": "harbor-benefits-brokers-contract.pdf"
+        },
+        {
+          "label": "Invoiced billable headcount",
+          "value": "640 employees billed at $24.00 PEPM",
+          "sourceDoc": "harbor-benefits-brokers-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Authoritative HRIS roster",
+          "value": "600 employees on the headcount export",
+          "sourceDoc": null
+        },
+        {
+          "label": "Over-billed headcount",
+          "value": "40 phantom employees x $24.00 = $960.00/mo",
+          "sourceDoc": null
+        },
+        {
+          "label": "Annualized overcharge",
+          "value": "$960.00/mo x 12 = $11,520",
+          "sourceDoc": null
+        },
+        {
+          "label": "Recoverable to date",
+          "value": "$11,520 across 12 billed month(s)",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Issue a credit of $11,520 for PEPM billed on 40 phantom employees, correct billing to the 600-employee HRIS roster going forward, and adopt a monthly roster reconciliation.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R05-vaultsign-esignature",
+      "ruleId": "R05",
+      "ruleName": "Overage / Usage-Tier Mismatch",
+      "category": "tier_optimization",
+      "vendorId": "vaultsign-esignature",
+      "vendorName": "VaultSign eSignature",
+      "title": "VaultSign eSignature: 650 envelope/monthly over allowance billed at punitive overage",
+      "summary": "Plan includes 500 envelope/monthly, but invoices bill 1,150 (650 over) at $2.00/envelope = $1,300/monthly ($15,600/yr) in overage. A published buy-up tier (allowance up to 1,500) costs a flat +$350/monthly over base and absorbs all 1,150 units, versus $1,300/monthly in overage today. Annualized avoidable savings $11,400.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 1140000,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 0,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 228000,
+      "confidence": 0.85,
+      "severity": "medium",
+      "leverage": "Consistent allowance breach means a higher base allowance (cheaper per unit) or a renegotiated overage rate beats paying punitive overage month after month.",
+      "evidence": [
+        {
+          "label": "Included allowance (contract commitment)",
+          "value": "500 envelope per monthly",
+          "sourceDoc": "vaultsign-esignature-contract.pdf"
+        },
+        {
+          "label": "Contract overage rate",
+          "value": "$2.00 per envelope",
+          "sourceDoc": "vaultsign-esignature-contract.pdf"
+        },
+        {
+          "label": "Billed usage (invoice)",
+          "value": "1,150 envelope (650 over the 500 allowance)",
+          "sourceDoc": "vaultsign-esignature-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Overage charge per period",
+          "value": "650 x $2.00 = $1,300 / monthly ($15,600 / yr)",
+          "sourceDoc": "vaultsign-esignature-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Published buy-up tier",
+          "value": "Allowance up to 1,500 for a flat base of $1,550 / monthly (+$350 over the base tier)",
+          "sourceDoc": "vaultsign-esignature-contract.pdf"
+        },
+        {
+          "label": "Annualized avoidable savings",
+          "value": "$950 / monthly x 12 = $11,400 / yr",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Move to the higher-allowance tier (up to 1,500 envelope) for +$350/monthly, eliminating the $1,300/monthly overage charge — a net $11,400/yr reduction.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R14-peakrank-digital",
+      "ruleId": "R14",
+      "ruleName": "Headcount-Based Fee Overbilling",
+      "category": "overbilling",
+      "vendorId": "peakrank-digital",
+      "vendorName": "PeakRank Digital",
+      "title": "Management fee billed at 15.0% vs contracted 12.0% of the spend base",
+      "summary": "PeakRank Digital computes its management fee at 15.0% of the $27,250/mo spend base, but the contract sets it at 12.0%. The 3.0% gap is an overcharge of $817.50/month ($9,810/yr), recoverable as a credit with a go-forward rate correction.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 981000,
+      "recoverableToDateCents": 981000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 294300,
+      "confidence": 0.96,
+      "severity": "high",
+      "leverage": "'You computed the management fee at the higher percentage against a lower contracted percentage of ad spend.' Arithmetic-clean credit plus a go-forward correction to the contracted rate.",
+      "evidence": [
+        {
+          "label": "Contract fee basis (% of base)",
+          "value": "12.0% of the spend base",
+          "sourceDoc": "peakrank-digital-contract.docx"
+        },
+        {
+          "label": "Spend base (per month)",
+          "value": "$27,250 pass-through base",
+          "sourceDoc": "peakrank-digital-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Invoiced management fee",
+          "value": "$4,087.50 = 15.0% of the $27,250 base",
+          "sourceDoc": "peakrank-digital-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Contracted management fee",
+          "value": "12.0% x $27,250 = $3,270.00",
+          "sourceDoc": "peakrank-digital-contract.docx"
+        },
+        {
+          "label": "Monthly overcharge",
+          "value": "$4,087.50 - $3,270.00 = $817.50/mo",
+          "sourceDoc": null
+        },
+        {
+          "label": "Annualized overcharge",
+          "value": "$817.50/mo x 12 = $9,810",
+          "sourceDoc": null
+        },
+        {
+          "label": "Recoverable to date",
+          "value": "$9,810 across 12 billed month(s)",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Issue a credit of $9,810 for the management fee overcharged above the contracted 12.0%, and re-rate all future invoices to 12.0% of the spend base.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R02-summit-copier-leasing",
+      "ruleId": "R02",
+      "ruleName": "Invoice Rate Mismatch",
+      "category": "rate_mismatch",
+      "vendorId": "summit-copier-leasing",
+      "vendorName": "Summit Copier Leasing",
+      "title": "Invoice rate mismatch — billed above contracted rate on CLICK-COLOR",
+      "summary": "Summit Copier Leasing billed above the contracted rate-card price on 1 SKU (CLICK-COLOR). Documented overcharge of $9,600 to date; $9,600/yr forward at the current run-rate.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 960000,
+      "recoverableToDateCents": 960000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 288000,
+      "confidence": 0.9500000000000001,
+      "severity": "high",
+      "leverage": "Documented, repeated overcharges on the same SKU are near-incontestable. Demand a credit memo / cash refund for the back period (not just a forward fix) and an audit-rights clause going forward.",
+      "evidence": [
+        {
+          "label": "Contract rate card",
+          "value": "Source: summit-copier-leasing-contract.pdf",
+          "sourceDoc": "summit-copier-leasing-contract.pdf"
+        },
+        {
+          "label": "Contracted rate (CLICK-COLOR)",
+          "value": "CLICK-COLOR — Color Clicks (per 1,000): $85.00 per 1000-clicks",
+          "sourceDoc": "summit-copier-leasing-contract.pdf"
+        },
+        {
+          "label": "Invoiced rate (CLICK-COLOR)",
+          "value": "Billed $105.00 per 1000-clicks (overcharge $20.00/1000-clicks) on 40 1000-clicks across 12 invoices",
+          "sourceDoc": "summit-copier-leasing-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Overcharge to date (CLICK-COLOR)",
+          "value": "$9,600 over 12 periods (latest invoice SC-INV-12)",
+          "sourceDoc": "summit-copier-leasing-invoice-2026-06.pdf"
+        }
+      ],
+      "recommendedAsk": "Issue a credit memo of $9,600 for the back-billed overcharge and re-rate CLICK-COLOR to the contracted $85.00/1000-clicks going forward.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R11-cascade-power-water",
+      "ruleId": "R11",
+      "ruleName": "Zombie / Inactive Service Line",
+      "category": "overbilling",
+      "vendorId": "cascade-power-water",
+      "vendorName": "Cascade Power & Water",
+      "title": "Inactive meter(s) still billing — $9,300/yr zombie charge",
+      "summary": "1 meter(s) billing a combined $775.00/mo ($9,300/yr) are decommissioned, returned, or zero-usage in the asset inventory yet still carry their monthly recurring charge. $9,300 is recoverable for periods already billed after retirement.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 930000,
+      "recoverableToDateCents": 930000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 279000,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "A decommissioned circuit, closed-location meter, or returned lease unit still billing is an unarguable, low-controversy credit; reconciling inventory to invoices also establishes audit-rights discipline for future periods.",
+      "evidence": [
+        {
+          "label": "Contract MRC basis",
+          "value": "Cascade Power & Water recurring meter charges — annual contract value $92,400",
+          "sourceDoc": "cascade-power-water-contract.pdf"
+        },
+        {
+          "label": "Asset MTR-DET-07 — billed 12 mo @ $775.00/mo",
+          "value": "Metered Service — Detroit Branch (closed) (MTR-DET-07) — inventory status \"decommissioned\" on 2025-06-15; recoverable $9,300",
+          "sourceDoc": "cascade-power-water-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Inventory record MTR-DET-07 (meter)",
+          "value": "status=decommissioned, lastActive=2025-06-15, decommissioned 2025-06-15",
+          "sourceDoc": "cascade-power-water-usage.xlsx"
+        }
+      ],
+      "recommendedAsk": "Credit $9,300 for the 1 inactive meter(s) billed after retirement, remove them going forward ($9,300/yr), and add an inventory-reconciliation/audit-rights clause.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R11-clearwave-mobile",
+      "ruleId": "R11",
+      "ruleName": "Zombie / Inactive Service Line",
+      "category": "overbilling",
+      "vendorId": "clearwave-mobile",
+      "vendorName": "ClearWave Mobile",
+      "title": "Inactive line(s) still billing — $9,072/yr zombie charge",
+      "summary": "18 line(s) billing a combined $756.00/mo ($9,072/yr) are decommissioned, returned, or zero-usage in the asset inventory yet still carry their monthly recurring charge. $9,072 is recoverable for periods already billed after retirement.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 907200,
+      "recoverableToDateCents": 907200,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 272160,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "A decommissioned circuit, closed-location meter, or returned lease unit still billing is an unarguable, low-controversy credit; reconciling inventory to invoices also establishes audit-rights discipline for future periods.",
+      "evidence": [
+        {
+          "label": "Contract MRC basis",
+          "value": "ClearWave Mobile recurring line charges — annual contract value $75,600",
+          "sourceDoc": "clearwave-mobile-contract.pdf"
+        },
+        {
+          "label": "Asset LN-614200 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614200 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614201 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614201 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614202 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614202 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614203 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614203 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614204 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614204 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614205 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614205 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614206 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614206 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614207 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614207 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614208 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614208 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614209 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614209 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614210 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614210 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614211 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614211 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614212 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614212 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614213 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614213 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614214 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614214 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614215 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614215 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614216 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614216 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Asset LN-614217 — billed 12 mo @ $42.00/mo",
+          "value": "Unlimited Voice/Data Line — LN-614217 — zero usage for 4 months (last active 2026-02-10); recoverable $504",
+          "sourceDoc": "clearwave-mobile-invoice-2025-07.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614200 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614201 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614202 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614203 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614204 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614205 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614206 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614207 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614208 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614209 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614210 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614211 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614212 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614213 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614214 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614215 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614216 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        },
+        {
+          "label": "Inventory record LN-614217 (line)",
+          "value": "status=inactive, lastActive=2026-02-10",
+          "sourceDoc": "clearwave-mobile-usage.xlsx"
+        }
+      ],
+      "recommendedAsk": "Credit $9,072 for the 18 inactive line(s) billed after retirement, remove them going forward ($9,072/yr), and add an inventory-reconciliation/audit-rights clause.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R02-brightseat-crm",
+      "ruleId": "R02",
+      "ruleName": "Invoice Rate Mismatch",
+      "category": "rate_mismatch",
+      "vendorId": "brightseat-crm",
+      "vendorName": "Brightseat CRM",
+      "title": "Invoice rate mismatch — billed above contracted rate on CRM-SEAT",
+      "summary": "Brightseat CRM billed above the contracted rate-card price on 1 SKU (CRM-SEAT). Documented overcharge of $8,640 to date; $8,640/yr forward at the current run-rate.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 864000,
+      "recoverableToDateCents": 864000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 259200,
+      "confidence": 0.9500000000000001,
+      "severity": "high",
+      "leverage": "Documented, repeated overcharges on the same SKU are near-incontestable. Demand a credit memo / cash refund for the back period (not just a forward fix) and an audit-rights clause going forward.",
+      "evidence": [
+        {
+          "label": "Contract rate card",
+          "value": "Source: brightseat-crm-contract.pdf",
+          "sourceDoc": "brightseat-crm-contract.pdf"
+        },
+        {
+          "label": "Contracted rate (CRM-SEAT)",
+          "value": "CRM-SEAT — Professional Seat License: $45.00 per seat",
+          "sourceDoc": "brightseat-crm-contract.pdf"
+        },
+        {
+          "label": "Invoiced rate (CRM-SEAT)",
+          "value": "Billed $48.60 per seat (overcharge $3.60/seat) on 200 seat across 12 invoices",
+          "sourceDoc": "brightseat-crm-invoice-2026-06.pdf"
+        },
+        {
+          "label": "Overcharge to date (CRM-SEAT)",
+          "value": "$8,640 over 12 periods (latest invoice BS-INV-12)",
+          "sourceDoc": "brightseat-crm-invoice-2026-06.pdf"
+        }
+      ],
+      "recommendedAsk": "Issue a credit memo of $8,640 for the back-billed overcharge and re-rate CRM-SEAT to the contracted $45.00/seat going forward.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R06-brightseat-crm",
+      "ruleId": "R06",
+      "ruleName": "Duplicate / Double Billing",
+      "category": "duplicate",
+      "vendorId": "brightseat-crm",
+      "vendorName": "Brightseat CRM",
+      "title": "Duplicate invoice BS-2026-0412 billed twice",
+      "summary": "Invoice BS-2026-0412 from Brightseat CRM appears more than once for the same amount ($7,500 per copy). The duplicate copy is a double-bill: the charge was invoiced with an identical number and amount, so one full copy ($7,500) is recoverable as a cash credit.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 750000,
+      "recoverableToDateCents": 750000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 225000,
+      "confidence": 0.96,
+      "severity": "high",
+      "leverage": "A clean duplicate is low-controversy, fast cash recovery — vendors rarely dispute it. Use it to also secure a three-way-match + audit-rights clause for future invoices.",
+      "evidence": [
+        {
+          "label": "Exact duplicate: invoice BS-2026-0412",
+          "value": "$7,500 — invoice dated 2026-04-05",
+          "sourceDoc": "brightseat-crm-services-invoice-2026-04.pdf"
+        },
+        {
+          "label": "Exact duplicate: invoice BS-2026-0412 (second copy)",
+          "value": "$7,500 — invoice dated 2026-04-05",
+          "sourceDoc": "brightseat-crm-services-invoice-2026-04-copy.pdf"
+        }
+      ],
+      "recommendedAsk": "Request a credit memo / cash refund of $7,500 for the duplicated invoice BS-2026-0412, and confirm both copies were not separately remitted.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R04-vertex-advisory-llp",
+      "ruleId": "R04",
+      "ruleName": "Price-Escalator / Above-Market Challenge",
+      "category": "price_escalator",
+      "vendorId": "vertex-advisory-llp",
+      "vendorName": "Vertex Advisory LLP",
+      "title": "Escalator breach: 8.0% uplift exceeds the 3.0% contract cap",
+      "summary": "Vertex Advisory LLP applied a 8.0% year-over-year increase to \"Monthly Audit & Advisory Retainer\" ($12,000.00 -> $12,960.00/mo), but the contract caps escalation at 3.0%. The portion above the cap — (8.0% - 3.0%) of the $144,000 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $7,200/yr.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 720000,
+      "recoverableToDateCents": 480000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 216000,
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.",
+      "evidence": [
+        {
+          "label": "Contract escalator clause",
+          "value": "Escalator type \"fixed\", capped at 3.0% (anniversary month 1)",
+          "sourceDoc": "vertex-advisory-llp-contract.docx"
+        },
+        {
+          "label": "Prior-period rate (Jul 2025)",
+          "value": "Monthly Audit & Advisory Retainer: $12,000.00/mo (= $144,000/yr base)",
+          "sourceDoc": "vertex-advisory-llp-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Escalated rate (Aug 2026)",
+          "value": "Monthly Audit & Advisory Retainer: $12,960.00/mo (+8.0% year-over-year)",
+          "sourceDoc": "vertex-advisory-llp-invoice-2026-08.pdf"
+        },
+        {
+          "label": "Benchmark applied",
+          "value": "Contract cap 3.0% — applied 8.0% exceeds the cap by 5.0%",
+          "sourceDoc": "vertex-advisory-llp-contract.docx"
+        },
+        {
+          "label": "Over-uplift billed to date",
+          "value": "$600.00/mo over the cap-allowed rate x 8 month(s) billed = $4,800 recoverable",
+          "sourceDoc": "vertex-advisory-llp-invoice-2026-08.pdf"
+        }
+      ],
+      "recommendedAsk": "Demand a credit/refund of $4,800 for the over-cap amount billed to date, roll \"Monthly Audit & Advisory Retainer\" back to the cap-compliant rate of $12,360.00/mo, and correct the base going forward ($7,200/yr).",
+      "deadlineDate": null
+    },
+    {
+      "id": "R11-summit-copier-leasing",
+      "ruleId": "R11",
+      "ruleName": "Zombie / Inactive Service Line",
+      "category": "overbilling",
+      "vendorId": "summit-copier-leasing",
+      "vendorName": "Summit Copier Leasing",
+      "title": "Inactive unit(s) still billing — $6,840/yr zombie charge",
+      "summary": "1 unit(s) billing a combined $570.00/mo ($6,840/yr) are decommissioned, returned, or zero-usage in the asset inventory yet still carry their monthly recurring charge. $6,840 is recoverable for periods already billed after retirement.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 684000,
+      "recoverableToDateCents": 684000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 205200,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "A decommissioned circuit, closed-location meter, or returned lease unit still billing is an unarguable, low-controversy credit; reconciling inventory to invoices also establishes audit-rights discipline for future periods.",
+      "evidence": [
+        {
+          "label": "Contract MRC basis",
+          "value": "Summit Copier Leasing recurring unit charges — annual contract value $74,280",
+          "sourceDoc": "summit-copier-leasing-contract.pdf"
+        },
+        {
+          "label": "Ghost units — billed 12 mo @ $570.00/mo",
+          "value": "MFP/Copier Monthly Lease — 2 returned unit(s) still billed (8-unit invoice vs 6 active in inventory); recoverable $6,840",
+          "sourceDoc": "summit-copier-leasing-invoice-2025-07.pdf"
+        }
+      ],
+      "recommendedAsk": "Credit $6,840 for the 1 inactive unit(s) billed after retirement, remove them going forward ($6,840/yr), and add an inventory-reconciliation/audit-rights clause.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R12-greenscape-grounds",
+      "ruleId": "R12",
+      "ruleName": "Service / Labor Overbilling",
+      "category": "overbilling",
+      "vendorId": "greenscape-grounds",
+      "vendorName": "GreenScape Grounds",
+      "title": "GreenScape Grounds: seasonal service billed out of season",
+      "summary": "Unperformed seasonal service: $6,400 of wrongly-billed charges identified across 12 invoices (annualized run-rate $6,400). Each charged line is contradicted by the contract schedule/scope.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 640000,
+      "recoverableToDateCents": 640000,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 192000,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "Itemized proof that each line is contradicted by the signed contract schedule/scope justifies a credit now and corrected go-forward billing terms.",
+      "evidence": [
+        {
+          "label": "Contract season window — Snow Removal",
+          "value": "Service is only contracted months 11-3; lines billed in any other month are unperformed/out-of-season.",
+          "sourceDoc": "greenscape-grounds-contract.docx"
+        },
+        {
+          "label": "Out-of-season \"Snow Removal (per event)\" (2025-07-01)",
+          "value": "1 x $1,600.00 = $1,600 billed in month 7, outside the contracted window",
+          "sourceDoc": "greenscape-grounds-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Out-of-season \"Snow Removal (per event)\" (2025-08-01)",
+          "value": "1 x $1,600.00 = $1,600 billed in month 8, outside the contracted window",
+          "sourceDoc": "greenscape-grounds-invoice-2025-08.pdf"
+        },
+        {
+          "label": "Out-of-season \"Snow Removal (per event)\" (2026-05-01)",
+          "value": "1 x $1,600.00 = $1,600 billed in month 5, outside the contracted window",
+          "sourceDoc": "greenscape-grounds-invoice-2026-05.pdf"
+        },
+        {
+          "label": "Out-of-season \"Snow Removal (per event)\" (2026-06-01)",
+          "value": "1 x $1,600.00 = $1,600 billed in month 6, outside the contracted window",
+          "sourceDoc": "greenscape-grounds-invoice-2026-06.pdf"
+        }
+      ],
+      "recommendedAsk": "Credit $6,400 for the out-of-season service lines and correct the go-forward billing to the contracted season window.",
+      "deadlineDate": null
+    },
+    {
+      "id": "R01-deskflow-itsm",
+      "ruleId": "R01",
+      "ruleName": "Auto-Renewal Notice-Window Alert",
+      "category": "auto_renewal",
+      "vendorId": "deskflow-itsm",
+      "vendorName": "DeskFlow ITSM",
+      "title": "Auto-renewal notice window has CLOSED — locked into a August 18, 2026 renewal",
+      "summary": "DeskFlow ITSM auto-renews on August 18, 2026 (52 days out). The 60-day cancellation-notice deadline was June 19, 2026 and has already passed, so absent renegotiation the buyer is locked into another 12-month term. The renewal applies a 7.0% uplift to the current $67,296/yr value ($72,007/yr), of which $4,711/yr is the negotiable increase. The closed/poorly-disclosed evergreen window may itself be unenforceable under several state auto-renewal laws — an escape lever even now.",
+      "savingsType": "avoidance",
+      "annualizedSavingsCents": 471072,
+      "recoverableToDateCents": 0,
+      "atRiskCents": 7200672,
+      "feeRate": 0.2,
+      "estimatedFeeCents": 94214,
+      "confidence": 0.85,
+      "severity": "critical",
+      "leverage": "An open (or contestable) notice window is the highest-leverage moment in the relationship: it converts an automatic renewal into a competitive event, forcing a price hold, escalator cap, and seat/commit right-sizing as the price of staying.",
+      "evidence": [
+        {
+          "label": "Auto-renew clause",
+          "value": "autoRenew = true; renewal term 12 months; notice required by written notice to vendor account manager 60 days before term end",
+          "sourceDoc": "deskflow-itsm-contract.pdf"
+        },
+        {
+          "label": "Term end date",
+          "value": "August 18, 2026 (52 days from analysis date June 27, 2026)",
+          "sourceDoc": "deskflow-itsm-contract.pdf"
+        },
+        {
+          "label": "Notice deadline",
+          "value": "June 19, 2026 — already passed (8 days ago): window closed",
+          "sourceDoc": "deskflow-itsm-contract.pdf"
+        },
+        {
+          "label": "Current annual value",
+          "value": "$67,296/yr",
+          "sourceDoc": "deskflow-itsm-contract.pdf"
+        },
+        {
+          "label": "Renewal uplift",
+          "value": "7.0% fixed escalator → renewal value $72,007/yr; negotiable uplift $4,711/yr",
+          "sourceDoc": "deskflow-itsm-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Release DeskFlow ITSM from the auto-renewal (or convert to month-to-month), citing the missed/poorly-disclosed evergreen window, and cap the renewal uplift at 0% — holding the $67,296/yr price and avoiding the $4,711/yr increase.",
+      "deadlineDate": "2026-06-19"
+    },
+    {
+      "id": "R08-vertex-advisory-llp",
+      "ruleId": "R08",
+      "ruleName": "Missed Early-Pay Discount",
+      "category": "missed_discount",
+      "vendorId": "vertex-advisory-llp",
+      "vendorName": "Vertex Advisory LLP",
+      "title": "Early-pay 2%/10 Net 30 discount forfeited on every invoice",
+      "summary": "AP paid all 14 Vertex Advisory LLP invoices ~20 days after the invoice date, past the 10-day early-pay window, forfeiting the 2% discount each time. That is $4,913.60 left on the table to date and $4,310/yr at the current run-rate.",
+      "savingsType": "recovery",
+      "annualizedSavingsCents": 431040,
+      "recoverableToDateCents": 491360,
+      "atRiskCents": 0,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 129312,
+      "confidence": 0.95,
+      "severity": "high",
+      "leverage": "Chronic early-pay misses are an internal AP timing fix worth a hard dollar figure. Quantify the back-period leakage to justify AP automation, and trade the corrected behaviour for dynamic-discounting terms (e.g. 2% at 5 days, 1.5% at 10).",
+      "evidence": [
+        {
+          "label": "Payment terms",
+          "value": "2%/10 Net 30 — 2% early-pay discount if paid within 10 days (net 30).",
+          "sourceDoc": "vertex-advisory-llp-invoice-2026-08.pdf"
+        },
+        {
+          "label": "Invoice VX-INV-01",
+          "value": "Total $17,000; invoiced 2025-07-05, paid 2025-07-25 (20 days later — 10 days past the 10-day window). Forfeited discount $340.00.",
+          "sourceDoc": "vertex-advisory-llp-invoice-2025-07.pdf"
+        },
+        {
+          "label": "Invoice VX-INV-02",
+          "value": "Total $17,000; invoiced 2025-08-05, paid 2025-08-25 (20 days later — 10 days past the 10-day window). Forfeited discount $340.00.",
+          "sourceDoc": "vertex-advisory-llp-invoice-2025-08.pdf"
+        },
+        {
+          "label": "Invoice VX-INV-03",
+          "value": "Total $17,000; invoiced 2025-09-05, paid 2025-09-25 (20 days later — 10 days past the 10-day window). Forfeited discount $340.00.",
+          "sourceDoc": "vertex-advisory-llp-invoice-2025-09.pdf"
+        },
+        {
+          "label": "Invoice VX-INV-04",
+          "value": "Total $17,000; invoiced 2025-10-05, paid 2025-10-25 (20 days later — 10 days past the 10-day window). Forfeited discount $340.00.",
+          "sourceDoc": "vertex-advisory-llp-invoice-2025-10.pdf"
+        },
+        {
+          "label": "Forfeited to date",
+          "value": "$4,913.60 across 14 invoices paid past the discount window.",
+          "sourceDoc": null
+        },
+        {
+          "label": "Implied cost of skipping",
+          "value": "Skipping 2%/10 Net 30 to pay ~20 days out is equivalent to borrowing at 37.2% APR.",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Request a retroactive credit of $4,913.60 for the 14 forfeited 2% discounts, and fix AP to pay within 10 days going forward to capture $4,310/yr.",
+      "deadlineDate": null
+    }
+  ],
+  "drafts": [
+    {
+      "findingId": "R09-atlascloud-iaas",
+      "vendorName": "AtlasCloud (IaaS)",
+      "to": "accounts@atlascloudiaas.com",
+      "subject": "AtlasCloud (IaaS) – right-sizing to actual usage",
+      "body": "Hi AtlasCloud (IaaS) team,\n\nAhead of our renewal we pulled utilization and consumption data. AtlasCloud (IaaS) carries a $480,000/yr committed minimum but consumed only $360,000 (75.0% utilization) — a $120,000 take-or-pay shortfall paid for and not used. In-term the floor is owed; right-sizing the next-term commitment to $396,000 (consumption + 10% buffer) recaptures $84,000/yr. Raise this before the renewal notice deadline (2027-11-01, 492 days out).\n\nWhat we're seeing:\n  • Committed annual minimum (take-or-pay floor): $480,000\n  • Commitment terms (annual measurement period): minCommitSpend $480,000 / annual\n  • Actual consumption (12 invoices): $360,000 (75.0% of the floor)\n  • Monthly run-rate / range: $30,000/mo (low $30,000, high $30,000)\n\nFor renewal we'd like to Reduce the committed annual minimum from $480,000 to $396,000 at renewal (consumption of $360,000 + 10% buffer), or convert the take-or-pay floor to a drawdown/rollover so unused commit carries forward — a $84,000/yr right-sizing.. To keep this simple and protect your unit economics, we'll hold the per-unit rate flat and add a true-up provision so we can scale back up at the same price. A documented multi-period utilization trend is the lever to lower the next-term minimum or convert take-or-pay to a drawdown/rollover. Over-commitment also signals the original deal was oversold — leverage for additional concessions. Tie to R01 timing: present before the notice deadline.\n\nCan you have a revised order form to us by November 1, 2027? We'd rather expand from a clean baseline than carry shelfware into another term.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "minimum_commit"
+    },
+    {
+      "findingId": "R05-catalyst-creative-agency",
+      "vendorName": "Catalyst Creative Agency",
+      "to": "accounts@catalystcreativeagency.com",
+      "subject": "Catalyst Creative Agency – right-sizing to actual usage",
+      "body": "Hi Catalyst Creative Agency team,\n\nAhead of our renewal we pulled utilization and consumption data. Plan includes 40 hour/monthly, but invoices bill 65 (25 over) at $185.00/hour = $4,625/monthly ($55,500/yr) in overage. No higher-allowance tier is published; the entire $4,625/monthly in punitive overage is avoidable by buying up the base allowance from 40 to 65 units. Annualized avoidable savings $55,500.\n\nWhat we're seeing:\n  • Included allowance (contract commitment): 40 hour per monthly\n  • Contract overage rate: $185.00 per hour\n  • Billed usage (invoice): 65 hour (25 over the 40 allowance)\n  • Overage charge per period: 25 x $185.00 = $4,625 / monthly ($55,500 / yr)\n\nFor renewal we'd like to Buy up the base allowance from 40 to at least 65 hour/monthly, eliminating the $4,625/monthly punitive overage — $4,625/monthly ($55,500/yr).. To keep this simple and protect your unit economics, we'll hold the per-unit rate flat and add a true-up provision so we can scale back up at the same price. Consistent allowance breach means a higher base allowance (cheaper per unit) or a renegotiated overage rate beats paying punitive overage month after month.\n\nCan you have a revised order form to us within 10 business days? We'd rather expand from a clean baseline than carry shelfware into another term.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "tier_optimization"
+    },
+    {
+      "findingId": "R03-collabhub-suite",
+      "vendorName": "CollabHub Suite",
+      "to": "accounts@collabhubsuite.com",
+      "subject": "CollabHub Suite – right-sizing to actual usage",
+      "body": "Hi CollabHub Suite team,\n\nAhead of our renewal we pulled utilization and consumption data. Utilization export shows only 160 of 250 paid seats active within the 30-day activity window — 90 seats are billed but idle. Reclaiming them at renewal avoids $48,600/yr.\n\nWhat we're seeing:\n  • Contracted seats (commitment): 250 seats @ $45.00/seat/mo (tier Standard)\n  • Active seats (utilization export): 160 of 250 seats active within 30 days of 2026-06-27 (64.0% utilization)\n  • Idle seats: 90 idle = 250 paid − 160 active (30 never logged in, 60 inactive >30d)\n  • Annualized idle cost: 90 × $45.00 × 12 = $48,600/yr ($4,050/mo)\n\nFor renewal we'd like to Reduce the seat count from 250 to 160 active seats at renewal (drop 90 idle seats), holding the $45.00/seat/mo rate flat — an annual avoidance of $48,600.. To keep this simple and protect your unit economics, we'll hold the per-unit rate flat and add a true-up provision so we can scale back up at the same price. Hard utilization data ('only N of M seats active') is the strongest right-sizing lever at renewal. Anchor on active seats, not provisioned. Offer to hold the per-seat rate flat plus a true-up clause to add seats later at the same price — it protects the vendor's unit economics and makes 'yes' easy. Pair with R01 timing so the ask lands before the notice deadline.\n\nCan you have a revised order form to us by January 29, 2027? We'd rather expand from a clean baseline than carry shelfware into another term.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "unused_seats"
+    },
+    {
+      "findingId": "R01-payworks-hcm",
+      "vendorName": "PayWorks HCM",
+      "to": "accounts@payworkshcm.com",
+      "subject": "Northwind Logistics Group, Inc. – PayWorks HCM renewal: term adjustment request",
+      "body": "Hi PayWorks HCM team,\n\nWe value the partnership and intend to keep working together, but I need to flag the upcoming auto-renewal on this agreement. PayWorks HCM auto-renews on August 11, 2026 (45 days out) at a 18.0% uplift, taking the contract from $190,800/yr to $225,144/yr. Written cancellation notice is due by July 12, 2026 (15 days away). Acting before that deadline opens a competitive renewal: the $34,344/yr uplift is negotiable and a price hold / escalator cap can be demanded as the condition of staying.\n\nWhat we're seeing:\n  • Auto-renew clause: autoRenew = true; renewal term 12 months; notice required by written notice to vendor 30 days before term end\n  • Term end date: August 11, 2026 (45 days from analysis date June 27, 2026)\n  • Notice deadline: July 12, 2026 — 15 days away\n  • Current annual value: $190,800/yr\n\nRather than let it renew on the current terms, we'd like to propose Before the July 12, 2026 notice deadline, demand a price hold or convert to month-to-month and cap the renewal uplift — eliminating the 18.0% ($34,344/yr) increase on the $190,800/yr base.. An open (or contestable) notice window is the highest-leverage moment in the relationship: it converts an automatic renewal into a competitive event, forcing a price hold, escalator cap, and seat/commit right-sizing as the price of staying.\n\nCan you confirm by July 12, 2026? We'd prefer to resolve this collaboratively before it escalates to a formal contract review.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "auto_renewal"
+    },
+    {
+      "findingId": "R13-redshield-cyber",
+      "vendorName": "RedShield Cyber",
+      "to": "accounts@redshieldcyber.com",
+      "subject": "RedShield Cyber – right-sizing to actual usage",
+      "body": "Hi RedShield Cyber team,\n\nAhead of our renewal we pulled utilization and consumption data. RedShield Cyber's standalone \"Managed Detection & Response (MDR)\" subscription ($28,000/yr) overlaps the same capability already bundled in AtlasCloud (IaaS)'s agreement. Eliminating the redundant standalone subscription at its renewal/cancellation window avoids the full annual cost. Issue the non-renewal/cancellation notice before 2027-11-01 (60-day window).\n\nWhat we're seeing:\n  • Overlapping capability: \"Managed Detection & Response (MDR)\" is covered by both AtlasCloud (IaaS) and RedShield Cyber.\n  • RedShield Cyber — standalone subscription (eliminable): Capability tags: Managed Detection & Response (MDR), SIEM, Threat Intelligence. Contract MSA-REDSHIELD-CYBER runs 2025-01-01 → 2027-12-31, 60-day notice.\n  • AtlasCloud (IaaS) — capability already bundled (retained): Capability tags: IaaS, Compute, Storage, Managed Detection & Response (MDR). \"Managed Detection & Response (MDR)\" ships as a bundled add-on under contract MSA-ATLASCLOUD-IAAS.\n  • RedShield Cyber run-rate: 12 monthly invoice(s) annualizing to $28,000 (contract current annual value $28,000).\n\nFor renewal we'd like to Do not renew the RedShield Cyber Managed Detection & Response (MDR) subscription; eliminate the redundant $28,000/yr spend (capability already provided under the AtlasCloud (IaaS) agreement).. To keep this simple and protect your unit economics, we'll hold the per-unit rate flat and add a true-up provision so we can scale back up at the same price. \"Managed Detection & Response (MDR)\" is already covered under our agreement with AtlasCloud (IaaS) — a clean non-renewal justification for RedShield Cyber and a consolidation lever toward a single retained vendor.\n\nCan you have a revised order form to us by November 1, 2027? We'd rather expand from a clean baseline than carry shelfware into another term.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "tier_optimization"
+    },
+    {
+      "findingId": "R04-keystone-mutual-insurance",
+      "vendorName": "Keystone Mutual Insurance",
+      "to": "accounts@keystonemutualinsurance.com",
+      "subject": "Keystone Mutual Insurance renewal pricing – capping the annual uplift",
+      "body": "Hi Keystone Mutual Insurance team,\n\nThanks for the renewal terms. The applied increase is out of line with both our agreement and the market. Keystone Mutual Insurance raised \"CGL + Property Package Premium (monthly installment)PKG-CGL-PROP\" 22.0% year-over-year ($10,000.00 -> $12,200.00/mo), far above the 8.0% above-market threshold and the fair 3-5% band (CPI 3.2%). With no contractual cap, the full $26,400/yr uplift is challengeable at renewal — convert it to a hard cap.\n\nWhat we're seeing:\n  • Contract escalator clause: Escalator type \"fixed\", no cap; market fair band is 3-5% (CPI 3.2%)\n  • Prior-period rate (May 2025): CGL + Property Package Premium (monthly installment)PKG-CGL-PROP: $10,000.00/mo (= $120,000/yr base)\n  • Escalated rate (Jun 2026): CGL + Property Package Premium (monthly installment)PKG-CGL-PROP: $12,200.00/mo (+22.0% year-over-year)\n  • Benchmark applied: Above-market threshold 8.0% — applied 22.0% (CPI 3.2%, BLS CPI-U trailing 12mo (May 2026): 3.2%)\n\nHere's a structure that works for both sides: Cap the renewal increase at \"lesser of CPI or 5%\" and roll the 22.0% uplift back toward fair market, recovering $26,400/yr of above-market spend. — a contractual cap on any future increase (the lesser of CPI or 3–5%). In exchange we're prepared to commit to a multi-year term, which gives you revenue visibility. A compliant-but-above-market uplift is the renewal ask: convert it to a hard cap ('lesser of CPI or 5%'), traded for a multi-year commitment. A vendor's refusal to cap signals its pricing trajectory.\n\nCan you confirm whether the cap is workable within 10 business days? A predictable ceiling lets us re-sign with confidence.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "price_escalator"
+    },
+    {
+      "findingId": "R04-swiftparcel-express",
+      "vendorName": "SwiftParcel Express",
+      "to": "accounts@swiftparcelexpress.com",
+      "subject": "SwiftParcel Express renewal pricing – capping the annual uplift",
+      "body": "Hi SwiftParcel Express team,\n\nThanks for the renewal terms. The applied increase is out of line with both our agreement and the market. SwiftParcel Express applied a 7.5% year-over-year increase to \"Base Transportation Charge\" ($112,000.00 -> $120,400.00/mo), but the contract caps escalation at 5.9%. The portion above the cap — (7.5% - 5.9%) of the $1,344,000 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $21,504/yr.\n\nWhat we're seeing:\n  • Contract escalator clause: Escalator type \"fixed\", capped at 5.9% (anniversary month 5)\n  • Prior-period rate (May 2025): Base Transportation Charge: $112,000.00/mo (= $1,344,000/yr base)\n  • Escalated rate (Jun 2026): Base Transportation Charge: $120,400.00/mo (+7.5% year-over-year)\n  • Benchmark applied: Contract cap 5.9% — applied 7.5% exceeds the cap by 1.6%\n\nHere's a structure that works for both sides: Demand a credit/refund of $3,584 for the over-cap amount billed to date, roll \"Base Transportation Charge\" back to the cap-compliant rate of $118,608.00/mo, and correct the base going forward ($21,504/yr). — a contractual cap on any future increase (the lesser of CPI or 3–5%). In exchange we're prepared to commit to a multi-year term, which gives you revenue visibility. A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.\n\nCan you confirm whether the cap is workable within 10 business days? A predictable ceiling lets us re-sign with confidence.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "price_escalator"
+    },
+    {
+      "findingId": "R12-sentryone-protective",
+      "vendorName": "SentryOne Protective",
+      "to": "accounts@sentryoneprotective.com",
+      "subject": "Billing discrepancy – SentryOne Protective – correction requested ($18,900)",
+      "body": "Hi SentryOne Protective team,\n\nWe've been reconciling recent invoices against our contract and identified a discrepancy. Labor overbilling (holiday premium + overtime): $18,900 of wrongly-billed charges identified across 12 invoices (annualized run-rate $18,900). Each charged line is contradicted by the contract schedule/scope.\n\nWhat we're seeing:\n  • Contract labor schedule: Scheduled post = 168 hrs/week; billable holidays = 6 dates. Premiums and OT are only warranted within those terms.\n  • Holiday premium on non-holiday (2025-08-15): 24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-08-15 is not in the contract holiday calendar)\n  • Holiday premium on non-holiday (2025-10-15): 24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-10-15 is not in the contract holiday calendar)\n  • Holiday premium on non-holiday (2025-12-15): 24 hrs at $60.00 vs regular $30.00 = $720 misapplied premium (2025-12-15 is not in the contract holiday calendar)\n\nPlease issue a credit/refund of $18,900 and correct the go-forward billing. Credit $18,900 for holiday premiums charged on non-holidays and overtime beyond the scheduled post, and correct the go-forward billing process.. Itemized proof that each line is contradicted by the signed contract schedule/scope justifies a credit now and corrected go-forward billing terms.\n\nWe'll remit any undisputed balance on standard terms. Please confirm the correction within 10 business days; we're happy to reconcile jointly under the audit-records provision.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "overbilling"
+    },
+    {
+      "findingId": "R11-meridian-telecom",
+      "vendorName": "Meridian Telecom",
+      "to": "accounts@meridiantelecom.com",
+      "subject": "Billing discrepancy – Meridian Telecom – correction requested ($15,000)",
+      "body": "Hi Meridian Telecom team,\n\nWe've been reconciling recent invoices against our contract and identified a discrepancy. 1 circuit(s) billing a combined $1,250.00/mo ($15,000/yr) are decommissioned, returned, or zero-usage in the asset inventory yet still carry their monthly recurring charge. $15,000 is recoverable for periods already billed after retirement.\n\nWhat we're seeing:\n  • Contract MRC basis: Meridian Telecom recurring circuit charges — annual contract value $75,000\n  • Asset CKT-4417 — billed 12 mo @ $1,250.00/mo: SD-WAN MRC — Detroit Branch (closed) (CKT-4417) — inventory status \"decommissioned\" on 2025-05-30; recoverable $15,000\n  • Inventory record CKT-4417 (circuit): status=decommissioned, lastActive=2025-05-30, decommissioned 2025-05-30\n\nPlease issue a credit/refund of $15,000 and correct the go-forward billing. Credit $15,000 for the 1 inactive circuit(s) billed after retirement, remove them going forward ($15,000/yr), and add an inventory-reconciliation/audit-rights clause.. A decommissioned circuit, closed-location meter, or returned lease unit still billing is an unarguable, low-controversy credit; reconciling inventory to invoices also establishes audit-rights discipline for future periods.\n\nWe'll remit any undisputed balance on standard terms. Please confirm the correction within 10 business days; we're happy to reconcile jointly under the audit-records provision.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "overbilling"
+    },
+    {
+      "findingId": "R04-pristinecare-facilities",
+      "vendorName": "PristineCare Facilities",
+      "to": "accounts@pristinecarefacilities.com",
+      "subject": "PristineCare Facilities renewal pricing – capping the annual uplift",
+      "body": "Hi PristineCare Facilities team,\n\nThanks for the renewal terms. The applied increase is out of line with both our agreement and the market. PristineCare Facilities applied a 9.0% year-over-year increase to \"Nightly Janitorial Services (3 offices)\" ($23,700.00 -> $25,833.00/mo), but the contract caps escalation at 4.0%. The portion above the cap — (9.0% - 4.0%) of the $284,400 prior-year base — is a breach of the contract's own ceiling and is recoverable as a credit/refund: $14,220/yr.\n\nWhat we're seeing:\n  • Contract escalator clause: Escalator type \"fixed\", capped at 4.0% (anniversary month 9)\n  • Prior-period rate (May 2025): Nightly Janitorial Services (3 offices): $23,700.00/mo (= $284,400/yr base)\n  • Escalated rate (Jun 2026): Nightly Janitorial Services (3 offices): $25,833.00/mo (+9.0% year-over-year)\n  • Benchmark applied: Contract cap 4.0% — applied 9.0% exceeds the cap by 5.0%\n\nHere's a structure that works for both sides: Demand a credit/refund of $11,850 for the over-cap amount billed to date, roll \"Nightly Janitorial Services (3 offices)\" back to the cap-compliant rate of $24,648.00/mo, and correct the base going forward ($14,220/yr). — a contractual cap on any future increase (the lesser of CPI or 3–5%). In exchange we're prepared to commit to a multi-year term, which gives you revenue visibility. A documented increase above the contract's own cap is a breach: demand the over-cap cash back and a corrected base, not just a forward fix. Escalators compound, so present the 3-year NPV of the corrected base.\n\nCan you confirm whether the cap is workable within 10 business days? A predictable ceiling lets us re-sign with confidence.\n\nBest regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\njordan.avery@northwindlogistics.com",
+      "category": "price_escalator"
+    }
+  ]
+}

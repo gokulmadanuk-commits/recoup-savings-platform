@@ -3,7 +3,7 @@
   "analysisDate": "2026-06-27",
   "generatedAt": "2026-06-27",
   "fileCount": 302,
-  "totalBytes": 1125981,
+  "totalBytes": 1126046,
   "byFormat": {
     "pdf": 229,
     "xlsx": 66,
@@ -223,7 +223,7 @@
           "format": "excel",
           "fileName": "collabhub-suite-utilization.xlsx",
           "path": "/seed/collabhub-suite/collabhub-suite-utilization.xlsx",
-          "bytes": 16001
+          "bytes": 16002
         }
       ]
     },
@@ -440,84 +440,84 @@
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-07.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-07.xlsx",
-          "bytes": 7464
+          "bytes": 7465
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-08.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-08.xlsx",
-          "bytes": 7464
+          "bytes": 7465
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-09.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-09.xlsx",
-          "bytes": 7461
+          "bytes": 7462
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-10.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-10.xlsx",
-          "bytes": 7461
+          "bytes": 7462
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-11.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-11.xlsx",
-          "bytes": 7458
+          "bytes": 7459
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2025-12.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2025-12.xlsx",
-          "bytes": 7466
+          "bytes": 7467
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-01.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-01.xlsx",
-          "bytes": 7463
+          "bytes": 7464
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-02.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-02.xlsx",
-          "bytes": 7466
+          "bytes": 7467
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-03.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-03.xlsx",
-          "bytes": 7464
+          "bytes": 7465
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-04.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-04.xlsx",
-          "bytes": 7461
+          "bytes": 7462
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-05.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-05.xlsx",
-          "bytes": 7463
+          "bytes": 7464
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "atlascloud-iaas-invoice-2026-06.xlsx",
           "path": "/seed/atlascloud-iaas/atlascloud-iaas-invoice-2026-06.xlsx",
-          "bytes": 7461
+          "bytes": 7462
         }
       ]
     },
@@ -538,84 +538,84 @@
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-07.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-07.xlsx",
-          "bytes": 7458
+          "bytes": 7459
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-08.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-08.xlsx",
-          "bytes": 7459
+          "bytes": 7460
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-09.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-09.xlsx",
-          "bytes": 7457
+          "bytes": 7458
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-10.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-10.xlsx",
-          "bytes": 7456
+          "bytes": 7457
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-11.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-11.xlsx",
-          "bytes": 7455
+          "bytes": 7456
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2025-12.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2025-12.xlsx",
-          "bytes": 7461
+          "bytes": 7462
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-01.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-01.xlsx",
-          "bytes": 7460
+          "bytes": 7461
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-02.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-02.xlsx",
-          "bytes": 7463
+          "bytes": 7464
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-03.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-03.xlsx",
-          "bytes": 7459
+          "bytes": 7460
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-04.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-04.xlsx",
-          "bytes": 7459
+          "bytes": 7460
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-05.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-05.xlsx",
-          "bytes": 7455
+          "bytes": 7456
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "nimbusedge-cdn-invoice-2026-06.xlsx",
           "path": "/seed/nimbusedge-cdn/nimbusedge-cdn-invoice-2026-06.xlsx",
-          "bytes": 7458
+          "bytes": 7459
         }
       ]
     },
@@ -636,91 +636,91 @@
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-07.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-07.xlsx",
-          "bytes": 7653
+          "bytes": 7654
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-08.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-08.xlsx",
-          "bytes": 7654
+          "bytes": 7655
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-09.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-09.xlsx",
-          "bytes": 7651
+          "bytes": 7652
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-10.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-10.xlsx",
-          "bytes": 7652
+          "bytes": 7653
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-11.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-11.xlsx",
-          "bytes": 7648
+          "bytes": 7649
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2025-12.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2025-12.xlsx",
-          "bytes": 7656
+          "bytes": 7657
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-01.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-01.xlsx",
-          "bytes": 7654
+          "bytes": 7655
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-02.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-02.xlsx",
-          "bytes": 7655
+          "bytes": 7656
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-03.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-03.xlsx",
-          "bytes": 7655
+          "bytes": 7656
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-04.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-04.xlsx",
-          "bytes": 7651
+          "bytes": 7652
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-05.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-05.xlsx",
-          "bytes": 7651
+          "bytes": 7652
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "meridian-telecom-invoice-2026-06.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-invoice-2026-06.xlsx",
-          "bytes": 7650
+          "bytes": 7651
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "meridian-telecom-utilization.xlsx",
           "path": "/seed/meridian-telecom/meridian-telecom-utilization.xlsx",
-          "bytes": 7099
+          "bytes": 7100
         }
       ]
     },
@@ -741,91 +741,91 @@
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-07.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-07.xlsx",
-          "bytes": 8155
+          "bytes": 8156
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-08.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-08.xlsx",
-          "bytes": 8153
+          "bytes": 8154
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-09.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-09.xlsx",
-          "bytes": 8152
+          "bytes": 8153
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-10.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-10.xlsx",
-          "bytes": 8152
+          "bytes": 8153
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-11.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-11.xlsx",
-          "bytes": 8149
+          "bytes": 8150
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2025-12.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2025-12.xlsx",
-          "bytes": 8155
+          "bytes": 8156
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-01.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-01.xlsx",
-          "bytes": 8154
+          "bytes": 8155
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-02.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-02.xlsx",
-          "bytes": 8156
+          "bytes": 8157
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-03.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-03.xlsx",
-          "bytes": 8154
+          "bytes": 8155
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-04.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-04.xlsx",
-          "bytes": 8152
+          "bytes": 8153
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-05.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-05.xlsx",
-          "bytes": 8154
+          "bytes": 8155
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "clearwave-mobile-invoice-2026-06.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-invoice-2026-06.xlsx",
-          "bytes": 8151
+          "bytes": 8152
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "clearwave-mobile-utilization.xlsx",
           "path": "/seed/clearwave-mobile/clearwave-mobile-utilization.xlsx",
-          "bytes": 7722
+          "bytes": 7723
         }
       ]
     },
@@ -846,91 +846,91 @@
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-07.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-07.xlsx",
-          "bytes": 7610
+          "bytes": 7611
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-08.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-08.xlsx",
-          "bytes": 7610
+          "bytes": 7611
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-09.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-09.xlsx",
-          "bytes": 7608
+          "bytes": 7609
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-10.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-10.xlsx",
-          "bytes": 7609
+          "bytes": 7610
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-11.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-11.xlsx",
-          "bytes": 7605
+          "bytes": 7606
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2025-12.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2025-12.xlsx",
-          "bytes": 7612
+          "bytes": 7613
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-01.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-01.xlsx",
-          "bytes": 7609
+          "bytes": 7610
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-02.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-02.xlsx",
-          "bytes": 7611
+          "bytes": 7612
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-03.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-03.xlsx",
-          "bytes": 7610
+          "bytes": 7611
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-04.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-04.xlsx",
-          "bytes": 7606
+          "bytes": 7607
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-05.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-05.xlsx",
-          "bytes": 7610
+          "bytes": 7611
         },
         {
           "docType": "invoice",
           "format": "excel",
           "fileName": "cascade-power-water-invoice-2026-06.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-invoice-2026-06.xlsx",
-          "bytes": 7607
+          "bytes": 7608
         },
         {
           "docType": "usage_export",
           "format": "excel",
           "fileName": "cascade-power-water-utilization.xlsx",
           "path": "/seed/cascade-power-water/cascade-power-water-utilization.xlsx",
-          "bytes": 7075
+          "bytes": 7076
         }
       ]
     },
@@ -1056,7 +1056,7 @@
           "format": "word",
           "fileName": "pristinecare-facilities-contract.docx",
           "path": "/seed/pristinecare-facilities/pristinecare-facilities-contract.docx",
-          "bytes": 9867
+          "bytes": 9868
         },
         {
           "docType": "invoice",
@@ -1266,7 +1266,7 @@
           "format": "word",
           "fileName": "sentryone-protective-contract.docx",
           "path": "/seed/sentryone-protective/sentryone-protective-contract.docx",
-          "bytes": 9850
+          "bytes": 9851
         },
         {
           "docType": "invoice",
@@ -1875,7 +1875,7 @@
           "format": "word",
           "fileName": "redshield-cyber-contract.docx",
           "path": "/seed/redshield-cyber/redshield-cyber-contract.docx",
-          "bytes": 9757
+          "bytes": 9756
         },
         {
           "docType": "invoice",

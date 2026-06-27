@@ -16,6 +16,9 @@ import { renderPdf } from "../src/lib/render/pdf";
 import { renderExcel } from "../src/lib/render/excel";
 import { renderWord } from "../src/lib/render/word";
 import { parseBatch, type InputFile } from "../src/lib/parsing/index";
+import { assembleDataset } from "../src/lib/docmodel/from-docmodel";
+import { analyzeDataset } from "../src/lib/analyze";
+import { ALL_RULES } from "../src/lib/rules/index";
 import { toDollars } from "../src/lib/money";
 import type { DocModel } from "../src/lib/types";
 
@@ -114,6 +117,18 @@ async function main() {
     expectedFindings: EXPECTED,
   };
   await writeFile(join(root, "ground-truth.json"), JSON.stringify(groundTruth, null, 2));
+
+  // Run the full engine over the PARSED-BACK documents (proving parse->detect)
+  // and persist the precomputed analysis for the instant "load sample" path.
+  const parsedDataset = assembleDataset(batch.documents, dataset.customer, dataset.analysisDate);
+  const analysis = analyzeDataset(parsedDataset, ALL_RULES, {
+    processed: batch.processed,
+    failed: batch.failed,
+  });
+  await writeFile(join(root, "analysis.json"), JSON.stringify(analysis, null, 2));
+  process.stdout.write(
+    `=== analysis: $${Math.round(toDollars(analysis.summary.totalAnnualizedSavingsCents)).toLocaleString()}/yr across ${analysis.summary.findingCount} findings (from parsed docs)\n`,
+  );
 
   process.stdout.write(
     `\n=== generated ${allFiles.length} files (${(totalBytes / 1024 / 1024).toFixed(1)} MB) ` +
