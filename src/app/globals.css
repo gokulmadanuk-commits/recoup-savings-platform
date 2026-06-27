@@ -1,24 +1,77 @@
 @import "tailwindcss";
 
-/* Provisional editorial theme — refined from design research before UI build. */
+/* ---- RECOUP editorial design system (from design research) ---- */
 @theme {
-  --color-paper: #f4f1ea;
-  --color-paper-dim: #ece6d8;
-  --color-paper-line: #ddd6c5;
-  --color-ink: #1b1a16;
-  --color-ink-soft: #4a4740;
-  --color-forest: #0d3b2e;
-  --color-forest-deep: #0a2c22;
-  --color-forest-soft: #1b5e47;
-  --color-sand: #c9a86a;
-  --color-claret: #7a2e2e;
+  /* Ground & paper */
+  --color-paper: #f5f1e8; /* primary warm off-white ground */
+  --color-bone: #ede7d9; /* alt background, zebra rows, insets */
+  --color-paper-line: #ddd6c5; /* hairline rules on paper */
 
-  --font-display: Georgia, "Times New Roman", serif;
-  --font-body: ui-sans-serif, system-ui, sans-serif;
+  /* Forest greens */
+  --color-forest: #1f3a2e; /* primary dark — heroes, footer, CTAs */
+  --color-pine: #16271f; /* darkest — gradient floors, stat cards */
+  --color-emerald: #008168; /* mid accent — links, active nav, series */
+  --color-verdant: #2e7d5b; /* bright — hovers, positive figures */
+
+  /* Ink */
+  --color-ink: #1a1a17; /* warm near-black body/headlines */
+  --color-ink-soft: #4a4a42; /* muted secondary text, captions */
+
+  /* Seasoning */
+  --color-gold: #b08d45; /* hairlines, accents — used sparingly */
+  --color-sand: #d8c9a8; /* tag fills, chart area fills */
+  --color-cream: #f0e9d8; /* text/wordmark/pills on forest */
+  --color-terracotta: #a6492f; /* negative figures — earthy, not alarm-red */
+
+  /* Type roles */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-newsreader), Georgia, serif;
+  --font-ui: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 html,
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Financial figures align like a printed prospectus. */
+.tnum {
+  font-variant-numeric: tabular-nums lining-nums;
+  font-feature-settings: "tnum", "lnum";
+}
+
+/* Eyebrow / kicker label. */
+.eyebrow {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Felt-not-seen paper grain over the whole page. */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
