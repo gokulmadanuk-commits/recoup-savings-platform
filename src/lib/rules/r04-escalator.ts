@@ -79,9 +79,14 @@ function groupRecurringLines(invoices: Invoice[]): LineGroup[] {
   return [...groups.values()];
 }
 
-/** The per-period amount that escalated: the unit price, or the line total if qty is 1. */
+/**
+ * The per-period amount that escalated. Use the LINE TOTAL (qty x unit price),
+ * not the unit price, so the escalation base reflects actual per-period spend on
+ * qty>1 recurring lines. The applied-percentage ratio is unaffected (qty cancels
+ * when quantity is constant across periods).
+ */
 function periodAmount(line: InvoiceLine): number {
-  return line.unitPriceCents;
+  return line.lineTotalCents;
 }
 
 interface Jump {

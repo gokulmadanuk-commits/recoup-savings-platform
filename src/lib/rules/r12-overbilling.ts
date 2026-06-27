@@ -153,7 +153,14 @@ function checkLabor(c: Contract, invoices: Invoice[]): Hit | null {
 
   // Determine whether the scheduled post is already fully covered by regular
   // hours (then any OT is structurally beyond the schedule). Compare billed
-  // regular hours/week against the contracted scheduledHoursPerWeek.
+  // regular hours/week against the contracted scheduledHoursPerWeek, derived on
+  // a calendar basis: weeksCovered = months * (365/12 days) / 7. Billed regular
+  // hours are often invoiced on a flat 30-day month, so they can fall a few
+  // percent short of the calendar-derived schedule even for a fully-staffed
+  // post; SCHEDULE_COVERAGE_TOLERANCE absorbs that rounding gap. Within it the
+  // post counts as fully staffed by regular hours, so any OT billed on top is
+  // structurally beyond the schedule and recoverable.
+  const SCHEDULE_COVERAGE_TOLERANCE = 0.95; // accept >=95% of the calendar schedule as "fully covered"
   const monthsCovered = distinctServiceMonths(invoices);
   const totalRegularHours = invoices
     .flatMap((inv) => inv.lines)
@@ -163,7 +170,7 @@ function checkLabor(c: Contract, invoices: Invoice[]): Hit | null {
   const regularHoursPerWeek = weeksCovered > 0 ? totalRegularHours / weeksCovered : 0;
   const scheduled = c.scheduledHoursPerWeek;
   const postFullyCovered =
-    scheduled != null && scheduled > 0 && regularHoursPerWeek >= scheduled * 0.95;
+    scheduled != null && scheduled > 0 && regularHoursPerWeek >= scheduled * SCHEDULE_COVERAGE_TOLERANCE;
 
   for (const inv of invoices) {
     for (const line of inv.lines) {

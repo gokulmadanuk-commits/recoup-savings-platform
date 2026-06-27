@@ -57,14 +57,21 @@ export async function parsePdf(data: Uint8Array, fileName: string): Promise<Pars
     });
   }
 
-  // First non-empty row is the title.
+  // The first row is the title only if it isn't actually a field / table /
+  // clause line — otherwise a title-less document would swallow its first field.
   let cursor = 0;
   let title = "";
-  if (rows.length > 0) {
-    title = rowText(rows[0]);
-    cursor = 1;
-  } else {
+  if (rows.length === 0) {
     warnings.push("No text rows extracted");
+  } else {
+    const first = rows[0];
+    const lead = first.runs[0]?.str.trim() ?? "";
+    const looksStructural =
+      parseFieldRow(first) !== null || TABLE_CAPTION.test(lead) || lead === CLAUSES_SENTINEL;
+    if (!looksStructural) {
+      title = rowText(first);
+      cursor = 1;
+    }
   }
 
   const fields: DocField[] = [];
@@ -245,11 +252,12 @@ function readTable(
     const row = rows[i];
     const lead = row.runs[0]?.str.trim() ?? "";
 
-    // Stop at the next table caption or the clause sentinel.
+    // A table runs until the next table caption, the clause sentinel, or EOF —
+    // explicit boundaries the renderer always emits (fields are rendered BEFORE
+    // tables). We deliberately do NOT terminate on a field-row heuristic, which
+    // would silently truncate a table at a sparse data row whose first cell ends
+    // in a colon.
     if (TABLE_CAPTION.test(lead) || lead === CLAUSES_SENTINEL) break;
-
-    // Stop if we've left the table region (a field row appears).
-    if (parseFieldRow(row) && !looksLikeDataRow(row, anchors)) break;
 
     const cells = rowToCells(row, anchors, columns.length);
 
@@ -288,17 +296,6 @@ function nearestAnchor(x: number, anchors: number[]): number {
 function isHeaderRow(cells: string[], columns: string[]): boolean {
   if (cells.length !== columns.length) return false;
   return cells.every((c, idx) => c === columns[idx]);
-}
-
-/**
- * Heuristic: a row "looks like a data row" of this table if at least two of its
- * runs land near distinct column anchors (vs a field row that has a label cell
- * at the far left and a value near a single anchor).
- */
-function looksLikeDataRow(row: Row, anchors: number[]): boolean {
-  const hit = new Set<number>();
-  for (const run of row.runs) hit.add(nearestAnchor(run.x, anchors));
-  return hit.size >= 2;
 }
 
 /* ------------------------------------------------------------------ */

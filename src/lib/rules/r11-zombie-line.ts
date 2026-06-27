@@ -176,7 +176,7 @@ const r11: Rule = perVendorRule(
           } else {
             zombies.push({
               assetId: "__ghost_units__",
-              reason: `${ghostCount} returned unit(s) still billed (8-unit invoice vs ${activeUnits} active in inventory)`,
+              reason: `${ghostCount} returned unit(s) still billed (${billedUnits}-unit invoice vs ${activeUnits} active in inventory)`,
               monthlyWasteCents: monthlyWaste,
               monthsBilled: 1,
               recoverableCents: monthlyWaste,

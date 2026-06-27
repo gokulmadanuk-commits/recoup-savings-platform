@@ -38,19 +38,53 @@ function annualizedSpend(rec: VendorRecord): number {
 }
 
 /**
- * A vendor is a "standalone" instance of `tag` when that capability is the
- * essence of the contract rather than one add-on among many — i.e. the contract
- * carries only a small number of capability tags and the tag is one of them.
- * AtlasCloud's MDR is one of four tags on a broad IaaS agreement (bundled);
- * RedShield's MDR is the headline of a focused security subscription.
+ * The standalone-vs-bundled split is decided by SPEND ATTRIBUTION, not tag
+ * counts: a vendor is the eliminable standalone when the overlapping capability
+ * accounts for ~all of its billed spend (the capability IS the contract), and a
+ * bundled peer is one where the same capability is a minor/zero fraction of a
+ * broader relationship. RedShield bills 100% MDR; AtlasCloud bills 0% MDR (it's
+ * a bundled add-on on a large IaaS contract). This holds regardless of how many
+ * capability tags either contract happens to list.
  */
-function isStandalone(rec: VendorRecord, tag: string): boolean {
-  const tags = rec.contract?.capabilityTags ?? [];
-  if (!tags.includes(tag)) return false;
-  // Standalone subscriptions are narrowly scoped (the capability and a couple
-  // of closely-related ones); bundled add-ons live on a broad, multi-domain
-  // contract. Use a small tag-count cutoff to separate the two.
-  return tags.length <= 3;
+const STANDALONE_CAPABILITY_SHARE = 0.8; // capability is essentially the whole contract
+const BUNDLED_CAPABILITY_SHARE = 0.2; // capability is a minor/bundled add-on
+
+const STOPWORDS = new Set([
+  "and", "the", "for", "with", "per", "plan", "service", "services",
+  "subscription", "fee", "sub", "management", "managed",
+]);
+
+/** Significant tokens for a capability tag, including any parenthetical acronym. */
+function capabilityTokens(tag: string): string[] {
+  const acronyms = [...tag.matchAll(/\(([^)]+)\)/g)].map((m) => m[1].toLowerCase());
+  const words = tag
+    .replace(/\([^)]*\)/g, " ")
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3 && !STOPWORDS.has(w));
+  return [...new Set([...words, ...acronyms])];
+}
+
+function lineMatchesCapability(
+  line: { description: string; sku: string | null },
+  tokens: string[],
+): boolean {
+  const hay = `${line.description} ${line.sku ?? ""}`.toLowerCase();
+  const hits = tokens.filter((t) => hay.includes(t)).length;
+  return hits >= Math.min(2, tokens.length);
+}
+
+/** Fraction of a vendor's billed spend attributable to a capability. */
+function capabilityShare(rec: VendorRecord, tokens: string[]): number {
+  const total = invoicesTotal(rec.invoices);
+  if (total <= 0) return 0;
+  let matched = 0;
+  for (const inv of rec.invoices) {
+    for (const l of inv.lines) {
+      if (lineMatchesCapability(l, tokens)) matched += l.lineTotalCents;
+    }
+  }
+  return matched / total;
 }
 
 /** The renewal/cancellation deadline for the eliminable contract (tie to R01). */
@@ -164,10 +198,16 @@ const rule: Rule = {
     for (const [tag, recs] of byTag) {
       if (recs.length < 2) continue; // no cross-vendor overlap
 
-      // Among the overlapping vendors, the eliminable ones are the standalone
-      // subscriptions; the retained peer is a non-standalone (bundled) carrier.
-      const standalones = recs.filter((r) => isStandalone(r, tag));
-      const bundledPeers = recs.filter((r) => !isStandalone(r, tag));
+      // Attribute each overlapping vendor's spend to the capability: eliminable
+      // standalones bill ~all of it; bundled peers bill little/none of it.
+      const tokens = capabilityTokens(tag);
+      const withShare = recs.map((r) => ({ r, share: capabilityShare(r, tokens) }));
+      const standalones = withShare
+        .filter((x) => x.share >= STANDALONE_CAPABILITY_SHARE)
+        .map((x) => x.r);
+      const bundledPeers = withShare
+        .filter((x) => x.share <= BUNDLED_CAPABILITY_SHARE)
+        .map((x) => x.r);
       if (standalones.length === 0 || bundledPeers.length === 0) continue;
 
       // Drop the cheaper-to-eliminate standalone subscription; retain a peer
@@ -175,7 +215,8 @@ const rule: Rule = {
       const eliminable = [...standalones].sort(
         (a, b) => annualizedSpend(a) - annualizedSpend(b),
       )[0];
-      const peer = bundledPeers[0];
+      const peer = bundledPeers.find((p) => p.vendor.id !== eliminable.vendor.id);
+      if (!peer) continue;
 
       if (seen.has(eliminable.vendor.id)) continue;
       seen.add(eliminable.vendor.id);

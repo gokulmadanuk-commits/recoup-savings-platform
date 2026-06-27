@@ -218,42 +218,81 @@ export function docModelToUsage(doc: DocModel): UsageRecord[] {
   );
 }
 
-/** Group parsed documents by vendor into the canonical Dataset the rules read. */
+export interface AssemblyFailure {
+  fileName: string;
+  reason: string;
+}
+
+function reason(e: unknown): string {
+  return e instanceof Error ? e.message : String(e);
+}
+
+/**
+ * Group parsed documents by vendor into the canonical Dataset the rules read.
+ * Resilient by design: a document that can't be mapped (missing required fields,
+ * etc.) is skipped and reported via `failures` — it never aborts the batch.
+ * Documents with no identifiable vendor are skipped rather than collapsed into a
+ * single bogus "Unknown" vendor that would be cross-referenced against itself.
+ */
 export function assembleDataset(
   docs: DocModel[],
   customer: string,
   analysisDate: string,
+  failures: AssemblyFailure[] = [],
 ): Dataset {
   const byVendor = new Map<string, DocModel[]>();
   for (const d of docs) {
-    const key = d.vendorName;
-    if (!byVendor.has(key)) byVendor.set(key, []);
-    byVendor.get(key)!.push(d);
+    const name = d.vendorName?.trim();
+    if (!name || name.toLowerCase() === "unknown") {
+      failures.push({ fileName: d.fileName, reason: "No identifiable vendor on the document; skipped." });
+      continue;
+    }
+    if (!byVendor.has(name)) byVendor.set(name, []);
+    byVendor.get(name)!.push(d);
   }
 
-  const vendors = [...byVendor.entries()].map(([vendorName, vdocs]) => {
+  const vendors: Dataset["vendors"] = [];
+  for (const [vendorName, vdocs] of byVendor) {
     const contractDoc = vdocs.find((d) => d.docType === "contract");
-    const contract = contractDoc ? docModelToContract(contractDoc) : null;
+    let contract = null;
+    if (contractDoc) {
+      try {
+        contract = docModelToContract(contractDoc);
+      } catch (e) {
+        failures.push({ fileName: contractDoc.fileName, reason: `Contract could not be read: ${reason(e)}` });
+      }
+    }
     const aliasField = contractDoc?.fields.find((f) => f.label === F.vendorAliases);
     const aliases = aliasField ? S.parseList(aliasField.value) : [];
-    const invoices = vdocs
-      .filter((d) => d.docType === "invoice")
-      .map(docModelToInvoice);
-    const usage = vdocs
-      .filter((d) => d.docType === "usage_export")
-      .flatMap(docModelToUsage);
-    return {
-      vendor: {
-        id: S.slug(vendorName),
-        name: vendorName,
-        category: contract?.category ?? "",
-        aliases,
-      },
+
+    const invoices = [];
+    for (const d of vdocs.filter((d) => d.docType === "invoice")) {
+      try {
+        invoices.push(docModelToInvoice(d));
+      } catch (e) {
+        failures.push({ fileName: d.fileName, reason: `Invoice could not be read: ${reason(e)}` });
+      }
+    }
+
+    const usage = [];
+    for (const d of vdocs.filter((d) => d.docType === "usage_export")) {
+      try {
+        usage.push(...docModelToUsage(d));
+      } catch (e) {
+        failures.push({ fileName: d.fileName, reason: `Usage export could not be read: ${reason(e)}` });
+      }
+    }
+
+    // Nothing usable for this vendor — don't emit an empty record.
+    if (!contract && invoices.length === 0) continue;
+
+    vendors.push({
+      vendor: { id: S.slug(vendorName), name: vendorName, category: contract?.category ?? "", aliases },
       contract,
       invoices,
       usage,
-    };
-  });
+    });
+  }
 
   return DatasetSchema.parse({ customer, analysisDate, vendors });
 }

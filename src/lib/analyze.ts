@@ -5,7 +5,7 @@
  * and the registry stays a single source of truth.
  */
 import { parseBatch, type InputFile } from "./parsing/index";
-import { assembleDataset } from "./docmodel/from-docmodel";
+import { assembleDataset, type AssemblyFailure } from "./docmodel/from-docmodel";
 import { runRules } from "./rules/runner";
 import { makeContext, type Rule } from "./rules/types";
 import { summarize } from "./rules/rank";
@@ -43,16 +43,19 @@ export async function analyzeFiles(
   opts: AnalyzeOptions = {},
 ): Promise<AnalyzeResult> {
   const batch = await parseBatch(files);
+  const assemblyFailures: AssemblyFailure[] = [];
   const dataset = assembleDataset(
     batch.documents,
     opts.customer ?? "Your Company",
     opts.analysisDate ?? ANALYSIS_DATE,
+    assemblyFailures,
   );
+  const failures = [...batch.failures, ...assemblyFailures];
   const result = analyzeDataset(
     dataset,
     rules,
-    { processed: batch.processed, failed: batch.failed },
+    { processed: batch.processed - failures.length, failed: failures.length },
     opts.topEmails ?? 10,
   );
-  return { ...result, failures: batch.failures };
+  return { ...result, failures };
 }

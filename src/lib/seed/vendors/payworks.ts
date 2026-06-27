@@ -44,7 +44,7 @@ const contract = makeContract({
   pepmRateCents: PEPM_RATE,
   // The renewal escalates the contract +18%; R01 reads this to size the uplift.
   escalator: { type: "fixed", fixedPct: RENEWAL_UPLIFT_PCT, anniversaryMonth: 8 },
-  capabilityTags: ["Payroll", "HRIS", "Benefits Administration"],
+  capabilityTags: ["Payroll", "HRIS"],
   signatory: { name: "Devon Carr", title: "VP People Operations", date: "2025-08-01" },
 });
 
