@@ -17,6 +17,7 @@ import { UploadCard } from "./upload-card";
 import { RecoveryTracker } from "./recovery-tracker";
 import { RenewalCalendar } from "./renewal-calendar";
 import { ReportButtons } from "./report-buttons";
+import { ValueImpact } from "./value-impact";
 
 type SectionId = "overview" | "findings" | "recovery" | "renewals" | "vendors" | "documents" | "emails";
 
@@ -199,6 +200,9 @@ export function Dashboard() {
                     </button>
                   </div>
                 )}
+              </div>
+              <div className="mt-6">
+                <ValueImpact result={result} />
               </div>
             </div>
           )}

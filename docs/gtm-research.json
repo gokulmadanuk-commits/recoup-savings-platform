@@ -153,7 +153,13 @@
       "whyFit": "£75m 2024 buyout into a 6-operator roll-up (Palletforce, NFT, Allport, Jigsaw, Adjuno) — duplicate carriers, telematics, fuel cards, insurance and SaaS across newly-combined entities.",
       "buyerTitle": "Group CFO / Integration Director",
       "outreachAngle": "Post-integration vendor reconciliation across the EV Cargo brands — find the duplicate spend the merger left behind.",
-      "source": "evcargo.com — EmergeVest acquires CM Downton (£75m transaction)"
+      "source": "evcargo.com — EmergeVest acquires CM Downton (£75m transaction)",
+      "contactName": "Ben Armstrong",
+      "contactTitle": "Finance Director (EV Cargo Logistics)",
+      "contactEmail": "ben.armstrong@evcargo.com",
+      "emailPattern": "first.last@evcargo.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Palletforce",
@@ -164,7 +170,13 @@
       "whyFit": "Network model with hundreds of member-depot contracts; off-contract rate drift plus duplicate IT/telecoms across the network.",
       "buyerTitle": "CFO / Procurement Lead",
       "outreachAngle": "Off-contract rate drift + duplicate IT/telecoms across the depot network.",
-      "source": "evcargo.com — EmergeVest / CM Downton announcement"
+      "source": "evcargo.com — EmergeVest / CM Downton announcement",
+      "contactName": "Deb Wallbanks",
+      "contactTitle": "Finance Director",
+      "contactEmail": "deb.wallbanks@palletforce.com",
+      "emailPattern": "first.last@palletforce.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Fox Brothers Holdings Group",
@@ -175,18 +187,30 @@
       "whyFit": "Fresh 2024 buyout plus merger with J A Jackson = duplicate fleet, fuel, insurance and back-office vendors across two operating businesses.",
       "buyerTitle": "CFO",
       "outreachAngle": "First-90-days cost-out on the combined Fox Brothers / J A Jackson vendor base.",
-      "source": "motortransport.co.uk — Fox Brothers acquired by Stellex"
+      "source": "motortransport.co.uk — Fox Brothers acquired by Stellex",
+      "contactName": "Barry Hope",
+      "contactTitle": "Chief Financial Officer, Fox Group",
+      "contactEmail": "barry.hope@foxgroup.co",
+      "emailPattern": "first.last@foxgroup.co",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Mandata",
       "companyNumber": "",
       "sector": "Transport-management software / logistics services",
       "size": "Mid-market",
-      "peBacker": "LDC",
+      "peBacker": "Tenzing (formerly LDC)",
       "whyFit": "LDC-backed; acquired Returnloads.net — bolt-on integration of overlapping tooling and redundant SaaS.",
       "buyerTitle": "CFO",
       "outreachAngle": "SaaS / redundant-tools rationalisation across the acquired stack.",
-      "source": "privateequitywire.co.uk — LDC-backed Mandata acquires Returnloads.net"
+      "source": "privateequitywire.co.uk — LDC-backed Mandata acquires Returnloads.net",
+      "contactName": "Tom McGuinness",
+      "contactTitle": "Chief Operating Officer (ex-Finance Director)",
+      "contactEmail": "tmcguinness@mandata.co.uk",
+      "emailPattern": "flast@mandata.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Contollo",
@@ -197,7 +221,13 @@
       "whyFit": "Textbook buy-and-build — three acquired entities' vendor bases not yet rationalised.",
       "buyerTitle": "CFO / FD",
       "outreachAngle": "Consolidate the vendor estate across your three acquisitions before the next bolt-on.",
-      "source": "northedge.com — 2024 a year in review"
+      "source": "northedge.com — 2024 a year in review",
+      "contactName": "Ojan Rohani",
+      "contactTitle": "Chief Financial Officer, Contollo Group",
+      "contactEmail": "ojan@contollogroup.com",
+      "emailPattern": "first@contollogroup.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Frankham Group",
@@ -208,7 +238,13 @@
       "whyFit": "Professional-services multi-site = sprawling software, travel, telecoms and professional-indemnity insurance.",
       "buyerTitle": "FD / CFO",
       "outreachAngle": "Idle SaaS seats + auto-renew sweep across offices.",
-      "source": "ldc.co.uk/portfolio"
+      "source": "ldc.co.uk/portfolio",
+      "contactName": "Richard West",
+      "contactTitle": "Chief Financial Officer",
+      "contactEmail": "richard.west@frankham.com",
+      "emailPattern": "first.last@frankham.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Nu-Style Products",
@@ -219,7 +255,13 @@
       "whyFit": "Manufacturing + multi-territory = freight, raw-material contracts, escalators, energy spend.",
       "buyerTitle": "CFO / COO",
       "outreachAngle": "Escalator-clause and off-contract-rate findings on input/logistics spend.",
-      "source": "ldc.co.uk/portfolio"
+      "source": "ldc.co.uk/portfolio",
+      "contactName": "",
+      "contactTitle": "Target the FD/CFO (not publicly named — check Companies House officers)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "title-only"
     },
     {
       "company": "VetPartners",
@@ -230,7 +272,13 @@
       "whyFit": "Huge multi-site estate — duplicate clinical-supply contracts, lab services, PMS software, energy and waste across hundreds of sites.",
       "buyerTitle": "Group CFO / Head of Procurement",
       "outreachAngle": "Multi-site vendor normalisation across the clinic network — off-contract rates and duplicate suppliers.",
-      "source": "pitchbook.com — August Equity profile"
+      "source": "pitchbook.com — August Equity profile",
+      "contactName": "Chris Haddleton",
+      "contactTitle": "Group CFO (also: Owain Price, Group Procurement Director)",
+      "contactEmail": "chris.haddleton@vetpartners.co.uk",
+      "emailPattern": "first.last@vetpartners.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Taking Care",
@@ -241,7 +289,13 @@
       "whyFit": "Fresh carve-out from a corporate parent = TSAs expiring, standalone vendor contracts being signed now, no clean baseline.",
       "buyerTitle": "CFO (newly standalone)",
       "outreachAngle": "Carve-out vendor baseline — make sure the new standalone contracts aren't inheriting parent-group overbilling.",
-      "source": "ldc.co.uk/news — LDC partner confident amid larger pipeline"
+      "source": "ldc.co.uk/news — LDC partner confident amid larger pipeline",
+      "contactName": "",
+      "contactTitle": "Target the CFO (fresh 2025 carve-out — only CEO Steve Gates named publicly)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "title-only"
     },
     {
       "company": "PAM Group",
@@ -252,7 +306,13 @@
       "whyFit": "Doubled revenue and three acquisitions = layered vendor stacks needing de-duplication.",
       "buyerTitle": "CFO",
       "outreachAngle": "SaaS + clinical-supplier de-duplication post-acquisition.",
-      "source": "ldc.co.uk/portfolio"
+      "source": "ldc.co.uk/portfolio",
+      "contactName": "Andy Bones",
+      "contactTitle": "Chief Finance Officer",
+      "contactEmail": "andy.bones@pamgroup.co.uk",
+      "emailPattern": "first.last@pamgroup.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Latus",
@@ -263,7 +323,13 @@
       "whyFit": "Early-stage roll-up integrating its first acquisitions — ideal moment to set a clean vendor baseline.",
       "buyerTitle": "FD / CFO",
       "outreachAngle": "Set the vendor baseline before you scale the buy-and-build.",
-      "source": "northedge.com — 2024 a year in review"
+      "source": "northedge.com — 2024 a year in review",
+      "contactName": "Alex Birkett",
+      "contactTitle": "Chief Financial Officer, Latus Group",
+      "contactEmail": "alex.birkett@latusgroup.co.uk",
+      "emailPattern": "first.last@latusgroup.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Veloris (ex-Ecobat Battery Division)",
@@ -274,7 +340,13 @@
       "whyFit": "Fresh carve-out under a turnaround investor = explicit cost-discipline mandate and new standalone contracts being signed now.",
       "buyerTitle": "CFO / Turnaround Director",
       "outreachAngle": "Day-one carve-out cost-out: catch parent-group rate inheritance and duplicate logistics.",
-      "source": "endlessllp.com — 20th-anniversary review"
+      "source": "endlessllp.com — 20th-anniversary review",
+      "contactName": "Alex Powell",
+      "contactTitle": "Finance Director",
+      "contactEmail": "alex.powell@veloris.com",
+      "emailPattern": "first.last@veloris.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "HSS hire division (Endless carve-out)",
@@ -285,7 +357,13 @@
       "whyFit": "Multi-site hire estate + carve-out = duplicate fleet/telecoms/insurance and expiring TSAs.",
       "buyerTitle": "CFO",
       "outreachAngle": "Multi-depot vendor reconciliation post-separation.",
-      "source": "endlessllp.com — 20th-anniversary review"
+      "source": "endlessllp.com — 20th-anniversary review",
+      "contactName": "",
+      "contactTitle": "Target the CFO of the standalone Endless hire business (not separately named)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "title-only"
     },
     {
       "company": "Coveris",
@@ -296,7 +374,13 @@
       "whyFit": "Multi-plant manufacturer actively divesting units (sold Paper BU 2026) = restructuring and cost focus.",
       "buyerTitle": "Group CFO / Procurement Director",
       "outreachAngle": "Energy, freight and raw-material escalator-clause audit across plants.",
-      "source": "mayerbrown.com — Coveris sale of Paper BU"
+      "source": "mayerbrown.com — Coveris sale of Paper BU",
+      "contactName": "Michael Riemer-Aschbacher",
+      "contactTitle": "Group Chief Finance Officer (also: Ivan Schober, Group Director Procurement)",
+      "contactEmail": "michael.riemer-aschbacher@coveris.com",
+      "emailPattern": "first.last@coveris.com",
+      "contactLinkedin": "https://at.linkedin.com/in/michael-riemer-aschbacher-4311b32b3",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Alton Cars",
@@ -307,7 +391,13 @@
       "whyFit": "Multi-site auto-repair = parts suppliers, insurance, DMS software and telecoms across branches.",
       "buyerTitle": "CFO / COO",
       "outreachAngle": "Off-contract parts pricing + duplicate site-level vendors.",
-      "source": "businesswire.com — Sun European affiliate invests in Alton Cars"
+      "source": "businesswire.com — Sun European affiliate invests in Alton Cars",
+      "contactName": "Sophie Braithwaite",
+      "contactTitle": "Group Finance Director (also: Tom Butterworth, Group Procurement Director)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Fortus",
@@ -318,7 +408,13 @@
       "whyFit": "Professional-services roll-up — practice-management/audit software, idle seats and duplicate subscriptions across acquired firms.",
       "buyerTitle": "FD / CFO / COO",
       "outreachAngle": "Idle-seat + duplicate-SaaS sweep across the firms you've merged in.",
-      "source": "ldc.co.uk/portfolio"
+      "source": "ldc.co.uk/portfolio",
+      "contactName": "Andy Northern",
+      "contactTitle": "Chief Operations Officer (LDC deal lead)",
+      "contactEmail": "andy.northern@fortus.co.uk",
+      "emailPattern": "first.last@fortus.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "TGJones (ex-WHSmith High Street)",
@@ -329,18 +425,13 @@
       "whyFit": "Just separated from parent WHSmith and rebranding 480 sites = brand-new standalone contracts, expiring shared-services agreements, energy/EPOS/telecoms estate to re-baseline.",
       "buyerTitle": "CFO / Property & Procurement Director",
       "outreachAngle": "Standalone-day vendor baseline across 480 stores — catch parent-inherited rates and zombie billing.",
-      "source": "retailgazette.co.uk — WHSmith High Street owner"
-    },
-    {
-      "company": "The Original Factory Shop",
-      "companyNumber": "",
-      "sector": "Discount multi-site retail",
-      "size": "~180 stores",
-      "peBacker": "Modella Capital (Feb 2025)",
-      "whyFit": "Distressed multi-site turnaround = aggressive cost focus and fragmented store-level vendor spend.",
-      "buyerTitle": "CFO / Turnaround Lead",
-      "outreachAngle": "Energy + waste + telecoms audit across 180 sites; auto-renew sweep.",
-      "source": "Modella Capital — Wikipedia"
+      "source": "retailgazette.co.uk — WHSmith High Street owner",
+      "contactName": "",
+      "contactTitle": "Target the CFO/FD (not publicly named; CEO is Alex Willson)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "title-only"
     },
     {
       "company": "Hobbycraft",
@@ -351,7 +442,13 @@
       "whyFit": "Recently acquired multi-store estate with store-level facilities, EPOS and payment-processing vendors to audit.",
       "buyerTitle": "CFO",
       "outreachAngle": "Store-level facilities + EPOS + payment-processing vendor audit.",
-      "source": "Modella Capital — Wikipedia"
+      "source": "Modella Capital — Wikipedia",
+      "contactName": "",
+      "contactTitle": "Target the CFO (operating CFO not publicly named post-turnaround)",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "",
+      "contactConfidence": "title-only"
     },
     {
       "company": "Loungers",
@@ -362,7 +459,13 @@
       "whyFit": "Large multi-site hospitality estate freshly private under a cost-focused sponsor = energy, food-supply, waste, EPOS, card-acquiring and repairs across hundreds of sites.",
       "buyerTitle": "CFO / Group Procurement Director",
       "outreachAngle": "Multi-site hospitality vendor audit — escalators on energy/food contracts + duplicate site suppliers.",
-      "source": "thecaterer.com — restaurant-group takeover deals"
+      "source": "thecaterer.com — restaurant-group takeover deals",
+      "contactName": "Stephen Marshall",
+      "contactTitle": "Chief Financial Officer",
+      "contactEmail": "stephen.marshall@loungers.co.uk",
+      "emailPattern": "first.last@loungers.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Wingstop UK",
@@ -373,7 +476,13 @@
       "whyFit": "Fast-scaling multi-site franchise = repeated new-site vendor onboarding, duplicate suppliers and escalator exposure.",
       "buyerTitle": "CFO / Finance Director",
       "outreachAngle": "Standardise + de-duplicate the new-site vendor playbook; catch escalators.",
-      "source": "thecaterer.com — restaurant-group takeover deals"
+      "source": "thecaterer.com — restaurant-group takeover deals",
+      "contactName": "Paddy Bamford",
+      "contactTitle": "Chief Financial Officer & Co-Founder",
+      "contactEmail": "pbamford@wingstop.co.uk",
+      "emailPattern": "finitial+last@wingstop.co.uk",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "ACCESS UK LTD",
@@ -384,7 +493,13 @@
       "whyFit": "Highly acquisitive software group -> tool/license sprawl across acquired products; large but vendor-heavy IT estate.",
       "buyerTitle": "Group CFO / VP Finance",
       "outreachAngle": "License/redundant-tools sweep across the acquired product portfolio.",
-      "source": "Companies House 02343760; privateequitywire.co.uk — Access Group Hg/TA investment"
+      "source": "Companies House 02343760; privateequitywire.co.uk — Access Group Hg/TA investment",
+      "contactName": "Sally Johnson",
+      "contactTitle": "Chief Financial Officer, The Access Group",
+      "contactEmail": "sally.johnson@theaccessgroup.com",
+      "emailPattern": "first.last@theaccessgroup.com",
+      "contactLinkedin": "https://www.linkedin.com/in/sally-johnson-cfo",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Pagabo Group Limited",
@@ -395,7 +510,13 @@
       "whyFit": "Midco PSC confirms a PE corporate stack; SaaS/cloud spend in a vendor-heavy software business.",
       "buyerTitle": "CFO / FD",
       "outreachAngle": "SaaS/cloud + auto-renew audit on a PE-backed software estate.",
-      "source": "Companies House 13306964 PSC record"
+      "source": "Companies House 13306964 PSC record",
+      "contactName": "Hannah Norbu",
+      "contactTitle": "Chief Financial Officer",
+      "contactEmail": "hannah.norbu@pagabogroup.com",
+      "emailPattern": "first.last@pagabogroup.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "TC Group Holdings Limited",
@@ -406,7 +527,13 @@
       "whyFit": "61-office accountancy roll-up = multi-site SaaS, telephony and duplicate subscriptions across acquired firms.",
       "buyerTitle": "CFO / COO",
       "outreachAngle": "Idle-seat + duplicate-SaaS + telephony sweep across the 61 offices.",
-      "source": "Companies House 11251664; inflexion.com/portfolio/tc-group"
+      "source": "Companies House 11251664; inflexion.com/portfolio/tc-group",
+      "contactName": "Peter Shaw",
+      "contactTitle": "Chief Financial & Risk Officer",
+      "contactEmail": "PeterShaw@tc-group.com",
+      "emailPattern": "FirstnameLastname@tc-group.com",
+      "contactLinkedin": "",
+      "contactConfidence": "named-person-sourced"
     },
     {
       "company": "Ocorian (UK) Limited",
@@ -417,8 +544,317 @@
       "whyFit": "Fund/corporate admin runs heavy data, KYC and market-data subscriptions — classic SaaS/subscription leakage; carve-out heritage.",
       "buyerTitle": "CFO / Head of Procurement",
       "outreachAngle": "Market-data + KYC subscription rationalisation and renewal sweep.",
-      "source": "Companies House 05534412; inflexion.com/portfolio/ocorian"
+      "source": "Companies House 05534412; inflexion.com/portfolio/ocorian",
+      "contactName": "Kerry Dettmar",
+      "contactTitle": "Chief Financial Officer",
+      "contactEmail": "",
+      "emailPattern": "",
+      "contactLinkedin": "https://www.linkedin.com/in/kerry-dettmar-8127734b/",
+      "contactConfidence": "named-person-sourced"
     }
   ],
-  "companies_house": "Companies House gives RECOUP a free, top-down way to build a PE-backed mid-market prospect list. The free REST API base URL is https://api.company-information.service.gov.uk (register on the Developer Hub, mint an API key, authenticate via HTTP Basic with the key as username and a blank password). Rate limit: 600 requests per rolling 5-minute window (~2 req/sec sustained; 429 on overage).\\n\\nKEY ENDPOINTS: GET /advanced-search/companies is the workhorse for ICP filtering (params: company_name_includes/excludes, company_status, company_type/subtype, sic_codes (comma-delimited), incorporated_from/to, location, size, start_index). GET /company/{number} returns status, sic_codes, accounts (category + dates), date_of_creation. GET /company/{number}/persons-with-significant-control surfaces ownership (the PE structure). GET /company/{number}/charges reveals debentures/mortgages (the LBO leverage signal). GET /company/{number}/officers maps decision-makers, and GET /officers/{id}/appointments finds serial PE operating-partner directors across a portfolio. Note: advanced search does NOT filter on account category, charges or PSC directly — filter by SIC + status, then enrich each hit with the profile/charges/PSC calls.\\n\\nBULK PRODUCTS (for scale): The free monthly Company Data Product CSV (download.companieshouse.gov.uk/en_output.html, all ~5M live companies) is the primary sieve — columns CompanyName, CompanyNumber, CompanyCategory, CompanyStatus, IncorporationDate, RegAddress.* (geo), SICCode.SicText_1..4 (sector), Accounts.AccountCategory (size proxy: FULL/GROUP/MEDIUM/SMALL/MICRO/DORMANT), Mortgages.NumMortOutstanding (leverage), and PreviousName_1..10 (rebrands follow buyouts). The PSC Data Product (full-register JSON snapshot) is joined to find PE-controlled companies. The free Accounts Data Product (iXBRL, ~75% of filers) is parsed for turnover, headcount and administrative expenses — the line RECOUP's savings live in.\\n\\nPE/SIZE FILTERS: (Signal A, strongest) PSC/RLE naming the PE corporate stack — Topco -> Midco -> Bidco, with a Relevant Legal Entity holding >75%; regex PSC names for \\\\b(TOPCO|MIDCO|BIDCO|HOLDCO)\\\\b plus INVESTMENTS/CAPITAL/PARTNERS/FUND/LP/SARL or Jersey/Guernsey/Cayman registration, or a known sponsor name. Always walk UP from the opco to the group/holdco to see the fund (the opco PSC may list individuals). Verified example: Pagabo Group Limited (13306964) PSC = 'Th 55 Group (Midco) Limited', 75%+ — 'Midco' is the tell. (Signal B) Charges/mortgages = LBO debt registered against Bidco/Midco; NumMortOutstanding>0 + recent incorporation + holdco-style name is the buyout fingerprint, confirmed via /charges (all-assets debenture to a bank/credit fund). (Signal C) Size: target Accounts.AccountCategory of MEDIUM/FULL/GROUP (~£10M-£150M turnover, up to ~250-employee 'medium' through lower-large; exclude MICRO/DORMANT). UK thresholds from 6 Apr 2025: Medium = turnover <=£54M, balance sheet <=£27M, <=250 employees. (Signal D) SIC codes for vendor-heavy sectors: 62012/62020/62090 IT & software consultancy, 58290 software publishing, 82990/70229 business support/consultancy, 64999/66190/66300 financial & fund services, 86900/87300 healthcare/care, 78200/78300 staffing, 52290/49410 logistics.\\n\\nRECIPE: (1) Company Data CSV -> keep CompanyStatus=Active AND SICCode in target list AND AccountCategory in {MEDIUM,FULL,GROUP} AND NumMortOutstanding>=1. (2) Join PSC snapshot -> keep rows whose top RLE matches Topco/Midco/Bidco/Holdings or a known sponsor -> flag 'PE-backed'. (3) API-enrich shortlist via /charges (confirm LBO debenture), /officers (decision-makers), /filing-history (recent refinance), XBRL accounts (admin-expense/headcount). (4) Rank by estimated recoverable vendor spend; feed to the 14-rule engine and email drafter.\\n\\nVERIFIED STARTER RECORDS (numbers checked against find-and-update.company-information.service.gov.uk): ACCESS UK LTD 02343760 (Hg + TA Associates); PAGABO GROUP LIMITED 13306964 (Midco PSC signal); WATERSCAN LIMITED 02948891 (LDC); 15BELOW LIMITED 03945289, SIC 62020 (LDC); DELTRON LIFTS LIMITED 04885757 (LDC — walk up to holdco for fund PSC); TC GROUP HOLDINGS LIMITED 11251664 (Inflexion Enterprise Fund V, 61 offices); CIVICA UK LIMITED 01628868 (group 04968437, holdings 02131240 — Blackstone ~$2.5bn 2024); OCORIAN (UK) LIMITED 05534412 (also Admin UK 07473349, Corp Svcs UK 05593045 — Inflexion). High-fit Inflexion target BES Group / British Engineering Services: resolve the live opco via /advanced-search/companies?company_name_includes=British%20Engineering%20Services before outreach (multiple BES entities exist).\\n\\nEXPANDING TO 200+: take any sponsor's public portfolio page (LDC ~224 holdings, Inflexion, Livingbridge, Palatine), run each name through /search/companies to get the number, then walk PSC up the stack and pull charges/accounts; or go top-down via the CSV filter above joined to the PSC snapshot. Always verify current owner and CFO on the live record before outreach — ownership shifts with secondaries (e.g. VetPartners moved August Equity -> BC Partners)."
+  "companies_house": "Companies House gives RECOUP a free, top-down way to build a PE-backed mid-market prospect list. The free REST API base URL is https://api.company-information.service.gov.uk (register on the Developer Hub, mint an API key, authenticate via HTTP Basic with the key as username and a blank password). Rate limit: 600 requests per rolling 5-minute window (~2 req/sec sustained; 429 on overage).\\n\\nKEY ENDPOINTS: GET /advanced-search/companies is the workhorse for ICP filtering (params: company_name_includes/excludes, company_status, company_type/subtype, sic_codes (comma-delimited), incorporated_from/to, location, size, start_index). GET /company/{number} returns status, sic_codes, accounts (category + dates), date_of_creation. GET /company/{number}/persons-with-significant-control surfaces ownership (the PE structure). GET /company/{number}/charges reveals debentures/mortgages (the LBO leverage signal). GET /company/{number}/officers maps decision-makers, and GET /officers/{id}/appointments finds serial PE operating-partner directors across a portfolio. Note: advanced search does NOT filter on account category, charges or PSC directly — filter by SIC + status, then enrich each hit with the profile/charges/PSC calls.\\n\\nBULK PRODUCTS (for scale): The free monthly Company Data Product CSV (download.companieshouse.gov.uk/en_output.html, all ~5M live companies) is the primary sieve — columns CompanyName, CompanyNumber, CompanyCategory, CompanyStatus, IncorporationDate, RegAddress.* (geo), SICCode.SicText_1..4 (sector), Accounts.AccountCategory (size proxy: FULL/GROUP/MEDIUM/SMALL/MICRO/DORMANT), Mortgages.NumMortOutstanding (leverage), and PreviousName_1..10 (rebrands follow buyouts). The PSC Data Product (full-register JSON snapshot) is joined to find PE-controlled companies. The free Accounts Data Product (iXBRL, ~75% of filers) is parsed for turnover, headcount and administrative expenses — the line RECOUP's savings live in.\\n\\nPE/SIZE FILTERS: (Signal A, strongest) PSC/RLE naming the PE corporate stack — Topco -> Midco -> Bidco, with a Relevant Legal Entity holding >75%; regex PSC names for \\\\b(TOPCO|MIDCO|BIDCO|HOLDCO)\\\\b plus INVESTMENTS/CAPITAL/PARTNERS/FUND/LP/SARL or Jersey/Guernsey/Cayman registration, or a known sponsor name. Always walk UP from the opco to the group/holdco to see the fund (the opco PSC may list individuals). Verified example: Pagabo Group Limited (13306964) PSC = 'Th 55 Group (Midco) Limited', 75%+ — 'Midco' is the tell. (Signal B) Charges/mortgages = LBO debt registered against Bidco/Midco; NumMortOutstanding>0 + recent incorporation + holdco-style name is the buyout fingerprint, confirmed via /charges (all-assets debenture to a bank/credit fund). (Signal C) Size: target Accounts.AccountCategory of MEDIUM/FULL/GROUP (~£10M-£150M turnover, up to ~250-employee 'medium' through lower-large; exclude MICRO/DORMANT). UK thresholds from 6 Apr 2025: Medium = turnover <=£54M, balance sheet <=£27M, <=250 employees. (Signal D) SIC codes for vendor-heavy sectors: 62012/62020/62090 IT & software consultancy, 58290 software publishing, 82990/70229 business support/consultancy, 64999/66190/66300 financial & fund services, 86900/87300 healthcare/care, 78200/78300 staffing, 52290/49410 logistics.\\n\\nRECIPE: (1) Company Data CSV -> keep CompanyStatus=Active AND SICCode in target list AND AccountCategory in {MEDIUM,FULL,GROUP} AND NumMortOutstanding>=1. (2) Join PSC snapshot -> keep rows whose top RLE matches Topco/Midco/Bidco/Holdings or a known sponsor -> flag 'PE-backed'. (3) API-enrich shortlist via /charges (confirm LBO debenture), /officers (decision-makers), /filing-history (recent refinance), XBRL accounts (admin-expense/headcount). (4) Rank by estimated recoverable vendor spend; feed to the 14-rule engine and email drafter.\\n\\nVERIFIED STARTER RECORDS (numbers checked against find-and-update.company-information.service.gov.uk): ACCESS UK LTD 02343760 (Hg + TA Associates); PAGABO GROUP LIMITED 13306964 (Midco PSC signal); WATERSCAN LIMITED 02948891 (LDC); 15BELOW LIMITED 03945289, SIC 62020 (LDC); DELTRON LIFTS LIMITED 04885757 (LDC — walk up to holdco for fund PSC); TC GROUP HOLDINGS LIMITED 11251664 (Inflexion Enterprise Fund V, 61 offices); CIVICA UK LIMITED 01628868 (group 04968437, holdings 02131240 — Blackstone ~$2.5bn 2024); OCORIAN (UK) LIMITED 05534412 (also Admin UK 07473349, Corp Svcs UK 05593045 — Inflexion). High-fit Inflexion target BES Group / British Engineering Services: resolve the live opco via /advanced-search/companies?company_name_includes=British%20Engineering%20Services before outreach (multiple BES entities exist).\\n\\nEXPANDING TO 200+: take any sponsor's public portfolio page (LDC ~224 holdings, Inflexion, Livingbridge, Palatine), run each name through /search/companies to get the number, then walk PSC up the stack and pull charges/accounts; or go top-down via the CSV filter above joined to the PSC snapshot. Always verify current owner and CFO on the live record before outreach — ownership shifts with secondaries (e.g. VetPartners moved August Equity -> BC Partners).",
+  "us_method": "The US has **no central, free registry** equivalent to the UK's Companies House — no single source publishes every company's officers, accounts, and ownership. You triangulate across public sources, each filling a gap.\n\n**1. SEC EDGAR — only for companies that file.** Full-text search (efts.sec.gov) covers all filings since 2001; search a PE firm or portfolio company name. 10-K/10-Q name executive officers and auditors; DEF 14A proxies list officers/directors and >5% owners; 8-Ks flag acquisitions and CFO changes; SC 13D/13G show control; S-1/S-4 disclose sponsor ownership. The catch: **most PE portfolio companies are private and file nothing** — EDGAR only helps when a portco has public high-yield debt, was recently taken private, or is heading to IPO.\n\n**2. State Secretary-of-State registries — the closest US analog, but fragmented across 50 states.** Delaware (where most PE entities incorporate) confirms existence + registered agent but does NOT list officers publicly. California Statements of Information list CEO/CFO/Secretary names — genuinely useful. New York/Texas give registered agents and some officer data. No state publishes financial accounts — the key contrast with Companies House.\n\n**3. PE portfolio mining — the primary engine for this ICP.** Mid-market firms (Audax, H.I.G., Court Square, Sun Capital, Genstar, Kohlberg, American Securities, Cortec, Wind Point, Gryphon) publish portfolio pages listing every company they own, often with acquisition year, sector, and add-on history (a roll-up = vendor sprawl). Cross-reference their press/news pages for deal dates and CFO quotes.\n\n**4. News & press releases.** BusinessWire / PR Newswire / PE Hub / Axios Pro Rata announce buyouts, carve-outs, add-ons, and executive (CFO) appointments — a new CFO under a fresh sponsor is the ideal cost-out buyer. Carve-outs are especially strong: they must stand up procurement and AP from scratch.\n\n**5. Enrichment tools for people + email patterns.** LinkedIn/Sales Navigator, ZoomInfo, Apollo, RocketReach, TheOrg, Craft.co, and pattern aggregators (Hunter) confirm the current CFO/CPO and the company's email convention. Best practice: confirm the *person* from a primary source and infer the *email* only from a publicly observed pattern — never assert a private address as verified.\n\n**Limitations:** the majority of PE-backed mid-market companies are private with thin public filings — no audited revenue, headcount, or officer list in many states. Revenue/employee figures are approximate estimates, and CFO turnover is high right after a buyout (which is also exactly why it's a good time to call).",
+  "us_prospects": [
+    {
+      "company": "Lanter Delivery Systems",
+      "sector": "Logistics / final-mile distribution",
+      "size": "~120 hubs across 48 states",
+      "peBacker": "Audax Private Equity (Feb 2025)",
+      "whyFit": "Very recent 2025 buyout; ~120-site nationwide transport network = heavy multi-vendor spend (fuel, fleet, facilities, 3PL, real estate)",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With 120+ hubs and a fresh Audax mandate, consolidating multi-site fleet and facilities contracts drops straight to EBITDA ahead of your next add-on.",
+      "contactName": "Chris Baer",
+      "contactTitle": "Chief Strategy & M&A Officer (formerly EVP & CFO — verify)",
+      "email": "cbaer@lanterdeliverysystems.com",
+      "emailPattern": "flast@lanterdeliverysystems.com",
+      "linkedin": "https://www.linkedin.com/in/chris-baer-8b0b7b8/",
+      "source": "https://www.businesswire.com/news/home/20250331026087/en/Audax-Private-Equity-Invests-in-Lanter-Delivery-Systems"
+    },
+    {
+      "company": "48forty Solutions",
+      "sector": "Pallet management / reverse logistics",
+      "size": "~2,400 employees; 250+ facilities",
+      "peBacker": "Audax Private Equity (2020; many add-ons)",
+      "whyFit": "Classic buy-and-build — 250+ sites plus bolted-on acquisitions = fragmented, duplicative vendor contracts across legacy entities",
+      "buyerTitle": "CFO",
+      "outreachAngle": "After folding in Relogistics and Pallet Consultants, you're likely carrying overlapping vendor contracts across 250+ sites — we recover the duplicate and overpriced spend before diligence.",
+      "contactName": "Jennifer Thomas",
+      "contactTitle": "Chief Financial Officer (verify post-2024 title)",
+      "email": "jennifer.thomas@48forty.com",
+      "emailPattern": "first.last@48forty.com",
+      "linkedin": "https://www.linkedin.com/in/jenniferthomas4/",
+      "source": "https://www.48forty.com/blog/celebrating-women-in-leadership-jennifer-thomas-48forty-cfo"
+    },
+    {
+      "company": "Resonant Clinical Solutions",
+      "sector": "Clinical-trial & lab supply-chain services",
+      "size": "~800 employees; ~$650M deal; 10 facilities",
+      "peBacker": "Audax Private Equity (carve-out from Avantor, Oct 2024)",
+      "whyFit": "Fresh carve-out standing up its own procurement and AP across multiple sites from scratch — peak moment for spend optimization",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Carve-outs inherit parent-company contracts and ad-hoc terms — we help newly independent CFOs capture the savings a standalone supply chain leaves behind.",
+      "contactName": "Scott Hickey",
+      "contactTitle": "Chief Financial Officer",
+      "email": "scott.hickey@resonantclinical.com",
+      "emailPattern": "first.last@resonantclinical.com",
+      "linkedin": "https://www.linkedin.com/in/scott-hickey-7b463a20/",
+      "source": "https://www.audaxprivateequity.com/news/audax-private-equity-completes-carveout-of-avantor-incs-clinical-services-business-and-rebrands-the-company-as-resonant-clinical-solutions"
+    },
+    {
+      "company": "Advanced Dental Brands (TeamADB)",
+      "sector": "Multi-site dental (DSO)",
+      "size": "50+ practices across New England",
+      "peBacker": "H.I.G. Capital (June 2023)",
+      "whyFit": "Multi-site vendor-heavy roll-up — dental supplies, lab services, equipment across many sites; still pursuing M&A",
+      "buyerTitle": "CFO",
+      "outreachAngle": "As you integrate 50+ practices, consolidating fragmented dental-supply, lab and equipment contracts into network pricing is one of the fastest post-deal margin levers.",
+      "contactName": "Chris Haeckel",
+      "contactTitle": "Chief Financial Officer",
+      "email": "chaeckel@teamadb.com",
+      "emailPattern": "flast@teamadb.com",
+      "linkedin": "https://www.linkedin.com/in/chris-haeckel-cpa-51380620/",
+      "source": "https://hig.com/news/h-i-g-capital-completes-recapitalization-of-advanced-dental-brands/"
+    },
+    {
+      "company": "CORE Linen Services",
+      "sector": "Outsourced laundry & linen (healthcare/hospitality)",
+      "size": "14 plants; 220M+ lbs/yr",
+      "peBacker": "H.I.G. Capital (carve-out of Crothall Laundry, 2024)",
+      "whyFit": "Highly vendor-heavy, multi-plant — textiles, chemicals, logistics, equipment, energy across 14 sites",
+      "buyerTitle": "CFO / Director of Procurement",
+      "outreachAngle": "Across 14 plants and 220M+ lbs, small per-unit savings on textiles, chemicals and freight compound fast — we audit and renegotiate on contingency.",
+      "contactName": "Dan Gatti",
+      "contactTitle": "Chief Financial Officer",
+      "email": "dan.gatti@corelinen.com",
+      "emailPattern": "first.last@corelinen.com",
+      "linkedin": "https://www.linkedin.com/company/core-linen-services",
+      "source": "https://americanlaundrynews.com/articles/core-linen-services-hires-gatti-cfo"
+    },
+    {
+      "company": "DCCM",
+      "sector": "Infrastructure engineering / program & construction management",
+      "size": "1,100+ employees; 46 states",
+      "peBacker": "Court Square Capital Partners (June 2025)",
+      "whyFit": "Very recent 2025 buyout; active M&A roll-up; 46-state multi-office = heavy multi-vendor spend (subs, fleet, real estate, IT)",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Court Square just closed DCCM — as you integrate a 46-state services platform, we recover overpayments and duplicate vendor contracts across combined offices.",
+      "contactName": "Mike Gallagher",
+      "contactTitle": "Chief Financial Officer",
+      "email": "mike.gallagher@dccm.com",
+      "emailPattern": "first.last@dccm.com",
+      "linkedin": "https://www.linkedin.com/in/mikegallagher101/",
+      "source": "https://www.courtsquare.com/media/court-square-capital-partners-announces-acquisition-of-dccm/"
+    },
+    {
+      "company": "Offen Petroleum",
+      "sector": "Fuel / propane / lubricants distribution",
+      "size": "200+ drivers; 2.2B+ gal/yr; ~26 states",
+      "peBacker": "Court Square Capital Partners (2019; active roll-up)",
+      "whyFit": "Textbook roll-up — ~10 acquisitions; heavy logistics base (fleet, terminals, supply) = strong duplicate-contract surface",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With ~10 fuel/logistics acquisitions rolled up, you're carrying overlapping carrier, terminal and supply contracts across 26 states — we recover the duplicate spend that survives integration.",
+      "contactName": "",
+      "contactTitle": "Target the CFO (CEO is Bill Gallagher; CFO not publicly surfaced)",
+      "email": "",
+      "emailPattern": "flast@offenpetro.com",
+      "linkedin": "",
+      "source": "https://www.courtsquare.com/portfolio/offen-petroleum/"
+    },
+    {
+      "company": "Five Star Parks & Attractions",
+      "sector": "Multi-site family entertainment centers",
+      "size": "27 locations, 11 brands, ~13 states",
+      "peBacker": "Court Square Capital Partners (Feb 2023)",
+      "whyFit": "Recent buyout; up to 27 sites under multiple brands = fragmented location-level vendor spend (utilities, arcade, F&B, facilities)",
+      "buyerTitle": "CFO",
+      "outreachAngle": "27 sites across 11 brands means location-level vendor contracts no one has consolidated — we recover the overbilling and duplicate facilities/F&B spend.",
+      "contactName": "Anne Hyde",
+      "contactTitle": "Chief Financial Officer, CPA",
+      "email": "ahyde@fivestarparks.com",
+      "emailPattern": "flast@fivestarparks.com",
+      "linkedin": "",
+      "source": "https://www.businesswire.com/news/home/20230316005442/en/Five-Star-Announces-Strategic-Capital-Investment-from-Court-Square-Capital-Partners"
+    },
+    {
+      "company": "EIS Holdings",
+      "sector": "Facilities & environmental services",
+      "size": "~1,000+ employees; 32 offices, 34 states",
+      "peBacker": "Sun Capital Partners (July 2021)",
+      "whyFit": "Roll-up of 5+ environmental firms with ongoing bolt-ons; CFO explicitly owns Global Procurement",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With 32 offices stitched from multiple acquisitions and procurement under your seat, 5-15% of recurring vendor and subcontractor spend is typically duplicated or off-contract.",
+      "contactName": "Chris Roth",
+      "contactTitle": "Chief Financial Officer (finance, IT, Global Procurement, M&A)",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "",
+      "source": "https://suncappart.com/2021/07/20/sun-capital-partners-affiliate-acquires-eis-holdings/"
+    },
+    {
+      "company": "Latite Roofing & Sheet Metal",
+      "sector": "Commercial & residential roofing",
+      "size": "~450+ professionals; statewide FL",
+      "peBacker": "Sun Capital Partners (Jan 2025)",
+      "whyFit": "Freshest buyout here (Jan 2025); M&A roll-up platform; multi-site contractor with heavy materials spend",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Fresh off the Sun Capital investment and scaling toward add-ons, now is the moment to standardize vendor contracts and catch materials-pricing leakage.",
+      "contactName": "Ryan Hurley",
+      "contactTitle": "Chief Financial Officer",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "",
+      "source": "https://suncappart.com/2025/01/08/sun-capital-partners-affiliate-completes-investment-in-latite-roofing-sheet-metal/"
+    },
+    {
+      "company": "Architectural Surfaces Group",
+      "sector": "Building-products distribution (stone, quartz, tile)",
+      "size": "~22 DCs + ~20 showrooms; predecessor ~$554M rev",
+      "peBacker": "Sun Capital Partners (take-private 2021; rolling up)",
+      "whyFit": "Import-heavy supply chain across ~22 branch DCs, recent buyout, active roll-up — classic multi-vendor consolidation target",
+      "buyerTitle": "VP Finance / CFO",
+      "outreachAngle": "Across 22 DCs and a string of bolt-ons, freight, packaging and indirect spend rarely get re-bid on one contract — we recover the difference.",
+      "contactName": "",
+      "contactTitle": "Target the CFO / VP Finance",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "",
+      "source": "https://suncappart.com/2021/10/21/sun-capital-partners-affiliate-completes-acquisition-of-select-interior-concepts-changes-name-to-architectural-surfaces-group/"
+    },
+    {
+      "company": "OTC Industrial Technologies",
+      "sector": "Industrial products distribution & services",
+      "size": "~2,000 associates; ~60 branches, 40+ states",
+      "peBacker": "Genstar Capital (April 2019)",
+      "whyFit": "Decentralized distributor, ~60 branches, 40+ brands via 16+ acquisitions — vendor-intensive and multi-site by design",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With ~60 branches each historically buying on their own terms, consolidating supplier contracts and indirect spend frees margin Genstar would love to see drop to EBITDA.",
+      "contactName": "Mike Del Regno",
+      "contactTitle": "Chief Financial Officer",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "https://www.linkedin.com/in/michael-del-regno-7629bb51/",
+      "source": "https://www.gencap.com/genstar-capital-announces-acquisition-of-ohio-transmission-corporation-in-partnership-with-management/"
+    },
+    {
+      "company": "Sonny's Enterprises",
+      "sector": "Manufacturing & distribution — car-wash equipment",
+      "size": "est. ~500-1,000 employees; ~$465M rev",
+      "peBacker": "Genstar Capital (Aug 2020)",
+      "whyFit": "Multi-site manufacturer/distributor with heavy input spend (raw materials, chemicals, electronics, software); active roll-up",
+      "buyerTitle": "CFO / SVP Finance",
+      "outreachAngle": "A manufacturer buying steel, chemicals and electronic components across many suppliers almost always has stranded volume — we re-bid and consolidate it into savings.",
+      "contactName": "Grant Fitz",
+      "contactTitle": "Chief Financial Officer (verify; SVP Finance Kelly Lawrence is an alternative)",
+      "email": "grant.fitz@sonnysdirect.com",
+      "emailPattern": "first.last@sonnysdirect.com",
+      "linkedin": "https://www.linkedin.com/in/grant-fitz-7021373a/",
+      "source": "https://www.gencap.com/genstar-capital-announces-investment-in-sonnys/"
+    },
+    {
+      "company": "RESA Power",
+      "sector": "Electrical power services (maintenance/testing)",
+      "size": "50+ locations US & Canada; est. ~1,000-1,500 staff",
+      "peBacker": "Kohlberg & Company (April 2025)",
+      "whyFit": "Vendor-heavy, multi-site field-services roll-up: 50+ locations each procuring test equipment, parts, fleet, subcontracted labor",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With 50+ newly Kohlberg-backed locations buying parts, test gear and fleet independently, a contract/payables audit surfaces duplicate and maverick spend for the value-creation plan.",
+      "contactName": "Chris Weaver",
+      "contactTitle": "Chief Financial Officer",
+      "email": "chris.weaver@resapower.com",
+      "emailPattern": "first.last@resapower.com",
+      "linkedin": "https://www.linkedin.com/in/chris-weaver-5655191b/",
+      "source": "https://www.businesswire.com/news/home/20250428378232/en/RESA-Power-Announces-Majority-Investment-from-Kohlberg"
+    },
+    {
+      "company": "OB Hospitalist Group",
+      "sector": "Multi-site healthcare services (OB hospitalist)",
+      "size": "~1,100+ clinicians; 200+ hospitals, 30+ states",
+      "peBacker": "Kohlberg & Company (Sept 2021)",
+      "whyFit": "Multi-site platform across 200+ hospitals with decentralized procurement; a brand-new CFO (Jan 2026) re-examining cost",
+      "buyerTitle": "CFO",
+      "outreachAngle": "A brand-new CFO at a 200+ hospital platform is the ideal moment for a contract/payables audit to consolidate fragmented staffing, supply and revenue-cycle spend.",
+      "contactName": "Aaron Cho",
+      "contactTitle": "Chief Financial Officer",
+      "email": "acho@obhg.com",
+      "emailPattern": "flast@obhg.com",
+      "linkedin": "https://www.linkedin.com/in/aaron-cho-b0183510/",
+      "source": "https://obhg.com/about-us/team/"
+    },
+    {
+      "company": "United FP (United PF Partners)",
+      "sector": "Multi-site fitness (Planet Fitness franchisee)",
+      "size": "190+ clubs, 14 states; ~1.2M members",
+      "peBacker": "American Securities (Dec 2019)",
+      "whyFit": "190-club roll-up of five franchisee groups; heavy recurring multi-site spend (equipment, maintenance, janitorial, utilities)",
+      "buyerTitle": "CFO",
+      "outreachAngle": "Across 190+ clubs from five separate roll-ups, standardizing maintenance, equipment and facilities contracts onto one rate card is a clean recurring margin lift.",
+      "contactName": "Michael Gilb",
+      "contactTitle": "Chief Financial Officer",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "https://www.linkedin.com/in/michael-gilb-66782438",
+      "source": "https://www.american-securities.com/en/companies/united-fp"
+    },
+    {
+      "company": "Buske Logistics",
+      "sector": "Contract warehousing / 3PL",
+      "size": "~37 facilities, 7M+ sq ft; est. ~1,500-2,500 staff",
+      "peBacker": "Wind Point Partners (carve-out from SC Johnson, 2025)",
+      "whyFit": "Very recent 2025 carve-out; 37-site footprint rebuilding contracts from scratch (packaging, materials handling, transport, facilities)",
+      "buyerTitle": "CFO / VP Finance",
+      "outreachAngle": "Post-carve-out from SC Johnson you're rebuilding vendor contracts across 37 sites — a payables and contract audit typically recovers 5-15% before the first renewal.",
+      "contactName": "Daena Baker",
+      "contactTitle": "Chief Financial Officer",
+      "email": "daena.baker@buske.com",
+      "emailPattern": "first.last@buske.com",
+      "linkedin": "",
+      "source": "https://www.wppartners.com/wind-point-partners-acquires-buske/"
+    },
+    {
+      "company": "FreshEdge",
+      "sector": "Fresh food / produce distribution",
+      "size": "~2,800 employees; ~$346M rev; 25 facilities; 1,200 fleet",
+      "peBacker": "Wind Point Partners (2022; multi-add-on roll-up)",
+      "whyFit": "Active roll-up, 25 DCs and 1,200-unit fleet — large recurring spend on fuel, fleet maintenance, packaging, cold-chain, facilities",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With 25 DCs and 1,200 fleet assets bolted from multiple acquisitions, duplicate and off-contract vendor spend is almost certain — we find and recover it.",
+      "contactName": "Wes Saber",
+      "contactTitle": "Chief Financial Officer",
+      "email": "wsaber@freshedgefoods.com",
+      "emailPattern": "finitiallast@freshedgefoods.com",
+      "linkedin": "https://www.linkedin.com/in/wes-saber-10629a1/",
+      "source": "https://www.wppartners.com/wind-point-partners-acquires-freshedge/"
+    },
+    {
+      "company": "Goettl Air Conditioning & Plumbing",
+      "sector": "Multi-site residential HVAC & plumbing",
+      "size": "4+ states / multiple metros; est. ~1,000-1,500 staff",
+      "peBacker": "Cortec Group (2021; active roll-up)",
+      "whyFit": "Branch-based services roll-up expanding by acquisition — heavy recurring spend on fleet, parts, facilities, field-services vendors",
+      "buyerTitle": "CFO",
+      "outreachAngle": "As you roll up HVAC branches across new markets, each acquisition brings its own messy vendor contracts — we standardize and renegotiate that spend so margin scales.",
+      "contactName": "John Landefeld",
+      "contactTitle": "Chief Financial Officer",
+      "email": "john.landefeld@goettl.com",
+      "emailPattern": "first.last@goettl.com",
+      "linkedin": "https://www.linkedin.com/in/landefeld/",
+      "source": "https://cortecgroup.com/company/goettl/"
+    },
+    {
+      "company": "Vision Innovation Partners",
+      "sector": "Multi-site ophthalmology & surgery centers",
+      "size": "~69 locations + 12 ASCs; 150+ providers",
+      "peBacker": "Gryphon Investors (Apr 2022; 27+ add-ons)",
+      "whyFit": "Aggressive multi-site healthcare roll-up (69 locations) — medical supplies, optical/lab, equipment, facilities rarely consolidated",
+      "buyerTitle": "CFO",
+      "outreachAngle": "With 69 locations folded in through 27+ acquisitions, each came with its own supplier and equipment contracts — consolidating it is one of the fastest EBITDA levers.",
+      "contactName": "Michael Pascetta",
+      "contactTitle": "Chief Financial Officer",
+      "email": "",
+      "emailPattern": "",
+      "linkedin": "",
+      "source": "https://www.gryphon-inv.com/companies/vision-innovation-partners/"
+    }
+  ]
 }
