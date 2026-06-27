@@ -1,28 +1,34 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { clsx } from "clsx";
-import type { AnalysisResult } from "@/lib/types";
 import { Button, Eyebrow } from "@/components/ui/primitives";
-import { ResultsSummary, FindingsBook } from "./results";
 
-type Result = AnalysisResult & { failures?: { fileName: string; reason: string }[] };
-type Status = "idle" | "loading" | "done" | "error";
+type Status = "idle" | "loading" | "error";
 
 const STEPS = [
   "Reading tables and schedules inside every document…",
   "Matching invoice line items back to each contract…",
   "Checking renewals, rates, seats, escalators and duplicates…",
-  "Ranking findings by what they're worth…",
+  "Ranking findings and drafting vendor emails…",
 ];
 
 export function Workbench() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
-  const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  function handoff(data: unknown) {
+    try {
+      sessionStorage.setItem("recoup:analysis", JSON.stringify(data));
+    } catch {
+      /* sessionStorage may be unavailable; the dashboard falls back to /api/sample */
+    }
+    router.push("/dashboard");
+  }
 
   async function loadSample() {
     setStatus("loading");
@@ -30,8 +36,7 @@ export function Workbench() {
     try {
       const res = await fetch("/api/sample");
       if (!res.ok) throw new Error(`Sample failed (${res.status})`);
-      setResult(await res.json());
-      setStatus("done");
+      handoff(await res.json());
     } catch (e) {
       setError(e instanceof Error ? e.message : "Failed to load sample.");
       setStatus("error");
@@ -48,51 +53,11 @@ export function Workbench() {
       const res = await fetch("/api/analyze", { method: "POST", body: form });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? `Analysis failed (${res.status})`);
-      setResult(data);
-      setStatus("done");
+      handoff(data);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Analysis failed.");
       setStatus("error");
     }
-  }
-
-  function reset() {
-    setStatus("idle");
-    setResult(null);
-    setError(null);
-    setFiles([]);
-    if (inputRef.current) inputRef.current.value = "";
-  }
-
-  if (status === "done" && result) {
-    return (
-      <div className="space-y-10">
-        <ResultsSummary summary={result.summary} />
-        {result.failures && result.failures.length > 0 && (
-          <p className="rounded-xl border border-gold/30 bg-gold/10 px-5 py-3 font-ui text-sm text-[#7a5e1f]">
-            {result.failures.length} document(s) could not be read and were skipped — the rest of the
-            batch was analyzed without interruption.
-          </p>
-        )}
-        <div className="flex items-center justify-between">
-          <div>
-            <Eyebrow>The findings book</Eyebrow>
-            <h2 className="mt-2 font-display text-3xl text-forest">
-              Ranked by what you can claw back
-            </h2>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link href="/documents" className="font-ui text-sm text-ink-soft underline decoration-gold/60 underline-offset-4 hover:text-ink">
-              Browse source documents
-            </Link>
-            <Button onClick={reset} variant="ghost" arrow={false}>
-              Start over
-            </Button>
-          </div>
-        </div>
-        <FindingsBook result={result} />
-      </div>
-    );
   }
 
   if (status === "loading") {
@@ -119,7 +84,8 @@ export function Workbench() {
         <h2 className="mt-3 font-display text-3xl text-forest">Use the sample portfolio</h2>
         <p className="mt-3 flex-1 font-body text-ink-soft">
           A mid-size logistics company — 22 vendors, 302 real-looking contracts and twelve months of
-          invoices across PDF, Excel and Word. Findings appear immediately.
+          invoices across PDF, Excel and Word. The dashboard opens with savings ranked and emails
+          drafted.
         </p>
         <div className="mt-6">
           <Button onClick={loadSample} variant="forest">
@@ -133,14 +99,10 @@ export function Workbench() {
         <Eyebrow>Your data</Eyebrow>
         <h2 className="mt-3 font-display text-3xl text-forest">Upload your own</h2>
         <p className="mt-3 font-body text-ink-soft">
-          Drop in your vendor contracts and 12+ months of invoices (PDF, Excel, Word). They're parsed
-          in-memory and never leave the request.
+          Drop in your vendor contracts and 12+ months of invoices (PDF, Excel, Word). They&apos;re
+          parsed in-memory and never leave the request.
         </p>
-        <label
-          className={clsx(
-            "mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-ink/25 bg-bone/40 px-4 py-8 text-center transition-colors hover:border-forest/40",
-          )}
-        >
+        <label className="mt-5 flex cursor-pointer flex-col items-center justify-center rounded-2xl border border-dashed border-ink/25 bg-bone/40 px-4 py-8 text-center transition-colors hover:border-forest/40">
           <input
             ref={inputRef}
             type="file"
@@ -156,14 +118,18 @@ export function Workbench() {
           </span>
         </label>
         <div className="mt-5">
-          <Button onClick={analyzeUpload} variant="forest" className={files.length === 0 ? "opacity-40 pointer-events-none" : ""}>
+          <Button
+            onClick={analyzeUpload}
+            variant="forest"
+            className={files.length === 0 ? "pointer-events-none opacity-40" : ""}
+          >
             Find my savings
           </Button>
         </div>
       </div>
 
       {status === "error" && (
-        <p className="md:col-span-2 rounded-xl border border-terracotta/30 bg-terracotta/10 px-5 py-3 font-ui text-sm text-terracotta">
+        <p className="rounded-xl border border-terracotta/30 bg-terracotta/10 px-5 py-3 font-ui text-sm text-terracotta md:col-span-2">
           {error}
         </p>
       )}

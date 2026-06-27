@@ -4,6 +4,7 @@ import { useState } from "react";
 import { clsx } from "clsx";
 import type { AnalysisResult, Finding, EmailDraft } from "@/lib/types";
 import { formatUSD, formatUSDPrecise } from "@/lib/money";
+import { gmailComposeUrl } from "@/lib/gmail";
 
 const CATEGORY_LABEL: Record<string, string> = {
   auto_renewal: "Auto-renewal",
@@ -73,17 +74,27 @@ function EmailBlock({ draft }: { draft: EmailDraft }) {
     <div className="mt-5 rounded-xl border border-ink/10 bg-bone/60 p-5">
       <div className="flex items-center justify-between">
         <span className="eyebrow text-emerald">Drafted vendor email</span>
-        <button
-          type="button"
-          onClick={() => {
-            navigator.clipboard?.writeText(full);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 1500);
-          }}
-          className="font-ui text-xs tracking-wide text-ink-soft underline decoration-gold/60 underline-offset-4 hover:text-ink"
-        >
-          {copied ? "Copied ✓" : "Copy"}
-        </button>
+        <div className="flex items-center gap-4">
+          <a
+            href={gmailComposeUrl(draft)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-ui text-xs tracking-wide text-ink-soft underline decoration-gold/60 underline-offset-4 hover:text-ink"
+          >
+            Open in Gmail
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              navigator.clipboard?.writeText(full);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 1500);
+            }}
+            className="font-ui text-xs tracking-wide text-ink-soft underline decoration-gold/60 underline-offset-4 hover:text-ink"
+          >
+            {copied ? "Copied ✓" : "Copy"}
+          </button>
+        </div>
       </div>
       <div className="mt-3 font-ui text-xs text-ink-soft">
         <span className="text-ink">To:</span> {draft.to}
