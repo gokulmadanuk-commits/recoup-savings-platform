@@ -14,12 +14,17 @@ import { DocumentsPanel } from "./documents-panel";
 import { EmailQueue } from "./email-queue";
 import { FindingsSection } from "./findings-section";
 import { UploadCard } from "./upload-card";
+import { RecoveryTracker } from "./recovery-tracker";
+import { RenewalCalendar } from "./renewal-calendar";
+import { ReportButtons } from "./report-buttons";
 
-type SectionId = "overview" | "findings" | "vendors" | "documents" | "emails";
+type SectionId = "overview" | "findings" | "recovery" | "renewals" | "vendors" | "documents" | "emails";
 
 const SECTIONS: { id: SectionId; label: string; eyebrow: string; title: string; subtitle: string }[] = [
   { id: "overview", label: "Overview", eyebrow: "Overview", title: "The book of savings", subtitle: "Everything we found, at a glance." },
   { id: "findings", label: "Findings", eyebrow: "Findings", title: "Ranked by what you can claw back", subtitle: "Each finding ties to its source document, with the leverage and the exact ask. Filter by category." },
+  { id: "recovery", label: "Recovery", eyebrow: "Recovery", title: "Recovery tracker", subtitle: "Move each finding from identified to posted cash — and watch the realization rate climb." },
+  { id: "renewals", label: "Renewals", eyebrow: "Renewals", title: "Renewal calendar", subtitle: "Every contract's renewal and notice deadline — act before the window closes." },
   { id: "vendors", label: "Vendors", eyebrow: "Vendors", title: "Vendor leaderboard", subtitle: "Annual spend reviewed against savings identified." },
   { id: "documents", label: "Documents", eyebrow: "Source documents", title: "Everything we read", subtitle: "The contracts and invoices behind every finding — downloadable, with the clauses we extracted." },
   { id: "emails", label: "Email queue", eyebrow: "Action queue", title: "Vendor emails, pre-drafted", subtitle: "Connect Gmail to open each email as a ready-to-send draft — the leverage and the number already written in." },
@@ -151,10 +156,13 @@ export function Dashboard() {
               <Eyebrow className="text-emerald">Savings analysis</Eyebrow>
               <h1 className="mt-2 font-display text-3xl text-forest md:text-4xl">{s.customer}</h1>
             </div>
-            <p className="font-ui text-sm text-ink-soft">
-              {s.documentsProcessed} documents · {s.vendorsAnalyzed} vendors · {formatLong(s.analysisDate)}
-              {s.documentsFailed > 0 && <span className="text-terracotta"> · {s.documentsFailed} unreadable</span>}
-            </p>
+            <div className="flex flex-col items-start gap-3 sm:items-end">
+              <p className="font-ui text-sm text-ink-soft">
+                {s.documentsProcessed} documents · {s.vendorsAnalyzed} vendors · {formatLong(s.analysisDate)}
+                {s.documentsFailed > 0 && <span className="text-terracotta"> · {s.documentsFailed} unreadable</span>}
+              </p>
+              <ReportButtons result={result} />
+            </div>
           </div>
 
           {/* Active section heading */}
@@ -195,6 +203,8 @@ export function Dashboard() {
             </div>
           )}
           {active === "findings" && <FindingsSection result={result} />}
+          {active === "recovery" && <RecoveryTracker findings={result.findings} drafts={result.drafts} />}
+          {active === "renewals" && <RenewalCalendar renewals={result.renewals} />}
           {active === "vendors" && <VendorsPanel vendors={result.vendors} />}
           {active === "documents" && <DocumentsPanel documents={result.documents} />}
           {active === "emails" && <EmailQueue drafts={result.drafts} findings={result.findings} />}
