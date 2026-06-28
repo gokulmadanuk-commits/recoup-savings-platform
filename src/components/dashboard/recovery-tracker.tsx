@@ -221,9 +221,17 @@ export function RecoveryTracker({
         </div>
       </div>
 
+      {/* Scroll hint */}
+      <div className="mt-5 flex items-center gap-2 font-ui text-xs text-ink-soft/80">
+        <span>{STAGES.length} stages</span>
+        <span className="text-gold/70">·</span>
+        <span>scroll across to see them all</span>
+        <span aria-hidden>→</span>
+      </div>
       {/* Board — horizontally scrolling columns */}
-      <div className="mt-5 overflow-x-auto pb-2">
-        <div className="flex min-w-max gap-4">
+      <div className="relative mt-2">
+        <div className="overflow-x-auto pb-2">
+          <div className="flex min-w-max gap-4">
           {STAGES.map((stage) => {
             const list = grouped.get(stage)!;
             const dropped = stage === "Won't pursue";
@@ -330,7 +338,13 @@ export function RecoveryTracker({
               </section>
             );
           })}
+          </div>
         </div>
+        {/* Right-edge fade signals more stages off-screen. */}
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-paper to-transparent md:w-20"
+          aria-hidden
+        />
       </div>
     </div>
   );

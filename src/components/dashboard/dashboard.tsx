@@ -150,7 +150,7 @@ export function Dashboard() {
 
       {/* Main */}
       <main className="min-w-0 flex-1">
-        <div className="mx-auto max-w-6xl px-6 py-10 md:px-10 md:py-12">
+        <div className="mx-auto w-full max-w-[112rem] px-6 py-10 md:px-10 md:py-12">
           {/* Intro */}
           <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink/10 pb-8">
             <div>
