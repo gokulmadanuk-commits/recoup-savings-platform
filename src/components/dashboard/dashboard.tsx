@@ -61,8 +61,8 @@ const SECTIONS: Section[] = [
 ];
 
 const GROUPS: { id: GroupId; label: string; blurb: string }[] = [
-  { id: "cost", label: "Cost Reduction", blurb: "Money you overpay vendors" },
   { id: "revenue", label: "Revenue Leakage", blurb: "Money your customers underpay you" },
+  { id: "cost", label: "Cost Reduction", blurb: "Money you overpay vendors" },
 ];
 
 function scrollToUpload() {
@@ -74,14 +74,31 @@ const REVENUE_CACHE_KEY = "recoup:revenue-analysis";
 export function Dashboard() {
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
-  const [active, setActive] = useState<string>("overview");
-  const [openGroups, setOpenGroups] = useState<Set<GroupId>>(new Set(["cost"]));
+  // Revenue Leakage is the lead product — the dashboard opens on it by default.
+  const [active, setActive] = useState<string>("rev_overview");
+  const [openGroups, setOpenGroups] = useState<Set<GroupId>>(new Set(["revenue"]));
 
   // Revenue side is loaded lazily on first visit to a revenue section.
   const [revenueResult, setRevenueResult] = useState<RevenueAnalysisResult | null>(null);
   const [revenueStatus, setRevenueStatus] = useState<"idle" | "loading" | "ready" | "error">("idle");
 
   useEffect(() => {
+    // The landing's Cost CTA links to /dashboard?view=cost — honor it.
+    let startCost = false;
+    try {
+      startCost = new URLSearchParams(window.location.search).get("view") === "cost";
+    } catch {
+      /* ignore */
+    }
+    if (startCost) {
+      setActive("overview");
+      setOpenGroups(new Set(["cost"]));
+    } else {
+      // Default lands on Revenue Leakage — preload its analysis.
+      loadRevenue();
+    }
+
+    // Cost analysis is always loaded (the cost sections + the initial gate need it).
     try {
       const cached = sessionStorage.getItem("recoup:analysis");
       if (cached) {
@@ -99,6 +116,7 @@ export function Dashboard() {
         setStatus("ready");
       })
       .catch(() => setStatus("error"));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function loadRevenue() {
