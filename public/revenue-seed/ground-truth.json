@@ -1,0 +1,130 @@
+{
+  "seller": "Northwind Logistics Group, Inc.",
+  "analysisDate": "2026-06-27",
+  "customerCount": 19,
+  "expectedFindingCount": 11,
+  "expectedTotalUsd": 1278396.8599999999,
+  "expectedFindings": [
+    {
+      "customerId": "cohort-retail-distribution",
+      "ruleId": "RL01",
+      "category": "escalator_missed",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 43877800,
+      "annualizedUpliftCents": 18215886,
+      "totalRecoverableCents": 62093686,
+      "relationshipRisk": "B",
+      "note": "RPI escalator never applied since 2021; billed flat at $480k/yr."
+    },
+    {
+      "customerId": "harborline-grocery-distribution",
+      "ruleId": "RL02",
+      "category": "price_step_missed",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 3600000,
+      "annualizedUpliftCents": 4800000,
+      "totalRecoverableCents": 8400000,
+      "relationshipRisk": "A",
+      "note": "Scheduled $52k→$56k/mo step (eff. 2025-10-01) never applied; 9 months under-billed."
+    },
+    {
+      "customerId": "brightline-grocers",
+      "ruleId": "RL03",
+      "category": "expired_discount",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 4050000,
+      "annualizedUpliftCents": 5400000,
+      "totalRecoverableCents": 9450000,
+      "relationshipRisk": "A",
+      "note": "15% intro discount expired 2025-09-30 but still applied Oct 2025..Jun 2026."
+    },
+    {
+      "customerId": "tidewater-wholesale-supply",
+      "ruleId": "RL04",
+      "category": "tier_breach",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 3960000,
+      "annualizedUpliftCents": 4320000,
+      "totalRecoverableCents": 8280000,
+      "relationshipRisk": "A",
+      "note": "Graduated tier breached: 5,200 pallets/mo billed flat at $12 instead of 4,000×$12 + 1,200×$15."
+    },
+    {
+      "customerId": "granite-peak-manufacturing",
+      "ruleId": "RL05",
+      "category": "unbilled_usage",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 3600000,
+      "annualizedUpliftCents": 3600000,
+      "totalRecoverableCents": 7200000,
+      "relationshipRisk": "A",
+      "note": "9,500 cu-ft/mo used vs 8,000 allowance; 1,500 cu-ft overage at $2.00 never billed for 12 months."
+    },
+    {
+      "customerId": "lakeshore-foods-coop",
+      "ruleId": "RL06",
+      "category": "min_commit_shortfall",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 9000000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 9000000,
+      "relationshipRisk": "A",
+      "note": "Annual take-or-pay floor $600k never enforced; only $510k billed over trailing 12mo."
+    },
+    {
+      "customerId": "continental-auto-parts",
+      "ruleId": "RL07",
+      "category": "missing_surcharge",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 4488000,
+      "annualizedUpliftCents": 4488000,
+      "totalRecoverableCents": 8976000,
+      "relationshipRisk": "A",
+      "note": "8.5% fuel surcharge (EIA diesel) never billed; base flat at $44k/mo."
+    },
+    {
+      "customerId": "cedarbrook-logistics",
+      "ruleId": "RL08",
+      "category": "unbilled_services",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 1500000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 1500000,
+      "relationshipRisk": "A",
+      "note": "6 delivered special-handling jobs (@$2,500) never invoiced; 2 invoiced jobs correctly excluded."
+    },
+    {
+      "customerId": "northgate-distribution-centers",
+      "ruleId": "RL09",
+      "category": "renewal_repricing",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 4000000,
+      "annualizedUpliftCents": 4800000,
+      "totalRecoverableCents": 8800000,
+      "relationshipRisk": "A",
+      "note": "Evergreen renewal (2025-09-01) repriced list to $58k/mo; still billing the lapsed $54k/mo."
+    },
+    {
+      "customerId": "pinnacle-retail-group",
+      "ruleId": "RL10",
+      "category": "late_interest",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 540000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 540000,
+      "relationshipRisk": "A",
+      "note": "1.5%/mo finance charge never billed; $80k@75d + $50k@130d past due, current row excluded."
+    },
+    {
+      "customerId": "evergreen-wholesale-foods",
+      "ruleId": "RL11",
+      "category": "rebate_over_credit",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 1800000,
+      "annualizedUpliftCents": 1800000,
+      "totalRecoverableCents": 3600000,
+      "relationshipRisk": "A",
+      "note": "Valid 5% rebate over-applied at 8% (−$4,000 vs −$2,500 on $50k gross) for 12 months."
+    }
+  ]
+}

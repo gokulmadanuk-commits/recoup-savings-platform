@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "seed": "tsx scripts/generate-seed.ts"
+    "seed": "tsx scripts/generate-seed.ts",
+    "seed:revenue": "tsx scripts/generate-revenue-seed.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

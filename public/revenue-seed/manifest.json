@@ -1,0 +1,1974 @@
+{
+  "seller": "Northwind Logistics Group, Inc.",
+  "analysisDate": "2026-06-27",
+  "generatedAt": "2026-06-28",
+  "fileCount": 261,
+  "totalBytes": 1674558,
+  "byFormat": {
+    "pdf": 97,
+    "xlsx": 160,
+    "docx": 4
+  },
+  "customers": [
+    {
+      "id": "cohort-retail-distribution",
+      "name": "Cohort Retail Distribution, LLC",
+      "segment": "Retail distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "cohort-retail-distribution-llc-contract.pdf",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-llc-contract.pdf",
+          "bytes": 5003
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-07.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-07.xlsx",
+          "bytes": 8449
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-08.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-08.xlsx",
+          "bytes": 8449
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-09.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-09.xlsx",
+          "bytes": 8449
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-10.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-10.xlsx",
+          "bytes": 8448
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-11.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-11.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2025-12.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2025-12.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-01.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-01.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-02.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-02.xlsx",
+          "bytes": 8448
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-03.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-03.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-04.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-04.xlsx",
+          "bytes": 8445
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-05.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-05.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-billing-2026-06.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-billing-2026-06.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "cohort-retail-distribution-llc-statement.xlsx",
+          "path": "/revenue-seed/cohort-retail-distribution/cohort-retail-distribution-llc-statement.xlsx",
+          "bytes": 8308
+        }
+      ]
+    },
+    {
+      "id": "harborline-grocery-distribution",
+      "name": "Harborline Grocery Distribution, Inc.",
+      "segment": "Grocery distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "harborline-grocery-distribution-inc-contract.pdf",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-inc-contract.pdf",
+          "bytes": 5139
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-07.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-07.xlsx",
+          "bytes": 8466
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-08.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-08.xlsx",
+          "bytes": 8466
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-09.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-09.xlsx",
+          "bytes": 8464
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-10.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-10.xlsx",
+          "bytes": 8463
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-11.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-11.xlsx",
+          "bytes": 8460
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2025-12.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2025-12.xlsx",
+          "bytes": 8467
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-01.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-01.xlsx",
+          "bytes": 8463
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-02.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-02.xlsx",
+          "bytes": 8465
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-03.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-03.xlsx",
+          "bytes": 8463
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-04.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-04.xlsx",
+          "bytes": 8462
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-05.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-05.xlsx",
+          "bytes": 8463
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-billing-2026-06.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-billing-2026-06.xlsx",
+          "bytes": 8461
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "harborline-grocery-distribution-inc-statement.xlsx",
+          "path": "/revenue-seed/harborline-grocery-distribution/harborline-grocery-distribution-inc-statement.xlsx",
+          "bytes": 8318
+        }
+      ]
+    },
+    {
+      "id": "brightline-grocers",
+      "name": "Brightline Grocers, LLC",
+      "segment": "Grocery retail",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "brightline-grocers-llc-contract.pdf",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-llc-contract.pdf",
+          "bytes": 4982
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2025-10.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2025-10.xlsx",
+          "bytes": 8543
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2025-11.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2025-11.xlsx",
+          "bytes": 8539
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2025-12.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2025-12.xlsx",
+          "bytes": 8544
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-01.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-01.xlsx",
+          "bytes": 8538
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-02.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-02.xlsx",
+          "bytes": 8539
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-03.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-03.xlsx",
+          "bytes": 8541
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-04.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-04.xlsx",
+          "bytes": 8538
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-05.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-05.xlsx",
+          "bytes": 8539
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "brightline-grocers-billing-2026-06.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-billing-2026-06.xlsx",
+          "bytes": 8538
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "brightline-grocers-llc-statement.xlsx",
+          "path": "/revenue-seed/brightline-grocers/brightline-grocers-llc-statement.xlsx",
+          "bytes": 8302
+        }
+      ]
+    },
+    {
+      "id": "tidewater-wholesale-supply",
+      "name": "Tidewater Wholesale Supply Co.",
+      "segment": "Wholesale distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "tidewater-wholesale-supply-co-contract.pdf",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-co-contract.pdf",
+          "bytes": 5118
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-07.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-07.xlsx",
+          "bytes": 8455
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-08.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-08.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-09.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-09.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-10.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-10.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-11.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-11.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2025-12.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2025-12.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-01.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-01.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-02.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-02.xlsx",
+          "bytes": 8454
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-03.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-03.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-04.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-04.xlsx",
+          "bytes": 8451
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-05.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-05.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-billing-2026-06.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-billing-2026-06.xlsx",
+          "bytes": 8451
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "tidewater-wholesale-supply-co-statement.xlsx",
+          "path": "/revenue-seed/tidewater-wholesale-supply/tidewater-wholesale-supply-co-statement.xlsx",
+          "bytes": 8305
+        }
+      ]
+    },
+    {
+      "id": "granite-peak-manufacturing",
+      "name": "Granite Peak Manufacturing, Inc.",
+      "segment": "Manufacturing",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "word",
+          "fileName": "granite-peak-manufacturing-inc-contract.docx",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-inc-contract.docx",
+          "bytes": 10178
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-07.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-07.pdf",
+          "bytes": 2621
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-08.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-08.pdf",
+          "bytes": 2620
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-09.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-09.pdf",
+          "bytes": 2619
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-10.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-10.pdf",
+          "bytes": 2623
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-11.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-11.pdf",
+          "bytes": 2618
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2025-12.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2025-12.pdf",
+          "bytes": 2622
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-01.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-01.pdf",
+          "bytes": 2619
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-02.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-02.pdf",
+          "bytes": 2619
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-03.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-03.pdf",
+          "bytes": 2621
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-04.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-04.pdf",
+          "bytes": 2617
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-05.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-05.pdf",
+          "bytes": 2620
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "granite-peak-manufacturing-billing-2026-06.pdf",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-billing-2026-06.pdf",
+          "bytes": 2616
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "granite-peak-manufacturing-inc-statement.xlsx",
+          "path": "/revenue-seed/granite-peak-manufacturing/granite-peak-manufacturing-inc-statement.xlsx",
+          "bytes": 8310
+        }
+      ]
+    },
+    {
+      "id": "lakeshore-foods-coop",
+      "name": "Lakeshore Foods Co-op",
+      "segment": "Food distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "lakeshore-foods-co-op-contract.pdf",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-co-op-contract.pdf",
+          "bytes": 4943
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-07.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-07.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-08.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-08.xlsx",
+          "bytes": 8449
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-09.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-09.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-10.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-10.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-11.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-11.xlsx",
+          "bytes": 8443
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2025-12.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2025-12.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-01.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-01.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-02.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-02.xlsx",
+          "bytes": 8448
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-03.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-03.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-04.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-04.xlsx",
+          "bytes": 8445
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-05.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-05.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "lakeshore-foods-coop-billing-2026-06.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-coop-billing-2026-06.xlsx",
+          "bytes": 8445
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "lakeshore-foods-co-op-statement.xlsx",
+          "path": "/revenue-seed/lakeshore-foods-coop/lakeshore-foods-co-op-statement.xlsx",
+          "bytes": 8302
+        }
+      ]
+    },
+    {
+      "id": "continental-auto-parts",
+      "name": "Continental Auto Parts Distribution, Inc.",
+      "segment": "Auto-parts distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "continental-auto-parts-distribution-inc-contract.pdf",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-distribution-inc-contract.pdf",
+          "bytes": 5126
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-07.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-07.xlsx",
+          "bytes": 8465
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-08.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-08.xlsx",
+          "bytes": 8466
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-09.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-09.xlsx",
+          "bytes": 8462
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-10.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-10.xlsx",
+          "bytes": 8463
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-11.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-11.xlsx",
+          "bytes": 8459
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2025-12.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2025-12.xlsx",
+          "bytes": 8466
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-01.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-01.xlsx",
+          "bytes": 8462
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-02.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-02.xlsx",
+          "bytes": 8464
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-03.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-03.xlsx",
+          "bytes": 8462
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-04.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-04.xlsx",
+          "bytes": 8461
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-05.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-05.xlsx",
+          "bytes": 8462
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "continental-auto-parts-billing-2026-06.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-billing-2026-06.xlsx",
+          "bytes": 8461
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "continental-auto-parts-distribution-inc-statement.xlsx",
+          "path": "/revenue-seed/continental-auto-parts/continental-auto-parts-distribution-inc-statement.xlsx",
+          "bytes": 8317
+        }
+      ]
+    },
+    {
+      "id": "cedarbrook-logistics",
+      "name": "Cedarbrook Logistics Partners, LLC",
+      "segment": "3PL",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-partners-llc-contract.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-partners-llc-contract.pdf",
+          "bytes": 4902
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-07.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-07.pdf",
+          "bytes": 2492
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-08.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-08.pdf",
+          "bytes": 2492
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-09.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-09.pdf",
+          "bytes": 2490
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-10.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-10.pdf",
+          "bytes": 2492
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-11.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-11.pdf",
+          "bytes": 2489
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2025-12.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2025-12.pdf",
+          "bytes": 2494
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-01.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-01.pdf",
+          "bytes": 2490
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-02.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-02.pdf",
+          "bytes": 2698
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-03.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-03.pdf",
+          "bytes": 2489
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-04.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-04.pdf",
+          "bytes": 2488
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-05.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-05.pdf",
+          "bytes": 2490
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "cedarbrook-logistics-billing-2026-06.pdf",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-billing-2026-06.pdf",
+          "bytes": 2487
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "cedarbrook-logistics-partners-llc-statement.xlsx",
+          "path": "/revenue-seed/cedarbrook-logistics/cedarbrook-logistics-partners-llc-statement.xlsx",
+          "bytes": 8740
+        }
+      ]
+    },
+    {
+      "id": "northgate-distribution-centers",
+      "name": "Northgate Distribution Centers, Inc.",
+      "segment": "Warehousing",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "word",
+          "fileName": "northgate-distribution-centers-inc-contract.docx",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-inc-contract.docx",
+          "bytes": 10108
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2025-09.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2025-09.pdf",
+          "bytes": 2532
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2025-10.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2025-10.pdf",
+          "bytes": 2532
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2025-11.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2025-11.pdf",
+          "bytes": 2531
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2025-12.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2025-12.pdf",
+          "bytes": 2530
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-01.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-01.pdf",
+          "bytes": 2526
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-02.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-02.pdf",
+          "bytes": 2533
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-03.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-03.pdf",
+          "bytes": 2530
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-04.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-04.pdf",
+          "bytes": 2528
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-05.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-05.pdf",
+          "bytes": 2527
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "northgate-distribution-centers-billing-2026-06.pdf",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-billing-2026-06.pdf",
+          "bytes": 2528
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "northgate-distribution-centers-inc-statement.xlsx",
+          "path": "/revenue-seed/northgate-distribution-centers/northgate-distribution-centers-inc-statement.xlsx",
+          "bytes": 8311
+        }
+      ]
+    },
+    {
+      "id": "pinnacle-retail-group",
+      "name": "Pinnacle Retail Group, Inc.",
+      "segment": "Retail",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-inc-contract.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-inc-contract.pdf",
+          "bytes": 4929
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-07.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-07.pdf",
+          "bytes": 2518
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-08.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-08.pdf",
+          "bytes": 2517
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-09.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-09.pdf",
+          "bytes": 2516
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-10.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-10.pdf",
+          "bytes": 2517
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-11.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-11.pdf",
+          "bytes": 2514
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2025-12.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2025-12.pdf",
+          "bytes": 2519
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-01.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-01.pdf",
+          "bytes": 2515
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-02.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-02.pdf",
+          "bytes": 2516
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-03.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-03.pdf",
+          "bytes": 2515
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-04.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-04.pdf",
+          "bytes": 2512
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-05.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-05.pdf",
+          "bytes": 2516
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "pinnacle-retail-group-billing-2026-06.pdf",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-billing-2026-06.pdf",
+          "bytes": 2512
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "pinnacle-retail-group-inc-statement.xlsx",
+          "path": "/revenue-seed/pinnacle-retail-group/pinnacle-retail-group-inc-statement.xlsx",
+          "bytes": 8377
+        }
+      ]
+    },
+    {
+      "id": "evergreen-wholesale-foods",
+      "name": "Evergreen Wholesale Foods, Inc.",
+      "segment": "Wholesale grocery",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "evergreen-wholesale-foods-inc-contract.pdf",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-inc-contract.pdf",
+          "bytes": 5004
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-07.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-07.xlsx",
+          "bytes": 8526
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-08.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-08.xlsx",
+          "bytes": 8526
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-09.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-09.xlsx",
+          "bytes": 8523
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-10.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-10.xlsx",
+          "bytes": 8523
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-11.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-11.xlsx",
+          "bytes": 8520
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2025-12.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2025-12.xlsx",
+          "bytes": 8527
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-01.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-01.xlsx",
+          "bytes": 8523
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-02.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-02.xlsx",
+          "bytes": 8525
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-03.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-03.xlsx",
+          "bytes": 8524
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-04.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-04.xlsx",
+          "bytes": 8522
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-05.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-05.xlsx",
+          "bytes": 8524
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-billing-2026-06.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-billing-2026-06.xlsx",
+          "bytes": 8521
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "evergreen-wholesale-foods-inc-statement.xlsx",
+          "path": "/revenue-seed/evergreen-wholesale-foods/evergreen-wholesale-foods-inc-statement.xlsx",
+          "bytes": 8310
+        }
+      ]
+    },
+    {
+      "id": "meadowbrook-foods",
+      "name": "Meadowbrook Foods Distribution",
+      "segment": "Food distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "meadowbrook-foods-distribution-contract.pdf",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-distribution-contract.pdf",
+          "bytes": 4849
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-07.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-07.xlsx",
+          "bytes": 8458
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-08.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-08.xlsx",
+          "bytes": 8459
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-09.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-09.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-10.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-10.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-11.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-11.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2025-12.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2025-12.xlsx",
+          "bytes": 8459
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-01.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-01.xlsx",
+          "bytes": 8457
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-02.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-02.xlsx",
+          "bytes": 8458
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-03.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-03.xlsx",
+          "bytes": 8457
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-04.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-04.xlsx",
+          "bytes": 8455
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-05.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-05.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-billing-2026-06.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-billing-2026-06.xlsx",
+          "bytes": 8454
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "meadowbrook-foods-distribution-statement.xlsx",
+          "path": "/revenue-seed/meadowbrook-foods/meadowbrook-foods-distribution-statement.xlsx",
+          "bytes": 8378
+        }
+      ]
+    },
+    {
+      "id": "atlantic-cold-chain",
+      "name": "Atlantic Cold Chain Co.",
+      "segment": "Cold-chain warehousing",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "word",
+          "fileName": "atlantic-cold-chain-co-contract.docx",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-co-contract.docx",
+          "bytes": 10092
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-07.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-07.pdf",
+          "bytes": 2521
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-08.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-08.pdf",
+          "bytes": 2522
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-09.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-09.pdf",
+          "bytes": 2523
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-10.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-10.pdf",
+          "bytes": 2522
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-11.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-11.pdf",
+          "bytes": 2521
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2025-12.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2025-12.pdf",
+          "bytes": 2523
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-01.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-01.pdf",
+          "bytes": 2522
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-02.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-02.pdf",
+          "bytes": 2518
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-03.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-03.pdf",
+          "bytes": 2519
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-04.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-04.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-05.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-05.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "atlantic-cold-chain-billing-2026-06.pdf",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-billing-2026-06.pdf",
+          "bytes": 2519
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "atlantic-cold-chain-co-statement.xlsx",
+          "path": "/revenue-seed/atlantic-cold-chain/atlantic-cold-chain-co-statement.xlsx",
+          "bytes": 8384
+        }
+      ]
+    },
+    {
+      "id": "summit-ecommerce-fulfilment",
+      "name": "Summit E-Commerce Fulfilment",
+      "segment": "E-commerce fulfilment",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "summit-e-commerce-fulfilment-contract.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-e-commerce-fulfilment-contract.pdf",
+          "bytes": 4797
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-07.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-07.pdf",
+          "bytes": 2509
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-08.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-08.pdf",
+          "bytes": 2509
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-09.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-09.pdf",
+          "bytes": 2508
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-10.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-10.pdf",
+          "bytes": 2509
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-11.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-11.pdf",
+          "bytes": 2506
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2025-12.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2025-12.pdf",
+          "bytes": 2510
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-01.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-01.pdf",
+          "bytes": 2506
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-02.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-02.pdf",
+          "bytes": 2507
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-03.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-03.pdf",
+          "bytes": 2506
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-04.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-04.pdf",
+          "bytes": 2506
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-05.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-05.pdf",
+          "bytes": 2507
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "summit-ecommerce-fulfilment-billing-2026-06.pdf",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-ecommerce-fulfilment-billing-2026-06.pdf",
+          "bytes": 2505
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "summit-e-commerce-fulfilment-statement.xlsx",
+          "path": "/revenue-seed/summit-ecommerce-fulfilment/summit-e-commerce-fulfilment-statement.xlsx",
+          "bytes": 8394
+        }
+      ]
+    },
+    {
+      "id": "redwood-building-supply",
+      "name": "Redwood Building Supply",
+      "segment": "Wholesale distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "redwood-building-supply-contract.pdf",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-contract.pdf",
+          "bytes": 4847
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-07.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-07.xlsx",
+          "bytes": 8455
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-08.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-08.xlsx",
+          "bytes": 8455
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-09.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-09.xlsx",
+          "bytes": 8454
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-10.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-10.xlsx",
+          "bytes": 8455
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-11.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-11.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2025-12.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2025-12.xlsx",
+          "bytes": 8456
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-01.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-01.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-02.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-02.xlsx",
+          "bytes": 8454
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-03.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-03.xlsx",
+          "bytes": 8451
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-04.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-04.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-05.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-05.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "redwood-building-supply-billing-2026-06.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-billing-2026-06.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "redwood-building-supply-statement.xlsx",
+          "path": "/revenue-seed/redwood-building-supply/redwood-building-supply-statement.xlsx",
+          "bytes": 8392
+        }
+      ]
+    },
+    {
+      "id": "keystone-pharma-logistics",
+      "name": "Keystone Pharma Logistics",
+      "segment": "Pharma logistics",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "word",
+          "fileName": "keystone-pharma-logistics-contract.docx",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-contract.docx",
+          "bytes": 10089
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-07.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-07.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-08.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-08.pdf",
+          "bytes": 2522
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-09.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-09.pdf",
+          "bytes": 2524
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-10.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-10.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-11.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-11.pdf",
+          "bytes": 2521
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2025-12.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2025-12.pdf",
+          "bytes": 2522
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-01.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-01.pdf",
+          "bytes": 2521
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-02.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-02.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-03.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-03.pdf",
+          "bytes": 2519
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-04.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-04.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-05.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-05.pdf",
+          "bytes": 2519
+        },
+        {
+          "docType": "billing_export",
+          "format": "pdf",
+          "fileName": "keystone-pharma-logistics-billing-2026-06.pdf",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-billing-2026-06.pdf",
+          "bytes": 2520
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "keystone-pharma-logistics-statement.xlsx",
+          "path": "/revenue-seed/keystone-pharma-logistics/keystone-pharma-logistics-statement.xlsx",
+          "bytes": 8381
+        }
+      ]
+    },
+    {
+      "id": "blue-ridge-courier",
+      "name": "Blue Ridge Courier Network",
+      "segment": "Courier & last-mile",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "blue-ridge-courier-network-contract.pdf",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-network-contract.pdf",
+          "bytes": 4812
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-07.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-07.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-08.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-08.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-09.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-09.xlsx",
+          "bytes": 8444
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-10.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-10.xlsx",
+          "bytes": 8444
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-11.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-11.xlsx",
+          "bytes": 8440
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2025-12.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2025-12.xlsx",
+          "bytes": 8447
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-01.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-01.xlsx",
+          "bytes": 8443
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-02.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-02.xlsx",
+          "bytes": 8445
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-03.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-03.xlsx",
+          "bytes": 8444
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-04.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-04.xlsx",
+          "bytes": 8443
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-05.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-05.xlsx",
+          "bytes": 8444
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-billing-2026-06.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-billing-2026-06.xlsx",
+          "bytes": 8442
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "blue-ridge-courier-network-statement.xlsx",
+          "path": "/revenue-seed/blue-ridge-courier/blue-ridge-courier-network-statement.xlsx",
+          "bytes": 8383
+        }
+      ]
+    },
+    {
+      "id": "copperfield-apparel",
+      "name": "Copperfield Apparel Group",
+      "segment": "Apparel retail distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "copperfield-apparel-group-contract.pdf",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-group-contract.pdf",
+          "bytes": 4830
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-07.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-07.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-08.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-08.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-09.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-09.xlsx",
+          "bytes": 8452
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-10.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-10.xlsx",
+          "bytes": 8453
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-11.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-11.xlsx",
+          "bytes": 8449
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2025-12.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2025-12.xlsx",
+          "bytes": 8454
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-01.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-01.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-02.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-02.xlsx",
+          "bytes": 8451
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-03.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-03.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-04.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-04.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-05.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-05.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "copperfield-apparel-billing-2026-06.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-billing-2026-06.xlsx",
+          "bytes": 8450
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "copperfield-apparel-group-statement.xlsx",
+          "path": "/revenue-seed/copperfield-apparel/copperfield-apparel-group-statement.xlsx",
+          "bytes": 8372
+        }
+      ]
+    },
+    {
+      "id": "sierra-beverage-distribution",
+      "name": "Sierra Beverage Distribution",
+      "segment": "Beverage distribution",
+      "docs": [
+        {
+          "docType": "customer_contract",
+          "format": "pdf",
+          "fileName": "sierra-beverage-distribution-contract.pdf",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-contract.pdf",
+          "bytes": 4841
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-07.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-07.xlsx",
+          "bytes": 8445
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-08.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-08.xlsx",
+          "bytes": 8444
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-09.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-09.xlsx",
+          "bytes": 8442
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-10.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-10.xlsx",
+          "bytes": 8442
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-11.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-11.xlsx",
+          "bytes": 8439
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2025-12.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2025-12.xlsx",
+          "bytes": 8446
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-01.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-01.xlsx",
+          "bytes": 8442
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-02.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-02.xlsx",
+          "bytes": 8443
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-03.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-03.xlsx",
+          "bytes": 8443
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-04.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-04.xlsx",
+          "bytes": 8441
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-05.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-05.xlsx",
+          "bytes": 8442
+        },
+        {
+          "docType": "billing_export",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-billing-2026-06.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-billing-2026-06.xlsx",
+          "bytes": 8440
+        },
+        {
+          "docType": "ar_aging",
+          "format": "excel",
+          "fileName": "sierra-beverage-distribution-statement.xlsx",
+          "path": "/revenue-seed/sierra-beverage-distribution/sierra-beverage-distribution-statement.xlsx",
+          "bytes": 8391
+        }
+      ]
+    }
+  ]
+}

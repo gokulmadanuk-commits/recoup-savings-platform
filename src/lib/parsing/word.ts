@@ -52,8 +52,16 @@ function detectDocType(
   fields: DocField[],
   tables: DocTable[],
 ): DocType {
-  if (marker === "contract" || marker === "invoice" || marker === "usage_export") {
-    return marker;
+  const VALID_DOCTYPES = new Set<string>([
+    "contract",
+    "invoice",
+    "usage_export",
+    "customer_contract",
+    "billing_export",
+    "ar_aging",
+  ]);
+  if (marker && VALID_DOCTYPES.has(marker)) {
+    return marker as DocType;
   }
   // Fallback heuristics if the marker is missing (defensive only).
   const labels = new Set(fields.map((f) => f.label));

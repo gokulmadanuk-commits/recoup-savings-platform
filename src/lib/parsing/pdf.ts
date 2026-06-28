@@ -315,6 +315,12 @@ function fieldValue(fields: DocField[], label: string): string | undefined {
 
 function detectDocType(fields: DocField[]): DocModel["docType"] {
   const has = (label: string) => fields.some((f) => f.label === label);
+  // Revenue-leakage (seller-side) docs carry unique header fields so PDFs
+  // round-trip their docType without a marker. Check these first.
+  if (has("Billing Document No.")) return "billing_export";
+  if (has("AR Statement Date")) return "ar_aging";
+  if (has("Seller")) return "customer_contract";
+  // Cost-side (buyer) docs.
   if (has("Invoice Number")) return "invoice";
   if (has("Export Type")) return "usage_export";
   return "contract";

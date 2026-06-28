@@ -293,7 +293,16 @@ export const DocFieldSchema = z.object({
 export type DocField = z.infer<typeof DocFieldSchema>;
 
 export const DocModelSchema = z.object({
-  docType: z.enum(["contract", "invoice", "usage_export"]),
+  docType: z.enum([
+    "contract",
+    "invoice",
+    "usage_export",
+    // Revenue-leakage (seller-side) document types. Additive: renderers/parsers
+    // treat docType as an opaque marker, so the cost-side round-trip is unaffected.
+    "customer_contract",
+    "billing_export",
+    "ar_aging",
+  ]),
   format: z.enum(["pdf", "excel", "word"]),
   vendorName: z.string(),
   title: z.string(),
@@ -441,7 +450,14 @@ export type VendorSummary = z.infer<typeof VendorSummarySchema>;
 export const DocumentSummarySchema = z.object({
   vendorId: z.string(),
   vendorName: z.string(),
-  docType: z.enum(["contract", "invoice", "usage_export"]),
+  docType: z.enum([
+    "contract",
+    "invoice",
+    "usage_export",
+    "customer_contract",
+    "billing_export",
+    "ar_aging",
+  ]),
   format: z.enum(["pdf", "excel", "word"]),
   fileName: z.string(),
   /** Download path for the sample corpus; null for live uploads. */
