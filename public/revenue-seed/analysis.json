@@ -1,0 +1,2033 @@
+{
+  "summary": {
+    "seller": "Northwind Logistics Group, Inc.",
+    "analysisDate": "2026-06-27",
+    "documentsProcessed": 261,
+    "documentsFailed": 0,
+    "customersAnalyzed": 19,
+    "customersWithFindings": 11,
+    "totalContractRevenueCents": 1018800000,
+    "totalArrearsCents": 80415800,
+    "totalAnnualizedUpliftCents": 47423886,
+    "totalRecoverableCents": 127839686,
+    "estimatedFeeCents": 33609517,
+    "findingCount": 11,
+    "totalOpenARCents": 223640000,
+    "totalExpectedRecoverableCents": 177488211,
+    "dso": 83.9
+  },
+  "findings": [
+    {
+      "id": "RL01-cohort-retail-distribution-llc",
+      "ruleId": "RL01",
+      "ruleName": "Escalator not applied",
+      "category": "escalator_missed",
+      "customerId": "cohort-retail-distribution-llc",
+      "customerName": "Cohort Retail Distribution, LLC",
+      "title": "RPI escalator never applied — billed flat since 2021",
+      "summary": "The agreement indexes the annual fee at each anniversary, but it has been billed flat at $480,000 since 2021. The correct current run-rate is $662,159 — 5 anniversaries of uplift were never billed.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 43877800,
+      "annualizedUpliftCents": 18215886,
+      "totalRecoverableCents": 62093686,
+      "feeRate": 0.2706638642776014,
+      "estimatedFeeCents": 16806517,
+      "relationshipRisk": "B",
+      "recommendedAction": "negotiate_partial",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 0.375,
+        "waiverEstoppel": 0.2,
+        "relationship": 0.4
+      },
+      "confidence": 0.9,
+      "severity": "high",
+      "leverage": "The Price Adjustment clause entitles Northwind Logistics Group, Inc. to index the fee to RPI (UK, series CHAW, Jan 1987 = 100); the rate has not moved since 2021, so the entitlement is unambiguous. Audit rights cover the last 24 months.",
+      "evidence": [
+        {
+          "label": "Base annual value",
+          "value": "$480,000",
+          "sourceDoc": "cohort-retail-distribution-llc-contract.pdf"
+        },
+        {
+          "label": "Correct current value",
+          "value": "$662,159",
+          "sourceDoc": null
+        },
+        {
+          "label": "Currently billed",
+          "value": "$480,000",
+          "sourceDoc": "cohort-retail-distribution-billing-2025-07.xlsx"
+        },
+        {
+          "label": "Anniversaries missed",
+          "value": "5",
+          "sourceDoc": null
+        },
+        {
+          "label": "Index",
+          "value": "RPI (UK, series CHAW, Jan 1987 = 100)",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Reprice forward to $662,159/yr (+$182,159) and recover the in-window arrears ($438,778 total to date; audit right covers the last 24 months).",
+      "clauseCited": "Price Adjustment (escalation)",
+      "deadlineDate": "2027-02-01"
+    },
+    {
+      "id": "RL03-brightline-grocers-llc",
+      "ruleId": "RL03",
+      "ruleName": "Expired discount still applied",
+      "category": "expired_discount",
+      "customerId": "brightline-grocers-llc",
+      "customerName": "Brightline Grocers, LLC",
+      "title": "Introductory 15% discount still applied 9 months past expiry (2025-09-30)",
+      "summary": "The 15% introductory discount expired 2025-09-30 but billing has continued to apply a discount line on every invoice since — 9 post-expiry months totalling $40,500 of credit that was no longer contractually owed. The list price should have been restored at expiry.",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 4050000,
+      "annualizedUpliftCents": 5400000,
+      "totalRecoverableCents": 9450000,
+      "feeRate": 0.24285714285714285,
+      "estimatedFeeCents": 2295000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 0.9,
+        "relationship": 0.6
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The Introductory Discount clause is expressly time-boxed to 2025-09-30; every discount credited after that date is recoverable and the list price applies forward. The issue is recent and discrete (9 months), so waiver/estoppel risk is minimal.",
+      "evidence": [
+        {
+          "label": "Discount",
+          "value": "15%",
+          "sourceDoc": "brightline-grocers-llc-contract.pdf"
+        },
+        {
+          "label": "Expiry date",
+          "value": "2025-09-30",
+          "sourceDoc": "brightline-grocers-llc-contract.pdf"
+        },
+        {
+          "label": "Post-expiry months still discounted",
+          "value": "9",
+          "sourceDoc": null
+        },
+        {
+          "label": "Monthly discount",
+          "value": "$4,500",
+          "sourceDoc": "brightline-grocers-billing-2025-10.xlsx"
+        },
+        {
+          "label": "Total wrongly credited",
+          "value": "$40,500",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Restore the list price forward (+$54,000/yr) and recover the $40,500 of discount credited across 9 months after the 2025-09-30 expiry.",
+      "clauseCited": "Introductory Discount (expiry)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL06-lakeshore-foods-co-op",
+      "ruleId": "RL06",
+      "ruleName": "Minimum-commitment shortfall",
+      "category": "min_commit_shortfall",
+      "customerId": "lakeshore-foods-co-op",
+      "customerName": "Lakeshore Foods Co-op",
+      "title": "Take-or-pay minimum shortfall never invoiced — $90,000 under the $600,000 annual floor",
+      "summary": "The agreement carries an annual take-or-pay minimum of $600,000, but only $510,000 was billed over the trailing 12 months. The $90,000 shortfall is owed under the minimum-commitment clause and was never invoiced.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 9000000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 9000000,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 2700000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.95,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.55
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The Minimum Commitment (take-or-pay) clause obligates the customer to pay at least $600,000 per measurement year regardless of usage; the entitlement is unconditional. Audit rights cover the last 24 months — the entire shortfall is in-window.",
+      "evidence": [
+        {
+          "label": "Annual minimum commitment",
+          "value": "$600,000",
+          "sourceDoc": "lakeshore-foods-co-op-contract.pdf"
+        },
+        {
+          "label": "Trailing-12-month billed",
+          "value": "$510,000",
+          "sourceDoc": "lakeshore-foods-coop-billing-2025-07.xlsx"
+        },
+        {
+          "label": "Unbilled shortfall",
+          "value": "$90,000",
+          "sourceDoc": null
+        },
+        {
+          "label": "Measurement period",
+          "value": "annual",
+          "sourceDoc": "lakeshore-foods-co-op-contract.pdf"
+        }
+      ],
+      "recommendedAsk": "Issue a true-up invoice for the $90,000 take-or-pay shortfall under the Minimum Commitment clause (audit right covers the last 24 months; the full gap is in-window).",
+      "clauseCited": "Minimum Commitment (take-or-pay)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL07-continental-auto-parts-distribution-inc",
+      "ruleId": "RL07",
+      "ruleName": "Contractual surcharge never billed",
+      "category": "missing_surcharge",
+      "customerId": "continental-auto-parts-distribution-inc",
+      "customerName": "Continental Auto Parts Distribution, Inc.",
+      "title": "Fuel surcharge (8.5%) never billed",
+      "summary": "The agreement entitles Northwind Logistics Group, Inc. to a 8.5% fuel surcharge (EIA on-highway diesel, monthly) on the base recurring fee, but no surcharge line appears on any billing. At the current base run-rate that is $3,740/mo — $44,880 unbilled to date and $44,880/yr going forward.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 4488000,
+      "annualizedUpliftCents": 4488000,
+      "totalRecoverableCents": 8976000,
+      "feeRate": 0.25,
+      "estimatedFeeCents": 2244000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.95,
+        "auditWindow": 1,
+        "waiverEstoppel": 0.9,
+        "relationship": 0.5
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The Fuel surcharge clause is an explicit pass-through (EIA on-highway diesel, monthly); the surcharge is a fixed 8.5% of the base fee, so the entitlement is mechanical and unambiguous. Audit rights cover the last 24 months.",
+      "evidence": [
+        {
+          "label": "Surcharge basis",
+          "value": "EIA on-highway diesel, monthly",
+          "sourceDoc": "continental-auto-parts-distribution-inc-contract.pdf"
+        },
+        {
+          "label": "Surcharge rate",
+          "value": "8.5%",
+          "sourceDoc": "continental-auto-parts-distribution-inc-contract.pdf"
+        },
+        {
+          "label": "Current monthly base",
+          "value": "$44,000",
+          "sourceDoc": "continental-auto-parts-billing-2026-06.xlsx"
+        },
+        {
+          "label": "Monthly surcharge due",
+          "value": "$3,740",
+          "sourceDoc": null
+        },
+        {
+          "label": "Surcharge lines billed",
+          "value": "0",
+          "sourceDoc": "continental-auto-parts-billing-2025-07.xlsx"
+        }
+      ],
+      "recommendedAsk": "Add the Fuel surcharge line (8.5% of base = $3,740/mo) to billing going forward (+$44,880/yr) and back-bill the in-window arrears ($44,880 to date; audit right covers the last 24 months).",
+      "clauseCited": "Fuel surcharge (pass-through)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL09-northgate-distribution-centers-inc",
+      "ruleId": "RL09",
+      "ruleName": "Auto-renewal repriced at the old rate",
+      "category": "renewal_repricing",
+      "customerId": "northgate-distribution-centers-inc",
+      "customerName": "Northgate Distribution Centers, Inc.",
+      "title": "Evergreen renewal billed at the old rate — list rose to $58,000/mo on 2025-09-01, still billing $54,000/mo",
+      "summary": "The agreement auto-renewed on 2025-09-01 and the rate card's effective list price stepped up from $54,000 to $58,000/mo, but billing has continued at the pre-renewal $54,000/mo for 10 months. The recurring rate was never repriced to the renewal list.",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 4000000,
+      "annualizedUpliftCents": 4800000,
+      "totalRecoverableCents": 8800000,
+      "feeRate": 0.24545454545454545,
+      "estimatedFeeCents": 2160000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.95,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.4
+      },
+      "confidence": 0.92,
+      "severity": "medium",
+      "leverage": "The renewal carried the current rate card forward at $58,000/mo (effective 2025-09-01); billing kept the lapsed $54,000 rate. The gap is recent (10 months), well inside the 24-month audit window, so the correction is clean.",
+      "evidence": [
+        {
+          "label": "Current list price (rate card)",
+          "value": "$58,000.00/mo",
+          "sourceDoc": "northgate-distribution-centers-inc-contract.docx"
+        },
+        {
+          "label": "Renewal effective date",
+          "value": "2025-09-01",
+          "sourceDoc": "northgate-distribution-centers-inc-contract.docx"
+        },
+        {
+          "label": "Pre-renewal list price",
+          "value": "$54,000.00/mo",
+          "sourceDoc": "northgate-distribution-centers-inc-contract.docx"
+        },
+        {
+          "label": "Currently billed",
+          "value": "$54,000.00/mo",
+          "sourceDoc": "northgate-distribution-centers-billing-2025-09.pdf"
+        },
+        {
+          "label": "Months under-billed",
+          "value": "10",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Reprice forward to the renewal list of $58,000/mo (+$48,000/yr) and recover the 10 months billed at the lapsed rate ($40,000 to date; well within the 24-month audit window).",
+      "clauseCited": "Auto-Renewal / Rate Card (renewal pricing)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL02-harborline-grocery-distribution-inc",
+      "ruleId": "RL02",
+      "ruleName": "Price step never triggered",
+      "category": "price_step_missed",
+      "customerId": "harborline-grocery-distribution-inc",
+      "customerName": "Harborline Grocery Distribution, Inc.",
+      "title": "Scheduled price step (2025-10-01) never applied — still billing $52,000/mo",
+      "summary": "The pricing schedule raised the monthly recurring fee to $56,000 effective 2025-10-01, but the last 9 billings still charge $52,000/mo — a $4,000/mo shortfall. Correct the rate forward and back-bill the in-window arrears.",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 3600000,
+      "annualizedUpliftCents": 4800000,
+      "totalRecoverableCents": 8400000,
+      "feeRate": 0.24285714285714285,
+      "estimatedFeeCents": 2040000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 0.9,
+        "relationship": 0.7
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The Scheduled Price Increase clause fixes a dated, agreed step to $56,000.00/mo effective 2025-10-01; the entitlement is explicit and every under-billed month sits inside the 24-month audit window.",
+      "evidence": [
+        {
+          "label": "Stepped price (per month)",
+          "value": "$56,000",
+          "sourceDoc": "harborline-grocery-distribution-inc-contract.pdf"
+        },
+        {
+          "label": "Currently billed (per month)",
+          "value": "$52,000",
+          "sourceDoc": "harborline-grocery-distribution-billing-2026-06.xlsx"
+        },
+        {
+          "label": "Monthly shortfall",
+          "value": "$4,000",
+          "sourceDoc": null
+        },
+        {
+          "label": "Step effective date",
+          "value": "2025-10-01",
+          "sourceDoc": "harborline-grocery-distribution-inc-contract.pdf"
+        },
+        {
+          "label": "Under-billed months",
+          "value": "9",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Reprice forward to $56,000/mo (+$48,000/yr) and recover the $36,000 of arrears billed below the stepped rate since 2025-10-01.",
+      "clauseCited": "Scheduled Price Increase (Schedule B, Year-3 step)",
+      "deadlineDate": "2025-10-01"
+    },
+    {
+      "id": "RL04-tidewater-wholesale-supply-co",
+      "ruleId": "RL04",
+      "ruleName": "Tier under-billed",
+      "category": "tier_breach",
+      "customerId": "tidewater-wholesale-supply-co",
+      "customerName": "Tidewater Wholesale Supply Co.",
+      "title": "Graduated tier breached — premium-capacity rate never billed above 4,000 units",
+      "summary": "Volume runs at 5,200 units/mo, but billing applies the base rate of $12 flat across the whole quantity. The 1,200 units above the 4,000-unit break should price at $15. Correct graduated charge is $66,000/mo vs. $62,400 billed — under by $3,600/mo across 11 completed months.",
+      "recoveryType": "uplift",
+      "arrearsToDateCents": 3960000,
+      "annualizedUpliftCents": 4320000,
+      "totalRecoverableCents": 8280000,
+      "feeRate": 0.24782608695652175,
+      "estimatedFeeCents": 2052000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 0.9,
+        "relationship": 0.5
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The graduated tier schedule entitles Northwind Logistics Group, Inc. to bill $15 on volume above 4,000 units. The breach is recent and the over-tier volume is on the invoices, so the entitlement is unambiguous and well inside the 24-month audit window.",
+      "evidence": [
+        {
+          "label": "Billed quantity / mo",
+          "value": "5,200 units",
+          "sourceDoc": "tidewater-wholesale-supply-billing-2026-05.xlsx"
+        },
+        {
+          "label": "Base rate (tier 1)",
+          "value": "$12 / unit (0–4,000)",
+          "sourceDoc": "tidewater-wholesale-supply-co-contract.pdf"
+        },
+        {
+          "label": "Premium rate (tier 2)",
+          "value": "$15 / unit (above 4,000)",
+          "sourceDoc": "tidewater-wholesale-supply-co-contract.pdf"
+        },
+        {
+          "label": "Correct graduated charge",
+          "value": "$66,000 / mo",
+          "sourceDoc": null
+        },
+        {
+          "label": "Actually billed",
+          "value": "$62,400 / mo",
+          "sourceDoc": "tidewater-wholesale-supply-billing-2026-05.xlsx"
+        },
+        {
+          "label": "Monthly under-billing",
+          "value": "$3,600",
+          "sourceDoc": null
+        },
+        {
+          "label": "Completed months under-billed",
+          "value": "11",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Re-rate forward to the graduated schedule ($66,000/mo, +$43,200/yr) and recover the in-window arrears of $39,600 across the last 11 months under the Volume Tier Pricing clause.",
+      "clauseCited": "Volume Tier Pricing (graduated rates)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL05-granite-peak-manufacturing-inc",
+      "ruleId": "RL05",
+      "ruleName": "Unbilled overage above allowance",
+      "category": "unbilled_usage",
+      "customerId": "granite-peak-manufacturing-inc",
+      "customerName": "Granite Peak Manufacturing, Inc.",
+      "title": "Overage above the 8,000-unit allowance never billed — 1,500 units/mo unbilled",
+      "summary": "Metered usage averages 9,500 units/mo against a bundled allowance of 8,000 units, but no overage line was raised. The contracted overage rate of $2/unit applies to the 1,500-unit monthly excess — $3,000/mo ($36,000/yr) that has gone unbilled across 12 months.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 3600000,
+      "annualizedUpliftCents": 3600000,
+      "totalRecoverableCents": 7200000,
+      "feeRate": 0.25,
+      "estimatedFeeCents": 1800000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.65
+      },
+      "confidence": 0.92,
+      "severity": "medium",
+      "leverage": "The Overage / Excess-Usage clause entitles Northwind Logistics Group, Inc. to bill consumption above the 8,000-unit allowance at $2/unit. Metered usage is the seller's own record, so the excess is unambiguous; audit rights cover the last 24 months.",
+      "evidence": [
+        {
+          "label": "Included allowance",
+          "value": "8,000 units",
+          "sourceDoc": "granite-peak-manufacturing-inc-contract.docx"
+        },
+        {
+          "label": "Avg metered usage",
+          "value": "9,500 units/mo",
+          "sourceDoc": "granite-peak-manufacturing-billing-2025-07.pdf"
+        },
+        {
+          "label": "Monthly excess",
+          "value": "1,500 units",
+          "sourceDoc": null
+        },
+        {
+          "label": "Overage rate",
+          "value": "$2/unit",
+          "sourceDoc": "granite-peak-manufacturing-inc-contract.docx"
+        },
+        {
+          "label": "Months unbilled",
+          "value": "12",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Raise the unbilled overage ($36,000 to date across 12 months) and bill the overage line going forward at $3,000/mo (+$36,000/yr).",
+      "clauseCited": "Overage / Excess-Usage charges",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL11-evergreen-wholesale-foods-inc",
+      "ruleId": "RL11",
+      "ruleName": "Credits issued in excess of contracted rate",
+      "category": "rebate_over_credit",
+      "customerId": "evergreen-wholesale-foods-inc",
+      "customerName": "Evergreen Wholesale Foods, Inc.",
+      "title": "Rebate over-applied — 8.0% credited vs 5.0% contracted",
+      "summary": "The agreement grants a valid 5.0% volume rebate (effective through 2027-12-31), but billing applied credits averaging 8.0% of gross — over-crediting by 3.0% across 12 month(s). Excess credit given to date is $18,000; left uncorrected the forward leak is $18,000/yr.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 1800000,
+      "annualizedUpliftCents": 1800000,
+      "totalRecoverableCents": 3600000,
+      "feeRate": 0.25,
+      "estimatedFeeCents": 900000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.5
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The Volume Rebate clause fixes the discount at 5.0% of gross; credits beyond that are unsupported and recoverable. The rebate is still in force (expires 2027-12-31), so this is an over-application — not a lapsed-discount dispute. Audit rights cover the last 24 months.",
+      "evidence": [
+        {
+          "label": "Contracted rebate",
+          "value": "5.0%",
+          "sourceDoc": "evergreen-wholesale-foods-inc-contract.pdf"
+        },
+        {
+          "label": "Actual credit rate",
+          "value": "8.0%",
+          "sourceDoc": "evergreen-wholesale-foods-billing-2025-07.xlsx"
+        },
+        {
+          "label": "Over-credit (pct pts)",
+          "value": "3.0%",
+          "sourceDoc": null
+        },
+        {
+          "label": "Excess credit to date",
+          "value": "$18,000",
+          "sourceDoc": null
+        },
+        {
+          "label": "Months over-credited",
+          "value": "12",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Correct the rebate line to the contracted 5.0% (stops the $18,000/yr forward leak) and recover the $18,000 over-credited to date under the audit/true-up clause.",
+      "clauseCited": "Volume Rebate / Discount",
+      "deadlineDate": "2027-12-31"
+    },
+    {
+      "id": "RL08-cedarbrook-logistics-partners-llc",
+      "ruleId": "RL08",
+      "ruleName": "Unbilled delivered services",
+      "category": "unbilled_services",
+      "customerId": "cedarbrook-logistics-partners-llc",
+      "customerName": "Cedarbrook Logistics Partners, LLC",
+      "title": "6 delivered work orders never billed — $15,000 unrecognized",
+      "summary": "6 special-handling / expedited jobs were delivered and accepted but never invoiced — no billing line references their work-order numbers. At the contracted unit price these total $15,000 of completed, unbilled service revenue.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 1500000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 1500000,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 450000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.95,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.55
+      },
+      "confidence": 0.95,
+      "severity": "medium",
+      "leverage": "The work orders are signed-off as delivered at the contracted unit price; the entitlement is unambiguous and the entire amount sits within the 24-month audit window. Northwind Logistics Group, Inc. can issue corrected invoices immediately.",
+      "evidence": [
+        {
+          "label": "Delivered, unbilled work orders",
+          "value": "6",
+          "sourceDoc": null
+        },
+        {
+          "label": "WO WO-CED-2026-101 (2026-03-05)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "WO WO-CED-2026-102 (2026-03-19)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "WO WO-CED-2026-103 (2026-04-02)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "WO WO-CED-2026-104 (2026-04-21)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "WO WO-CED-2026-105 (2026-05-08)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "WO WO-CED-2026-106 (2026-05-26)",
+          "value": "$2,500 — Special-handling / expedited freight job",
+          "sourceDoc": "cedarbrook-logistics-partners-llc-contract.pdf"
+        },
+        {
+          "label": "Total unbilled",
+          "value": "$15,000",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Issue corrected invoices for the 6 delivered work orders ($15,000 total). The amount is fully in-window and supported by signed delivery records.",
+      "clauseCited": "Services & Fees (billing for delivered work orders)",
+      "deadlineDate": null
+    },
+    {
+      "id": "RL10-pinnacle-retail-group-inc",
+      "ruleId": "RL10",
+      "ruleName": "Late-payment interest not charged",
+      "category": "late_interest",
+      "customerId": "pinnacle-retail-group-inc",
+      "customerName": "Pinnacle Retail Group, Inc.",
+      "title": "Late-payment interest (1.5%/mo) never charged on 2 past-due invoices",
+      "summary": "The agreement entitles Northwind Logistics Group, Inc. to a 1.5%/mo finance charge on balances past due, but no interest has been billed. $130,000 sits past due beyond the 30-day grace period; the accrued unbilled interest to date is $5,400.",
+      "recoveryType": "arrears",
+      "arrearsToDateCents": 540000,
+      "annualizedUpliftCents": 0,
+      "totalRecoverableCents": 540000,
+      "feeRate": 0.3,
+      "estimatedFeeCents": 162000,
+      "relationshipRisk": "A",
+      "recommendedAction": "retroactive_claim",
+      "riskFactors": {
+        "entitlement": 0.9,
+        "auditWindow": 1,
+        "waiverEstoppel": 1,
+        "relationship": 0.6
+      },
+      "confidence": 0.92,
+      "severity": "medium",
+      "leverage": "The Late Payment / finance-charge clause sets a 1.5%/mo rate on past-due balances; the entitlement is mechanical once an invoice ages past the grace period. The exposure is recent (oldest item 130 days past due), so it sits squarely inside the 24-month audit window.",
+      "evidence": [
+        {
+          "label": "Late-payment rate",
+          "value": "1.5%/mo",
+          "sourceDoc": "pinnacle-retail-group-inc-contract.pdf"
+        },
+        {
+          "label": "Past-due balance (post-grace)",
+          "value": "$130,000",
+          "sourceDoc": null
+        },
+        {
+          "label": "PRG-2026-0188 — 75d past due (2 mo)",
+          "value": "$80,000 → $2,400 interest",
+          "sourceDoc": null
+        },
+        {
+          "label": "PRG-2026-0171 — 130d past due (4 mo)",
+          "value": "$50,000 → $3,000 interest",
+          "sourceDoc": null
+        },
+        {
+          "label": "Total accrued interest",
+          "value": "$5,400",
+          "sourceDoc": null
+        }
+      ],
+      "recommendedAsk": "Issue a finance-charge invoice for $5,400 in accrued late-payment interest under the Late Payment clause (1.5%/mo on balances past the 30-day grace period).",
+      "clauseCited": "Late Payment (finance charge)",
+      "deadlineDate": null
+    }
+  ],
+  "drafts": [
+    {
+      "findingId": "RL01-cohort-retail-distribution-llc",
+      "vendorName": "Cohort Retail Distribution, LLC",
+      "to": "accountspayable@cohortretaildistributionllc.com",
+      "subject": "Pricing reconciliation — Cohort Retail Distribution, LLC — corrected rate going forward",
+      "body": "Dear Cohort Retail Distribution, LLC team,\n\nWe value the partnership, and in reviewing your account we found the billing has drifted from the agreed terms under the \"Price Adjustment (escalation)\" provision. The agreement indexes the annual fee at each anniversary, but it has been billed flat at $480,000 since 2021. The correct current run-rate is $662,159 — 5 anniversaries of uplift were never billed.\n\nWhat the contract and billing show:\n  • Base annual value: $480,000\n  • Correct current value: $662,159\n  • Currently billed: $480,000\n  • Anniversaries missed: 5\n\nWe'd like to correct the rate going forward (+$182,159/yr to the contracted level) and discuss a fair settlement of the in-window difference ($438,778 to date). Reprice forward to $662,159/yr (+$182,159) and recover the in-window arrears ($438,778 total to date; audit right covers the last 24 months).. The Price Adjustment clause entitles Northwind Logistics Group, Inc. to index the fee to RPI (UK, series CHAW, Jan 1987 = 100); the rate has not moved since 2021, so the entitlement is unambiguous. Audit rights cover the last 24 months.\n\nWe'd rather resolve this collaboratively than invoke the formal audit clause. Could we set up a short call this week?\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "escalator_missed"
+    },
+    {
+      "findingId": "RL03-brightline-grocers-llc",
+      "vendorName": "Brightline Grocers, LLC",
+      "to": "accountspayable@brightlinegrocersllc.com",
+      "subject": "Billing correction & adjustment invoice — $94,500 — Brightline Grocers, LLC",
+      "body": "Dear Brightline Grocers, LLC Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Introductory Discount (expiry)\" provision. The 15% introductory discount expired 2025-09-30 but billing has continued to apply a discount line on every invoice since — 9 post-expiry months totalling $40,500 of credit that was no longer contractually owed. The list price should have been restored at expiry.\n\nWhat the contract and billing show:\n  • Discount: 15%\n  • Expiry date: 2025-09-30\n  • Post-expiry months still discounted: 9\n  • Monthly discount: $4,500\n\nAccordingly we are issuing a corrected invoice: $40,500 in arrears to date, and the rate is corrected going forward (an additional $54,000/yr). Restore the list price forward (+$54,000/yr) and recover the $40,500 of discount credited across 9 months after the 2025-09-30 expiry.. The Introductory Discount clause is expressly time-boxed to 2025-09-30; every discount credited after that date is recoverable and the list price applies forward. The issue is recent and discrete (9 months), so waiver/estoppel risk is minimal.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "expired_discount"
+    },
+    {
+      "findingId": "RL06-lakeshore-foods-co-op",
+      "vendorName": "Lakeshore Foods Co-op",
+      "to": "accountspayable@lakeshorefoodscoop.com",
+      "subject": "Billing correction & adjustment invoice — $90,000 — Lakeshore Foods Co-op",
+      "body": "Dear Lakeshore Foods Co-op Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Minimum Commitment (take-or-pay)\" provision. The agreement carries an annual take-or-pay minimum of $600,000, but only $510,000 was billed over the trailing 12 months. The $90,000 shortfall is owed under the minimum-commitment clause and was never invoiced.\n\nWhat the contract and billing show:\n  • Annual minimum commitment: $600,000\n  • Trailing-12-month billed: $510,000\n  • Unbilled shortfall: $90,000\n  • Measurement period: annual\n\nAccordingly we are issuing a corrected invoice: $90,000 in arrears to date. Issue a true-up invoice for the $90,000 take-or-pay shortfall under the Minimum Commitment clause (audit right covers the last 24 months; the full gap is in-window).. The Minimum Commitment (take-or-pay) clause obligates the customer to pay at least $600,000 per measurement year regardless of usage; the entitlement is unconditional. Audit rights cover the last 24 months — the entire shortfall is in-window.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "min_commit_shortfall"
+    },
+    {
+      "findingId": "RL07-continental-auto-parts-distribution-inc",
+      "vendorName": "Continental Auto Parts Distribution, Inc.",
+      "to": "accountspayable@continentalautopartsdistributioninc.com",
+      "subject": "Billing correction & adjustment invoice — $89,760 — Continental Auto Parts Distribution, Inc.",
+      "body": "Dear Continental Auto Parts Distribution, Inc. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Fuel surcharge (pass-through)\" provision. The agreement entitles Northwind Logistics Group, Inc. to a 8.5% fuel surcharge (EIA on-highway diesel, monthly) on the base recurring fee, but no surcharge line appears on any billing. At the current base run-rate that is $3,740/mo — $44,880 unbilled to date and $44,880/yr going forward.\n\nWhat the contract and billing show:\n  • Surcharge basis: EIA on-highway diesel, monthly\n  • Surcharge rate: 8.5%\n  • Current monthly base: $44,000\n  • Monthly surcharge due: $3,740\n\nAccordingly we are issuing a corrected invoice: $44,880 in arrears to date, and the rate is corrected going forward (an additional $44,880/yr). Add the Fuel surcharge line (8.5% of base = $3,740/mo) to billing going forward (+$44,880/yr) and back-bill the in-window arrears ($44,880 to date; audit right covers the last 24 months).. The Fuel surcharge clause is an explicit pass-through (EIA on-highway diesel, monthly); the surcharge is a fixed 8.5% of the base fee, so the entitlement is mechanical and unambiguous. Audit rights cover the last 24 months.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "missing_surcharge"
+    },
+    {
+      "findingId": "RL09-northgate-distribution-centers-inc",
+      "vendorName": "Northgate Distribution Centers, Inc.",
+      "to": "accountspayable@northgatedistributioncentersinc.com",
+      "subject": "Billing correction & adjustment invoice — $88,000 — Northgate Distribution Centers, Inc.",
+      "body": "Dear Northgate Distribution Centers, Inc. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Auto-Renewal / Rate Card (renewal pricing)\" provision. The agreement auto-renewed on 2025-09-01 and the rate card's effective list price stepped up from $54,000 to $58,000/mo, but billing has continued at the pre-renewal $54,000/mo for 10 months. The recurring rate was never repriced to the renewal list.\n\nWhat the contract and billing show:\n  • Current list price (rate card): $58,000.00/mo\n  • Renewal effective date: 2025-09-01\n  • Pre-renewal list price: $54,000.00/mo\n  • Currently billed: $54,000.00/mo\n\nAccordingly we are issuing a corrected invoice: $40,000 in arrears to date, and the rate is corrected going forward (an additional $48,000/yr). Reprice forward to the renewal list of $58,000/mo (+$48,000/yr) and recover the 10 months billed at the lapsed rate ($40,000 to date; well within the 24-month audit window).. The renewal carried the current rate card forward at $58,000/mo (effective 2025-09-01); billing kept the lapsed $54,000 rate. The gap is recent (10 months), well inside the 24-month audit window, so the correction is clean.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "renewal_repricing"
+    },
+    {
+      "findingId": "RL02-harborline-grocery-distribution-inc",
+      "vendorName": "Harborline Grocery Distribution, Inc.",
+      "to": "accountspayable@harborlinegrocerydistributioninc.com",
+      "subject": "Billing correction & adjustment invoice — $84,000 — Harborline Grocery Distribution, Inc.",
+      "body": "Dear Harborline Grocery Distribution, Inc. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Scheduled Price Increase (Schedule B, Year-3 step)\" provision. The pricing schedule raised the monthly recurring fee to $56,000 effective 2025-10-01, but the last 9 billings still charge $52,000/mo — a $4,000/mo shortfall. Correct the rate forward and back-bill the in-window arrears.\n\nWhat the contract and billing show:\n  • Stepped price (per month): $56,000\n  • Currently billed (per month): $52,000\n  • Monthly shortfall: $4,000\n  • Step effective date: 2025-10-01\n\nAccordingly we are issuing a corrected invoice: $36,000 in arrears to date, and the rate is corrected going forward (an additional $48,000/yr). Reprice forward to $56,000/mo (+$48,000/yr) and recover the $36,000 of arrears billed below the stepped rate since 2025-10-01.. The Scheduled Price Increase clause fixes a dated, agreed step to $56,000.00/mo effective 2025-10-01; the entitlement is explicit and every under-billed month sits inside the 24-month audit window.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by October 1, 2025.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "price_step_missed"
+    },
+    {
+      "findingId": "RL04-tidewater-wholesale-supply-co",
+      "vendorName": "Tidewater Wholesale Supply Co.",
+      "to": "accountspayable@tidewaterwholesalesupplyco.com",
+      "subject": "Billing correction & adjustment invoice — $82,800 — Tidewater Wholesale Supply Co.",
+      "body": "Dear Tidewater Wholesale Supply Co. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Volume Tier Pricing (graduated rates)\" provision. Volume runs at 5,200 units/mo, but billing applies the base rate of $12 flat across the whole quantity. The 1,200 units above the 4,000-unit break should price at $15. Correct graduated charge is $66,000/mo vs. $62,400 billed — under by $3,600/mo across 11 completed months.\n\nWhat the contract and billing show:\n  • Billed quantity / mo: 5,200 units\n  • Base rate (tier 1): $12 / unit (0–4,000)\n  • Premium rate (tier 2): $15 / unit (above 4,000)\n  • Correct graduated charge: $66,000 / mo\n\nAccordingly we are issuing a corrected invoice: $39,600 in arrears to date, and the rate is corrected going forward (an additional $43,200/yr). Re-rate forward to the graduated schedule ($66,000/mo, +$43,200/yr) and recover the in-window arrears of $39,600 across the last 11 months under the Volume Tier Pricing clause.. The graduated tier schedule entitles Northwind Logistics Group, Inc. to bill $15 on volume above 4,000 units. The breach is recent and the over-tier volume is on the invoices, so the entitlement is unambiguous and well inside the 24-month audit window.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "tier_breach"
+    },
+    {
+      "findingId": "RL05-granite-peak-manufacturing-inc",
+      "vendorName": "Granite Peak Manufacturing, Inc.",
+      "to": "accountspayable@granitepeakmanufacturinginc.com",
+      "subject": "Billing correction & adjustment invoice — $72,000 — Granite Peak Manufacturing, Inc.",
+      "body": "Dear Granite Peak Manufacturing, Inc. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Overage / Excess-Usage charges\" provision. Metered usage averages 9,500 units/mo against a bundled allowance of 8,000 units, but no overage line was raised. The contracted overage rate of $2/unit applies to the 1,500-unit monthly excess — $3,000/mo ($36,000/yr) that has gone unbilled across 12 months.\n\nWhat the contract and billing show:\n  • Included allowance: 8,000 units\n  • Avg metered usage: 9,500 units/mo\n  • Monthly excess: 1,500 units\n  • Overage rate: $2/unit\n\nAccordingly we are issuing a corrected invoice: $36,000 in arrears to date, and the rate is corrected going forward (an additional $36,000/yr). Raise the unbilled overage ($36,000 to date across 12 months) and bill the overage line going forward at $3,000/mo (+$36,000/yr).. The Overage / Excess-Usage clause entitles Northwind Logistics Group, Inc. to bill consumption above the 8,000-unit allowance at $2/unit. Metered usage is the seller's own record, so the excess is unambiguous; audit rights cover the last 24 months.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "unbilled_usage"
+    },
+    {
+      "findingId": "RL11-evergreen-wholesale-foods-inc",
+      "vendorName": "Evergreen Wholesale Foods, Inc.",
+      "to": "accountspayable@evergreenwholesalefoodsinc.com",
+      "subject": "Billing correction & adjustment invoice — $36,000 — Evergreen Wholesale Foods, Inc.",
+      "body": "Dear Evergreen Wholesale Foods, Inc. Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Volume Rebate / Discount\" provision. The agreement grants a valid 5.0% volume rebate (effective through 2027-12-31), but billing applied credits averaging 8.0% of gross — over-crediting by 3.0% across 12 month(s). Excess credit given to date is $18,000; left uncorrected the forward leak is $18,000/yr.\n\nWhat the contract and billing show:\n  • Contracted rebate: 5.0%\n  • Actual credit rate: 8.0%\n  • Over-credit (pct pts): 3.0%\n  • Excess credit to date: $18,000\n\nAccordingly we are issuing a corrected invoice: $18,000 in arrears to date, and the rate is corrected going forward (an additional $18,000/yr). Correct the rebate line to the contracted 5.0% (stops the $18,000/yr forward leak) and recover the $18,000 over-credited to date under the audit/true-up clause.. The Volume Rebate clause fixes the discount at 5.0% of gross; credits beyond that are unsupported and recoverable. The rebate is still in force (expires 2027-12-31), so this is an over-application — not a lapsed-discount dispute. Audit rights cover the last 24 months.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by December 31, 2027.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "rebate_over_credit"
+    },
+    {
+      "findingId": "RL08-cedarbrook-logistics-partners-llc",
+      "vendorName": "Cedarbrook Logistics Partners, LLC",
+      "to": "accountspayable@cedarbrooklogisticspartnersllc.com",
+      "subject": "Billing correction & adjustment invoice — $15,000 — Cedarbrook Logistics Partners, LLC",
+      "body": "Dear Cedarbrook Logistics Partners, LLC Accounts Payable,\n\nIn a reconciliation of your account against our agreement we identified an amount that was under-billed under the \"Services & Fees (billing for delivered work orders)\" provision. 6 special-handling / expedited jobs were delivered and accepted but never invoiced — no billing line references their work-order numbers. At the contracted unit price these total $15,000 of completed, unbilled service revenue.\n\nWhat the contract and billing show:\n  • Delivered, unbilled work orders: 6\n  • WO WO-CED-2026-101 (2026-03-05): $2,500 — Special-handling / expedited freight job\n  • WO WO-CED-2026-102 (2026-03-19): $2,500 — Special-handling / expedited freight job\n  • WO WO-CED-2026-103 (2026-04-02): $2,500 — Special-handling / expedited freight job\n\nAccordingly we are issuing a corrected invoice: $15,000 in arrears to date. Issue corrected invoices for the 6 delivered work orders ($15,000 total). The amount is fully in-window and supported by signed delivery records.. The work orders are signed-off as delivered at the contracted unit price; the entitlement is unambiguous and the entire amount sits within the 24-month audit window. Northwind Logistics Group, Inc. can issue corrected invoices immediately.\n\nWe'd be glad to walk your team through the calculation under the contract's audit-records provision. Please confirm by return.\n\nKind regards,\nJordan Avery\nVP, Finance, Northwind Logistics Group, Inc.\nbilling@northwindlogistics.com",
+      "category": "unbilled_services"
+    }
+  ],
+  "categories": [
+    {
+      "category": "escalator_missed",
+      "label": "Escalator not applied",
+      "count": 1,
+      "recoverableCents": 62093686,
+      "arrearsCents": 43877800,
+      "upliftCents": 18215886
+    },
+    {
+      "category": "expired_discount",
+      "label": "Expired discount",
+      "count": 1,
+      "recoverableCents": 9450000,
+      "arrearsCents": 4050000,
+      "upliftCents": 5400000
+    },
+    {
+      "category": "min_commit_shortfall",
+      "label": "Minimum shortfall",
+      "count": 1,
+      "recoverableCents": 9000000,
+      "arrearsCents": 9000000,
+      "upliftCents": 0
+    },
+    {
+      "category": "missing_surcharge",
+      "label": "Missing surcharge",
+      "count": 1,
+      "recoverableCents": 8976000,
+      "arrearsCents": 4488000,
+      "upliftCents": 4488000
+    },
+    {
+      "category": "renewal_repricing",
+      "label": "Renewal mispriced",
+      "count": 1,
+      "recoverableCents": 8800000,
+      "arrearsCents": 4000000,
+      "upliftCents": 4800000
+    },
+    {
+      "category": "price_step_missed",
+      "label": "Price step missed",
+      "count": 1,
+      "recoverableCents": 8400000,
+      "arrearsCents": 3600000,
+      "upliftCents": 4800000
+    },
+    {
+      "category": "tier_breach",
+      "label": "Tier under-billed",
+      "count": 1,
+      "recoverableCents": 8280000,
+      "arrearsCents": 3960000,
+      "upliftCents": 4320000
+    },
+    {
+      "category": "unbilled_usage",
+      "label": "Unbilled usage",
+      "count": 1,
+      "recoverableCents": 7200000,
+      "arrearsCents": 3600000,
+      "upliftCents": 3600000
+    },
+    {
+      "category": "rebate_over_credit",
+      "label": "Over-credited",
+      "count": 1,
+      "recoverableCents": 3600000,
+      "arrearsCents": 1800000,
+      "upliftCents": 1800000
+    },
+    {
+      "category": "unbilled_services",
+      "label": "Unbilled services",
+      "count": 1,
+      "recoverableCents": 1500000,
+      "arrearsCents": 1500000,
+      "upliftCents": 0
+    },
+    {
+      "category": "late_interest",
+      "label": "Late-payment interest",
+      "count": 1,
+      "recoverableCents": 540000,
+      "arrearsCents": 540000,
+      "upliftCents": 0
+    }
+  ],
+  "customers": [
+    {
+      "id": "cohort-retail-distribution-llc",
+      "name": "Cohort Retail Distribution, LLC",
+      "segment": "Retail distribution",
+      "annualRevenueCents": 48000000,
+      "recoverableCents": 62093686,
+      "arrearsCents": 43877800,
+      "upliftCents": 18215886,
+      "findingCount": 1,
+      "openARCents": 8000000
+    },
+    {
+      "id": "brightline-grocers-llc",
+      "name": "Brightline Grocers, LLC",
+      "segment": "Grocery retail",
+      "annualRevenueCents": 36000000,
+      "recoverableCents": 9450000,
+      "arrearsCents": 4050000,
+      "upliftCents": 5400000,
+      "findingCount": 1,
+      "openARCents": 5100000
+    },
+    {
+      "id": "lakeshore-foods-co-op",
+      "name": "Lakeshore Foods Co-op",
+      "segment": "Food distribution",
+      "annualRevenueCents": 60000000,
+      "recoverableCents": 9000000,
+      "arrearsCents": 9000000,
+      "upliftCents": 0,
+      "findingCount": 1,
+      "openARCents": 8500000
+    },
+    {
+      "id": "continental-auto-parts-distribution-inc",
+      "name": "Continental Auto Parts Distribution, Inc.",
+      "segment": "Auto-parts distribution",
+      "annualRevenueCents": 52800000,
+      "recoverableCents": 8976000,
+      "arrearsCents": 4488000,
+      "upliftCents": 4488000,
+      "findingCount": 1,
+      "openARCents": 8800000
+    },
+    {
+      "id": "northgate-distribution-centers-inc",
+      "name": "Northgate Distribution Centers, Inc.",
+      "segment": "Warehousing",
+      "annualRevenueCents": 69600000,
+      "recoverableCents": 8800000,
+      "arrearsCents": 4000000,
+      "upliftCents": 4800000,
+      "findingCount": 1,
+      "openARCents": 10800000
+    },
+    {
+      "id": "harborline-grocery-distribution-inc",
+      "name": "Harborline Grocery Distribution, Inc.",
+      "segment": "Grocery distribution",
+      "annualRevenueCents": 62400000,
+      "recoverableCents": 8400000,
+      "arrearsCents": 3600000,
+      "upliftCents": 4800000,
+      "findingCount": 1,
+      "openARCents": 10400000
+    },
+    {
+      "id": "tidewater-wholesale-supply-co",
+      "name": "Tidewater Wholesale Supply Co.",
+      "segment": "Wholesale distribution",
+      "annualRevenueCents": 79200000,
+      "recoverableCents": 8280000,
+      "arrearsCents": 3960000,
+      "upliftCents": 4320000,
+      "findingCount": 1,
+      "openARCents": 12480000
+    },
+    {
+      "id": "granite-peak-manufacturing-inc",
+      "name": "Granite Peak Manufacturing, Inc.",
+      "segment": "Manufacturing",
+      "annualRevenueCents": 18000000,
+      "recoverableCents": 7200000,
+      "arrearsCents": 3600000,
+      "upliftCents": 3600000,
+      "findingCount": 1,
+      "openARCents": 3000000
+    },
+    {
+      "id": "evergreen-wholesale-foods-inc",
+      "name": "Evergreen Wholesale Foods, Inc.",
+      "segment": "Wholesale grocery",
+      "annualRevenueCents": 60000000,
+      "recoverableCents": 3600000,
+      "arrearsCents": 1800000,
+      "upliftCents": 1800000,
+      "findingCount": 1,
+      "openARCents": 9200000
+    },
+    {
+      "id": "cedarbrook-logistics-partners-llc",
+      "name": "Cedarbrook Logistics Partners, LLC",
+      "segment": "3PL",
+      "annualRevenueCents": 36000000,
+      "recoverableCents": 1500000,
+      "arrearsCents": 1500000,
+      "upliftCents": 0,
+      "findingCount": 1,
+      "openARCents": 6000000
+    },
+    {
+      "id": "pinnacle-retail-group-inc",
+      "name": "Pinnacle Retail Group, Inc.",
+      "segment": "Retail",
+      "annualRevenueCents": 36000000,
+      "recoverableCents": 540000,
+      "arrearsCents": 540000,
+      "upliftCents": 0,
+      "findingCount": 1,
+      "openARCents": 16000000
+    },
+    {
+      "id": "meadowbrook-foods-distribution",
+      "name": "Meadowbrook Foods Distribution",
+      "segment": "Food distribution",
+      "annualRevenueCents": 62400000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 13550000
+    },
+    {
+      "id": "atlantic-cold-chain-co",
+      "name": "Atlantic Cold Chain Co.",
+      "segment": "Cold-chain warehousing",
+      "annualRevenueCents": 45600000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 11720000
+    },
+    {
+      "id": "summit-e-commerce-fulfilment",
+      "name": "Summit E-Commerce Fulfilment",
+      "segment": "E-commerce fulfilment",
+      "annualRevenueCents": 25200000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 6040000
+    },
+    {
+      "id": "redwood-building-supply",
+      "name": "Redwood Building Supply",
+      "segment": "Wholesale distribution",
+      "annualRevenueCents": 80400000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 21850000
+    },
+    {
+      "id": "keystone-pharma-logistics",
+      "name": "Keystone Pharma Logistics",
+      "segment": "Pharma logistics",
+      "annualRevenueCents": 114000000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 25200000
+    },
+    {
+      "id": "blue-ridge-courier-network",
+      "name": "Blue Ridge Courier Network",
+      "segment": "Courier & last-mile",
+      "annualRevenueCents": 10800000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 2600000
+    },
+    {
+      "id": "copperfield-apparel-group",
+      "name": "Copperfield Apparel Group",
+      "segment": "Apparel retail distribution",
+      "annualRevenueCents": 52800000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 13200000
+    },
+    {
+      "id": "sierra-beverage-distribution",
+      "name": "Sierra Beverage Distribution",
+      "segment": "Beverage distribution",
+      "annualRevenueCents": 69600000,
+      "recoverableCents": 0,
+      "arrearsCents": 0,
+      "upliftCents": 0,
+      "findingCount": 0,
+      "openARCents": 31200000
+    }
+  ],
+  "documents": [],
+  "priceIncreases": [
+    {
+      "customerId": "brightline-grocers-llc",
+      "customerName": "Brightline Grocers, LLC",
+      "segment": "Grocery retail",
+      "mechanism": "discount_expiry",
+      "effectiveDate": "2025-09-30",
+      "currentPriceCents": 0,
+      "correctPriceCents": 0,
+      "upliftCents": 0,
+      "daysToEffective": -270,
+      "clause": "Introductory discount (15%) expiry"
+    },
+    {
+      "customerId": "harborline-grocery-distribution-inc",
+      "customerName": "Harborline Grocery Distribution, Inc.",
+      "segment": "Grocery distribution",
+      "mechanism": "step",
+      "effectiveDate": "2025-10-01",
+      "currentPriceCents": 0,
+      "correctPriceCents": 5600000,
+      "upliftCents": 5600000,
+      "daysToEffective": -269,
+      "clause": "Scheduled Price Increase (Schedule B, Year-3 step)"
+    },
+    {
+      "customerId": "cohort-retail-distribution-llc",
+      "customerName": "Cohort Retail Distribution, LLC",
+      "segment": "Retail distribution",
+      "mechanism": "escalator",
+      "effectiveDate": "2027-02-01",
+      "currentPriceCents": 48000000,
+      "correctPriceCents": 66215886,
+      "upliftCents": 18215886,
+      "daysToEffective": 219,
+      "clause": "Price Adjustment (escalation)"
+    },
+    {
+      "customerId": "evergreen-wholesale-foods-inc",
+      "customerName": "Evergreen Wholesale Foods, Inc.",
+      "segment": "Wholesale grocery",
+      "mechanism": "discount_expiry",
+      "effectiveDate": "2027-12-31",
+      "currentPriceCents": 0,
+      "correctPriceCents": 0,
+      "upliftCents": 0,
+      "daysToEffective": 552,
+      "clause": "Introductory discount (5%) expiry"
+    }
+  ],
+  "collections": [
+    {
+      "customerId": "keystone-pharma-logistics",
+      "customerName": "Keystone Pharma Logistics",
+      "invoiceNumber": "NW-KPL-2026-12",
+      "balanceCents": 9500000,
+      "ageDays": 7,
+      "bucket": "1_30",
+      "pCollect": 0.9611,
+      "ervCents": 9130450,
+      "factors": {
+        "ageDays": 7,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "keystone-pharma-logistics",
+      "customerName": "Keystone Pharma Logistics",
+      "invoiceNumber": "NW-KPL-2026-11",
+      "balanceCents": 9500000,
+      "ageDays": 55,
+      "bucket": "31_60",
+      "pCollect": 0.8115,
+      "ervCents": 7709250,
+      "factors": {
+        "ageDays": 55,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "sierra-beverage-distribution",
+      "customerName": "Sierra Beverage Distribution",
+      "invoiceNumber": "NW-SBD-2026-01",
+      "balanceCents": 22000000,
+      "ageDays": 160,
+      "bucket": "90_plus",
+      "pCollect": 0.33126666666666665,
+      "ervCents": 7287867,
+      "factors": {
+        "ageDays": 160,
+        "disputed": true,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Resolve dispute before pursuing"
+    },
+    {
+      "customerId": "redwood-building-supply",
+      "customerName": "Redwood Building Supply",
+      "invoiceNumber": "NW-RBS-2026-12",
+      "balanceCents": 6700000,
+      "ageDays": 2,
+      "bucket": "1_30",
+      "pCollect": 0.9746,
+      "ervCents": 6529820,
+      "factors": {
+        "ageDays": 2,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "tidewater-wholesale-supply-co",
+      "customerName": "Tidewater Wholesale Supply Co.",
+      "invoiceNumber": "NW-TWS-2026-11",
+      "balanceCents": 6240000,
+      "ageDays": 7,
+      "bucket": "1_30",
+      "pCollect": 0.9611,
+      "ervCents": 5997264,
+      "factors": {
+        "ageDays": 7,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "redwood-building-supply",
+      "customerName": "Redwood Building Supply",
+      "invoiceNumber": "NW-RBS-2026-11",
+      "balanceCents": 6700000,
+      "ageDays": 33,
+      "bucket": "31_60",
+      "pCollect": 0.8885000000000001,
+      "ervCents": 5952950,
+      "factors": {
+        "ageDays": 33,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "pinnacle-retail-group-inc",
+      "customerName": "Pinnacle Retail Group, Inc.",
+      "invoiceNumber": "PRG-2026-0188",
+      "balanceCents": 8000000,
+      "ageDays": 75,
+      "bucket": "61_90",
+      "pCollect": 0.7414999999999999,
+      "ervCents": 5932000,
+      "factors": {
+        "ageDays": 75,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "sierra-beverage-distribution",
+      "customerName": "Sierra Beverage Distribution",
+      "invoiceNumber": "NW-SBD-2026-12",
+      "balanceCents": 5800000,
+      "ageDays": 9,
+      "bucket": "1_30",
+      "pCollect": 0.9557,
+      "ervCents": 5543060,
+      "factors": {
+        "ageDays": 9,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "tidewater-wholesale-supply-co",
+      "customerName": "Tidewater Wholesale Supply Co.",
+      "invoiceNumber": "NW-TWS-2026-10",
+      "balanceCents": 6240000,
+      "ageDays": 38,
+      "bucket": "31_60",
+      "pCollect": 0.871,
+      "ervCents": 5435040,
+      "factors": {
+        "ageDays": 38,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "northgate-distribution-centers-inc",
+      "customerName": "Northgate Distribution Centers, Inc.",
+      "invoiceNumber": "NW-NGD-2026-10",
+      "balanceCents": 5400000,
+      "ageDays": 6,
+      "bucket": "1_30",
+      "pCollect": 0.9638,
+      "ervCents": 5204520,
+      "factors": {
+        "ageDays": 6,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "meadowbrook-foods-distribution",
+      "customerName": "Meadowbrook Foods Distribution",
+      "invoiceNumber": "NW-MBF-2026-12",
+      "balanceCents": 5200000,
+      "ageDays": 5,
+      "bucket": "1_30",
+      "pCollect": 0.9665,
+      "ervCents": 5025800,
+      "factors": {
+        "ageDays": 5,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "harborline-grocery-distribution-inc",
+      "customerName": "Harborline Grocery Distribution, Inc.",
+      "invoiceNumber": "NW-HARB-2026-12",
+      "balanceCents": 5200000,
+      "ageDays": 12,
+      "bucket": "1_30",
+      "pCollect": 0.9476,
+      "ervCents": 4927520,
+      "factors": {
+        "ageDays": 12,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "northgate-distribution-centers-inc",
+      "customerName": "Northgate Distribution Centers, Inc.",
+      "invoiceNumber": "NW-NGD-2026-09",
+      "balanceCents": 5400000,
+      "ageDays": 37,
+      "bucket": "31_60",
+      "pCollect": 0.8745,
+      "ervCents": 4722300,
+      "factors": {
+        "ageDays": 37,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "harborline-grocery-distribution-inc",
+      "customerName": "Harborline Grocery Distribution, Inc.",
+      "invoiceNumber": "NW-HARB-2026-11",
+      "balanceCents": 5200000,
+      "ageDays": 43,
+      "bucket": "31_60",
+      "pCollect": 0.8535,
+      "ervCents": 4438200,
+      "factors": {
+        "ageDays": 43,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "evergreen-wholesale-foods-inc",
+      "customerName": "Evergreen Wholesale Foods, Inc.",
+      "invoiceNumber": "NW-EWF-2026-11",
+      "balanceCents": 4600000,
+      "ageDays": 7,
+      "bucket": "1_30",
+      "pCollect": 0.9611,
+      "ervCents": 4421060,
+      "factors": {
+        "ageDays": 7,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "copperfield-apparel-group",
+      "customerName": "Copperfield Apparel Group",
+      "invoiceNumber": "NW-CAG-2026-11",
+      "balanceCents": 4400000,
+      "ageDays": 27,
+      "bucket": "1_30",
+      "pCollect": 0.99,
+      "ervCents": 4356000,
+      "factors": {
+        "ageDays": 27,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": true,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Hold to promise date"
+    },
+    {
+      "customerId": "meadowbrook-foods-distribution",
+      "customerName": "Meadowbrook Foods Distribution",
+      "invoiceNumber": "NW-MBF-2026-10",
+      "balanceCents": 5200000,
+      "ageDays": 48,
+      "bucket": "31_60",
+      "pCollect": 0.836,
+      "ervCents": 4347200,
+      "factors": {
+        "ageDays": 48,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "copperfield-apparel-group",
+      "customerName": "Copperfield Apparel Group",
+      "invoiceNumber": "NW-CAG-2026-12",
+      "balanceCents": 4400000,
+      "ageDays": -5,
+      "bucket": "current",
+      "pCollect": 0.98,
+      "ervCents": 4312000,
+      "factors": {
+        "ageDays": -5,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "continental-auto-parts-distribution-inc",
+      "customerName": "Continental Auto Parts Distribution, Inc.",
+      "invoiceNumber": "NW-CAP-2026-12",
+      "balanceCents": 4400000,
+      "ageDays": 7,
+      "bucket": "1_30",
+      "pCollect": 0.9611,
+      "ervCents": 4228840,
+      "factors": {
+        "ageDays": 7,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "lakeshore-foods-co-op",
+      "customerName": "Lakeshore Foods Co-op",
+      "invoiceNumber": "NW-LFC-2026-12",
+      "balanceCents": 4250000,
+      "ageDays": 6,
+      "bucket": "1_30",
+      "pCollect": 0.9638,
+      "ervCents": 4096150,
+      "factors": {
+        "ageDays": 6,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "evergreen-wholesale-foods-inc",
+      "customerName": "Evergreen Wholesale Foods, Inc.",
+      "invoiceNumber": "NW-EWF-2026-10",
+      "balanceCents": 4600000,
+      "ageDays": 38,
+      "bucket": "31_60",
+      "pCollect": 0.871,
+      "ervCents": 4006600,
+      "factors": {
+        "ageDays": 38,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "cohort-retail-distribution-llc",
+      "customerName": "Cohort Retail Distribution, LLC",
+      "invoiceNumber": "NW-COH-2026-11",
+      "balanceCents": 4000000,
+      "ageDays": 8,
+      "bucket": "1_30",
+      "pCollect": 0.9584,
+      "ervCents": 3833600,
+      "factors": {
+        "ageDays": 8,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "continental-auto-parts-distribution-inc",
+      "customerName": "Continental Auto Parts Distribution, Inc.",
+      "invoiceNumber": "NW-CAP-2026-11",
+      "balanceCents": 4400000,
+      "ageDays": 38,
+      "bucket": "31_60",
+      "pCollect": 0.871,
+      "ervCents": 3832400,
+      "factors": {
+        "ageDays": 38,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "atlantic-cold-chain-co",
+      "customerName": "Atlantic Cold Chain Co.",
+      "invoiceNumber": "NW-ACC-2026-12",
+      "balanceCents": 3800000,
+      "ageDays": -3,
+      "bucket": "current",
+      "pCollect": 0.98,
+      "ervCents": 3724000,
+      "factors": {
+        "ageDays": -3,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "lakeshore-foods-co-op",
+      "customerName": "Lakeshore Foods Co-op",
+      "invoiceNumber": "NW-LFC-2026-11",
+      "balanceCents": 4250000,
+      "ageDays": 37,
+      "bucket": "31_60",
+      "pCollect": 0.8745,
+      "ervCents": 3716625,
+      "factors": {
+        "ageDays": 37,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "atlantic-cold-chain-co",
+      "customerName": "Atlantic Cold Chain Co.",
+      "invoiceNumber": "NW-ACC-2026-11",
+      "balanceCents": 3800000,
+      "ageDays": 18,
+      "bucket": "1_30",
+      "pCollect": 0.9314,
+      "ervCents": 3539320,
+      "factors": {
+        "ageDays": 18,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "cohort-retail-distribution-llc",
+      "customerName": "Cohort Retail Distribution, LLC",
+      "invoiceNumber": "NW-COH-2026-10",
+      "balanceCents": 4000000,
+      "ageDays": 39,
+      "bucket": "31_60",
+      "pCollect": 0.8675,
+      "ervCents": 3470000,
+      "factors": {
+        "ageDays": 39,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "copperfield-apparel-group",
+      "customerName": "Copperfield Apparel Group",
+      "invoiceNumber": "NW-CAG-2026-10",
+      "balanceCents": 4400000,
+      "ageDays": 70,
+      "bucket": "61_90",
+      "pCollect": 0.759,
+      "ervCents": 3339600,
+      "factors": {
+        "ageDays": 70,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "meadowbrook-foods-distribution",
+      "customerName": "Meadowbrook Foods Distribution",
+      "invoiceNumber": "NW-MBF-2026-11",
+      "balanceCents": 3150000,
+      "ageDays": 22,
+      "bucket": "1_30",
+      "pCollect": 0.99,
+      "ervCents": 3118500,
+      "factors": {
+        "ageDays": 22,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": true,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "sierra-beverage-distribution",
+      "customerName": "Sierra Beverage Distribution",
+      "invoiceNumber": "NW-SBD-2026-11",
+      "balanceCents": 3400000,
+      "ageDays": 50,
+      "bucket": "31_60",
+      "pCollect": 0.9119,
+      "ervCents": 3100460,
+      "factors": {
+        "ageDays": 50,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": true,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "pinnacle-retail-group-inc",
+      "customerName": "Pinnacle Retail Group, Inc.",
+      "invoiceNumber": "PRG-2026-0171",
+      "balanceCents": 5000000,
+      "ageDays": 130,
+      "bucket": "90_plus",
+      "pCollect": 0.6107777777777778,
+      "ervCents": 3053889,
+      "factors": {
+        "ageDays": 130,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Final demand / agency referral"
+    },
+    {
+      "customerId": "cedarbrook-logistics-partners-llc",
+      "customerName": "Cedarbrook Logistics Partners, LLC",
+      "invoiceNumber": "NW-CED-2026-11",
+      "balanceCents": 3000000,
+      "ageDays": 9,
+      "bucket": "1_30",
+      "pCollect": 0.9557,
+      "ervCents": 2867100,
+      "factors": {
+        "ageDays": 9,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "keystone-pharma-logistics",
+      "customerName": "Keystone Pharma Logistics",
+      "invoiceNumber": "NW-KPL-2026-10",
+      "balanceCents": 6200000,
+      "ageDays": 88,
+      "bucket": "61_90",
+      "pCollect": 0.45936,
+      "ervCents": 2848032,
+      "factors": {
+        "ageDays": 88,
+        "disputed": true,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": true,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Resolve dispute before pursuing"
+    },
+    {
+      "customerId": "pinnacle-retail-group-inc",
+      "customerName": "Pinnacle Retail Group, Inc.",
+      "invoiceNumber": "PRG-2026-0203",
+      "balanceCents": 3000000,
+      "ageDays": 12,
+      "bucket": "1_30",
+      "pCollect": 0.9476,
+      "ervCents": 2842800,
+      "factors": {
+        "ageDays": 12,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "cedarbrook-logistics-partners-llc",
+      "customerName": "Cedarbrook Logistics Partners, LLC",
+      "invoiceNumber": "NW-CED-2026-10",
+      "balanceCents": 3000000,
+      "ageDays": 40,
+      "bucket": "31_60",
+      "pCollect": 0.864,
+      "ervCents": 2592000,
+      "factors": {
+        "ageDays": 40,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "brightline-grocers-llc",
+      "customerName": "Brightline Grocers, LLC",
+      "invoiceNumber": "NW-BRG-2026-09",
+      "balanceCents": 2550000,
+      "ageDays": 7,
+      "bucket": "1_30",
+      "pCollect": 0.9611,
+      "ervCents": 2450805,
+      "factors": {
+        "ageDays": 7,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "brightline-grocers-llc",
+      "customerName": "Brightline Grocers, LLC",
+      "invoiceNumber": "NW-BRG-2026-08",
+      "balanceCents": 2550000,
+      "ageDays": 38,
+      "bucket": "31_60",
+      "pCollect": 0.871,
+      "ervCents": 2221050,
+      "factors": {
+        "ageDays": 38,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "summit-e-commerce-fulfilment",
+      "customerName": "Summit E-Commerce Fulfilment",
+      "invoiceNumber": "NW-SEF-2026-11",
+      "balanceCents": 2100000,
+      "ageDays": 40,
+      "bucket": "31_60",
+      "pCollect": 0.9504,
+      "ervCents": 1995840,
+      "factors": {
+        "ageDays": 40,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": true,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Hold to promise date"
+    },
+    {
+      "customerId": "summit-e-commerce-fulfilment",
+      "customerName": "Summit E-Commerce Fulfilment",
+      "invoiceNumber": "NW-SEF-2026-12",
+      "balanceCents": 2100000,
+      "ageDays": 11,
+      "bucket": "1_30",
+      "pCollect": 0.9503,
+      "ervCents": 1995630,
+      "factors": {
+        "ageDays": 11,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "atlantic-cold-chain-co",
+      "customerName": "Atlantic Cold Chain Co.",
+      "invoiceNumber": "NW-ACC-2026-10",
+      "balanceCents": 4120000,
+      "ageDays": 75,
+      "bucket": "61_90",
+      "pCollect": 0.44489999999999996,
+      "ervCents": 1832988,
+      "factors": {
+        "ageDays": 75,
+        "disputed": true,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Resolve dispute before pursuing"
+    },
+    {
+      "customerId": "redwood-building-supply",
+      "customerName": "Redwood Building Supply",
+      "invoiceNumber": "NW-RBS-2025-12",
+      "balanceCents": 8450000,
+      "ageDays": 200,
+      "bucket": "90_plus",
+      "pCollect": 0.19293333333333335,
+      "ervCents": 1630287,
+      "factors": {
+        "ageDays": 200,
+        "disputed": false,
+        "promiseBroken": true,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 1
+      },
+      "recommendedAction": "Escalate — broken promise to pay"
+    },
+    {
+      "customerId": "granite-peak-manufacturing-inc",
+      "customerName": "Granite Peak Manufacturing, Inc.",
+      "invoiceNumber": "NW-GPM-2026-12",
+      "balanceCents": 1500000,
+      "ageDays": 8,
+      "bucket": "1_30",
+      "pCollect": 0.9584,
+      "ervCents": 1437600,
+      "factors": {
+        "ageDays": 8,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "granite-peak-manufacturing-inc",
+      "customerName": "Granite Peak Manufacturing, Inc.",
+      "invoiceNumber": "NW-GPM-2026-11",
+      "balanceCents": 1500000,
+      "ageDays": 39,
+      "bucket": "31_60",
+      "pCollect": 0.8675,
+      "ervCents": 1301250,
+      "factors": {
+        "ageDays": 39,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "summit-e-commerce-fulfilment",
+      "customerName": "Summit E-Commerce Fulfilment",
+      "invoiceNumber": "NW-SEF-2026-09",
+      "balanceCents": 1840000,
+      "ageDays": 110,
+      "bucket": "90_plus",
+      "pCollect": 0.6498888888888888,
+      "ervCents": 1195796,
+      "factors": {
+        "ageDays": 110,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Final demand / agency referral"
+    },
+    {
+      "customerId": "blue-ridge-courier-network",
+      "customerName": "Blue Ridge Courier Network",
+      "invoiceNumber": "NW-BRC-2026-12",
+      "balanceCents": 900000,
+      "ageDays": 15,
+      "bucket": "1_30",
+      "pCollect": 0.9395,
+      "ervCents": 845550,
+      "factors": {
+        "ageDays": 15,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Standard reminder"
+    },
+    {
+      "customerId": "blue-ridge-courier-network",
+      "customerName": "Blue Ridge Courier Network",
+      "invoiceNumber": "NW-BRC-2026-10",
+      "balanceCents": 900000,
+      "ageDays": 62,
+      "bucket": "61_90",
+      "pCollect": 0.7869999999999999,
+      "ervCents": 708300,
+      "factors": {
+        "ageDays": 62,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 0
+      },
+      "recommendedAction": "Active follow-up call"
+    },
+    {
+      "customerId": "blue-ridge-courier-network",
+      "customerName": "Blue Ridge Courier Network",
+      "invoiceNumber": "NW-BRC-2026-08",
+      "balanceCents": 800000,
+      "ageDays": 130,
+      "bucket": "90_plus",
+      "pCollect": 0.48862222222222224,
+      "ervCents": 390898,
+      "factors": {
+        "ageDays": 130,
+        "disputed": false,
+        "promiseBroken": false,
+        "promiseKept": false,
+        "partialPayment": false,
+        "priorWriteOffs": 2
+      },
+      "recommendedAction": "Final demand / agency referral"
+    }
+  ],
+  "arAging": {
+    "buckets": [
+      {
+        "bucket": "current",
+        "label": "Current",
+        "count": 2,
+        "balanceCents": 8200000
+      },
+      {
+        "bucket": "1_30",
+        "label": "1–30 days",
+        "count": 20,
+        "balanceCents": 85690000
+      },
+      {
+        "bucket": "31_60",
+        "label": "31–60 days",
+        "count": 15,
+        "balanceCents": 68040000
+      },
+      {
+        "bucket": "61_90",
+        "label": "61–90 days",
+        "count": 5,
+        "balanceCents": 23620000
+      },
+      {
+        "bucket": "90_plus",
+        "label": "90+ days",
+        "count": 5,
+        "balanceCents": 38090000
+      }
+    ],
+    "totalOpenCents": 223640000,
+    "dso": 83.9
+  }
+}

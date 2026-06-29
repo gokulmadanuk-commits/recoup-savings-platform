@@ -199,11 +199,17 @@ export async function parseExcel(
   flushTable();
 
   const tableNames = tables.map((t) => t.name);
+  const VALID_DOCTYPES = new Set<string>([
+    "contract",
+    "invoice",
+    "usage_export",
+    "customer_contract",
+    "billing_export",
+    "ar_aging",
+  ]);
   const docType =
-    docTypeMarker === "contract" ||
-    docTypeMarker === "invoice" ||
-    docTypeMarker === "usage_export"
-      ? docTypeMarker
+    docTypeMarker && VALID_DOCTYPES.has(docTypeMarker)
+      ? (docTypeMarker as DocModel["docType"])
       : detectDocType(tableNames);
 
   if (!docTypeMarker) {
