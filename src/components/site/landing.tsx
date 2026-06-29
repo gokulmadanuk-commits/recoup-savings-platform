@@ -1,99 +1,25 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { clsx } from "clsx";
+import { Nav } from "@/components/site/nav";
 import { Footer } from "@/components/site/footer";
 import { Container, Button, Eyebrow, Stat, Hairline, SectionIndex } from "@/components/ui/primitives";
+import { PRODUCT, type Product } from "@/lib/product";
 
 /* ------------------------------------------------------------------ */
-/* Two products, one ledger. The floating toggle swaps the whole page  */
-/* and FLIPS the palette: Revenue Leakage is green-dominant (dark      */
-/* forest ground, light type), Cost Reduction inverts to paper-        */
-/* dominant (light ground, forest-green type). Both stay editorial.    */
+/* Single-product landing. Two RECOUP products share this shell and    */
+/* the same green editorial theme; only the copy differs by PRODUCT.    */
 /* ------------------------------------------------------------------ */
 
-type Mode = "revenue" | "cost";
-
-interface Accent {
-  /* toggle + top bar */
-  indicator: string;
-  bar: string;
-  /* hero ground/type */
-  heroBg: string;
-  heroGlow: string;
-  heroText: string;
-  heroSub: string;
-  heroFee: string;
-  heroEyebrow: string;
-  heroEmph: string;
-  /* top header (wordmark + cta) */
-  headerText: string;
-  headerCta: string;
-  heroBtn: "cream" | "forest";
-  /* stat strip */
-  statTone: "ink" | "cream";
-  statBorder: string;
-  /* light mid-sections */
-  eyebrowLight: string;
-  rule: string;
-  /* "what we find" ground/cards */
-  findBg: string;
-  findText: string;
-  findHeadText: string;
-  findEyebrow: string;
-  findCard: string;
-  findCardTitle: string;
-  findCardBody: string;
-  findRule: string;
-  findHover: string;
-}
-
-interface ModeContent {
-  name: string;
-  dashHref: string;
-  accent: Accent;
+interface Content {
   hero: { eyebrow: string; pre: string; emph: string; post: string; sub: string; fee: string };
   stats: { value: string; label: string }[];
-  pitch: { eyebrow: string; body1: React.ReactNode; body2: React.ReactNode };
+  pitch: { body1: React.ReactNode; body2: React.ReactNode };
   method: { headline: string; steps: { n: string; title: string; body: string }[] };
-  find: { eyebrow: string; headline: string; items: { t: string; d: string }[] };
-  closing: { eyebrow: string; headline: string; sub: string };
+  find: { headline: string; items: { t: string; d: string }[] };
+  closing: { headline: string; sub: string };
 }
 
-const MODES: Record<Mode, ModeContent> = {
+const CONTENT: Record<Product, Content> = {
   revenue: {
-    name: "Revenue Leakage",
-    dashHref: "/dashboard",
-    accent: {
-      indicator: "bg-emerald",
-      bar: "bg-emerald",
-      // Green-dominant: dark forest ground, light type.
-      heroBg: "bg-forest",
-      heroGlow:
-        "radial-gradient(120% 90% at 70% 0%, rgba(0,129,104,0.45), transparent 55%), radial-gradient(80% 60% at 10% 100%, rgba(22,39,31,0.92), transparent 60%)",
-      heroText: "text-cream",
-      heroSub: "text-cream/80",
-      heroFee: "text-cream/60",
-      heroEyebrow: "text-gold",
-      heroEmph: "text-cream/95",
-      headerText: "text-cream",
-      headerCta: "bg-cream text-forest hover:bg-white",
-      heroBtn: "cream",
-      statTone: "cream",
-      statBorder: "border-cream/15",
-      eyebrowLight: "text-emerald",
-      rule: "border-emerald/35",
-      findBg: "bg-forest",
-      findText: "text-cream",
-      findHeadText: "text-cream",
-      findEyebrow: "text-gold",
-      findCard: "border-cream/15 bg-pine/40",
-      findCardTitle: "text-cream",
-      findCardBody: "text-cream/75",
-      findRule: "border-gold/30",
-      findHover: "hover:border-emerald/60",
-    },
     hero: {
       eyebrow: "Contract & Receivables Recovery",
       pre: "The contracts no one has read since signing are quietly ",
@@ -109,7 +35,6 @@ const MODES: Record<Mode, ModeContent> = {
       { value: "$3.8M", label: "Enterprise value at 8×" },
     ],
     pitch: {
-      eyebrow: "The engagement",
       body1: (
         <>
           Most B2B sellers leak two to four percent of revenue — none of it exotic
@@ -138,7 +63,6 @@ const MODES: Record<Mode, ModeContent> = {
       ],
     },
     find: {
-      eyebrow: "What we find",
       headline: "The money hides in the terms nobody re-checks.",
       items: [
         { t: "Escalators never applied", d: "RPI/CPI uplifts your contract entitles you to that were never billed — recoverable as arrears plus a permanent run-rate increase." },
@@ -150,43 +74,11 @@ const MODES: Record<Mode, ModeContent> = {
       ],
     },
     closing: {
-      eyebrow: "No find, no fee",
       headline: "See what your customers aren't paying you.",
       sub: "Load the sample book, or bring your own contracts and billing export. Findings appear immediately, ranked by what they're worth and graded by how to ask.",
     },
   },
   cost: {
-    name: "Cost Reduction",
-    dashHref: "/dashboard?view=cost",
-    accent: {
-      indicator: "bg-gold",
-      bar: "bg-gold",
-      // Paper-dominant: light ground, forest-green type (the flip).
-      heroBg: "bg-bone",
-      heroGlow:
-        "radial-gradient(110% 80% at 75% 0%, rgba(176,141,69,0.22), transparent 55%), radial-gradient(75% 60% at 6% 100%, rgba(46,125,91,0.12), transparent 60%)",
-      heroText: "text-forest",
-      heroSub: "text-ink-soft",
-      heroFee: "text-ink-soft",
-      heroEyebrow: "text-emerald",
-      heroEmph: "text-emerald",
-      headerText: "text-forest",
-      headerCta: "bg-forest text-cream hover:bg-pine",
-      heroBtn: "forest",
-      statTone: "ink",
-      statBorder: "border-ink/10",
-      eyebrowLight: "text-[#8a6d2f]",
-      rule: "border-gold/40",
-      findBg: "bg-bone",
-      findText: "text-ink",
-      findHeadText: "text-forest",
-      findEyebrow: "text-[#8a6d2f]",
-      findCard: "border-ink/10 bg-paper",
-      findCardTitle: "text-forest",
-      findCardBody: "text-ink-soft",
-      findRule: "border-gold/40",
-      findHover: "hover:border-gold/60 hover:shadow-[0_8px_30px_rgba(31,58,46,0.06)]",
-    },
     hero: {
       eyebrow: "Contract & Payables Recovery",
       pre: "The contracts no one has read since signing are quietly ",
@@ -202,7 +94,6 @@ const MODES: Record<Mode, ModeContent> = {
       { value: "7.2%", label: "Of annual spend" },
     ],
     pitch: {
-      eyebrow: "The engagement",
       body1: (
         <>
           Mid-market companies lose an estimated five to ten percent of profit to
@@ -230,7 +121,6 @@ const MODES: Record<Mode, ModeContent> = {
       ],
     },
     find: {
-      eyebrow: "What we find",
       headline: "The money hides in the tables nobody reads.",
       items: [
         { t: "Auto-renewals", d: "Evergreen contracts renewing inside 90 days whose cancellation window is about to close — or already has." },
@@ -242,118 +132,52 @@ const MODES: Record<Mode, ModeContent> = {
       ],
     },
     closing: {
-      eyebrow: "No find, no fee",
       headline: "See what your last twelve months are hiding.",
       sub: "Load the sample portfolio, or bring your own contracts and invoices. Findings appear immediately, ranked by what they're worth.",
     },
   },
 };
 
-/* ------------------------------------------------------------------ */
-/* The floating product toggle                                         */
-/* ------------------------------------------------------------------ */
-
-function ProductToggle({ mode, onChange }: { mode: Mode; onChange: (m: Mode) => void }) {
-  const a = MODES[mode].accent;
-  return (
-    <div className="fixed left-1/2 top-[4.5rem] z-[60] -translate-x-1/2 px-3 sm:top-3">
-      <div className="relative flex rounded-full border border-ink/10 bg-paper/85 p-1 shadow-[0_10px_40px_rgba(22,39,31,0.18)] backdrop-blur">
-        <span
-          aria-hidden
-          className={clsx(
-            "absolute inset-y-1 left-1 w-[9rem] rounded-full transition-all duration-300 ease-out sm:w-[10rem]",
-            a.indicator,
-          )}
-          style={{ transform: mode === "cost" ? "translateX(100%)" : "translateX(0)" }}
-        />
-        {(["revenue", "cost"] as const).map((mm) => (
-          <button
-            key={mm}
-            type="button"
-            onClick={() => onChange(mm)}
-            aria-pressed={mode === mm}
-            className={clsx(
-              "relative z-10 w-[9rem] rounded-full px-3 py-2 text-center font-ui text-[12px] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 sm:w-[10rem] sm:text-[13px]",
-              mode === mm
-                ? mm === "revenue"
-                  ? "text-cream"
-                  : "text-pine"
-                : "text-ink-soft hover:text-ink",
-            )}
-          >
-            {mm === "revenue" ? "Revenue Leakage" : "Cost Reduction"}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Landing                                                             */
-/* ------------------------------------------------------------------ */
-
 export function Landing() {
-  const [mode, setMode] = useState<Mode>("revenue");
-  const m = MODES[mode];
-  const a = m.accent;
+  const c = CONTENT[PRODUCT];
 
   return (
     <main>
-      {/* Mode color bar pinned to the very top */}
-      <div className={clsx("fixed inset-x-0 top-0 z-[55] h-1 transition-colors duration-300", a.bar)} aria-hidden />
-      <ProductToggle mode={mode} onChange={setMode} />
-
-      {/* Hero — ground/type flips between products */}
-      <section className={clsx("relative overflow-hidden transition-colors duration-500", a.heroBg)}>
-        <div className="pointer-events-none absolute inset-0 opacity-80 transition-[background] duration-500" style={{ background: a.heroGlow }} />
-
-        {/* Top bar: wordmark + CTA (the toggle owns the centre) */}
-        <header className={clsx("absolute inset-x-0 top-0 z-40", a.headerText)}>
-          <Container className="flex items-center justify-between py-6">
-            <Link href="/" className={clsx("font-display text-2xl tracking-[0.2em]", a.headerText)}>
-              RECOUP
-            </Link>
-            <Link
-              href={m.dashHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={clsx(
-                "group hidden items-center gap-2 rounded-full px-5 py-2.5 font-ui text-sm tracking-wide transition-all duration-300 md:inline-flex",
-                a.headerCta,
-              )}
-            >
-              See it in action
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-          </Container>
-        </header>
-
-        <Container className="relative pb-24 pt-44 md:pb-32 md:pt-52">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-forest text-cream">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            background:
+              "radial-gradient(120% 90% at 70% 0%, rgba(0,129,104,0.35), transparent 55%), radial-gradient(80% 60% at 10% 100%, rgba(22,39,31,0.9), transparent 60%)",
+          }}
+        />
+        <Nav tone="dark" />
+        <Container className="relative pb-24 pt-40 md:pb-32 md:pt-52">
           <div className="max-w-3xl">
-            <Eyebrow className={a.heroEyebrow}>{m.hero.eyebrow}</Eyebrow>
-            <h1 className={clsx("mt-6 font-display text-5xl leading-[1.02] tracking-tight md:text-7xl", a.heroText)}>
-              {m.hero.pre}
-              <span className={clsx("italic", a.heroEmph)}>{m.hero.emph}</span>
-              {m.hero.post}
+            <Eyebrow className="text-gold">{c.hero.eyebrow}</Eyebrow>
+            <h1 className="mt-6 font-display text-5xl leading-[1.02] tracking-tight md:text-7xl">
+              {c.hero.pre}
+              <span className="italic text-cream/95">{c.hero.emph}</span>
+              {c.hero.post}
             </h1>
-            <p className={clsx("mt-8 max-w-2xl font-body text-lg leading-relaxed md:text-xl", a.heroSub)}>
-              {m.hero.sub}
+            <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-cream/80 md:text-xl">
+              {c.hero.sub}
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Button href={m.dashHref} newTab variant={a.heroBtn}>
+              <Button href="/dashboard" newTab variant="cream">
                 See it in action
               </Button>
             </div>
-            <p className={clsx("mt-6 font-ui text-sm tracking-wide", a.heroFee)}>{m.hero.fee}</p>
+            <p className="mt-6 font-ui text-sm tracking-wide text-cream/60">{c.hero.fee}</p>
           </div>
         </Container>
 
         {/* Stat strip */}
-        <div className={clsx("relative border-t", a.statBorder)}>
+        <div className="relative border-t border-cream/15">
           <Container className="grid grid-cols-2 gap-8 py-10 md:grid-cols-4">
-            {m.stats.map((sstat) => (
-              <Stat key={sstat.label} tone={a.statTone} value={sstat.value} label={sstat.label} />
+            {c.stats.map((s) => (
+              <Stat key={s.label} tone="cream" value={s.value} label={s.label} />
             ))}
           </Container>
         </div>
@@ -363,17 +187,17 @@ export function Landing() {
       <section className="bg-paper">
         <Container className="grid gap-12 py-24 md:grid-cols-12 md:py-32">
           <div className="md:col-span-5">
-            <Eyebrow className={a.eyebrowLight}>{m.pitch.eyebrow}</Eyebrow>
+            <Eyebrow>The engagement</Eyebrow>
             <h2 className="mt-5 font-display text-4xl leading-tight md:text-5xl">
               We only get paid when <span className="italic">you</span> do.
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7">
-            <p className="font-body text-lg leading-relaxed text-ink-soft">{m.pitch.body1}</p>
-            <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">{m.pitch.body2}</p>
+            <p className="font-body text-lg leading-relaxed text-ink-soft">{c.pitch.body1}</p>
+            <p className="mt-5 font-body text-lg leading-relaxed text-ink-soft">{c.pitch.body2}</p>
             <div className="mt-8">
-              <Hairline className={clsx("mb-6", a.rule)} />
-              <Button href={m.dashHref} newTab>
+              <Hairline className="mb-6" />
+              <Button href="/dashboard" newTab>
                 See it in action
               </Button>
             </div>
@@ -385,11 +209,11 @@ export function Landing() {
       <section id="method" className="bg-bone">
         <Container className="py-24 md:py-32">
           <div className="max-w-2xl">
-            <Eyebrow className={a.eyebrowLight}>The method</Eyebrow>
-            <h2 className="mt-5 font-display text-4xl leading-tight md:text-5xl">{m.method.headline}</h2>
+            <Eyebrow>The method</Eyebrow>
+            <h2 className="mt-5 font-display text-4xl leading-tight md:text-5xl">{c.method.headline}</h2>
           </div>
           <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 md:grid-cols-2">
-            {m.method.steps.map((step) => (
+            {c.method.steps.map((step) => (
               <div key={step.n} className="bg-paper p-8 md:p-10">
                 <div className="flex items-baseline gap-4">
                   <SectionIndex n={step.n} />
@@ -402,24 +226,24 @@ export function Landing() {
         </Container>
       </section>
 
-      {/* What we find — ground/cards flip between products */}
-      <section id="what-we-find" className={clsx("transition-colors duration-500", a.findBg, a.findText)}>
+      {/* What we find */}
+      <section id="what-we-find" className="bg-forest text-cream">
         <Container className="py-24 md:py-32">
           <div className="max-w-2xl">
-            <Eyebrow className={a.findEyebrow}>{m.find.eyebrow}</Eyebrow>
-            <h2 className={clsx("mt-5 font-display text-4xl leading-tight md:text-5xl", a.findHeadText)}>
-              {m.find.headline}
+            <Eyebrow className="text-gold">What we find</Eyebrow>
+            <h2 className="mt-5 font-display text-4xl leading-tight text-cream md:text-5xl">
+              {c.find.headline}
             </h2>
           </div>
           <div className="mt-16 grid gap-6 md:grid-cols-3">
-            {m.find.items.map((c) => (
+            {c.find.items.map((item) => (
               <div
-                key={c.t}
-                className={clsx("rounded-2xl border p-7 transition-all duration-300", a.findCard, a.findHover)}
+                key={item.t}
+                className="rounded-2xl border border-cream/15 bg-pine/40 p-7 transition-colors duration-300 hover:border-gold/50"
               >
-                <h3 className={clsx("font-display text-xl", a.findCardTitle)}>{c.t}</h3>
-                <hr className={clsx("my-4 border-0 border-t", a.findRule)} />
-                <p className={clsx("font-body", a.findCardBody)}>{c.d}</p>
+                <h3 className="font-display text-xl text-cream">{item.t}</h3>
+                <hr className="my-4 border-0 border-t border-gold/30" />
+                <p className="font-body text-cream/75">{item.d}</p>
               </div>
             ))}
           </div>
@@ -429,13 +253,13 @@ export function Landing() {
       {/* Closing CTA */}
       <section className="bg-paper">
         <Container className="py-24 text-center md:py-32">
-          <Eyebrow className={clsx("mx-auto", a.eyebrowLight)}>{m.closing.eyebrow}</Eyebrow>
+          <Eyebrow className="mx-auto">No find, no fee</Eyebrow>
           <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl leading-tight md:text-6xl">
-            {m.closing.headline}
+            {c.closing.headline}
           </h2>
-          <p className="mx-auto mt-6 max-w-xl font-body text-lg text-ink-soft">{m.closing.sub}</p>
+          <p className="mx-auto mt-6 max-w-xl font-body text-lg text-ink-soft">{c.closing.sub}</p>
           <div className="mt-10 flex justify-center">
-            <Button href={m.dashHref} newTab variant="forest">
+            <Button href="/dashboard" newTab variant="forest">
               See it in action
             </Button>
           </div>

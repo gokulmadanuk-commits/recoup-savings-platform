@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "../ui/primitives";
+import { IS_REVENUE } from "@/lib/product";
 
 export function Footer() {
   return (
@@ -9,8 +10,9 @@ export function Footer() {
           <div className="max-w-sm">
             <div className="font-display text-2xl tracking-[0.2em]">RECOUP</div>
             <p className="mt-4 font-body text-cream/70">
-              We read every vendor contract and twelve months of invoices, then
-              find the money hiding inside them. Free unless we find you savings.
+              {IS_REVENUE
+                ? "We read every customer contract and billing export, then find the revenue your customers aren't paying you. Free unless we find you revenue."
+                : "We read every vendor contract and twelve months of invoices, then find the money hiding inside them. Free unless we find you savings."}
             </p>
           </div>
           <div className="flex gap-16">
